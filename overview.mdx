@@ -7,7 +7,7 @@ keywords: ["ChatFlows", "API", "REST API", "developer", "token", "scopes", "pagi
 
 ## What is the ChatFlows.io API
 
-The ChatFlows.io REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from a dedicated host, `api.chatflows.io`, separate from your tenant subdomain.
+The ChatFlows.io REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from the same address as your workspace, at `/api/v1`.
 
 <Warning>
   API access is a paid feature. Upgrade your plan to start using the ChatFlows.io API.
@@ -30,14 +30,19 @@ The ChatFlows.io REST API lets you interact with your workspace programmatically
     ```
   </Step>
   <Step title="Call the API">
-    Send requests to `https://api.chatflows.io/api/v1/...`. Start with `GET /api/v1/ping` to confirm your token and abilities are working — you'll find it under [Auth & Account](/api-reference/auth-&-account/ping) in the sidebar.
+    Send requests to your own workspace address, at `/api/v1/...` — for example
+    `https://yourworkspace.example.com/api/v1/...`. Start with `GET /api/v1/ping` to confirm your
+    token and abilities are working — you'll find it under [Auth & Account](/api-reference/auth-&-account/ping)
+    in the sidebar.
   </Step>
 </Steps>
 
 ## Base URL
 
+Your workspace's own address, followed by `/api/v1` — for example:
+
 ```text
-https://api.chatflows.io/api/v1
+https://yourworkspace.example.com/api/v1
 ```
 
 ## Scopes (abilities)
@@ -84,19 +89,19 @@ Every module is documented endpoint by endpoint in the sidebar under this Api ta
 
 ## Prefer Swagger, or need an OpenAPI spec / Postman collection?
 
-If you'd rather browse and test everything from a single interactive Swagger page, or need the raw spec to generate a client, the same API is also documented at [api.chatflows.io/docs](https://api.chatflows.io/docs).
+If you'd rather browse and test everything from a single interactive Swagger page, or need the raw spec to generate a client, the same API is also documented at `/docs` on your own workspace address.
 
 <CardGroup cols={2}>
-  <Card title="Try it out, live" icon="play" href="https://api.chatflows.io/docs">
-    Use the **Authorize** button on the Swagger UI to add `Authorization: Bearer <token>` and send real requests against your workspace without leaving the browser.
+  <Card title="Try it out, live" icon="play">
+    Use the **Authorize** button on the Swagger UI (at `/docs` on your workspace address) to add `Authorization: Bearer <token>` and send real requests against your workspace without leaving the browser.
   </Card>
 
-  <Card title="OpenAPI spec" icon="file-code" href="https://api.chatflows.io/openapi/chatflows-api-v1.json">
-    Download the raw OAS 3.1 document to generate clients or import it into your own tooling.
+  <Card title="OpenAPI spec" icon="file-code">
+    Download the raw OAS 3.1 document from `/openapi/chatflows-api-v1.json` on your workspace address to generate clients or import it into your own tooling.
   </Card>
 
-  <Card title="Postman collection" icon="download" href="https://api.chatflows.io/docs">
-    Export every request, with example payloads and responses, ready to import into Postman (button available on the Swagger page).
+  <Card title="Postman collection" icon="download">
+    Export every request, with example payloads and responses, ready to import into Postman (button available on the Swagger page at `/docs`).
   </Card>
 
   <Card title="Full reference, right here" icon="book-open">

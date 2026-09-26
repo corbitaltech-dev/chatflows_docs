@@ -190,7 +190,6 @@
               "settings/opt-out",
               "settings/shopify",
               "settings/woocommerce",
-              "settings/account-and-danger-zone",
               "settings/profile"
             ]
           }

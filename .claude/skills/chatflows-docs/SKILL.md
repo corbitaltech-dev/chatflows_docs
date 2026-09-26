@@ -107,7 +107,9 @@ If a feature needs a paid plan, say so **at the point you mention it** — a sho
 </Card>
 ```
 
-Currently paid-only: team invites (more than one seat), Shopify, WooCommerce, Google Sheets/Calendar nodes, webhook forwarding, REST API, canned replies, custom domain (a separate add-on even on Professional).
+Currently paid-only: team invites (more than one seat), Shopify, WooCommerce, Google Sheets/Calendar nodes, webhook forwarding, REST API, canned replies.
+
+Add-ons and self-service custom domain do not exist for this audience — this docs site serves a reseller's own customers, and neither feature is wired up for that account type. Don't reintroduce `billing/addons-and-upgrades.mdx` or `settings/custom-domain.mdx`-style content; check with the user before adding either back.
 
 **Why:** a new user who hits an unexpected paywall halfway through onboarding loses more trust than the signup was worth. Verify current gating against `getting-started/free-vs-paid.mdx` before claiming anything is free.
 
