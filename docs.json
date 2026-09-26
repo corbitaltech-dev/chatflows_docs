@@ -93,8 +93,7 @@
             "group": "Billing",
             "pages": [
               "billing/plans-and-subscription",
-              "billing/payments-and-invoices",
-              "billing/addons-and-upgrades"
+              "billing/payments-and-invoices"
             ]
           },
           {
@@ -184,7 +183,6 @@
               "settings/general",
               "settings/business-hours",
               "settings/billing-details",
-              "settings/custom-domain",
               "settings/contact-configuration",
               "settings/webhooks",
               "settings/google-accounts",
