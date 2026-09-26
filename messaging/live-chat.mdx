@@ -1,0 +1,268 @@
+---
+title: "Live Chat"
+description: "One place to handle all your WhatsApp and Messenger chats with customers."
+icon: "messages-square"
+keywords: ["WhatsMark", "chat", "live chat", "team inbox", "conversations", "inbox"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+When a customer messages you on WhatsApp or Messenger, it shows up here instantly, and anyone from your team can reply. Everyone can work from the same screen, so nothing gets missed.
+
+<Note>
+  Before you start chat needs at least one **connected WhatsApp or Messenger channel** to work. Without that, the screen stays empty because there are no messages to receive. See [Connecting WhatsApp](/core-setup/channels/whatsapp) to set up.
+</Note>
+
+## What you see on the chat screen
+
+When you open Chat, the screen is split into four parts:
+
+1. **Sidebar** — filters to show only the chats you want.
+2. **Chat list** — all your conversations, newest at the top.
+3. **Message thread** — the chat you're currently reading, with the reply box at the bottom.
+4. **Contact panel** — details about the person you're talking to. It opens when you want it.
+
+<Figure
+  src="/messaging/img/chat/chat-screen-overview.png"  
+  alt="The full Chat screen: the sidebar on the left with All, Mine, Unassigned, Not Replied, Status, and Team Inbox filters, the chat list in the middle with contact rows and last-message previews, and an open conversation on the right with its message thread and reply box"
+  caption="Image shows the Chat screen with the sidebar, chat list, and an open conversation."
+/>
+
+## How a chat starts
+
+A chat can begin in two ways.
+
+### A customer messages you
+
+This is how most chats start. The customer messages you first and then it shows up in your list, and you can open it and reply.
+
+If the customer is not in your contacts, they are added automatically. You do not need to add them.
+
+### You message first
+
+You can also start the conversation yourself. Click **New chat** at the top of the sidebar (owners and admins only) and search for a contact by name, phone, or email.
+
+After you pick a contact, one of these happens:
+
+- If you already have a chat going with them, it opens and you can type as normal.
+- If there is no chat going yet, you are asked to pick a template to start one.
+
+<Warning>
+On **WhatsApp** you cannot send a plain message to start a chat. You have to use an **approved template**, so keep at least one ready template before you try. See [WhatsApp Templates](/messaging/whatsapp-templates) to create one and get it approved. See [Meta's policy](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows) for more details.
+
+On **Messenger** you cannot message first at all, so wait for the customer to message you.
+</Warning>
+
+<Figure
+  src="/messaging/img/chat/chat-new-chat.png"
+  alt="The New chat sheet with a search box to find a contact by name, phone, or email, and a list of contacts each showing Open or Template status"
+  caption="Image shows the New chat sheet with the contact search and list."
+/>
+
+## Perform actions on a message
+
+Hover over any message to open its menu:
+
+<Figure
+  src="/messaging/img/chat/chat-message-menu.png"
+  alt="An open chat with the per-message menu showing Reply, Copy, and Delete options on a message bubble"
+  caption="Image shows the menu that opens on a single message."
+/>
+
+- **Reply** — quote it in your answer. Click a quoted message to jump to the original.
+- **Copy** — copy the text.
+- **Delete** — remove it from your inbox.
+
+<Note>
+Deleting message only removes the message from your screen. The customer still sees it on their phone. You have 2 minutes to restore it.
+</Note>
+
+## The reply time limit
+
+WhatsApp and Messenger do not let you message a customer any time you want. You can only reply for a set time after they message you. This stops businesses from spamming people.
+
+### On WhatsApp: 24 hours
+
+After a customer messages you, you get 24 hours to reply. You can send anything you want in that time. A countdown at the top of the chat shows how much time is left. It turns amber in the last hour and red in the last few minutes.
+
+When the time runs out, the reply box goes away. In its place you get a **Send template** button. Use it to send an approved template and reach them again.
+
+<Figure
+  src="/messaging/img/chat/chat-screen-expired.png"
+  alt="WhatsApp and Messenger do not let you message a customer any time you want."
+  caption="Image shows the chat when the messaging window has expired."
+/>
+
+### On Messenger: 7 days
+
+On Messenger you get 7 days. After that the reply box closes too. There is no template option here, so you have to wait for the customer to message you again.
+
+<Note>
+The countdown restarts every time the customer sends you a new message. See [Meta's policy](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#customer-service-windows)
+</Note>
+
+## Replying
+
+Type your reply in the box at the bottom and press Enter to send.
+
+Above the box you get basic formatting: bold, italic, strikethrough, and lists.
+
+### The tools under the box
+
+<Figure
+  src="/messaging/img/chat/chat-composer-annotated.png"
+  alt="The reply box with its formatting bar on top and the nine tool icons below numbered 1 to 9, and the microphone button on the right"
+  caption="Image shows the reply box with its formatting bar and tool icons."
+/>
+
+1. **Emoji** — add an emoji.
+2. **Attach** — send an image, video, audio file, or document. This opens your [Media Library](/media/media-library), where you can upload a new file or pick one you have already used.
+3. **Location** — send a location pin.
+4. **Contact card** — send contact details to the customer. You can pick one of your saved contacts, or type in new details by hand. Details you type here are only sent in the message and are not saved to your contacts.
+5. **Canned reply** — pick a saved reply you use often. You can also type `/` to open this. See [Canned Replies](/core-setup/canned-replies).
+6. **Run a flow** — start an automation in this chat. See [Chatbot Flows](/automation/overview).
+7. **Send form** — send a form the customer can fill in, like a booking form. (WhatsApp only) See [WhatsApp Flows](/appointment-and-flow/whatsapp-flows).
+8. **AI assist** — rewrite or translate your message with AI. See [AI assist](#ai-assist) below.
+9. **Send template** — send an approved template. See [WhatsApp Templates](/messaging/whatsapp-templates) and [Messenger Templates](/messaging/messenger-templates).
+10. **Voice notes** — When the box is empty, the send button turns into a microphone. Click it to record, then send it as a voice note.
+
+
+## AI assist
+
+Click the sparkle icon to have AI change your message before you send it.
+
+You get:
+
+- **Quick fixes** — improve the writing, fix grammar, make it formal or casual, or make it shorter.
+- **Translate** — turn your message into another language.
+- **Your own prompts** — saved instructions you write yourself. See [AI Prompts](/core-setup/ai-prompts).
+
+After AI rewrites your message you can **Undo** it or **Regenerate** for a different version.
+
+A meter shows how many AI tokens you have left from your plan's limit.
+
+<Figure
+  src="/messaging/img/chat/chat-ai-assist.png"
+  alt="The AI assist popover showing Quick Actions for improve writing, fix grammar, make formal, make casual and make shorter, a Translate option, your own saved prompts, a monthly AI token meter, and a Manage prompts link"
+  caption="Image shows the AI assist popover with its quick actions and token meter."
+/>
+
+## Searching in a chat
+
+Long chats are hard to scroll through. Click the search icon at the top of the chat to search inside it.
+
+Type at least two letters. Matching messages appear in a list with your search term highlighted. Click one to jump straight to it in the chat.
+
+## The contact panel
+
+Click the person icon at the top right to open details about the customer you are talking to. It has three tabs.
+
+### Contact
+
+Their name, phone, email, source, type, who they are assigned to, labels, and the channel they use. Click **Edit** to change any of it without leaving the chat.
+
+See [Managing Contacts](/contacts/managing-contacts) for what each field means.
+
+<Figure
+  src="/messaging/img/chat/chat-contact-panel-details.png"
+  alt="The contact panel showing Contact details with Name, Phone Number, Email Address, Source, Contact Type, Assigned to, Labels, and Channel fields, plus an Edit button"
+  caption="Image shows the contact panel with the contact's details."
+/>
+
+### Notes
+
+Private notes about this customer that only your team can see. The customer never sees them. Use them to record things like "asked for a bulk order quote".
+
+### Media
+
+Every photo, video, file and audio clip shared in this chat, in one place. Filter by type, click any image to open it full size, or download a file.
+
+## Filtering your chats
+
+Once messages start coming in, the list gets long. Here is how to find what you need.
+
+<Figure
+  src="/messaging/img/chat/chat-inbox-layout.png"
+  alt="The Chat sidebar with All, Mine, Unassigned, Not Replied, Status and Team Inbox filters, next to the chat list showing contact rows with status labels, avatars and last-message previews"
+  caption="Image shows the Chat sidebar filters next to the chat list."
+/>
+
+### Filters in the sidebar
+
+The sidebar splits your chats into groups. Each one shows a live count, so you can see how much is waiting.
+
+- **All** — every chat you can see.
+- **Mine** — chats assigned to you.
+- **Unassigned** — chats nobody has picked up yet.
+- **Not Replied** — a switch that shows only chats where the customer is still waiting for an answer.
+- **Status** — your contact statuses, like New Lead or Customer. See [Statuses](/core-setup/statuses).
+- **Team Inbox** — chats sent to a team you belong to, like Sales or Support.
+
+Click a filter again to turn it off.
+
+### Search, sort and channel
+
+Above the chat list:
+
+- **Search** — type a name or number to find a chat.
+- **Sort** — switch between newest and oldest first.
+- **Channel** — show chats from one WhatsApp or Messenger number instead of all of them.
+
+### What you see in the chat list
+
+Every row gives you a quick summary:
+
+- Photo of the customer, with a small icon showing if they used WhatsApp or Messenger.
+- Name and their status label.
+- Time of the last message.
+- On the right, a small photo of the team member handling the chat, and the profile photo of the channel it came in on.
+- One line of the last message.
+- A coloured badge with the number of unread messages.
+
+## Assigning chats
+
+### Assign it to a person
+
+Open a chat and use the assign dropdown at the top. Tick one or more team members, then click **Apply**. Their photos then show on the chat row so everyone knows who is handling it.
+
+### Assign it to a team
+
+You can also group people into teams like Sales or Support, and send a chat to the whole team instead of one person. Everyone in that team sees it in their sidebar.
+
+To create a team, click the **+** next to Team Inbox in the sidebar, give it a name, and pick the members.
+
+### Closing, clearing and deleting
+
+- **Close** — close the chat you have open and go back to the empty screen.
+- **Clear chat** — delete all the messages but keep the chat.
+- **Delete conversation** — remove the whole chat from your inbox.
+
+<Note>
+Only owners and admins can assign chats or manage teams. Other actions depend on your role — see [Roles & Permissions](/core-setup/roles-and-permissions).
+
+Owners and admins see every chat. Everyone else only sees chats assigned to them or sent to their team.
+</Note>
+
+## Looking at older chats
+
+Click the calendar icon at the top of the sidebar to pick a date range. The chat list and the open chat both jump to that period. Clear the date chip to come back to now.
+
+<Note>
+How far back you can go depends on your plan. Dates outside your limit are greyed out in the picker, with a link to upgrade.
+</Note>
+
+## Live updates
+
+You never need to refresh the page. New messages, delivery ticks, unread counts and assignment changes all appear as they happen.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp Templates" icon="file-text" href="/messaging/whatsapp-templates">
+    Get messages approved by Meta so you can message contacts outside the 24-hour window.
+  </Card>
+
+  <Card title="Campaigns" icon="megaphone" href="/messaging/campaigns">
+    Send messages to many contacts at once instead of one conversation at a time.
+  </Card>
+</CardGroup>

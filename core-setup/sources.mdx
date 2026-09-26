@@ -1,0 +1,85 @@
+---
+title: "Sources"
+description: "Know where every contact came from — WhatsApp, ads, your website, or a referral."
+icon: "map-pin"
+keywords: ["WhatsMark", "WaMatrix.io", "sources", "contact source", "contacts", "tracking"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+A source shows where a contact came from, such as Facebook Ads, Website, or Referral. This helps you understand which channels bring in the most contacts.
+
+WaMatrix.io includes two built-in sources: WhatsApp and Facebook. These are assigned automatically and can't be edited or deleted. Create your own sources for everything else.
+## Where sources show up
+
+Once set, a source follows the contact everywhere:
+
+- **Contacts page** — filter your list by source to see everyone from one place.
+- **Campaigns** — when picking who receives a [campaign](/messaging/campaigns), you can filter the audience by source.
+- **Imports** — when [importing contacts](/contacts/import-export), pick one source to apply to every contact in the file.
+- **Exports** — filter by source first, then export to download only those contacts.
+- **New contacts from messages** — when a message from a new person creates a contact, the source is set for you. You can change these defaults in [Contact Configuration](/settings/contact-configuration).
+
+## Creating a source
+
+<Figure
+  src="/core-setup/img/source-form.png"
+  alt="New Source form showing a required name field"
+  caption="Image shows the New Source form."
+/>
+
+<Steps>
+<Step title="Open Sources">
+  Click **Setup** in the sidebar, then **Sources**.
+</Step>
+
+<Step title="Click Create Source">
+  The button sits at the top right of the page. A form opens on the right side of the screen.
+</Step>
+
+<Step title="Enter the name">
+  Add a clear name, such as **Facebook Ads**, **Website**, **Walk-in**, or **Referral**. Each name can be used only once.
+</Step>
+
+<Step title="Save">
+  Click **Save**. The source is ready to use right away in contact forms, filters, imports, and campaigns.
+</Step>
+</Steps>
+
+<Tip>
+You can also create a source without leaving the contact form — click the `+` icon beside the **Source** field while adding or editing a contact.
+</Tip>
+
+## Managing sources
+
+<Figure
+  src="/core-setup/img/sources-table.png"
+  alt="Sources table listing Facebook and WhatsApp, each marked with a System badge, with a Create Source button at the top right"
+  caption="Image shows the Sources table."
+/>
+
+From the Sources page you can:
+
+- **Reorder** — drag rows up or down. The same order is used everywhere sources are listed.
+- **Edit** — click the menu icon at the end of a row and click **Edit** to change the name.
+- **Delete** — click the menu icon and click **Delete**.
+
+<Note>
+A source that's still in use can't be deleted. If any contacts have it, or it's chosen as a default in [Contact Configuration](/settings/contact-configuration), WaMatrix.io tells you where it's used — clear it there first, then delete. The built-in **System** sources can never be edited or deleted.
+</Note>
+
+<Tip>
+Stick to one name per place — **Facebook Ads**, not a mix of "FB", "Facebook", and "fb ads". When everyone uses the same names, your filters show the full picture instead of splitting one source into three.
+</Tip>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Custom Fields" icon="square" href="/core-setup/custom-fields">
+    Add custom data fields to your contact records.
+  </Card>
+
+  <Card title="Statuses" icon="circle" href="/core-setup/statuses">
+    Track where every contact stands in your sales journey.
+  </Card>
+</CardGroup>

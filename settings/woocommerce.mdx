@@ -1,0 +1,227 @@
+---
+title: "WooCommerce"
+description: "Connect your WooCommerce store to automatically send WhatsApp messages to your customers."
+icon: "shopping-cart"
+keywords: ["WhatsMark", "WooCommerce", "integration", "ecommerce", "WordPress", "abandoned cart"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+Connect your **WooCommerce** store with WaMatrix.io to automatically send WhatsApp messages when customers **place an order, their order ships, or they leave without completing a purchase**.
+
+Find it under **Settings → WooCommerce**.
+
+<Note>
+**Before you start**
+
+- The WooCommerce integration is available on the **Professional plan**.
+- Configure your checkout to collect the customer's phone number before connecting WooCommerce. See [Make sure you can reach customers](#make-sure-you-can-reach-customers).
+</Note>
+
+## Step 1 — Create a REST API key
+<Steps>
+<Step title="Open the REST API page">
+  In your WordPress admin panel, go to **WooCommerce → Settings → Advanced → REST API Keys**.
+
+  <Figure
+    src="/settings/img/woo-rest-api-page.png"
+    alt="The WooCommerce REST API settings page in WordPress with an Add key button"
+    caption="Image shows WooCommerce → Settings → Advanced → REST API."
+  />
+</Step>
+
+<Step title="Click Add key">
+  Enter a description so you can recognize the key later.
+</Step>
+
+<Step title="Set Permissions to Read/Write">
+  Choose **Read/Write**. Read access alone won't work because WaMatrix.io needs to create webhooks.
+
+  <Figure
+    src="/settings/img/woo-create-api-key.png"
+    alt="The WooCommerce Add key form with description, user and permissions set to Read/Write"
+    caption="Image shows the key details with Permissions set to Read/Write."
+  />
+</Step>
+
+<Step title="Click Generate API key">
+  You now see a **Consumer Key** and a **Consumer Secret**. Copy both.
+
+  <Figure
+    src="/settings/img/woo-api-key-generated.png"
+    alt="The generated Consumer Key and Consumer Secret shown once in WooCommerce"
+    caption="Image shows the generated Consumer Key and Consumer Secret."
+  />
+</Step>
+</Steps>
+
+## Step 2 — Connect your store
+
+Now in WaMatrix.io, go to **Settings → WooCommerce** and fill in the fields:
+
+- **Store URL** — your shop's web address, like `https://your-store.com`.
+- **Consumer Key** — starts with `ck_`.
+- **Consumer Secret** — starts with `cs_`.
+
+<Figure
+  src="/settings/img/woo-connect-form.png"
+  alt="The Connect WooCommerce form with Store URL, Consumer Key and Consumer Secret fields"
+  caption="Image shows the Connect WooCommerce form."
+/>
+
+Click **Connect WooCommerce**.
+
+Your details are checked right away. If everything is correct, the status changes from **Connecting...** to **Connected** in a few moments.
+
+<Note>
+If you see **Could not verify these credentials against your store,** the error appears under **Consumer Key**, but the problem is often the Store URL. Make sure you're using the correct store address, including `https://`, with nothing after the domain.
+</Note>
+
+## Step 3 — Install the WordPress plugin
+
+<Steps>
+<Step title="Download it">
+  On the WaMatrix.io WooCommerce page, click **Download plugin**. You get a `.zip` file.
+
+  <Figure
+    src="/settings/img/woo-plugin-download.png"
+    alt="The connected WooCommerce store card with the Download plugin button"
+    caption="Image shows the Download plugin button on the connected store."
+  />
+
+</Step>
+
+<Step title="Upload it to WordPress">
+  In your WordPress admin, go to **Plugins → Add Plugin → Upload Plugin**, choose the zip file you downloaded, and click **Install Now**.
+
+  <Figure
+    src="/settings/img/woo-upload-plugin.png"
+    alt="The WordPress Upload Plugin screen with a file chooser and Install Now button"
+    caption="Image shows Plugins → Add Plugin → Upload Plugin in WordPress."
+  />
+</Step>
+
+<Step title="Activate it">
+  Click **Activate Plugin**. It is called **WooCommerce Connector for WaMatrix.io**.
+</Step>
+</Steps>
+
+## Step 4 — Point the plugin at your workspace
+
+Once the plugin is active, a **WaMatrix.io** link appears in your WordPress sidebar. Click it.
+
+<Figure
+  src="/settings/img/woo-plugin-menu.png"
+  alt="The WordPress admin sidebar with a WaMatrix.io menu link"
+  caption="Image shows the WaMatrix.io link in the WordPress sidebar."
+/>
+
+<Steps>
+<Step title="Webhook URL">
+  Go back to **Settings → WooCommerce** in WaMatrix.io and click the copy icon next to **Webhook URL**. Paste it into WordPress.
+
+  <Figure
+    src="/settings/img/woo-webhook-details.png"
+    alt="The Webhook URL and Webhook Secret fields with copy buttons on the WooCommerce settings page"
+    caption="Image shows where to copy the Webhook URL and Webhook Secret."
+  />
+</Step>
+
+<Step title="Webhook Secret">
+  Copy the **Webhook Secret** from WaMatrix.io and paste it here. It verifies that the webhook requests come from your store.
+</Step>
+
+<Step title="Abandoned cart delay (minutes)">
+  An [abandoned cart](#how-abandoned-carts-work) is a shopping cart where a customer adds items but leaves without completing the purchase. This setting controls how long WaMatrix.io waits before treating the cart as abandoned. The recommended value is 60 minutes.
+</Step>
+
+<Step title="Click Save Settings">
+  Setup is done.
+</Step>
+</Steps>
+
+<Note>
+The plugin checks in with WaMatrix.io **once a day**, so your WooCommerce page can still say **Plugin not yet connected** for up to 24 hours after you install it. That does not mean the install failed. Abandoned carts start working immediately.
+</Note>
+
+## Make sure you can reach customers
+
+Your WooCommerce checkout must collect the customer's phone number. This allows WaMatrix.io to create a contact and send abandoned cart, order, and shipping messages to the right customer.
+
+The simplest way to do that is to require an account at checkout:
+
+<Steps>
+<Step title="Open Accounts & Privacy">
+  In WordPress, go to **WooCommerce → Settings → Accounts & Privacy**.
+</Step>
+
+<Step title="Turn off guest checkout">
+  Uncheck **Enable guest checkout**.
+
+  <Figure
+    src="/settings/img/woo-guest-checkout.png"
+    alt="The WooCommerce Accounts and Privacy settings with the guest checkout option unticked"
+    caption="Image shows WooCommerce → Settings → Accounts & Privacy."
+  />
+</Step>
+
+<Step title="Save changes">
+  Customers now have to fill in their details, so you get a phone number every time.
+</Step>
+</Steps>
+
+## Bringing in your existing customers
+
+Click **Sync contacts** to import the customers already in your store into [Contacts](/contacts/managing-contacts).
+
+Only customers **with a phone number** are imported. The rest are skipped.
+
+
+## What you can build
+
+After connecting your store, WooCommerce events such as **new orders, order updates,** and **abandoned carts** can automatically start an automation flow.
+
+If you want a flow to run only for a specific order status, use the **Order Update trigger** and add a [WooCommerce Condition](/automation/flow-steps/integrations#woocommerce-condition) node to check the order status. For example, you can send a message only when an order is marked as **shipped**.
+
+See [WooCommerce triggers](/automation/flow-builder#woocommerce) for the full list and [WooCommerce Condition](/automation/flow-steps/integrations#woocommerce-condition) for the branching step.
+
+## Your first message must be a template
+
+Every WooCommerce flow starts when something happens in your store, not when a customer messages you. For events like **abandoned carts, new orders, and shipping updates,** the customer usually hasn't contacted you yet, so you can't send a regular WhatsApp message.
+
+Start every WooCommerce flow with a [**Template Message**](/automation/flow-steps/basic#whatsapp-template). Once the customer replies, you can continue the conversation with normal text messages within [**the 24-hour messaging window**](/getting-started/concepts#two-whatsapp-rules-that-shape-everything).
+
+## How abandoned carts work
+
+An abandoned cart is when a customer adds items to their cart but leaves without completing the purchase. A WhatsApp reminder can encourage them to come back and finish their order. You can send them a reminder using an automation flow.
+
+How it works:
+
+- The cart is saved as soon as the customer adds an item.
+- WaMatrix.io can only send a message after the customer enters their **phone number** during checkout.
+- If the customer doesn't check out within the time you set, the cart is marked as **abandoned** and the automation runs.
+- Only one reminder is sent for each abandoned cart.
+
+## Order details in your messages
+
+You can include **order details** in your message. Type `@` and choose a [merge field](/messaging/merge-fields) from the WooCommerce Order group.
+
+## Disconnecting
+
+Click **Disconnect** and confirm. WooCommerce events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
+
+<Note>
+Reconnecting creates a **new Webhook Secret**. Copy the new secret and update it in the WaMatrix.io plugin in WordPress. The Webhook URL stays the same.
+</Note>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Automation Flows" icon="bot" href="/automation/overview">
+    Build the message that goes out on each store event.
+  </Card>
+
+  <Card title="Shopify" icon="shopping-bag" href="/settings/shopify">
+    Connect a Shopify store instead, or as well.
+  </Card>
+</CardGroup>

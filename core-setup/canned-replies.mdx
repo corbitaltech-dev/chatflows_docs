@@ -1,0 +1,92 @@
+---
+title: "Canned Replies"
+description: "Save the replies you send often and drop them into a chat with a shortcut."
+icon: "message-square-quote"
+keywords: ["WhatsMark", "canned replies", "quick replies", "shortcuts", "live chat"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+Some questions come up again and again. Your prices, your opening hours, how to track an order. Instead of typing the same answer every time, you save it once here and drop it into a chat by typing `/`.
+
+## What you see on the screen
+
+The page lists the replies you can use — the ones your team shares, plus any you have kept to yourself:
+
+- **Title** — the name you gave the reply.
+- **Shortcut** — what you type after `/` to use it.
+- **Body** — the first part of the reply text.
+- **Media** — the file attached to it, if there is one.
+- **Category** — the group you put it in.
+- **Created** — when it was added.
+
+Use the search box to find a reply by its title, shortcut, text or category.
+
+<Figure
+  src="/core-setup/img/canned-reply.png"
+  alt="The Canned Replies page listing saved replies with their title, shortcut, body preview, media, category and created date, with a search box and a Create canned reply button"
+  caption="Image shows the Canned Replies page."
+/>
+
+## Creating a reply
+
+Click **Create canned reply**. A form opens on the right with these fields.
+
+<Figure
+  src="/core-setup/img/canned-reply-form.png"
+  alt="The new canned reply form with fields for title, shortcut, body, attachment, category, sort order, and shared with team"
+  caption="Image shows the new canned reply form."
+/>
+
+- **Title** — a name you will recognise later, like *Pricing details*. It has to be different from your other replies.
+- **Shortcut** — what agents type after `/`, like `pricing`. Letters, numbers, hyphens and underscores only. Up to 50 characters, and each shortcut can only be used once.
+- **Body** — the reply itself. You can make text bold, italic or struck through, and add bullet or numbered lists. You can leave this empty only if you attach a file.
+- **Attachment** — one optional file. Clicking the box opens your [Media Library](/media/media-library), so you can upload something new or pick a file you have already used.
+- **Category** — an optional word to group replies, like *Sales* or *Billing*. You type it yourself, so use the same spelling each time.
+- **Sort order** — a number that decides where the reply sits in this list and in the picker agents see.
+- **Shared with team** — on by default, so everyone on your team can use the reply. Turn it off and the reply is only yours. Nobody else sees it in this list or in their chat picker.
+
+<Note>
+An attachment can be up to 16 MB, and it has to be a file type WhatsApp accepts, such as an image, video, audio file or PDF. You get a message if the file is not supported.
+</Note>
+
+## Using a reply in a chat
+
+There are two ways to open the picker while you are chatting:
+
+- Click the **canned reply** icon under the message box.
+- Type `/` in the message box.
+
+<Figure
+  src="/core-setup/img/canned-reply-picker1.png"
+  alt="The canned reply picker open above the chat message box, showing a search field and a matching reply with its shortcut, title, text and attached file"
+  caption="Image shows the canned reply picker above the chat box."
+/>
+
+Then type in the search box to find what you want. It looks at the shortcut, the title and the reply text. Use the arrow keys to move through the list and press Enter to pick one, or just click it.
+
+Picking a reply puts its text into the message box and attaches its file. Nothing is sent yet, so you can edit it first and then press Send.
+
+<Warning>
+Picking a reply **replaces** whatever is already in the message box. Send or clear anything you have typed before you open the picker.
+</Warning>
+
+## Editing and deleting
+
+Click a reply's title, or use the menu at the end of its row, to open it again and change anything.
+
+To move a reply up or down the list, edit it and change its **Sort order** number. The list is ordered by that number, lowest first.
+
+The same row menu has **Delete**. You are asked to confirm, because agents will no longer see the reply in their picker.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="AI Prompts" icon="sparkles" href="/core-setup/ai-prompts">
+    Save instructions that let AI rewrite what you typed.
+  </Card>
+
+  <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
+    See how replying to customers works.
+  </Card>
+</CardGroup>

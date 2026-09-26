@@ -1,0 +1,100 @@
+---
+title: "Roles & Permissions"
+description: "Choose what each team member can do in WaMatrix.io."
+icon: "shield-check"
+keywords: ["WhatsMark", "roles", "permissions", "access", "team", "restrict"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+A role is a set of permissions that you assign to team members. Create roles like **Sales Agent**, **Support Agent**, or **Manager**, then assign them to one or more team members. Updating a role automatically updates permissions for everyone using it.
+
+Find it under **Setup → Roles** in the sidebar, or click **Manage Roles** on the Team page.
+
+<Figure
+  src="/core-setup/img/role.png"
+  alt="The Roles page listing roles with Name, Members and Created columns, a Create Role button, and a row menu"
+  caption="Image shows the Roles page with every role in your workspace."
+/>
+
+The table shows each role's **Name**, how many **Members** hold it, and when it was **Created**.
+
+## Create a role
+
+<Steps>
+<Step title="Click Create Role">
+  The button sits at the top right. A form opens on the right side of the screen.
+</Step>
+
+<Step title="Name the role">
+  Enter a role name, such as **Support Agent**.
+</Step>
+
+<Step title="Check what this role can do">
+  Select the permissions for the role.
+
+  <Figure
+    src="/core-setup/img/roles-create.png"
+    alt="The Create Role form with a role name field and a list of features with permission checkboxes"
+    caption="Image shows the Create Role form."
+  />
+</Step>
+
+<Step title="Click Save">
+  The role is ready to assign.
+</Step>
+</Steps>
+
+## How the permissions work
+
+Most features offer the same four permissions:
+
+- **View** — see the page and what's on it.
+- **Create** — add a new record.
+- **Edit** — change an existing record.
+- **Delete** — remove a record.
+
+### Permissions that work differently
+
+The table below explains the extra permissions available for each feature.
+
+| Feature | Extra permission |
+| --- | --- |
+| **Contacts** | [**Import:**](/contacts/import-export#importing-contacts) imports contacts from a file. [**Initiate chat:**](/contacts/managing-contacts#actions-on-a-single-contact) starts a new chat with a contact. **View own:** members see only the contacts assigned to them. 
+| **Channels** | [**Connect**](/core-setup/channels/whatsapp#connecting-whatsapp) and [**Disconnect**](/core-setup/channels/messenger#managing-a-connected-page) the channels. |
+| **Team** | [**Invite:**](/core-setup/team-and-roles#invite-them-by-email) sends an email invitation. |
+| **Templates** | [**Load:**](/messaging/whatsapp-templates#adding-a-template) pulls your approved templates in from Meta. |
+| **WhatsApp Flows** | [**Submission view:**](/appointment-and-flow/whatsapp-flows#submissions) members can see customer responses. |
+| **Chat** | Works differently — see [Chat](#chat) below. |
+
+### Chat
+
+Chat has no **View** box. A member reaches the inbox if they hold **any** chat permission at all, or if a conversation has been assigned to them.
+
+- **Send Message** — reply in a conversation. Without it, the inbox is read-only.
+- **Send Template** — send an approved template.
+- **Run Flow** — start an automation or send a form inside a chat.
+- **Close** — close the conversation they have open.
+- **Clear** — delete every message in a conversation.
+- **Delete** — delete a whole conversation.
+- **Delete Message** — delete and restore individual messages.
+
+## Admins always have full access
+
+Roles apply only to team members. Team members marked as **Is Admin** always have full access, regardless of the role assigned to them.
+
+<Warning>
+A role that members are using cannot be deleted. Move those members to a different role first, then delete it. The **Members** column shows you how many are affected.
+</Warning>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Team" icon="users" href="/core-setup/team-and-roles">
+    Add members and give them the roles you have made.
+  </Card>
+
+  <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
+    See how chat permissions play out in the inbox.
+  </Card>
+</CardGroup>

@@ -1,0 +1,109 @@
+---
+title: "API Overview"
+description: "Connect your own software to WaMatrix.io — what the API can do, and how to get your access token."
+icon: "eye"
+keywords: ["WhatsMark", "API", "REST API", "developer", "token", "scopes", "pagination"]
+---
+
+## What is the WaMatrix.io API
+
+The WaMatrix.io REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from a dedicated host, `api.wamatrix.io`, separate from your tenant subdomain.
+
+<Warning>
+  API access is a paid feature. Upgrade your plan to start using the WaMatrix.io API.
+</Warning>
+
+## Getting access
+
+<Steps>
+  <Step title="Upgrade to Professional">
+    If you're on the Free plan, upgrade from **Billing** in the account menu (click your name at the bottom of the sidebar) first. See [Plans & subscription](/billing/plans-and-subscription).
+  </Step>
+  <Step title="Create a workspace API token">
+    Go to [Setup → API Tokens](/core-setup/api-keys) and create a token. Choose the abilities (scopes) it needs — tokens are only granted the scopes you select.
+  </Step>
+  <Step title="Authenticate your requests">
+    Every request must include your token as a bearer token:
+
+    ```text
+    Authorization: Bearer YOUR_API_TOKEN
+    ```
+  </Step>
+  <Step title="Call the API">
+    Send requests to `https://api.wamatrix.io/api/v1/...`. Start with `GET /api/v1/ping` to confirm your token and abilities are working — you'll find it under [Auth & Account](/api-reference/auth-&-account/ping) in the sidebar.
+  </Step>
+</Steps>
+
+## Base URL
+
+```text
+https://api.wamatrix.io/api/v1
+```
+
+## Scopes (abilities)
+
+Each endpoint requires a specific token ability (scope), for example `account:read` or `channels:read`. Create your token with the abilities that match the endpoints you plan to call — a request will be rejected with `403 Forbidden` if your token is missing the required scope. Every endpoint page in this reference states its required scope at the top.
+
+## Pagination
+
+List endpoints return a consistent envelope:
+
+```json
+{
+  "data": [ ... ],
+  "links": { "next": "...", "prev": "..." },
+  "meta": { ... }
+}
+```
+
+Large or append-only collections (contacts, group members, webhooks) use opaque cursor pagination — keep following `links.next` until it's `null`. `per_page` is clamped between 5 and 100.
+
+## Async sends
+
+Message and OTP send endpoints return `202 Accepted` immediately and are processed on a background queue rather than sent synchronously.
+
+## Errors
+
+Errors use a consistent envelope:
+
+```json
+{
+  "message": "...",
+  "error_code": "...",
+  "status": 4xx
+}
+```
+
+Each endpoint page lists the specific error codes it can return and when they happen.
+
+## Modules
+
+The API covers: **Auth & Account** · **Channels** · **Contacts** · **Contact Statuses** · **Contact Sources** · **Contact Groups** · **Contact Labels** · **Templates** · **Messages** · **Conversations** · **OTP**.
+
+Every module is documented endpoint by endpoint in the sidebar under this Api tab — parameters, request bodies, required scopes, and example requests/responses for each one.
+
+## Prefer Swagger, or need an OpenAPI spec / Postman collection?
+
+If you'd rather browse and test everything from a single interactive Swagger page, or need the raw spec to generate a client, the same API is also documented at [api.wamatrix.io/docs](https://api.wamatrix.io/docs).
+
+<CardGroup cols={2}>
+  <Card title="Try it out, live" icon="play" href="https://api.wamatrix.io/docs">
+    Use the **Authorize** button on the Swagger UI to add `Authorization: Bearer <token>` and send real requests against your workspace without leaving the browser.
+  </Card>
+
+  <Card title="OpenAPI spec" icon="file-code" href="https://api.wamatrix.io/openapi/wamatrix-api-v1.json">
+    Download the raw OAS 3.1 document to generate clients or import it into your own tooling.
+  </Card>
+
+  <Card title="Postman collection" icon="download" href="https://api.wamatrix.io/docs">
+    Export every request, with example payloads and responses, ready to import into Postman (button available on the Swagger page).
+  </Card>
+
+  <Card title="Full reference, right here" icon="book-open">
+    Every endpoint is documented in this sidebar with the same parameters, scopes, and examples — start with **Auth & Account**.
+  </Card>
+</CardGroup>
+
+<Info>
+  Already have a Professional plan? Head to [Setup → API Tokens](/core-setup/api-keys) in your workspace to create your first token.
+</Info>

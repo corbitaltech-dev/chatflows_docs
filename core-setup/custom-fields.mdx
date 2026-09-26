@@ -1,0 +1,131 @@
+---
+title: "Custom Fields"
+description: "Store extra details about your contacts, like company name or renewal date."
+icon: "square"
+keywords: ["WhatsMark", "custom fields", "contacts", "data"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+Custom fields let you store your own details on every contact, beyond name and phone number. For example: "Company Name", "Contract Value", "Preferred Language", or "Birth Date".
+
+Once you create a field, it appears on the **Custom Fields** tab whenever you add or edit a contact. You can also show it as a column in your contact list and use it to personalize messages.
+
+## Creating a custom field
+
+<Figure
+  src="/core-setup/img/custom field-form.png"
+  alt="Custom Field form showing field name, type selector, and field options"
+  caption="Image shows the New Custom Field form."
+/>
+
+<Steps>
+<Step title="Open Setup → Custom Fields">
+  Click **Setup** in the sidebar, then **Custom Fields**.
+</Step>
+
+<Step title="Click Create Custom Field">
+  A form opens on the right side of the screen. It has two tabs: **Basic** and **Options**.
+</Step>
+
+<Step title="Fill in the Basic tab">
+  Enter a **Label** — this is the field name your team will see, such as "Company Name". Then pick a **Type** that matches the data, such as Text, Number, or Date.
+
+  The other fields on this tab are optional. Each one is explained below.
+</Step>
+
+<Step title="Click Next to open the Options tab">
+  If you chose **Dropdown**, **Radio**, or **Checkbox**, add the choices here. You must add at least one choice before saving.
+
+  For other types, this tab lets you set optional limits, such as a minimum and maximum for numbers or an earliest and latest date.
+</Step>
+
+<Step title="Click Save">
+  Your field is ready. It now appears on the **Custom Fields** tab whenever you add or edit a contact.
+</Step>
+</Steps>
+
+
+
+<Note>
+Make a field **Required** only if every contact truly needs it. Once it is required, you must fill it every time you save any contact.
+</Note>
+
+## Field types
+
+Pick the type that matches your data:
+
+| Type | Use it for | Example |
+| --- | --- | --- |
+| Text | A short line of text | Company Name |
+| Text Area | Longer text over many lines | Special instructions |
+| Email | An email address | Billing email |
+| URL | A website link | Company website |
+| Phone | A phone number | Office number |
+| Number | A number | Contract value |
+| Dropdown | Pick one choice from a list | Industry |
+| Radio | Pick one choice, all shown at once | Preferred language |
+| Checkbox | Pick more than one choice | Interested products |
+| Date | A calendar date | Renewal date |
+| Time | A time of day | Preferred call time |
+| Color | A color | Brand color |
+| Toggle | A simple yes or no | VIP customer |
+
+## Options for each type
+
+When you click **Next**, the Options tab changes based on the type you picked:
+
+- **Dropdown, Radio, Checkbox** — add your choices here. At least one choice is required.
+- **Text, Text Area** — set a minimum and maximum length. Optional.
+- **Number** — set a minimum and maximum value. Optional.
+- **Date** — set the earliest and latest date allowed. Optional.
+- **Checkbox** — also set how many choices must be picked. Optional.
+- All other types — nothing to set here. Just click **Save**.
+
+## Editing and managing fields
+
+Your custom fields appear in a list on the same page. From here you can:
+
+- **Edit** — open the row menu and click **Edit** to change the label, type, or options. The Slug cannot be changed.
+- **Turn on or off** — use the **Active** toggle on each row. An inactive field is hidden from the contact form and from message personalization, but the saved values are kept. Turn it back on and everything returns.
+- **Delete** — open the row menu and click **Delete** to remove the field everywhere.
+
+<Warning>
+Deleting a custom field cannot be undone. The field disappears from every contact. If you are not sure, turn the field off with the **Active** toggle instead.
+</Warning>
+
+## Where custom fields appear
+
+After you create a field, it works across WaMatrix.io:
+
+- On the **Custom Fields** tab when you [add or edit a contact](/contacts/managing-contacts).
+- As a column in your contact list, if **Show in Table** is on.
+- As a personalization token in messages and campaigns — you pick it from the token list, no typing needed. See [Merge Fields](/messaging/merge-fields).
+- When [importing contacts](/contacts/import-export), you can match a column in your file to a custom field.
+- When a customer fills a [WhatsApp Flow](/appointment-and-flow/whatsapp-flows), their answers can be saved into custom fields.
+
+## Tips
+
+- Create your custom fields before importing contacts, so you can fill them during the import.
+- Use **Dropdown** instead of **Text** when the answers come from a fixed list. It keeps the data clean.
+- Turn on **Show in Table** only for the fields you check often, so your contact list stays easy to read.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Merge Fields" icon="braces" href="/messaging/merge-fields">
+    Use custom fields to personalize your messages.
+  </Card>
+
+  <Card title="Import & Export" icon="arrow-right-left" href="/contacts/import-export">
+    Fill custom fields while importing contacts.
+  </Card>
+
+  <Card title="WhatsApp Flows" icon="zap" href="/appointment-and-flow/whatsapp-flows">
+    Save form answers into custom fields.
+  </Card>
+
+  <Card title="Campaigns" icon="send" href="/messaging/campaigns">
+    Send personalized messages to many contacts.
+  </Card>
+</CardGroup>

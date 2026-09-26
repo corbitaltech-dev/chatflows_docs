@@ -1,0 +1,73 @@
+---
+title: "Opt-out"
+description: "Let customers unsubscribe from your marketing messages by replying with a word like STOP."
+icon: "ban"
+keywords: ["WhatsMark", "opt-out", "unsubscribe", "STOP", "marketing consent", "opt-in"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+Customers can stop receiving your marketing messages by replying with a keyword, like `STOP` or `UNSUBSCRIBE`. When they send one of these words, they're unsubscribed automatically.
+
+In **Settings → Opt-out**, you choose which keywords count. WaMatrix.io comes with **STOP**, **UNSUBSCRIBE**, **OPT OUT**, and **OPTOUT** ready to use — you can edit these or add your own.
+
+<Figure
+  src="/settings/img/opt-out-keywords.png"
+  alt="Opt-out keywords settings showing an Unsubscribe words field with STOP, UNSUBSCRIBE, OPT OUT, OPTOUT, and a Resubscribe words field with START, SUBSCRIBE, UNSTOP, OPT IN, OPTIN"
+  caption="Image shows the Opt-out keywords settings."
+/>
+
+## Which messages are stopped
+
+Only marketing messages stop. Important messages are still sent.
+
+| Still sent | Stopped |
+| --- | --- |
+| Order and delivery updates | Marketing [campaigns](/messaging/campaigns) |
+| Appointment reminders | Any marketing template |
+| One-time passcodes | Plain text campaigns sent to a list |
+| Your team replying in [chat](/messaging/live-chat) | |
+
+<Note>
+When a customer unsubscribes, it applies across your whole workspace — they stop getting marketing from all your WhatsApp numbers and Messenger.
+</Note>
+
+## Unsubscribe words
+
+Enter the words customers can use to unsubscribe, separated by commas. You can keep the default words, edit them, or add your own.
+
+How the matching works:
+
+- **Capital letters do not matter.** `stop`, `Stop` and `STOP` all work.
+- **The message must be just the keyword on its own (simple punctuation or an emoji around it is fine)**. For example, **stop sending me the wrong size** is treated as a normal message, not an unsubscribe.
+- **Only typed text works.** The keyword must be sent as a text message — clicking a button or sending it in an image caption won't unsubscribe the customer.
+
+## Resubscribe words
+
+The words a customer can send to start receiving your marketing again. The defaults are **START**, **SUBSCRIBE**, **UNSTOP**, **OPT IN** and **OPTIN**.
+
+## The automatic reply
+
+<Figure
+  src="/settings/img/opt-out-automatic-reply.png"
+  alt="Automatic reply settings with a Send a confirmation toggle turned on, and Unsubscribe confirmation and Resubscribe confirmation message fields"
+  caption="Image shows the automatic reply settings."
+/>
+
+By default, WaMatrix.io sends a confirmation message when someone unsubscribes or subscribes again.
+
+- **Send a confirmation** — Turn this off if you don't want to send a confirmation message.
+- **Unsubscribe confirmation** — The message sent when a customer unsubscribes.
+- **Resubscribe confirmation** — The message sent when a customer subscribes again.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Campaigns" icon="megaphone" href="/messaging/campaigns">
+    See who your campaign will reach, and who is left out.
+  </Card>
+
+  <Card title="WhatsApp Templates" icon="layout-template" href="/messaging/whatsapp-templates">
+    Marketing, utility and authentication templates.
+  </Card>
+</CardGroup>

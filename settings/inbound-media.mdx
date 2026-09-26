@@ -1,0 +1,52 @@
+---
+title: "Inbound Media"
+description: "Automatically save your own copy of the photos and files customers send you on WhatsApp."
+icon: "image"
+keywords: ["WhatsMark", "inbound media", "download media", "attachments", "storage", "WhatsApp media"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+When a customer sends you a photo, a voice note or a PDF on WhatsApp, the file itself stays on Meta's servers. WaMatrix.io only holds a link to it.
+
+Meta's link to those files expires about **30 days** later. After that the link stops working, and the message in your chat shows nothing.
+
+Turn this setting on and WaMatrix.io saves its own copy of every file as it arrives, so it is still there months later. Find it under **Settings → Inbound Media**.
+
+<Figure
+  src="/settings/img/inbound-media-form.png"
+  alt="Archive inbound WhatsApp media card with a Download inbound media toggle"
+  caption="Image shows the Inbound Media Archival page."
+/>
+
+## Turning it on
+
+Switch on **Download inbound media**, then click **Save changes**.
+
+From then on, every photo, video, voice note, document and sticker a customer sends is saved as it arrives.
+
+Switch it off and new files stop being saved. Anything already saved stays as it is.
+
+<Note>
+This covers WhatsApp only. Files sent to you on Messenger are not saved.
+</Note>
+
+## Storage usage
+
+Every saved file uses part of your plan's storage. You can check how much you have left on the [Dashboard](/reporting/dashboard-and-usage).
+
+<Warning>
+If your storage is full, new files are skipped without any warning. The message then keeps only Meta's link, which stops working after 30 days. If you receive a lot of files, check your storage regularly or upgrade your plan for more space.
+</Warning>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Dashboard & Feature Usage" icon="gauge" href="/reporting/dashboard-and-usage">
+    See how much of your storage you have used.
+  </Card>
+
+  <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
+    Where the files customers send you show up.
+  </Card>
+</CardGroup>

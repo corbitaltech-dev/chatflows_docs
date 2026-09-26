@@ -1,0 +1,117 @@
+---
+title: "Connecting WhatsApp"
+description: "How to connect a WhatsApp Business Account to WaMatrix.io via Embedded Signup or manually, and manage its health and business profile."
+icon: "whatsapp"
+keywords: ["WhatsMark", "WhatsApp", "WABA", "embedded signup", "coexistence", "business profile"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+Connect a WhatsApp Business Account (WABA) so you can send and receive WhatsApp messages through WaMatrix.io.
+
+## Before you connect
+
+<Tip>
+Make sure you have the following ready:
+
+- A Facebook account.
+- A **Meta Business account** — Business Verification is not mandatory to connect, but it is strongly recommended; without it your account stays on limited messaging tiers.
+- One mobile number for WhatsApp that must be either:
+  - **not connected to any WhatsApp account**, or
+  - **already connected to the WhatsApp Business App**
+- Your **WABA ID**, **Access Token**, **Meta App ID**, and **App Secret** (for manual connections only).
+</Tip>
+
+## Connecting WhatsApp
+
+<Steps>
+<Step title="Click Connect">
+  From the **Channels** page, click **Connect Channel** and choose **WhatsApp** from the platform picker.
+
+  <Figure
+    src="/core-setup/channels/img/channels-connect.png"
+    alt="Channels page showing a Connect Channel button and a Supported channels panel listing WhatsApp and Messenger, both marked Available"
+    caption="Image shows the Channels page with the Connect Channel button."
+  />
+</Step>
+
+<Step title="Pick a connection method">
+  You'll see two tabs:
+
+  <Figure
+    src="/core-setup/channels/img/whatsapp-connect-methods.png"
+    alt="Connect a WhatsApp Account sheet shown twice: the Embedded Signup tab with a Standard Signup Launch button, and the Manual tab with fields for channel name, Business Account ID, access token, Meta App ID, and App Secret"
+    caption="Image shows the Connect a WhatsApp Account sheet with its Embedded Signup and Manual tabs."
+  />
+
+  - **Embedded Signup** — connect using Meta's secure Embedded Signup flow.
+    - Sign in with your Facebook Business account.
+    - Choose or create a WhatsApp Business Account and number.
+    - Confirm the requested permissions.
+    The setup completes automatically and the popup closes when done.
+  - **Manual** — use this for advanced setups with existing WhatsApp Business API credentials.
+    - Enter the **WABA ID**.
+    - Paste the **Access Token**.
+    - Provide the **Meta App ID** and **App Secret**.
+</Step>
+
+<Step title="Confirm it's connected">
+  Once connected, the channel appears in your Channels list with an **Active** status, and a webhook subscription is set up automatically so incoming messages reach your workspace.
+</Step>
+</Steps>
+
+<Figure
+  src="/core-setup/channels/img/channels-list-connected.png"
+  alt="Channels list showing two connected channels — a WhatsApp channel and a Messenger channel — each with an Active status, the method used to connect it, and the date connected"
+  caption="Image shows the Channels list with connected channels and their Active status."
+/>
+
+<Note>
+Both connection methods can be individually disabled by your plan. If a tab is missing or disable, that method isn't available on your current plan.
+</Note>
+
+## Coexistence mode
+
+If enabled on your plan, you can connect a WhatsApp number in **coexistence mode** — this keeps your existing WhatsApp Business app active on your phone alongside the API connection. Chat history and contacts from the app are imported, and messages stay in sync between the app and WaMatrix.io.
+
+## WABA health
+
+<Figure
+  src="/core-setup/channels/img/waba-health.png"
+  alt="WABA Health panel showing an overall Available status, with Waba, Business, and App each listed as Available alongside their IDs"
+  caption="Image shows the WABA Health panel."
+/>
+
+Open a connected WhatsApp channel to view:
+
+- **Quality rating**, review status, and business verification.
+- **Conversation analytics** for the account.
+- Per-number quality, if you have multiple phone numbers under the same WABA.
+
+## Business Profile
+
+<Figure
+  src="/core-setup/channels/img/business-profile.png"
+  alt="Phone number card showing the profile photo and number, a GREEN quality badge, messaging throughput and daily limit, and the business name, description, and location"
+  caption="Image shows the phone number and business profile card."
+/>
+
+Go to a channel's **Profile** tab to edit the public WhatsApp Business Profile your contacts see: about text, address, description, email, websites, business vertical/category, and profile photo.
+
+## Test message
+
+<Figure
+  src="/core-setup/channels/img/send-test-message.png"
+  alt="Send Test Message dialog with a Template picker showing an approved marketing template and a Recipient Phone Number field, opened from the Test button on an active channel"
+  caption="Image shows the Send Test Message dialog with a template picker and recipient number field."
+/>
+
+Use the **Test** button on a channel to confirm the connection actually works end-to-end before relying on it. You'll pick an approved **template** and a **recipient number** — so this needs at least one approved template on the account.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Connecting Messenger" icon="message-circle" href="/core-setup/channels/messenger">
+    Connect a Facebook Page the same way.
+  </Card>
+</CardGroup>

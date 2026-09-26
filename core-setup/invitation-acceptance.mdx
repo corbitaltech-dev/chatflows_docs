@@ -1,0 +1,83 @@
+---
+title: "Invite Team Members"
+description: "Invite team member to your workspace by email"
+icon: "user-plus"
+keywords: ["WhatsMark", "invite", "invitation", "team member", "join workspace"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+Send an email invitation to team member. The memeber can create their own account and join your workspace with the assigned role.
+
+## Sending an invitation
+
+Click **Invite Member** on the [Team](/core-setup/team-and-roles) page. Enter an **email address** and select a **role**.
+
+<Figure
+  src="/core-setup/img/invite-member.png"
+  alt="The Invite Team Member form with an email field and a role picker"
+  caption="Image shows the Invite Team Member form."
+/>
+
+<Note>
+The invite link works for **7 days**. After that you need to send a new one.
+</Note>
+
+## Pending invitations
+
+The Pending Invitations list shows members who have not accepted invitation yet, along with their role and the invitation date.
+
+**Revoke** cancels the invitation, and invitation link stops working right away.
+
+<Figure
+  src="/core-setup/img/pending-invitation.png"
+  alt="The Pending Invitations list showing an invited email, its role, when it was sent, and a Revoke button"
+  caption="Image shows the Pending Invitations list."
+/>
+
+## What the invited member does
+
+Here is what your team member need to do after you send the invitation.
+
+
+<Steps>
+<Step title="Open the invitation">
+  They click **Accept Invitation** in the email, which opens an account creation form.
+</Step>
+
+<Step title="Fill in their details">
+  <Figure
+    src="/core-setup/img/accept-invitation.png"
+    alt="The accept invitation form where the invited person creates their account"
+    caption="Image shows the accept invitation form."
+  />
+  - **Full name** — their name.
+  - **Email address** — already filled in from the invitation.
+  - **WhatsApp number** — their own number, with the country code.
+  - **Password** and **Confirm password** — at least 8 characters.
+</Step>
+
+<Step title="Accept the invitation">
+  They click **Accept invitation** to create their account and join with the role you gave them.
+</Step>
+
+<Step title="Verify their WhatsApp number">
+  Enter a 6-digit code sent to their number.
+</Step>
+
+<Step title="Land on the dashboard">
+  They are redirect to the Dashboard and can start working.
+</Step>
+</Steps>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Team" icon="users" href="/core-setup/team-and-roles">
+    Add and manage the people in your workspace.
+  </Card>
+
+  <Card title="Roles & Permissions" icon="shield-check" href="/core-setup/roles-and-permissions">
+    Decide what each role can do before you invite.
+  </Card>
+</CardGroup>

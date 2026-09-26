@@ -1,0 +1,351 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "WaMatrix.io",
+  "colors": {
+    "primary": "#779812",
+    "light": "#C6FE1E",
+    "dark": "#166534"
+  },
+  "favicon": {
+    "light": "/images/favicon-green.svg",
+    "dark": "/favicon.png"
+  },
+  "redirects": [
+    {
+      "source": "/quickstart",
+      "destination": "/"
+    },
+    {
+      "source": "/getting-started/overview",
+      "destination": "/"
+    },
+    {
+      "source": "/automation/chatbot-flows",
+      "destination": "/automation/overview"
+    },
+    {
+      "source": "/automation/flow-library",
+      "destination": "/automation/overview#flow-collection"
+    },
+    {
+      "source": "/automation/ai-features",
+      "destination": "/core-setup/ai-prompts"
+    },
+    {
+      "source": "/ai-and-more/ai-features",
+      "destination": "/core-setup/ai-prompts"
+    },
+    {
+      "source": "/ai-and-more/appointments",
+      "destination": "/appointment-and-flow/appointments"
+    },
+    {
+      "source": "/ai-and-more/whatsapp-flows",
+      "destination": "/appointment-and-flow/whatsapp-flows"
+    },
+    {
+      "source": "/automation/appointments",
+      "destination": "/appointment-and-flow/appointments"
+    },
+    {
+      "source": "/automation/whatsapp-flows",
+      "destination": "/appointment-and-flow/whatsapp-flows"
+    },
+    {
+      "source": "/automation/message-types/basic",
+      "destination": "/automation/flow-steps/basic"
+    },
+    {
+      "source": "/automation/message-types/interactive",
+      "destination": "/automation/flow-steps/interactive"
+    },
+    {
+      "source": "/automation/message-types/ask",
+      "destination": "/automation/flow-steps/ask"
+    },
+    {
+      "source": "/automation/message-types/advanced",
+      "destination": "/automation/flow-steps/advanced"
+    },
+    {
+      "source": "/automation/message-types/integrations",
+      "destination": "/automation/flow-steps/integrations"
+    }
+  ],
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "pages": [
+          {
+            "group": "Start here",
+            "pages": [
+              "index",
+              "features",
+              "getting-started/concepts",
+              "getting-started/free-vs-paid",
+              "getting-started/register",
+              "getting-started/log-in"
+            ]
+          },
+          {
+            "group": "Billing",
+            "pages": [
+              "billing/plans-and-subscription",
+              "billing/payments-and-invoices",
+              "billing/addons-and-upgrades"
+            ]
+          },
+          {
+            "group": "Channels",
+            "pages": [
+              "core-setup/channels/whatsapp",
+              "core-setup/channels/messenger"
+            ]
+          },
+          {
+            "group": "Contacts",
+            "pages": [
+              "contacts/managing-contacts",
+              "contacts/import-export",
+              "contacts/bulk-actions-and-merge"
+            ]
+          },
+          {
+            "group": "Messaging",
+            "pages": [
+              "messaging/whatsapp-templates",
+              "messaging/messenger-templates",
+              "messaging/campaigns",
+              "messaging/live-chat",
+              "messaging/merge-fields"
+            ]
+          },
+          {
+            "group": "Automation",
+            "pages": [
+              "automation/overview",
+              "automation/generate-with-ai",
+              "automation/flow-builder",
+              {
+                "group": "Flow Steps",
+                "icon": "shapes",
+                "pages": [
+                  "automation/flow-steps/basic",
+                  "automation/flow-steps/interactive",
+                  "automation/flow-steps/ask",
+                  "automation/flow-steps/advanced",
+                  "automation/flow-steps/integrations"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Appointments & Flows",
+            "pages": [
+              "appointment-and-flow/whatsapp-flows",
+              "appointment-and-flow/appointments"
+            ]
+          },
+          {
+            "group": "Reporting",
+            "pages": [
+              "reporting/dashboard-and-usage",
+              "reporting/whatsapp-analytics",
+              "reporting/activity-logs",
+              "reporting/notifications"
+            ]
+          },
+          {
+            "group": "Media",
+            "pages": ["media/media-library"]
+          },
+          {
+            "group": "Setup",
+            "pages": [
+              "core-setup/team-and-roles",
+              "core-setup/roles-and-permissions",
+              "core-setup/invitation-acceptance",
+              "core-setup/statuses",
+              "core-setup/sources",
+              "core-setup/labels",
+              "core-setup/groups",
+              "core-setup/canned-replies",
+              "core-setup/ai-prompts",
+              "core-setup/whatsapp-activity-log",
+              "core-setup/custom-fields",
+              "core-setup/api-keys"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "settings/general",
+              "settings/business-hours",
+              "settings/billing-details",
+              "settings/custom-domain",
+              "settings/contact-configuration",
+              "settings/webhooks",
+              "settings/google-accounts",
+              "settings/inbound-media",
+              "settings/opt-out",
+              "settings/shopify",
+              "settings/woocommerce",
+              "settings/account-and-danger-zone",
+              "settings/profile"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Api",
+        "openapi": "/api-collection/wamatrix-api-v1.json",
+        "pages": [
+          "overview",
+          {
+            "group": "Auth & Account",
+            "pages": [
+              "GET /api/v1/ping",
+              "GET /api/v1/account",
+              "GET /api/v1/usage"
+            ]
+          },
+          {
+            "group": "Channels",
+            "pages": [
+              "GET /api/v1/channels",
+              "GET /api/v1/channels/{channel_id}"
+            ]
+          },
+          {
+            "group": "Contacts",
+            "pages": [
+              "GET /api/v1/contacts",
+              "POST /api/v1/contacts",
+              "POST /api/v1/contacts/batch",
+              "POST /api/v1/contacts/bulk",
+              "POST /api/v1/contacts/{contact_id}/merge",
+              "GET /api/v1/contacts/{contact_id}",
+              "PUT /api/v1/contacts/{contact_id}",
+              "DELETE /api/v1/contacts/{contact_id}"
+            ]
+          },
+          {
+            "group": "Contact Statuses",
+            "pages": [
+              "GET /api/v1/statuses",
+              "POST /api/v1/statuses",
+              "GET /api/v1/statuses/{status_id}",
+              "PUT /api/v1/statuses/{status_id}",
+              "DELETE /api/v1/statuses/{status_id}"
+            ]
+          },
+          {
+            "group": "Contact Sources",
+            "pages": [
+              "GET /api/v1/sources",
+              "POST /api/v1/sources",
+              "GET /api/v1/sources/{source_id}",
+              "PUT /api/v1/sources/{source_id}",
+              "DELETE /api/v1/sources/{source_id}"
+            ]
+          },
+          {
+            "group": "Contact Groups",
+            "pages": [
+              "GET /api/v1/groups",
+              "POST /api/v1/groups",
+              "GET /api/v1/groups/{group_id}",
+              "PUT /api/v1/groups/{group_id}",
+              "DELETE /api/v1/groups/{group_id}",
+              "GET /api/v1/groups/{group_id}/contacts",
+              "POST /api/v1/groups/{group_id}/contacts",
+              "DELETE /api/v1/groups/{group_id}/contacts/{contact_id}"
+            ]
+          },
+          {
+            "group": "Contact Labels",
+            "pages": [
+              "GET /api/v1/labels",
+              "POST /api/v1/labels",
+              "GET /api/v1/labels/{label_id}",
+              "PUT /api/v1/labels/{label_id}",
+              "DELETE /api/v1/labels/{label_id}"
+            ]
+          },
+          {
+            "group": "Templates",
+            "pages": [
+              "GET /api/v1/templates",
+              "POST /api/v1/templates",
+              "POST /api/v1/templates/sync",
+              "GET /api/v1/templates/{template_id}"
+            ]
+          },
+          {
+            "group": "Messages",
+            "pages": [
+              "POST /api/v1/messages",
+              "POST /api/v1/contacts/{contact_id}/messages",
+              "GET /api/v1/messages/{message_id}"
+            ]
+          },
+          {
+            "group": "Conversations",
+            "pages": [
+              "GET /api/v1/conversations",
+              "GET /api/v1/conversations/{conversation_id}/messages"
+            ]
+          },
+          {
+            "group": "OTP",
+            "pages": [
+              "POST /api/v1/otp",
+              "GET /api/v1/otp/{reference}",
+              "DELETE /api/v1/otp/{reference}",
+              "POST /api/v1/otp/{reference}/verify",
+              "POST /api/v1/otp/{reference}/resend"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/wamatrix-dark-green.svg",
+    "dark": "/images/wamatrix-green.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@wamatrix.io"
+      }
+    ]
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/wamatrix_io",
+      "linkedin": "https://linkedin.com/company/wamatrixio"
+    }
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "fonts": {
+    "family": "Geist"
+  }
+}

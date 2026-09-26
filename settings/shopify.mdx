@@ -1,0 +1,109 @@
+---
+title: "Shopify"
+description: "Connect your Shopify store to send WhatsApp messages automatically."
+icon: "shopping-bag"
+keywords: ["WhatsMark", "Shopify", "integration", "ecommerce", "cart abandoned"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+Connect your Shopify store to automatically send WhatsApp messages when customers **place an order, their order ships, their order is delivered, or they leave without completing a purchase**.
+
+Find it under **Settings → Shopify**.
+
+<Note>
+The Shopify integration is available on the **Professional plan**.
+</Note>
+
+## Connecting your store
+
+<Steps>
+<Step title="Enter your store domain">
+  Enter your Shopify store domain exactly as Shopify provides it, ending with `.myshopify.com`. For example, `your-store.myshopify.com`.
+
+  <Figure
+    src="/settings/img/connect-shopify.png"
+    alt="The Connect Shopify card with a Store domain field and a Connect Shopify button"
+    caption="Image shows the Connect Shopify form."
+  />
+</Step>
+
+<Step title="Click Connect Shopify">
+  You are taken to Shopify.
+</Step>
+
+<Step title="Approve the permissions">
+  Shopify shows you what WaMatrix.io needs access to — your **customer data**, your **staff and contributor data**, and your **store data**, which covers customers, products, orders and your online store. Click **Install** to approve.
+
+  <Figure
+    src="/settings/img/shopify-install.png"
+    alt="Shopify's install screen for WaMatrix.io, listing View customer data, View staff and contributor data, and View store data, with Cancel and Install buttons"
+    caption="Image shows the Shopify permissions screen."
+  />
+</Step>
+
+<Step title="You come back automatically">
+  The status shows **Connecting…** and then **Connected** a moment later.
+
+  <Figure
+    src="/settings/img/shopify-connected.png"
+    alt="The Shopify Store card showing a connected store, a Disconnect button and the Sync contacts section"
+    caption="Image shows a connected Shopify store."
+  />
+</Step>
+</Steps>
+
+
+## What you can build
+
+After you connect your store, Shopify events such as a **new order, shipping updates, order cancellation, or an abandoned cart** can automatically start an automation flow.
+
+Choose the event when creating your flow. See [Shopify triggers](/automation/flow-builder#shopify) for the full list and when each one runs.
+
+## Your first message must be a template
+
+Every Shopify flow starts when something happens in your store, not when a customer messages you. For events like **abandoned carts, new orders, and shipping updates,** the customer usually hasn't contacted you yet, so you can't send a regular WhatsApp message.
+
+Start every Shopify flow with a [**Template Message**](/automation/flow-steps/basic#whatsapp-template). Once the customer replies, you can continue the conversation with normal text messages within [**the 24-hour messaging window**](/getting-started/concepts#two-whatsapp-rules-that-shape-everything).
+
+## How abandoned carts work
+
+An **abandoned cart** is a customer who reached your checkout and left without paying.
+
+If they have not paid **one hour later**, the cart counts as abandoned and your flow runs. Paying stops it, and only one reminder is sent per cart. The one hour is fixed and cannot be changed.
+
+Add `order.recovery_url` to your message to send them straight back to their checkout, with everything still in the basket.
+
+## Order details in your messages
+
+Your messages can include the customer's own order details, what they bought, the total, tracking link and more. Type `@` while writing and pick what you need.
+
+See [Merge fields](/messaging/merge-fields#available-fields) for everything you can use.
+
+## Bringing in your existing customers
+
+Click **Sync contacts** to import the customers already in your store into [Contacts](/contacts/managing-contacts).
+
+Only customers **with a phone number** are imported. The rest are skipped.
+
+<Figure
+  src="/settings/img/shopify-connected.png"
+  alt="The connected Shopify store card with the Sync contacts section and its last synced date"
+  caption="Image shows the Sync contacts button on the connected store."
+/>
+
+## Disconnecting
+
+Click **Disconnect** and confirm. Shopify events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Automation Flows" icon="bot" href="/automation/overview">
+    Build the message that goes out on each store event.
+  </Card>
+
+  <Card title="WooCommerce" icon="shopping-cart" href="/settings/woocommerce">
+    Connect a WooCommerce store instead, or as well.
+  </Card>
+</CardGroup>

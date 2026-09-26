@@ -1,0 +1,295 @@
+---
+title: "WhatsApp Templates"
+description: "WhatsApp Templates are pre-approved message formats used to communicate with customers on WhatsApp."
+icon: "file-text"
+keywords: ["WhatsMark", "WhatsApp templates", "message templates", "Meta approval", "carousel", "authentication template"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+The WhatsApp Templates page lets you create, submit, manage, and track your templates in one place. Once a template is approved by Meta, it's ready to use in campaigns, automations, and other supported messaging features.
+
+<Note>
+Before you can add a template, you need to [connect a WhatsApp channel](/core-setup/channels/whatsapp) to your workspace.
+</Note>
+
+## Adding a Template
+
+- **Sync Templates** – If you've already created templates in your **Meta Business account** and that account is connected to your WhatsApp channel, click **Sync Templates** to import them into WaMatrix.io.
+- **Create Template** – Click [**Create Template**](#creating-a-template) to create a new template directly in WaMatrix.io.
+
+<Note>
+If you have more than one connected channel, clicking **Sync Templates** opens a menu where you can choose **Sync all accounts** or select a specific channel to sync.
+</Note>
+
+## Template Collection
+
+The Template Collection is a set of pre-built templates for common use cases, organized into **Header**, **Carousel**, and **Authentication** tabs.
+
+- **Use Template** – Opens it as an editable draft. Enter a template name, adjust the content as needed, then submit it for approval.
+- **Favourite** (star icon) – Saves it under the **My Favourites** tab for quick access.
+
+If none fit, click [**Create Template**](#creating-a-template) to build one from scratch.
+
+<Figure
+  src="/messaging/img/template-library.png"
+  alt="Template Collection dialog with tabs for My Favourites, Header, Carousel, and Authentication, showing pre-built templates such as Flash Sale Announcement and Order Confirmation, each with a category badge, a star icon, and a Use Template button"
+  caption="Image shows the Template Collection dialog."
+/>
+
+## Creating a template
+
+After clicking **Create Template**, choose one of three template types:
+
+- [**Header Template**](#header-template) – For marketing and utility messages like offers, updates, and notifications.
+- [**Carousel Template**](#carousel-template) – For displaying multiple products or a catalog in scrollable cards.
+- [**Authentication**](#authentication) – For sending OTP codes for user verification.
+
+<Figure
+  src="/messaging/img/template-pick-type.png"
+  alt="Create WhatsApp Template dialog listing three choices: Header Template, Carousel Template, and Authentication, each with a short description"
+  caption="Image shows the template type picker."
+/>
+
+### Header Template
+
+A Header Template allows you to include an image, video, document, or text header in your WhatsApp message, making it ideal for marketing and utility messages.
+
+<img src="/messaging/img/template-header-example.png" alt="Example of a WhatsApp header template message on a phone, with a promotional image header, a greeting body using a variable, and Shop Now and View Offers buttons" width="320" style={{ margin: '0 auto' }} />
+
+Follow these steps to build one:
+
+<Steps>
+<Step title="Fill in Basic Info">
+  <div id="basic-info" />
+
+  <Figure
+    src="/messaging/img/template-basic-info.png"
+    alt="Basic Info step of the template builder with fields for Channels, Template Name, Language, and Category, beside a sidebar tracking the five steps"
+    caption="Image shows the Basic Info step of the template builder."
+  />
+
+  Enter the basic details for your template:
+
+  - **Channels** – Select the connected WhatsApp account that the template belongs to.
+  - **Template Name** – Enter a unique name using only lowercase letters, numbers, and underscores (for example, `order_confirmation`).
+  - **Language** – Select the language of your template content. Make sure the message is written in the selected language to avoid template rejection during Meta's review.
+  - **Category** – Choose the category that best matches the purpose of your message:
+    - **Marketing** – Promotional messages such as offers, discounts, product launches, and announcements.
+    - **Utility** – Transactional messages such as order updates, appointment reminders, account alerts, and payment confirmations.
+
+</Step>
+
+<Step title="Build the Header">
+
+  <Figure
+    src="/messaging/img/template-header.png"
+    alt="Header step with an Include Header toggle switched on, a Header Type choice of Text, Image, Video, or Document, and a Header Text field limited to 60 characters"
+    caption="Image shows the Header step of the template builder."
+  />
+
+  Add an optional header to your message — **Text** (up to 60 characters), **Image**, **Video**, or **Document**.
+
+  A text header should be plain text only. Per Meta's rules, header text can't contain emojis.
+
+  <Note>
+  Supported formats and file size limits are set by Meta. See Meta's [supported media types](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#supported-media-types) for the current limits.
+  </Note>
+
+</Step>
+
+<Step title="Write the Message Body">
+  <div id="body" />
+
+<Figure
+    src="/messaging/img/template-body.png"
+    alt="Body step with a formatting toolbar, a message body containing a variable, and a Detected Variables list below it"
+    caption="Image shows the Body step of the template builder."
+  />
+
+  The main message content of your template, up to 1,024 characters. Use the toolbar to format text with **bold**, _italic_, strikethrough, or code.
+
+  To insert dynamic values, click **+ Add Variable** to add placeholders like `{{1}}` and `{{2}}`.
+
+  Each variable appears in a **Detected Variables** list below the body. WaMatrix.io assigns each a sample value (like "Value 1") for Meta's review — these aren't sent to customers.
+
+  When you send the template, each variable is replaced with real data, such as a [merge field](/messaging/merge-fields) (the contact's name) or a fixed value.
+
+</Step>
+
+<Step title="Add a Footer (optional)">
+
+  <Figure
+    src="/messaging/img/template-footer.png"
+    alt="Footer step with a Footer Text field and a note explaining the footer appears in small text below the message body"
+    caption="Image shows the Footer step of the template builder."
+  />
+
+  An optional line of fixed text that appears below the message body, up to 60 characters.
+
+  Variables are not allowed in the footer.
+</Step>
+
+<Step title="Add Buttons (optional)">
+
+  <Figure
+    src="/messaging/img/template-buttons.png"
+    alt="Buttons step with an Add Button control and a Button Type dropdown open, offering Quick Reply, Website URL, Phone Number, and Flow (interactive form)"
+    caption="Image shows the Buttons step of the template builder."
+  />
+
+  Add up to 10 buttons to let customers take action. There are four types:
+
+  - **Quick Reply** – A tappable button that lets the customer reply instantly with the button's text, instead of typing.
+  - **Website URL** – Opens or redirects to a website link.
+  - **Phone Number** – Starts a call to the number you set.
+  - **Flow (interactive form)** – Opens a [WhatsApp Flow](/appointment-and-flow/whatsapp-flows) form the customer fills in without leaving the chat. Lists the published flows on the selected account.
+
+  <Warning>
+  A few limits apply:
+
+  - Up to **2 URL** buttons.
+  - Up to **1 Phone Number** button.
+  - When you mix **Quick Reply** with other button types, you can have a maximum of **3 buttons** in total.
+  </Warning>
+</Step>
+</Steps>
+
+### Carousel Template
+
+A Carousel Template lets you showcase multiple products, services, or items using scrollable cards in a single WhatsApp message.
+
+<img src="/messaging/img/template-carousel-example.png" alt="Example of a WhatsApp carousel message on a phone, showing a sale announcement followed by scrollable product cards, each with an image, a short description, and Buy Now and View More buttons" width="320" style={{ margin: '0 auto' }} />
+
+Follow these steps to build one:
+
+<Steps>
+<Step title="Fill in Basic Info">
+
+  <Figure
+    src="/messaging/img/template-carousel-basic-info.png"
+    alt="Basic Info step of the carousel template builder with fields for Channels, Template Name, Language, and Category, a three-step sidebar, and a live carousel preview"
+    caption="Image shows the Basic Info step of the carousel template builder."
+  />
+
+  Enter the channel, name, and language — same as in the [Basic Info step](#basic-info). For carousel templates, the category is fixed to **Marketing**.
+</Step>
+
+<Step title="Write the Message Body">
+
+  <Figure
+    src="/messaging/img/template-carousel-body.png"
+    alt="Body step of the carousel template builder with a Message Body field, formatting toolbar, and an Add Variable button, beside a live carousel preview"
+    caption="Image shows the Body step of the carousel template builder."
+  />
+
+  The main message text that appears above the cards, up to 1,024 characters. Formatting and variables work the same as in the [Body step](#body).
+</Step>
+
+<Step title="Build the Cards">
+
+  <Figure
+    src="/messaging/img/template-carousel-cards.png"
+    alt="Cards step of the carousel template builder showing Card 1 with a Header Type choice of Image or Video, an Upload media area, a Body Text field, and Buttons, beside a live carousel preview"
+    caption="Image shows the Cards step of the carousel template builder."
+  />
+
+  Add **2–10 cards**. Each card has:
+
+  - **Header** – An image or video ([formats and size limits](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#supported-media-types) are set by Meta).
+  - **Body text** – Up to 160 characters.
+  - **Buttons** – 1–2 buttons (Quick Reply or URL).
+
+  <Warning>
+  All cards must use the same number of buttons with matching types (for example, all Quick Reply or all URL). WaMatrix.io checks this before submission and warns you if the cards don't match.
+  </Warning>
+</Step>
+</Steps>
+
+### Authentication
+
+An Authentication Template lets you send one-time passcodes (OTPs) to verify a user's identity.
+
+<img src="/messaging/img/template-auth-example.png" alt="Example of a WhatsApp authentication message on a phone, showing a verification code with a security note and a Copy Code button" width="320" style={{ margin: '0 auto' }} />
+
+Follow these steps to build one:
+
+<Steps>
+<Step title="Fill in Basic Info">
+
+  <Figure
+    src="/messaging/img/template-auth-basic-info.png"
+    alt="Basic Info step of the authentication template builder with fields for Channels, Template Name, Language, and Category, beside a live preview of an OTP message with a Copy Code button"
+    caption="Image shows the Basic Info step of the authentication template builder."
+  />
+
+  Enter the channel, name, and language for your template. For authentication templates, the category is fixed to **Authentication**.
+</Step>
+
+<Step title="Configure the OTP">
+
+  <Figure
+    src="/messaging/img/template-auth-otp-config.png"
+    alt="OTP Config step of the authentication template builder with an OTP Button Type dropdown, Button Text field, Add Security Recommendation toggle, Code Expiry, and Message TTL fields, beside a live OTP preview"
+    caption="Image shows the OTP Config step of the authentication template builder."
+  />
+
+  Choose how the user receives and enters the code. There are three **OTP button types**:
+
+  - **Copy Code** – The user copies the code and pastes it manually. Works on all devices, including iOS and web.
+  - **One-Tap Autofill** – The user taps a button and the code is filled in automatically. Android app only.
+  - **Zero-Tap** – The code is verified automatically, with no user action. Android app only.
+
+  Then configure the delivery settings:
+
+  - **Button Text** – The label on the OTP button, up to 25 characters.
+  - **Code Expiry** – How long the code stays valid (1–90 minutes).
+  - **Message TTL** – How long WhatsApp retries delivery (10–600 seconds).
+  - **Security recommendation** – Optional toggle that adds a "do not share this code" note.
+  - **Android Package Name** and **App Signature Hash** – Required for **One-Tap** and **Zero-Tap**.
+  - **Accept Zero-Tap Terms** – Required only when you choose **Zero-Tap**.
+</Step>
+</Steps>
+
+  <Warning>
+  Once a template is submitted, its **name**, **language**, and **category** can no longer be changed. You can still edit the content and resubmit, or delete it and start over.
+  </Warning>
+
+
+## Submitting for approval
+
+Once your template is created, submit it to Meta for review. The template first appears as **Pending** while Meta reviews it. When the review is complete, its status updates automatically to **Approved**, **Rejected**, **Paused**, or **Disabled**.
+
+<Note>
+Whenever Meta updates your template's status — approved, rejected, paused, or disabled — WaMatrix.io notifies you automatically. An on-screen notification appears and it's added to your notifications so you can review it anytime.
+</Note>
+
+## Managing existing templates
+
+<Figure
+  src="/messaging/img/templates-list.png"
+  alt="WhatsApp Templates table listing templates with category, type, status, account, language, and last synced date, with a row menu open showing View Stats, Edit, and Delete"
+  caption="Image shows the WhatsApp Templates table with a row menu open."
+/>
+
+Use the row menu on any template to:
+
+- **View Stats** — open the template's analytics panel to see sent, delivered, read, and clicked figures over a chosen date range.
+- **Edit** the template's content and resubmit it. Editing an approved template sends it back to Meta for review — its status returns to **Pending** and it must be approved again before you can use the updated version.
+- **Delete** a template.
+
+<Note>
+**View Stats** is available only when analytics is enabled for your WhatsApp Business Account. If analytics is turned off, enable it in **WhatsApp Manager** and try again.
+</Note>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Campaigns" icon="megaphone" href="/messaging/campaigns">
+    Use an approved template to broadcast to a list of contacts.
+  </Card>
+
+  <Card title="Messenger Templates" icon="message-square" href="/messaging/messenger-templates">
+    See how Messenger's local, non-Meta-approved presets work instead.
+  </Card>
+</CardGroup>

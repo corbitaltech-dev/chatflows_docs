@@ -1,0 +1,103 @@
+---
+title: "Dashboard & Feature Usage"
+description: "View your workspace overview and plan usage."
+icon: "gauge"
+keywords: ["WhatsMark", "dashboard", "feature usage", "charts", "usage limits", "plan usage"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+The **Dashboard** gives you a quick overview of your workspace. Check your recent activity, monitor plan usage, track messaging performance, and see what's coming up—all from one place.
+
+## What you see first
+
+<Figure
+  src="/reporting/img/dashboard/dashboard-greeting-usage-limits.png"
+  alt="The Dashboard greeting card with Open Inbox, New Campaign, and Refresh Data buttons, above an expanded Usage and Limits panel showing cards for Contacts, Template Broadcasts, Broadcast Campaigns, Custom AI Prompts, AI Usage Tokens, Team Members, and more, each with a used-of-limit figure and a percentage"
+  caption="Image shows the greeting card and the Usage & Limits panel."
+/>
+
+At the top of the Dashboard, you'll see today's date and quick actions:
+
+- **Open Inbox** — go to [Chat](/messaging/live-chat).
+- **New Campaign** — start a [campaign](/messaging/campaigns).
+- **Refresh Data** — Update the dashboard with the latest data.
+
+## Usage & Limits
+
+This section shows your current **plan usage**.
+
+At the top, you'll see how many features are tracked, how many are unlimited, and which tracked feature has the highest usage.
+
+Each card shows how much of a feature you've used, its limit, and the percentage used. Most cards also link to the related page.
+
+There are two types of limits:
+
+- **Period quota** — Resets at the start of each billing cycle, such as AI tokens and campaigns.
+- **Plan limit** — Does not reset and counts the total allowed by your plan, such as contacts and team members.
+
+Click **View all** to open the full [Feature Usage](#feature-usage) page.
+
+## Upcoming Campaigns
+
+This section shows the next five [campaigns](/messaging/campaigns) that are **scheduled or currently sending**. For each campaign, you can see its **name, current status, how many contacts will receive it**, and the **scheduled date and time.**
+
+## Analytics
+
+This section contains your workspace charts. Each chart has its own **date range filter**, which defaults to **Last 14 days**. You can change it to **Today, Last 7 days, Last 15 days, Last month, or Last year.**
+
+<Figure
+  src="/reporting/img/dashboard/dashboard-messages-contacts-charts.png"
+  alt="Three Dashboard charts side by side: a Messages line chart plotting sent against received over the last 14 days, a Leads and Customers donut showing a converted percentage with customers, leads, and guests counts, and a New contacts by source donut split between whatsapp and Instagram"
+  caption="Image shows the Messages, Leads & Customers, and New contacts by source charts."
+/>
+
+- **Messages** — Compare the number of messages sent and received over time.
+- **Leads & Customers** — See how many new contacts became customers, leads, or guests, along with the percentage that converted into customers.
+- **New contacts by source** — See where your new contacts came from by source.
+
+<Figure
+  src="/reporting/img/dashboard/dashboard-channels-message-sources.png"
+  alt="Two Dashboard panels: Channels listing a WhatsApp Support Channel and a Messenger channel with inbound and outbound counts on bars, and Sent messages by source listing Templates, Direct chat, and Flows with counts and percentages"
+  caption="Image shows the Channels and Sent messages by source panels."
+/>
+
+- **Channels** — See number of incoming and outgoing messages for each connected [channel](/core-setup/channels/whatsapp).
+- **Sent messages by source** — See the source of your outgoing messages: [**Templates**](/messaging/whatsapp-templates), [**Flows**](/automation/overview) or [**Direct chat**](/messaging/live-chat).
+
+<Figure
+  src="/reporting/img/dashboard/dashboard-engaged-unreplied-chats.png"
+  alt="Two Dashboard panels: Most-engaged chats listing top conversations by message count with a badge showing the count, and Waiting on reply listing chats where the contact spoke last with the message preview and how long ago it arrived"
+  caption="Image shows Most-engaged chats and Waiting on reply."
+/>
+
+- **Most-engaged chats** — Your five most active conversations.
+- **Waiting on reply** — Five contacts waiting for your response.
+
+## Feature Usage
+
+View all your plan limits in one place.
+
+Open it from **Usage & Limits → View all**.
+
+<Figure
+  src="/reporting/img/feature-usage.png"
+  alt="The Feature Usage page with a Current Plan card, Features, Unlimited and Highest Usage stats, and features grouped by AI, Messaging, Channel and Integration, each row showing a used-of-limit figure, a progress bar and a status badge"
+  caption="Image shows the Feature Usage page."
+/>
+
+At the top, you'll see your **current plan**, the total number of **features, unlimited features,** and the feature with the **highest usage**. Click Manage Plan to open the [Billing](/billing/plans-and-subscription).
+
+Below, your plan features are grouped into categories such as **Core, Messaging, Automation, AI, Channels, Integrations, Team, Users, API, and Advanced.** Only the categories included in your plan are shown.
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Activity Logs" icon="history" href="/reporting/activity-logs">
+    See everything that has happened in your workspace.
+  </Card>
+
+  <Card title="Plans & Subscription" icon="credit-card" href="/billing/plans-and-subscription">
+    Upgrade if you are always close to a limit.
+  </Card>
+</CardGroup>

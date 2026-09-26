@@ -1,0 +1,139 @@
+---
+title: "Appointments"
+description: "View and manage appointments booked through your WhatsApp booking form."
+icon: "calendar-check"
+keywords: ["WhatsMark", "appointments", "bookings", "calendar", "business hours"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+When a customer books an appointment through your [WhatsApp booking form](/appointment-and-flow/whatsapp-flows#appointment-booking-flows), it appears here. You can view and manage all appointments from this page.
+
+## Appointment list
+
+This page shows your Upcoming, Today, and Completed bookings at a glance. Switch between List and Calendar view, and use the tabs and Filters to quickly find the bookings you're looking for.
+
+<Figure
+  src="/appointment-and-flow/img/appointment/appointment.png"
+  alt="The Appointments page with Upcoming, Today and Completed summary cards, usage chips, All / Scheduled / Completed tabs, List and Calendar views, and a table of bookings"
+  caption="Image shows the Appointments page with the summary cards and bookings table."
+/>
+
+## Appointment statuses
+
+| Status | It means |
+| --- | --- |
+| **Scheduled** | The appointment is booked. |
+| **Confirmed** | You have confirmed the appointment. |
+| **Completed** | The appointment is finished. |
+| **Cancelled** | The appointment was cancelled. The time slot becomes available again. |
+| **No Show** | The customer did not attend the appointment. |
+
+## Appointment details
+
+Open a booking's `⋮` menu and click **View details** to see the contact, status, start and end time, service, channel, booking form, how it was booked (WhatsApp or web link), notes, and any answers the customer filled in.
+
+<Figure
+  src="/appointment-and-flow/img/appointment/appointment-details.png"
+  alt="An appointment's details showing the contact, status, when it starts and ends, its source, notes, and the details the customer submitted"
+  caption="Image shows an appointment's details."
+/>
+
+## Updating an appointment
+
+Use the booking's Actions menu to change its status to Scheduled, Confirmed, Completed, Cancelled, or No Show.
+
+<Note>
+You can only change the booking status here. You cannot change the appointment time, edit the booking details, or create a new booking. Customers can reschedule their appointments through WhatsApp.
+</Note>
+
+## Setting your available times
+
+The times a customer can pick come from two settings working together.
+
+- **Business hours** — Set your business opening and closing times, and add any closed dates. This is a workspace [Settings](/settings/business-hours) and only needs to be set once.
+- **Booking settings** — Set the booking times separately for each form. See [Booking settings](/appointment-and-flow/whatsapp-flows#booking-settings).
+
+## Confirmation message
+
+Open the Appointments page's **Settings** to set the message sent when a customer books or reschedules, and the message sent when a booking is cancelled.
+
+<Figure
+  src="/appointment-and-flow/img/appointment/appointment-setting.png"
+  alt="The Appointment settings panel with a Confirmation section showing a Send for audience dropdown and a template or plain message editor"
+  caption="Image shows the Appointment settings panel."
+/>
+
+First, choose **Send for** — who this message is for:
+
+- **Both booking sources** — every booking, whether it came in through WhatsApp or your public booking link.
+- **Public booking link only** — only bookings made through your public web booking page.
+- **WhatsApp flow only** — only bookings made through a WhatsApp booking form.
+
+Then choose the message itself:
+
+- For a WhatsApp booking, you can pick an approved [template](/messaging/whatsapp-templates) or write your own **Plain message**. In a Plain message, type **@** to insert a [merge field](/messaging/merge-fields), like the contact's name or phone number.
+- For a booking made through your public web booking link, you can only use a template.
+
+<Note>
+To use a different message for each form, set it up under that form's [Booking messages](/appointment-and-flow/whatsapp-flows#booking-messages).
+</Note>
+
+## Reminders, public booking link, booking defaults, and services
+
+<Figure
+  src="/appointment-and-flow/img/appointment/public-booking-link.png"
+  alt="The Reminder, Public booking link, Booking defaults, and Services sections of Appointment settings, showing a copyable web booking URL for channel WP 1, Slot length and Bookings per slot fields, and a list of service name tags"
+  caption="Image shows the Reminder, Public booking link, Booking defaults, and Services sections of Appointment settings."
+/>
+
+**Reminder**
+
+A reminder is a message sent automatically to the customer shortly before their appointment, so they don't forget it.
+
+- Pick a [template](/messaging/whatsapp-templates) to use as the reminder. Leave it as None to not send one.
+
+**Public booking link**
+
+- A link to a web page where customers can book, without using WhatsApp.
+- Customers still enter their WhatsApp number, and get their confirmation there.
+
+<Figure
+  src="/appointment-and-flow/img/appointment/public-booking-page.png"
+  alt="The public booking page with Date, Available times, Name, WhatsApp number, Service, and Notes fields, and a Book appointment button"
+  caption="Image shows the public booking page a customer sees after opening the link."
+/>
+
+<Note>
+For customers to get a WhatsApp confirmation after booking on this page, set **Send for** to **Both booking sources** or **Public booking link only** in [Confirmation message](#confirmation-message).
+</Note>
+
+**Booking defaults**
+
+These control the time slots offered on your public booking link.
+
+- **Slot length** — how long each appointment takes, in minutes.
+- **Bookings per slot** — how many customers can book the same time slot.
+
+**Services**
+
+If you offer more than one kind of appointment — like "Consultation" and "Follow-up" — add them here so you can tell them apart on your bookings.
+
+- On your public page, customers see this list and pick one.
+- On WhatsApp, there's no picker — instead, set a **Default service** in [Customize form](/appointment-and-flow/whatsapp-flows#customize-form) so every booking through that form is tagged with it automatically.
+
+<Note>
+A customer can have only one upcoming appointment at a time per WhatsApp number, across all your booking forms. They must cancel or reschedule it before booking another. Past dates and times can't be booked.
+</Note>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp Flows" icon="workflow" href="/appointment-and-flow/whatsapp-flows">
+    Build the booking form that feeds this page.
+  </Card>
+
+  <Card title="Business Hours" icon="clock" href="/settings/business-hours">
+    Set the hours your slots are offered in.
+  </Card>
+</CardGroup>

@@ -1,0 +1,125 @@
+---
+title: "Bulk Actions & Merge"
+description: "Update many contacts in one go — change status, groups, labels, or owner — and join duplicate records into one."
+icon: "layers"
+keywords: ["WhatsMark", "contacts", "bulk actions", "merge contacts", "duplicates"]
+---
+
+import { BrowserFrame, Figure } from '/snippets/browser-frame.jsx';
+
+Once you have contacts in your workspace, you often need to change many of them at once — or clean up duplicates. Both are available directly from the Contacts table.
+
+## Bulk actions
+
+Select one or more contacts using the checkboxes on each row. A bar appears above the table with **Merge** and **Bulk Actions**.
+
+To go beyond the visible page, click the **Select all `number of contacts` contacts matching current filters** link in the bar — this targets every contact matching your filters, even ones not shown. Untick any row to leave it out; the bar shows how many are excluded.
+
+<Figure
+  src="/contacts/img/bulk-selection-bar.png"
+  alt="Contacts table with rows selected and a bar above it reading 15 selected, with a link to select all contacts matching current filters, plus Merge and Bulk Actions buttons and a Clear option"
+  caption="Image shows the Contacts table with rows selected and the action bar above it."
+/>
+
+Choosing **Bulk Actions** opens a sheet where you set only the fields you want to change — anything left on **No change** is untouched, and you can combine several changes in one go:
+
+<Figure
+  src="/contacts/img/bulk-actions-sheet.png"
+  alt="Bulk Actions sheet for 15 selected contacts with a highlighted Delete selected contacts option, and dropdowns each defaulting to No change for status, type, source, group, label, assignee, active status, and linking or unlinking a WhatsApp channel"
+  caption="Image shows the Bulk Actions sheet with each field set to No change."
+/>
+
+Every option is set to No change by default, so only the changes you select will be applied. If you choose Delete, you can't make any other changes at the same time.
+
+<AccordionGroup>
+<Accordion title="Change status / change type">
+  Move the selected contacts to a different status, or change their contact type.
+</Accordion>
+
+<Accordion title="Assign to a team member">
+  Bulk-assign ownership of the selected contacts.
+</Accordion>
+
+<Accordion title="Change source">
+  Change where the selected contacts are recorded as coming from.
+</Accordion>
+
+<Accordion title="Add to group">
+  Add the selected contacts to a group. Their existing groups are kept.
+</Accordion>
+
+<Accordion title="Add label">
+  Add a label to the selected contacts. Their existing labels are kept.
+</Accordion>
+
+<Accordion title="Activate / deactivate">
+  Toggle whether the selected contacts are active.
+</Accordion>
+
+<Accordion title="Link / unlink channel">
+  **Link to WhatsApp channel** adds a channel without removing any the contacts are already linked to. **Unlink from WhatsApp channel** pairs with it to correct a wrong channel — for example, after an import that used the wrong one.
+</Accordion>
+
+<Accordion title="Delete">
+  Permanently remove the selected contacts. Delete **can't be combined with other changes**, and requires a separate delete permission, since it's irreversible.
+</Accordion>
+</AccordionGroup>
+
+<Note>
+When you use "select all matching", or delete contacts in bulk, the work runs in the background. You will see a "Bulk action queued" message, and the table updates once the job finishes — no need to submit again.
+</Note>
+
+<Warning>
+Deleting contacts in bulk cannot be undone. Double-check your filters before confirming a bulk delete, especially when using "select all matching".
+</Warning>
+
+## Merging duplicate contacts
+
+If the same person ends up as two or more contact records (for example, they messaged from two numbers, or were imported twice), you can fold them together.
+
+### Merging a single duplicate
+
+<Steps>
+<Step title="Open Merge with…">
+  Click the menu icon on the contact you want to **keep**, then click **Merge with…**. This contact stays; the duplicate will fold into it.
+</Step>
+
+<Step title="Find the duplicate">
+  Search for the duplicate by name, phone, or email, and pick it from the list.
+</Step>
+
+<Step title="Click Merge">
+  The duplicate's details are copied into the contact you kept, and the duplicate record is marked as merged.
+</Step>
+</Steps>
+
+### Bulk merge
+
+You can also select **multiple** contacts, click **Merge**, choose one as the primary, and fold them all into it with **Merge Contacts**.
+
+
+<Figure
+  src="/contacts/img/bulk-merge.png"
+  alt="Merge selected contacts dialog explaining that the other contacts will fold into the primary, with a radio list of the selected contacts and the first marked Primary"
+  caption="Image shows the Merge dialog with the primary contact selected."
+/>
+
+<Note>
+Merging fills in the gaps rather than overwriting: blank fields on the primary are filled from the duplicate, and groups and labels from both are combined. A filled field on the primary is never replaced. Conversations are kept but not combined — each chat thread stays separate on the merged contact.
+</Note>
+
+<Warning>
+A merge cannot be undone. A contact that has been merged into another one can't be merged again.
+</Warning>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Campaigns" icon="send" href="/messaging/campaigns">
+    Send a message to the groups and labels you just organized.
+  </Card>
+
+  <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
+    See merged and organized contacts in the team inbox.
+  </Card>
+</CardGroup>

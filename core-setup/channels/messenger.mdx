@@ -1,0 +1,99 @@
+---
+title: "Connecting Messenger"
+description: "How to connect a Facebook Page to WaMatrix.io via Embedded Signup or manually, to send and receive Messenger conversations."
+icon: "message-circle"
+keywords: ["WhatsMark", "Messenger", "Facebook Page", "embedded signup", "manual connect"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+Connect a Facebook Page so you can send and receive Messenger conversations through WaMatrix.io, right alongside your WhatsApp channels.
+
+## Before you connect
+
+<Tip>
+Make sure you have the following ready:
+
+- A Facebook account.
+- A Meta Business account — Business Verification is not mandatory to connect, but it is strongly recommended; without it your account stays on limited messaging tiers.
+- A Facebook Page that you manage and want to connect to Messenger.
+- Your Page ID, Page Access Token, Meta App ID, and Meta App Secret (for manual connections only).
+</Tip>
+
+## Connecting Messenger
+
+<Steps>
+<Step title="Click Connect">
+  From the **Channels** page, click **Connect** and choose **Messenger** from the platform picker.
+  
+  <Figure
+    src="/core-setup/channels/img/channels-connect.png"
+    alt="Channels page showing a Connect Channel button and a Supported channels panel listing WhatsApp and Messenger, both marked Available"
+    caption="Image shows the Channels page with the Connect Channel button."
+  />
+</Step>
+
+<Step title="Pick a connection method">
+  You'll see two tabs:
+
+  <Figure
+    src="/core-setup/channels/img/messenger-connect-methods.png"
+    alt="Messenger connect flow showing Embedded Signup and Manual connection options"
+    caption="Image shows the Messenger connect flow with its Embedded Signup and Manual tabs."
+  />
+
+  - **Embedded Signup** — connect with Meta's secure Facebook login flow.
+    - Sign in using your Facebook credentials.
+    - Select the Page you want to connect.
+    - Confirm the requested permissions.
+    - The connection completes automatically and the popup closes when done.
+  - **Manual** — use this for advanced setups with existing Meta credentials.
+    - Enter the **Page ID**.
+    - Paste the **Page Access Token**.
+    - Provide the **Meta App ID** and **Meta App Secret**.
+</Step>
+
+<Step title="Confirm it's connected">
+  Once connected, the Page appears in your Channels list marked **Active**, and incoming Messenger conversations start reaching your workspace automatically.
+</Step>
+</Steps>
+
+<Figure
+  src="/core-setup/channels/img/channels-list-connected.png"
+  alt="Channels list showing two connected channels — a WhatsApp channel and a Messenger channel — each with an Active status, the method used to connect it, and the date connected"
+  caption="Image shows the Channels list with connected channels and their Active status."
+/>
+
+<Note>
+Both connection methods can be individually disabled by your plan. If a tab is missing or disable, that method isn't available on your current plan.
+</Note>
+
+## Managing a connected Page
+
+Open a connected Messenger channel to:
+
+- **Review Page information** fetched from Meta, including Page name, Page ID, category, and connection method.
+- **Check** channel health and **view webhook subscription status**.
+- **Disconnect** the Page.
+
+<Figure
+  src="/core-setup/channels/img/messenger-view.png"
+  alt="Connected Messenger channel list showing Active status and connection method"
+  caption="Image shows a connected Messenger channel's Page information and webhook status."
+/>
+
+<Tip>
+You can connect more than one Facebook Page — manage all of them from the same **Channels** page, alongside your WhatsApp channels.
+</Tip>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Connecting WhatsApp" icon="whatsapp" href="/core-setup/channels/whatsapp">
+    Connect a WhatsApp Business Account the same way.
+  </Card>
+
+  <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
+    Start replying to Messenger conversations from the unified team inbox.
+  </Card>
+</CardGroup>

@@ -1,0 +1,163 @@
+---
+title: "Messenger Templates"
+description: "Messenger Templates are reusable message blocks used to communicate with customers on Facebook Messenger."
+icon: "message-square"
+keywords: ["WhatsMark", "Messenger templates", "quick replies", "button template", "generic template", "carousel", "media template"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+Messenger Templates are ready-made messages you can save once and reuse anytime on Facebook Messenger. Unlike [WhatsApp Templates](/messaging/whatsapp-templates), Meta approval is not required — you can start using a template immediately after saving it.
+
+<Note>
+Before you can create a template, you need to [connect a Facebook Page](/core-setup/channels/messenger) to your workspace.
+</Note>
+
+## Where you can use them
+
+Once saved, a Messenger template can be used in:
+
+- [**Campaigns**](/messaging/campaigns) – Send the template to many contacts at once as a Messenger broadcast.
+- [**Automations**](/automation/overview) – Send the template automatically as part of a chatbot flow — for example, a welcome message when a customer messages your Page.
+- [**Live Chat**](/messaging/live-chat) – Send the template yourself during a conversation, straight from the chat.
+
+## Creating a template
+
+Click **New Template** to open the template form.
+
+<Figure
+  src="/messaging/img/messenger/messenger-template-basic-info.png"
+  alt="Basic Info step of the Messenger template builder with fields for Facebook Page, Name, Category, and Template Type, beside a two-step sidebar showing Basic Info and Message"
+  caption="Image shows the Basic Info step of the Messenger template builder."
+/>
+
+Start with the **Basic Info** step:
+
+- **Facebook Page** – Select the connected Page that the template belongs to.
+- **Name** – Enter a template name, up to 100 characters.
+- **Category** – Choose a category to organize your templates:
+  - **General** – Everyday messages like greetings and follow-ups.
+  - **Marketing** – Promotional messages like offers and announcements.
+  - **Utility** – Transactional messages like order updates and reminders.
+  - **Support** – Customer help messages like FAQs and issue responses.
+- **Template Type** – Choose the type of message you want to build.
+
+<Warning>
+The template type can't be changed after the template is created.
+</Warning>
+
+## Template types
+
+There are five template types, each suited to a different kind of message:
+
+- [**Text**](#text) – A simple text message, like a welcome greeting or an order update.
+- [**Quick Replies**](#quick-replies) – A message with reply buttons, like asking "How can we help?" with options to click.
+- [**Button Template**](#button-template) – A message with action buttons, like "Visit Website" or "Call Us".
+- [**Generic Template (Carousel)**](#generic-template-carousel) – Scrollable cards, like showing several products with images and buttons.
+- [**Media**](#media) – A single image, video, audio, or file, like a product photo, a promo video, or a PDF catalog.
+
+### Text
+
+<Figure
+  src="/messaging/img/messenger/messenger-template-text-message.png"
+  alt="Message step of the Messenger template builder with a Message Body field, formatting toolbar, an Add Variable button, and a detected variable with an example value input"
+  caption="Image shows the Message step of the Messenger template builder."
+/>
+
+Enter your message (up to 2,000 characters).
+
+To insert a dynamic value, add a variable such as `{{1}}`. For example, `Hello {{1}}` becomes `Hello John` when the message is sent.
+
+Click **+ Add Variable** to insert a variable (up to 10). Enter a sample value to preview the message — the sample value is only for preview.
+
+When you send the template, each variable is replaced with real data, such as a [merge field](/messaging/merge-fields) (the contact's name) or a fixed value.
+
+### Quick Replies
+
+<Figure
+  src="/messaging/img/messenger/messenger-template-quick-replies.png"
+  alt="Quick Replies step of the Messenger template builder showing three reply buttons — Get Started, Contact Support, and View Pricing — each with a Button Label and Payload field, and an Add button"
+  caption="Image shows the Quick Replies step of the Messenger template builder."
+/>
+
+Create a message with up to **13** reply buttons. Customers can reply by clicking a button instead of typing a message. You can also use variables in the message text, just like in a [Text template](#text).
+
+Each reply button includes:
+
+- **Button Label** – The text shown on the button (up to 20 characters). This text is also sent as the customer's reply when they click the button.
+- **Payload** – A unique value used to identify which button the customer selected.
+
+### Button Template
+
+<Figure
+  src="/messaging/img/messenger/messenger-template-buttons.png"
+  alt="Buttons step of the Messenger template builder showing two buttons — a URL button labeled Visit Website with a link field, and a Postback button labeled Contact Support with a payload field"
+  caption="Image shows the Buttons step of the Messenger template builder."
+/>
+
+A text message with up to **3** action buttons. The message body works the same as a [Text template](#text), including variables.
+
+Each button is one of:
+
+- **URL** – Opens a website when clicked, like your shop or a product page.
+- **Postback** – When the customer clicks the button, the button text is sent as their reply. If that reply matches a keyword in your [automation](/automation/overview), it starts automatically.
+
+
+### Generic Template (Carousel)
+
+<Figure
+  src="/messaging/img/messenger/messenger-template-carousel-cards.png"
+  alt="Carousel Cards step of the Messenger template builder showing Card 1 with Title, Subtitle, an Image picker, a Default Tap URL field, and a Buttons section with an Add button"
+  caption="Image shows the Carousel Cards step of the Messenger template builder."
+/>
+
+A set of 1–10 scrollable cards — ideal for showing products, services, or options. Each card has:
+
+- **Title** – Up to 80 characters.
+- **Subtitle** – Optional, up to 80 characters.
+- **Image** – Optional. Pick from the [Media Library](/media/media-library) or paste an image link.
+- **Default Tap URL** – Optional link that opens when the customer taps anywhere on the card.
+- **Buttons** – Up to 3 per card (same URL/Postback rules as the [Button Template](#button-template)).
+
+### Media
+
+<Figure
+  src="/messaging/img/messenger/messenger-template-media.png"
+  alt="Media step of the Messenger template builder with a Media Type dropdown set to Image, a selected image preview, a URL field, and an optional Caption field"
+  caption="Image shows the Media step of the Messenger template builder."
+/>
+
+A single image, video, audio, or file. Pick it from the [Media Library](/media/media-library) or paste a URL, and add an optional caption of up to 2,000 characters.
+
+<Warning>
+Every link in a template — button links, card images, and media files — must be a secure link starting with **https://**. Messenger doesn't accept plain http:// links.
+</Warning>
+
+## Managing templates
+
+<Figure
+  src="/messaging/img/messenger/messenger-templates-list.png"
+  alt="Messenger Templates table listing templates with their type, category, Page, and created date, with a row menu open showing Edit and Delete"
+  caption="Image shows the Messenger Templates table with a row menu open."
+/>
+
+The Messenger Templates table lists all your templates with their type, category, Page, and created date. Use the row menu on any template to:
+
+- **Edit** the template's content. Changes apply to future sends only.
+- **Delete** a template. Existing messages and automations using the template are not affected, but it can't be selected for new messages or automations.
+
+<Note>
+Messenger Templates don't go through any approval process. Every template is ready to use as soon as you save it.
+</Note>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp Templates" icon="file-text" href="/messaging/whatsapp-templates">
+    See how the Meta-approved equivalent works for WhatsApp.
+  </Card>
+
+  <Card title="Campaigns" icon="megaphone" href="/messaging/campaigns">
+    Broadcast a Messenger template to a list of contacts.
+  </Card>
+</CardGroup>

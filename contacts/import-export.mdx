@@ -1,0 +1,93 @@
+---
+title: "Importing & Exporting"
+description: "Add many contacts at once from a file, and download your contact list as a file."
+icon: "file-input"
+keywords: ["WhatsMark", "contacts", "import", "export", "CSV", "XLSX", "bulk import"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+Have a contact list in Excel or another app? You don't need to add people one at a time — import the whole file from the Contacts page.
+
+## Importing contacts
+
+<Steps>
+<Step title="Upload your file">
+  From Contacts, click **Import Contacts**, then **New Import**, and upload a **CSV or XLSX** file (up to 30 MB).
+
+  <Figure
+    src="/contacts/img/import-upload.png"
+    alt="Upload step of the import wizard with a Before you upload checklist and a drag-and-drop file area accepting CSV or XLSX up to 30 MB"
+    caption="Image shows the upload step with the before-you-upload checklist and file drop area."
+  />
+
+  Not sure how your file should look? Click **Download sample CSV** on this step to get a ready-made example.
+
+  Your file needs a **header row** as the first row, and phone numbers must include the **country code** (for example `+9198******`). Duplicate phone numbers are **skipped** — existing contacts are never overwritten.
+</Step>
+
+<Step title="Map your columns">
+  WaMatrix.io reads your file's headers and suggests a mapping to contact fields automatically. Review and adjust the mapping — including your own [custom fields](/core-setup/custom-fields) — before continuing.
+
+  <Figure
+    src="/contacts/img/import-map-columns.png"
+    alt="Map Columns step showing a preview of the first rows of the uploaded file above dropdowns matching each file column to a contact field, with Phone and First Name marked required"
+    caption="Image shows the Map Columns step with a file preview and field mapping dropdowns."
+  />
+</Step>
+
+<Step title="Set Default Values and start the import">
+  On the **Default Values** step, set the **status**, **source**, **group(s)**, **label(s)**, **WhatsApp channel**, and **assigned team member**. These values are applied to **every** contact in this file — they cannot come from the file itself. Then choose **Start Import**. The import runs in the background, so large files don't block you from continuing to use the app.
+
+  If your file has more rows than your plan's remaining contact allowance, WaMatrix.io warns you here and imports only what fits. The extra rows are reported as failed.
+
+  <Figure
+    src="/contacts/img/import-default-values.png"
+    alt="Default Values step showing an import summary of the column mapping, a note confirming how many rows were detected and how many contact slots remain, and default fields for channel, type, status, source, assignee, groups, and labels"
+    caption="Image shows the Default Values step with the import summary and default field settings."
+  />
+</Step>
+</Steps>
+
+<Note>
+Some defaults are **required** — the WhatsApp channel, type, status, and source must be set before you can start the import.
+</Note>
+
+## Tracking an import
+
+<Figure
+  src="/contacts/img/import-history.png"
+  alt="Import Contacts page listing past imports with the file name, a progress bar showing rows processed with counts of imported and skipped rows, a Completed status, and the date"
+  caption="Image shows the Import Contacts page listing past imports with their progress."
+/>
+
+Each import you run is listed with its status and progress. Open one to:
+
+- See how many rows were imported, skipped, and failed.
+- **Download Failed Rows CSV** — a file listing the rows that failed and why.
+- **Download Original File** — the file you uploaded.
+- **Delete** a single import record, or **bulk-delete** several at once. This only removes the import history entry — contacts already created by that import are not deleted.
+
+<Warning>
+Failed row details are kept for **30 days**. Download the Failed Rows CSV before they are removed.
+</Warning>
+
+
+## Exporting contacts
+
+From the Contacts page, apply the filters you want — **type**, [status](/core-setup/statuses), [source](/core-setup/sources), **active**, **assignee**, or [channel](/core-setup/channels/whatsapp) — or type in the search box, then click **Export** to download exactly that filtered list as a file.
+
+You can also select specific contacts in the list. When contacts are selected, **Export** downloads only those rows.
+
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Managing Contacts" icon="contact" href="/contacts/managing-contacts">
+    Browse, create, and edit contacts individually.
+  </Card>
+
+  <Card title="Bulk Actions & Merge" icon="layers" href="/contacts/bulk-actions-and-merge">
+    Clean up and organize contacts after a large import.
+  </Card>
+</CardGroup>

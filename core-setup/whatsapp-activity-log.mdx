@@ -1,0 +1,71 @@
+---
+title: "WhatsApp Activity Log"
+description: "See the status of every WhatsApp message and any delivery errors."
+icon: "list"
+keywords: ["WhatsMark", "WhatsApp", "activity log", "message log", "delivery", "errors"]
+---
+
+import { Figure } from '/snippets/browser-frame.jsx';
+
+This page shows all WhatsApp messages sent from your workspace, whether they were sent from a **[campaign](/messaging/campaigns)**, **[automation](/automation/overview)**, or **[chat](/messaging/live-chat)**. You can use it to check sent messages and see why any message failed.
+
+Find it under **Setup → WhatsApp Activity Log**.
+
+
+## WhatsApp activity log list
+
+<Figure
+  src="/core-setup/img/whatsapp-activity-log.png"
+  alt="The WhatsApp Activity Log with All, Success and Errors tabs and a table of sent messages showing category, name, template, status, error, relation type and created date"
+  caption="Image shows the WhatsApp Activity Log."
+/>
+
+| Column | What it shows |
+| --- | --- |
+| **Category** | Where the message was sent from, such as a campaign, automation, or chat. |
+| **Name** | The campaign, automation, or contact name. |
+| **Template Name** | The template used, if any. |
+| **Status** | The current message status. |
+| **Error** | The reason the message failed, if any. |
+| **Contact Type** | The recipient type, such as Guest, Lead, or Customer. |
+| **Created** | When the message was sent. |
+
+## Message statuses
+
+| Status | What it means |
+| --- | --- |
+| **pending** | The message is waiting to be sent. |
+| **accepted** | WhatsApp has accepted the message. |
+| **sent** | The message has been sent. |
+| **delivered** | The message reached the recipient. |
+| **read** | The recipient has opened the message. |
+| **failed** | The message was not sent. Check the Error column to see why. |
+
+## View message details
+
+Open the `⋮` menu and choose **View** to see more information about the message:
+
+<Figure
+  src="/core-setup/img/whatsapp-activity-log-view.png"
+  alt="The message details dialog with Response and Raw Content tabs, showing the status, response code, response time, wamid, and the response payload returned by WhatsApp"
+  caption="Image shows the message details view with the Response tab open."
+/>
+
+- **Response** — Shows the current message status, WhatsApp response code, response time, message ID (WAMID), and the response payload returned by WhatsApp.
+- **Raw Content** — Shows the original request sent to WhatsApp, including the message type, phone number ID, business account ID, request payload, and other message details.
+
+<Note>
+Deleting a campaign or an automation also removes its messages from this log.
+</Note>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Activity Log" icon="history" href="/reporting/activity-logs">
+    See every action taken in your workspace.
+  </Card>
+
+  <Card title="Chatbot Flows" icon="zap" href="/automation/overview">
+    Build automations that send messages automatically.
+  </Card>
+</CardGroup>

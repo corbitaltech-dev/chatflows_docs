@@ -1,0 +1,118 @@
+---
+title: "Payments & Invoices"
+description: "How to pay for your WaMatrix.io subscription, apply a coupon, and download your invoices."
+icon: "receipt"
+keywords: ["WhatsMark", "payments", "invoices", "coupons", "Razorpay", "Dodo", "offline payment", "bank transfer"]
+---
+
+import { BrowserFrame, Figure } from '/snippets/browser-frame.jsx';
+
+WaMatrix.io supports online and offline payment, coupon codes at checkout, and a full invoice history — all from **Billing**.
+
+## Paying online
+
+Online payments cover subscribing to a plan, changing plans, renewals, and add-on purchases. You don't choose a payment gateway — the right one for your billing currency is picked for you:
+
+- **INR** — pay by card, UPI, netbanking, or wallet through **Razorpay**.
+- **USD** — pay through **Dodo Payments**.
+
+Checkout shows a live total that updates instantly when you apply a coupon. **Your plan activates as soon as payment succeeds** — you're taken straight back to your workspace.
+
+<Tip>
+  Paid but don't see it yet? Give it a moment and refresh the page — online payments usually
+  reflect within a minute.
+</Tip>
+
+<Note>
+Prices are shown **before tax**. Any tax that applies is added on top and shown as its own line at checkout and on your invoice — so the final amount charged is higher than the plan or add-on price on its own.
+</Note>
+
+<Note>
+Paying in **USD**? Dodo Payments handles tax as merchant of record, so it's calculated when Dodo takes payment rather than previewed beforehand. Your total at Dodo's checkout — and your invoice — show the exact amount charged, tax included.
+</Note>
+
+## Paying by bank transfer
+
+Prefer to pay by bank transfer instead of online? You can. Your payment is safe throughout —
+here's exactly what happens:
+
+<Steps>
+<Step title="Transfer to the bank details shown">
+  You'll see the bank account (or UPI ID) to pay, along with any instructions shown there.
+</Step>
+
+<Step title="Submit your proof">
+  Upload proof of the transfer — a screenshot or receipt — and the reference number.
+</Step>
+
+<Step title="We review and activate">
+  Your request shows as **Pending** while an admin checks it against the payment received. Your
+  workspace shows the turnaround time to expect. Once it's confirmed, your plan or add-on activates.
+</Step>
+</Steps>
+
+Because a person checks each transfer, this isn't instant like an online payment — it activates
+once the payment is confirmed. If anything's off, the request shows as **Rejected** with the
+reason alongside it, so you can fix it and submit again. Nothing is lost either way.
+
+<Figure
+  src="/billing/img/offline-payment-pending.png"
+  alt="Billing page with a banner reading that the offline payment is pending admin review and plan changes are disabled, beside a Pending Payment Review card showing the plan, amount, reference, and submitted time"
+  caption="Image shows the billing page while a payment is under review."
+/>
+
+<Note>
+Offline payment is available for plan subscriptions, plan changes, and add-on/contact-limit purchases alike — not just initial signup.
+</Note>
+
+<Warning>
+While an offline payment is **under review**, you can't change your plan. Wait for the decision, and if it's rejected you're free to try again.
+</Warning>
+
+## Coupons
+
+At checkout — whether subscribing, changing plans, buying an add-on, or checking out a cart — you can apply a coupon code. The total recalculates live so you can see the discount before you confirm payment.
+
+<Note>
+Coupons apply to your **current purchase only**. They don't carry over to your next renewal, so a future renewal will be charged at full price.
+</Note>
+
+<Accordion title="My coupon code didn't work" icon="info">
+  A code is usually turned down because it's **expired**, has **already been used** on your
+  account, or **doesn't match** the plan or billing cycle you're buying. The checkout tells you
+  which — read the message, adjust if you can, and try again.
+</Accordion>
+
+## Invoices
+
+<Figure
+  src="/billing/img/invoice-history.png"
+  alt="Invoice History table listing invoices with invoice number, amount, gateway, reason, Paid status, and date, with a row menu open showing View and Download"
+  caption="Image shows the Invoice History table with a row menu open for viewing or downloading an invoice."
+/>
+
+Every billed transaction generates an invoice under **Invoices**:
+
+- Browse a table of past invoices.
+- **View** an invoice's full breakdown.
+- **Download** it as a PDF for your records.
+
+<Note>
+Team members need permission to see invoices, and downloading is a separate permission from viewing — so someone may be able to open an invoice without being able to save the PDF.
+</Note>
+
+<Warning>
+Only the workspace **owner** can pay or apply coupons.
+</Warning>
+
+## What's next
+
+<CardGroup cols={2}>
+  <Card title="Add-ons & upgrades" icon="puzzle" href="/billing/addons-and-upgrades">
+    Buy extra capacity — more contacts, team seats or AI — without changing your whole plan.
+  </Card>
+
+  <Card title="Dashboard & usage" icon="chart-line" href="/reporting/dashboard-and-usage">
+    Track how much of each limit you've used.
+  </Card>
+</CardGroup>
