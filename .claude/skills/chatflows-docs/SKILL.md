@@ -1,11 +1,11 @@
 ---
 name: chatflows-docs
-description: Authoritative rules for writing and editing any page in the docs.chatflows.io Mintlify site — plain-language voice, the ChatFlows.io brand and plan-naming rules, the banned-claims list, honest plan gating, Mintlify component and docs.json mechanics (Lucide icons, redirects, the index.mdx root rule), screenshot and image alt-text conventions, the shared-repo safety rules for working alongside other writers, and the verification checklist every page must pass. Activate for ANY task that creates, rewrites, reviews, or fact-checks a docs page, edits docs.json or navigation, or when the user mentions the docs site, a docs page, Mintlify, or quickstart.
+description: Authoritative rules for writing and editing any page in the docs.chatflows.io Mintlify site — plain-language voice, the ChatFlows.io brand rules, the Shopify-only feature list and menu names, the banned-claims list, Mintlify component and docs.json mechanics (Lucide icons, redirects, the index.mdx root rule), screenshot and image alt-text conventions, the shared-repo safety rules for working alongside other writers, and the verification checklist every page must pass. Activate for ANY task that creates, rewrites, reviews, or fact-checks a docs page, edits docs.json or navigation, or when the user mentions the docs site, a docs page, Mintlify, or quickstart.
 ---
 
 # ChatFlows.io Documentation
 
-You write the customer-facing docs at `docs.chatflows.io`. The audience is a **small-business owner or their staff** — not a developer. Most arrive from the marketing site while deciding whether to buy.
+You write the customer-facing docs at `docs.chatflows.io`. The audience is a **small-business owner or their staff** — not a developer. They run a Shopify store and installed ChatFlows.io from the Shopify App Store.
 
 Two goals, in this order:
 
@@ -50,13 +50,11 @@ The same trap applies to any "don't worry about X" phrasing. If the reader would
 
 Most readers arrive while deciding whether to trust and buy. These docs are part of that decision, so they persuade — honestly. The rules below are standing, not per-page. None of them means overclaiming; the honesty rules in §1 and §2 always win. Persuasion here is about *order and framing*, never about saying something untrue.
 
-**Momentum — always point forward.** Every "What's next" / "Where to next" card group links to pages the reader has **not** seen yet, never back to one above the current page in the nav. A card pointing to an already-read page reads as a dead-end and stalls them. On the last page of a flow, point into the next section, not back to the start. (This is why "Free vs. paid" must not appear in a Billing page's What's next — the reader is past it.)
+**Momentum — always point forward.** Every "What's next" / "Where to next" card group links to pages the reader has **not** seen yet, never back to one above the current page in the nav. A card pointing to an already-read page reads as a dead-end and stalls them. On the last page of a flow, point into the next section, not back to the start. 
 
 **Reassure before you warn.** When a paragraph carries both good and bad news — cancellation, deletion, a limit — lead with what the reader *keeps*, then state what changes, then the deadline. "You keep full access until the end of the period you've paid for" **before** "after that it's removed." Never open a paragraph with a loss. This is the single highest-impact ordering rule on the site.
 
 **Name the fear, then answer it.** People abandon on unspoken worries. Surface the worry as the reader would phrase it and answer plainly: "Does WhatsApp charge me separately?", "What happens to my data if I downgrade?", "Am I being charged twice?" A question heading that says the quiet part out loud, immediately answered, calms more than three paragraphs of prose.
-
-**Upgrade triggers are symptoms, not features.** When telling someone it's time to pay, describe the *situation they'll recognise in themselves* — "someone else needs to answer messages", "you're pasting the same reply for the tenth time" — not the feature name or the limit number. People act on recognising themselves, not on reading a spec.
 
 **Say what it does before how to do it.** Outcomes before mechanics, benefits before button names. A section that opens with "Two-factor security keeps your account safe even if someone learns your password" earns the steps that follow; one that opens with "Click Enable" does not.
 
@@ -64,54 +62,65 @@ Most readers arrive while deciding whether to trust and buy. These docs are part
 
 **Cut the doubt-planters.** Covered in §1, restated here because it's persuasion: "no coding required", time promises, "it's easy" — anything that raises a worry the reader didn't have, or sets an expectation you can't guarantee, loses more trust than it wins. Delete it.
 
-**What persuasion never licenses:** inventing a benefit, softening a real limit into vagueness, "free forever = never expires" wording, prices or counts outside the plans page, or a comfortable claim you haven't verified. If a reassuring line isn't true, the honest line wins every time — a promise the product breaks costs far more than the friction of stating the truth.
+**What persuasion never licenses:** inventing a benefit, softening a real limit into vagueness, plan or price talk outside the billing page, or a comfortable claim you haven't verified. If a reassuring line isn't true, the honest line wins every time — a promise the product breaks costs far more than the friction of stating the truth.
 
 ---
 
-## 2. Brand and plan naming — non-negotiable
+## 2. Brand naming and the Shopify-only product — non-negotiable
 
 - The product is **ChatFlows.io**. Never "ChatFlows" in body prose, headings, descriptions, captions, or `docs.json`'s `name`.
   - `keywords:` frontmatter is the **one exception** — keep the bare "ChatFlows" there too, because people search both spellings and dropping it costs search traffic.
-- The free plan is the **Free Forever plan**. Not "the Free plan", not "our free tier".
+- The old brands **WaMatrix**, **WaMatrix.io**, **WhatsMark** and **whatsmark.io** must never appear — not in text, alt text, links or file names.
 
-**Banned claims.** These have been explicitly ruled out. Do not reintroduce them, in any wording:
+### Who reads these docs
 
-- ❌ Anything about the free plan **not expiring** — "never expires", "doesn't expire", "not a trial", "no countdown". Say "Free Forever" and stop.
-- ❌ **Specific limit counts or prices** on any page other than `getting-started/free-vs-paid.mdx`. No "100 contacts", no "2 channels", no "10,000 AI tokens", no "₹799 / $9".
-  - Write "connected numbers, contacts, chatbot flows and a monthly allowance of AI usage" and link to Free vs. paid.
-  - **Why:** prices and limits change. One stale number on a marketing-facing page destroys trust and nobody remembers to update six pages.
-- ❌ **Time promises of any kind** — "in about 15 minutes", "set up in under an hour", per-step minute breakdowns. Setup time isn't ours to promise: template approval is Meta's, and it varies. A number here either pressures the reader into a commitment they didn't ask for, or disappoints them when reality runs longer. Describe the *steps*, never the clock.
+ChatFlows.io is sold **only to Shopify merchants**, through the Shopify App Store. The product runs with `SHOPIFY_ONLY_MODE=true` on the `chatflows` branch. Write for a Shopify shop owner. Lead with what matters to a store: abandoned carts, order updates, and the shared inbox.
 
-`getting-started/free-vs-paid.mdx` is the **single source of truth** for every number. Every page that wants to mention a limit links there instead — and that page itself should be written from `developer-docs/features/plans-and-pricing.md`, not from the seeders.
+### Features that do not exist for this audience
 
-### Two facts that page currently gets wrong
+These are hidden in Shopify-only mode (`config/shopify_only.php`). Never document them, link to them, or use them as examples of a product feature:
 
-Verified against code on 2026-07-23; fix when next editing it:
+- WooCommerce, IndiaMART, Facebook Lead Ads
+- Instagram (Messenger **stays** — it is still in the product)
+- Appointments, bookings, the public booking page, live-booking WhatsApp Flows
+- AppSumo, coupons and discount codes
+- Any payment method other than Shopify Billing (card, UPI, PayPal, Razorpay, bank transfer, offline payment)
+- Public sign-up and the plans/pricing page. Merchants arrive by installing the app from Shopify.
 
-- **Quotas reset on the calendar month, not the billing cycle.** `FeatureService::calculatePeriod()` uses `Carbon::now()->startOf('month')`. Someone who subscribes on the 20th gets a full reset 11 days later. The page says "resets each billing cycle".
-- **Free-plan users cannot see the Billing menu.** `UserMenuContent.vue` hides it behind `v-if="!isFreePlan && …"` — deliberately. The page tells them to "Go to Billing → Plans"; the real path is **My Subscription → Upgrade Plan**. This one costs money: it sends a customer who wants to pay to a dead end.
+A booking or a reservation is fine as a **made-up example** in a flow, but prefer shop examples (orders, returns, delivery).
 
-### The plan is called "Free" inside the app
+### Plans: one page only
 
-`PlanSeeder` names it `Free`. "Free Forever" appears only in `resources/js/marketing/` — the SEO title, the hero CTA, the feature-page CTAs. Docs saying **Free Forever** match the marketing site a visitor arrives from, which is why we use it. Be aware the billing screens say **Free**, and don't describe a UI element as saying "Free Forever" when it doesn't.
+Merchants still pick a plan and pay, but Shopify charges them. **Only `billing/plan-and-billing.mdx` talks about plans, trials, prices or upgrades.**
 
----
+- ❌ No "paid feature", "free trial", "Free Forever", "Free plan", "Professional" or "upgrade your plan" notes on feature pages. Plans are set per store and change; a feature page says nothing about them.
+- ❌ No specific limit counts or prices on any page.
+- ❌ **Time promises of any kind** — "in about 15 minutes", "set up in under an hour", per-step minute breakdowns. Template approval is Meta's, and it varies. Describe the *steps*, never the clock. (A product setting measured in minutes, like **Send after (minutes)**, is fine.)
 
-## 3. Be honest about paid features
+### Menu names in Shopify mode
 
-If a feature needs a paid plan, say so **at the point you mention it** — a short italic note is enough:
+The app shows merchant names for its menus (`sidebar_labels` / `settings_labels` in `config/shopify_only.php`). Use these in "Go to …" steps, page titles and card titles:
 
-```mdx
-<Card title="Bring your team in" icon="users" href="/core-setup/team-and-roles">
-  Invite colleagues by email and decide what each of them can see and do. *(Team invites need a paid plan.)*
-</Card>
-```
+| The app used to say | The app now says |
+|---|---|
+| Chat | **Inbox** |
+| Contacts (menu and Settings) | **Customers** |
+| Templates | **Message Templates** |
+| AI Assistants | **AI Assistant** |
+| WhatsApp Flows | **WhatsApp Forms** |
+| Analytics | **Reports** |
+| Channels | **WhatsApp Setup** |
+| Canned Replies | **Quick Replies** |
+| Groups | **Customer Groups** |
+| Labels | **Customer Tags** |
+| Statuses | **Customer Statuses** |
+| Sources | **Customer Sources** |
+| Team | **Team & Agents** |
+| Custom Fields | **Customer Fields** |
+| API Tokens | **Developer API Keys** |
+| WhatsApp Activity Log | **WhatsApp Message Log** |
 
-Currently paid-only: team invites (more than one seat), Shopify, WooCommerce, Google Sheets/Calendar nodes, webhook forwarding, REST API, canned replies.
-
-Add-ons and self-service custom domain do not exist for this audience — this docs site serves a reseller's own customers, and neither feature is wired up for that account type. Don't reintroduce `billing/addons-and-upgrades.mdx` or `settings/custom-domain.mdx`-style content; check with the user before adding either back.
-
-**Why:** a new user who hits an unexpected paywall halfway through onboarding loses more trust than the signup was worth. Verify current gating against `getting-started/free-vs-paid.mdx` before claiming anything is free.
+Unchanged: Dashboard, Campaigns, Automations, Media Library, Activity Log, Settings, Roles, AI Prompts. These rename **menus and page titles only** — buttons inside a page (like **Create Contact**) keep their own label until the app shows otherwise.
 
 ---
 
@@ -125,7 +134,7 @@ The pattern proven on the quick start, in order:
 4. **The steps** — a `<Steps>` block, 5 or 6 maximum. Each step ends with a `Details: [Page](/link)` line rather than swelling.
 5. **A `<Check>` recap** — the whole path in one line.
 6. **Keep going** — cards for the natural next actions.
-7. **Common questions** — an `AccordionGroup` answering the objections that stop a purchase: does it cost anything, will I lose my number, why can't I send this, how long does approval take, can I migrate, do I need a developer.
+7. **Common questions** — an `AccordionGroup` answering the worries that stop a merchant: will I lose my number, why can't I send this, how long does approval take, can I move from another provider.
 8. **Where to next** — 4 cards.
 
 **Link out, don't inline.** A quick start that explains everything is not quick. One line plus a link beats three paragraphs.
@@ -285,8 +294,10 @@ Then confirm by hand:
 
 - [ ] Zero banned words from §1; every retained term defined on first use
 - [ ] "ChatFlows.io" everywhere except `keywords:`
-- [ ] "Free Forever" — and no expiry claim, no specific limits or prices
-- [ ] Every paid-only feature marked
+- [ ] No WaMatrix / WhatsMark anywhere, including alt text
+- [ ] No plan, trial, price or "paid feature" text outside `billing/plan-and-billing.mdx`
+- [ ] No hidden feature (WooCommerce, Instagram, Appointments, coupons, sign-up, non-Shopify payments)
+- [ ] Menu names match the Shopify-mode table in §2
 - [ ] Every icon is a real Lucide name (they fail **silently** — check the rendered page, not the source)
 - [ ] Every UI label matches the actual app
 - [ ] `mint broken-links` shows no *new* breakage (run it once before your change to get the baseline — some failures are pre-existing and not yours)
@@ -299,4 +310,4 @@ Then confirm by hand:
 ## 9. Related skills
 
 - **`docs-competitor-benchmark`** — before writing an onboarding, landing, or comparison page, check how AiSensy, Wati, respond.io, BotSailor and Interakt handle the same thing, and find what we can honestly claim that they can't.
-- **`docs-fact-check`** — verify a claim against the product source at `/home/corbital/laravel/whatsmarkio_reseller` before publishing it.
+- **`docs-fact-check`** — verify a claim against the product source at `/home/laravel/whatsmarkio_reseller` (**branch `chatflows`**, Shopify-only mode on) before publishing it.

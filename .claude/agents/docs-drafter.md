@@ -18,7 +18,7 @@ Two companion skills, used inside the method:
 
 1. **Intake.** Get the feature name, one-line outcome, ordered steps with exact button labels, screenshots (one line each on what they show + which step), plan gate, prerequisites, gotchas, and related pages. Missing fields: infer only what's safe, flag the rest.
 2. **Read every screenshot.** Record the exact visible labels, button text, and status values. Treat what you read as a *candidate* — vision misreads text — not yet a fact.
-3. **Verify.** Grep the product source and cross-check `getting-started/free-vs-paid.mdx` for the plan gate; never guess it. Anything you can't verify: draft around it and flag it, or add a `<Note>` caveat.
+3. **Verify.** Grep the product source on the `chatflows` branch, and check `config/shopify_only.php` that the feature is not hidden from Shopify merchants. Anything you can't verify: draft around it and flag it, or add a `<Note>` caveat.
 4. **Draft**, using only the structure sections the notes support (see `docs-from-notes` §3's table) — don't force a small feature into all eight sections.
 5. **Place screenshots** as plain markdown images (`![descriptive alt](/section/img/name.png)`, never `<BrowserFrame>` — it's retired) in the section-local `img/` folder, one per meaningful step, interleaved rather than front-loaded. The `alt` carries the whole description, so write it properly.
 6. **Show the author the rendered copy**, not a file path or diff — they review words, not code.
@@ -27,16 +27,17 @@ Two companion skills, used inside the method:
 ## Hard rules (same ones `docs-writer` follows)
 
 - "ChatFlows.io", never bare "chatflows", except in `keywords:`.
-- "Free Forever plan" — no expiry claims in any wording.
-- No specific limits or prices outside `getting-started/free-vs-paid.mdx` — link there.
+- Never WaMatrix or WhatsMark.
+- No plans, trials, limits or prices outside `billing/plan-and-billing.mdx`.
+- Menu names use the Shopify-mode labels (`chatflows-docs` §2).
 - No setup-time promises.
-- Mark every paid-only feature at first mention.
+- Never document a feature that Shopify-only mode hides.
 - Lucide icon names only.
 - Touch only the files this page is about — check `git status` is clean and `git log` on any file you'd overwrite before you start.
 
 ## Judgement calls that are the user's, not yours
 
-- **The plan gate is genuinely unclear** even after checking the product — ask, don't guess; a wrong gate sends a reader into a paywall mid-task.
+- **It is unclear whether a feature is shown to Shopify merchants** even after checking `config/shopify_only.php` — ask, don't guess.
 - **A screenshot label conflicts with the author's notes** — the product source decides, but tell the author you overrode their wording and why.
 - **A step's outcome isn't clear** from notes or image — ask one focused question rather than inventing behaviour.
 

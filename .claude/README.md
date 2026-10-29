@@ -25,7 +25,7 @@ Built from the findings of the July 2026 audit (`skills/docs-audit/reports/2026-
 │   ├── docs-from-notes/
 │   │   ├── SKILL.md                — method: short notes + screenshots → full on-brand page
 │   │   └── INTAKE-TEMPLATE.md      — fill one per feature; keeps notes structured
-│   ├── docs-consistency-lint/SKILL.md     — brand, Free Forever, banned words, images, icons, headings, time promises
+│   ├── docs-consistency-lint/SKILL.md     — brand, plan talk, old brands, hidden features, banned words, images, icons, headings, time promises
 │   ├── docs-grammar-style/SKILL.md        — proofreading pass (grounded in the real error patterns)
 │   ├── docs-link-integrity/SKILL.md       — links, anchors, image paths, redirects, Meta soft-404s
 │   └── docs-audit/
@@ -63,7 +63,7 @@ Every monitoring agent has `Bash`, so the grep / `mint broken-links` / `curl` / 
 | Audit finding | Caught going forward by |
 | --- | --- |
 | Broken `/automation/chatbot-flows`, `/automation/appointments` (reorg rot — confirmed in 9+ files, not the 2 first sampled) | `docs-link-integrity` §2 (post-reorg stale-path sweep) |
-| "tenant", bare "chatflows", "Free plan" | `docs-consistency-lint` §1–3 |
+| "tenant", bare "chatflows", plan/trial talk, WaMatrix/WhatsMark | `docs-consistency-lint` §1–3 |
 | Jargon page (`whatsapp.mdx`: WABA, Embedded Signup, webhook) | `docs-consistency-lint` §3 → escalate to `docs-writer` |
 | Grammar errors (E1–E7) | `docs-grammar-style` |
 | Image alt text; Title vs sentence case; UI-label casing | `docs-consistency-lint` §4, §6–8 |

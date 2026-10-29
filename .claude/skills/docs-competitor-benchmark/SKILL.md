@@ -33,7 +33,7 @@ The goal is never to copy their copy. It is to find (a) the structural patterns 
 
 - **Prerequisites first** (from Wati) — the "Before you start" section. Highest-value block on the quick start; it kills the most common support ticket.
 - **Checklist framing** (from respond.io) — numbered `<Steps>`, a `<Check>` recap, then a "Keep going" card group.
-- **Free access up front** (from AiSensy) — the Free Forever card sits above the fold, before the feature list.
+- **Install path up front** — the quick start opens with installing from the Shopify App Store, before the feature list.
 - **A migration answer** (from AiSensy) — "I'm already with another provider, can I move across?" in the FAQ, answered with **Sync Templates**.
 - **Rejected:** BotSailor-style feature dumps and jargon. Outcomes, not module names.
 
@@ -44,7 +44,7 @@ Verified against the product. Lead with these — competitors either can't offer
 1. **Coexistence** — you keep using the WhatsApp Business app on your phone, your old chats come across, and messages stay in sync. Still the best objection-killer for "will I lose my number and my chats?", so keep it in prerequisites *and* the FAQ.
    - ⚠️ **No longer a differentiator as a capability.** As of the July 2026 benchmark, respond.io, Wati and AiSensy all document coexistence too. Our edge is now in *explaining it better* — e.g. the 14-day rule (you must open the app at least once a fortnight), which only respond.io mentions. Do not claim or imply we are alone in offering it.
 2. **Instant template sync** — one click pulls in every template already approved on your WhatsApp Business account, so a migrating customer skips the wait entirely.
-3. **AI flow generation** — describe a chatbot in plain English and it gets built. Available on the Free Forever plan, which is unusual.
-4. **Free Forever includes the AI assistant** — most competitors gate AI behind a paid tier.
+3. **AI flow generation** — describe a chatbot in plain English and it gets built.
+4. **Built for Shopify** — abandoned-cart recovery with a per-automation delay, order updates from placed to delivered, and a Shopify sales dashboard, all inside the Shopify admin. Don't mention plans when using these.
 
 **Rules when using these:** never name a competitor on a docs page — describe the benefit, not the comparison. Never state a competitor's pricing or limits; they change and being wrong is worse than being silent. Re-verify a differentiator before reusing it — coexistence availability and plan gating have both moved before.

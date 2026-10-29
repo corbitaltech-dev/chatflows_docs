@@ -20,7 +20,8 @@ Read `chatflows-docs` first, every time. It's the rulebook everything below defe
 
 - Banned word → house term (`tenant` → `workspace`, etc.) — pure substitution, meaning unchanged.
 - Bare `ChatFlows` → `ChatFlows.io` outside `keywords:`.
-- `Free plan` / `Free-plan` → `Free Forever plan` / `Free Forever workspaces`.
+- A plan, trial or "paid feature" note on any page except `billing/plan-and-billing.mdx` → deleted, sentence otherwise kept.
+- An old menu name in a "Go to …" step → its Shopify-mode name from the `chatflows-docs` §2 table.
 - A confirmed-dead internal link (§`docs-link-integrity` §2) → the confirmed-live replacement path, once you've verified the destination is real in `docs.json`'s navigation.
 - A Font Awesome icon name → its Lucide equivalent from the known table.
 - A setup-time promise about **our own product** → deleted, sentence otherwise kept.

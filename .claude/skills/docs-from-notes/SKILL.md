@@ -32,8 +32,8 @@ For each image, look and record: which screen it is, the exact visible labels an
 Before drafting, resolve anything the page will assert:
 
 - **Labels & nav paths** — grep the product source (`docs-fact-check`).
-- **Plan gate** — is this really on Free Forever, or Professional / an add-on? Never guess a gate; a wrong one sends a reader into a paywall mid-task.
-- **Limits & prices** — these belong only on `getting-started/free-vs-paid.mdx`; link there, don't restate a number.
+- **Shopify-only** — is the feature hidden in Shopify-only mode (`config/shopify_only.php`)? If so, stop and tell the user.
+- **Plans, limits & prices** — never on a feature page. Only `billing/plan-and-billing.mdx` talks about plans.
 - **Meta rules** — if a constraint (24-hour window, template approval, messaging limits) is Meta's, cite Meta's page for it.
 
 Anything you can't verify: draft around it and **flag it to the author**, or leave a `<Note>` caveat. Never soften an unverified claim into vague wording to make it feel safe.
@@ -57,7 +57,7 @@ Momentum rule: "Keep going" and "What's next" point to pages the reader **hasn't
 
 ## Step 4 — Write the prose
 
-Expand each bullet into plain, short sentences. Outcomes before mechanics; benefit before button name. Use the exact UI labels in **bold**. Define `template` and `channel` on first use. Mark every paid-only feature right where you mention it — `*(Needs a paid plan.)*`. Do not add "no coding required" style reassurance (§1 trap). Do not over-explain; if something's obvious, leave it out.
+Expand each bullet into plain, short sentences. Outcomes before mechanics; benefit before button name. Use the exact UI labels in **bold**. Define `template` and `channel` on first use. Don't mention plans. Do not add "no coding required" style reassurance (§1 trap). Do not over-explain; if something's obvious, leave it out.
 
 ## Step 5 — Place the screenshots
 
@@ -95,24 +95,24 @@ Ask a focused question **only** when a genuine gap blocks the page — an unknow
 ## Worked example (compact)
 
 **Author's input:**
-> Feature: Canned Replies. What: save replies you send a lot, insert with a shortcut. Plan: paid only. Steps: 1) Settings → Canned Replies → **Add Canned Reply** 2) give it a **Title** and **Message** 3) in a chat type `/` and pick it. Screenshot: `canned-reply-form.png` = the add form (step 2). Gotcha: shortcuts are per-workspace, everyone on the team sees them.
+> Feature: Quick Replies. What: save replies you send a lot, insert with a shortcut. Steps: 1) Setup → Quick Replies → **Add Canned Reply** 2) give it a **Title** and **Message** 3) in a chat type `/` and pick it. Screenshot: `canned-reply-form.png` = the add form (step 2). Gotcha: shortcuts are per-workspace, everyone on the team sees them.
 
 **Draft output (excerpt):**
 ```mdx
 ---
-title: "Canned replies"
+title: "Quick replies"
 description: "Save the answers you send every day and drop them into a chat with a shortcut."
 icon: "message-square-quote"
-keywords: ["ChatFlows", "ChatFlows.io", "canned replies", "quick replies", "shortcuts", "live chat"]
+keywords: ["ChatFlows", "ChatFlows.io", "quick replies", "canned replies", "shortcuts", "live chat"]
 ---
 
-Save the replies you type again and again, and drop them into any chat in one click. *(Canned replies need a paid plan.)*
+Save the replies you type again and again, and drop them into any chat in one click.
 
-## Add a canned reply
+## Add a quick reply
 
 <Steps>
-  <Step title="Open canned replies">
-    Go to **Settings → Canned Replies** and click **Add Canned Reply**.
+  <Step title="Open quick replies">
+    Go to **Setup → Quick Replies** and click **Add Canned Reply**.
   </Step>
   <Step title="Write it">
     Give it a **Title** you'll recognise and the **Message** you want to send. The Title is only for you; the Message is what the customer receives.
@@ -125,8 +125,8 @@ Save the replies you type again and again, and drop them into any chat in one cl
 </Steps>
 
 <Note>
-  Canned replies are shared across your workspace — everyone on your team can use the ones you save.
+  Quick replies are shared across your workspace — everyone on your team can use the ones you save.
 </Note>
 ```
 
-Notice: the paid gate is marked at first mention, labels are bold and exact, the image sits beside its step with a written alt and caption, nothing beyond the author's notes was invented, and the shortcut behaviour ("per-workspace, team sees them") became the `<Note>`. Before shipping, the labels **Add Canned Reply / Title / Message** get confirmed via `docs-fact-check`.
+Notice: no plan is mentioned, the menu uses its Shopify-mode name, labels are bold and exact, the image sits beside its step with a written alt and caption, nothing beyond the author's notes was invented, and the shortcut behaviour ("per-workspace, team sees them") became the `<Note>`. Before shipping, the labels **Add Canned Reply / Title / Message** get confirmed via `docs-fact-check`.

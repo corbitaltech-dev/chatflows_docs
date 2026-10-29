@@ -1,11 +1,9 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
-
 # Documentation project instructions
 
 ## About this project
 
+- Customer docs for **ChatFlows.io**, sold only to Shopify merchants through the Shopify App Store
+- Product source: `/home/laravel/whatsmarkio_reseller`, branch `chatflows`, with `SHOPIFY_ONLY_MODE=true` (hidden features: `config/shopify_only.php`)
 - This is a documentation site built on [Mintlify](https://mintlify.com)
 - Pages are MDX files with YAML frontmatter
 - Configuration lives in `docs.json`
@@ -13,8 +11,8 @@
 
 ## Terminology, style, and content boundaries
 
-The real rules — banned words (e.g. "workspace" not "tenant"), brand and plan naming
-("ChatFlows.io", "Free Forever"), voice, page structure, Meta-citation requirements,
+The real rules — banned words (e.g. "workspace" not "tenant"), brand naming
+("ChatFlows.io", never WaMatrix or WhatsMark), the Shopify-only feature list and menu names, voice, page structure, Meta-citation requirements,
 and what belongs on a customer page versus the API reference — live in
 **`.claude/skills/chatflows-docs/SKILL.md`**. Read that file before writing or
 editing any page; it is the single source of truth, not this file.

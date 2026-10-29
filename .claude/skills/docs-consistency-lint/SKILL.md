@@ -1,6 +1,6 @@
 ---
 name: "docs-consistency-lint"
-description: "Site-wide sweep for brand, banned-word, plan-naming, formatting, and time-promise drift on docs.chatflows.io — bare 'ChatFlows' outside keywords, 'tenant' instead of 'workspace', 'Free plan' instead of 'Free Forever', developer jargon (WABA, webhook, embedded signup) on customer pages, thin or missing image alt text, Lucide icon typos, Title Case vs sentence case drift, inconsistent UI-label casing, and setup-time promises. Grounded in the July 2026 site audit, where every check here caught a real, repeated instance. Activate for a pre-launch sweep, a scheduled docs-manager run, or 'lint this page/section for brand and formatting issues'."
+description: "Site-wide sweep for brand, banned-word, plan-naming, formatting, and time-promise drift on docs.chatflows.io — bare 'ChatFlows' outside keywords, 'tenant' instead of 'workspace', plan and trial talk outside the billing page, old brand names (WaMatrix, WhatsMark), hidden Shopify-only features, developer jargon (WABA, webhook, embedded signup) on customer pages, thin or missing image alt text, Lucide icon typos, Title Case vs sentence case drift, inconsistent UI-label casing, and setup-time promises. Grounded in the July 2026 site audit, where every check here caught a real, repeated instance. Activate for a pre-launch sweep, a scheduled docs-manager run, or 'lint this page/section for brand and formatting issues'."
 ---
 
 # Consistency lint: brand, banned words, formatting, time promises
@@ -38,13 +38,16 @@ Every hit outside a `keywords:` array should read **ChatFlows.io**. Watch for th
 
 ## §3 — Plan naming and jargon drift
 
-**"Free plan" instead of "Free Forever":**
+**Plan talk, old brands and hidden features:**
 
 ```bash
-grep -rnE --include="*.mdx" "Free[- ]plan" .
+grep -rniE --include="*.mdx" "wamatrix|whatsmark|free forever|free[- ]plan|free trial|free-vs-paid|paid (plan|feature)|professional plan" . | grep -v "^./billing/plan-and-billing.mdx"
+grep -rniE --include="*.mdx" "woocommerce|indiamart|lead ads|instagram|appointment|coupon|bank transfer|paypal|razorpay|sign up for" .
 ```
 
-Mechanical fix: `Free plan` / `Free-plan` → `Free Forever plan` / `Free Forever workspaces`.
+Fix: delete plan and trial notes outside `billing/plan-and-billing.mdx` (feature pages say nothing about plans). Old brand names: always a bug. Hidden features (see `chatflows-docs` §2): remove, unless a booking is only a made-up flow example.
+
+**Old menu names:** check "Go to …" steps and titles against the Shopify-mode table in `chatflows-docs` §2 (Chat → Inbox, Contacts → Customers, Channels → WhatsApp Setup, and so on).
 
 **Jargon drift (judgement — escalate, don't auto-fix):** developer-y terms on a customer page where the surrounding sentence needs rewriting, not just a word swap — unqualified `WABA`/`WhatsApp Business Account`, `embedded signup` as a bare noun, `webhook subscription`. Find candidates:
 

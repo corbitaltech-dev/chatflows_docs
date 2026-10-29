@@ -48,7 +48,7 @@ Always the same shape, so it's scannable and diffable across runs:
 - [ ] docs.json still valid, if touched
 ```
 
-**Blocking** = anything in the banned-claims list (§2 of `chatflows-docs`), a broken link the change introduces, an unmarked paid feature, an unverifiable factual claim, or a grammar error that breaks the sentence's meaning. **Non-blocking** = casing drift, a stylistic preference, a pre-existing issue outside the diff. Never block on something the change didn't touch — call it out under "Pre-existing" instead so it doesn't get read as this author's mistake.
+**Blocking** = anything in the banned-claims list (§2 of `chatflows-docs`), a broken link the change introduces, plan or trial talk outside the billing page, a WaMatrix/WhatsMark mention, a hidden Shopify-only feature, an unverifiable factual claim, or a grammar error that breaks the sentence's meaning. **Non-blocking** = casing drift, a stylistic preference, a pre-existing issue outside the diff. Never block on something the change didn't touch — call it out under "Pre-existing" instead so it doesn't get read as this author's mistake.
 
 ## What you don't decide
 

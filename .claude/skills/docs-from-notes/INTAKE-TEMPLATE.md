@@ -17,12 +17,9 @@ _(the outcome, not the mechanism. "Save replies you send often and reuse them", 
 ## 3. Who uses it / when
 >
 
-## 4. Plan gate
-_(tick one — if unsure, write "not sure" and the agent will verify)_
-- [ ] Free Forever
-- [ ] Professional (paid)
-- [ ] Add-on
-- [ ] Not sure
+## 4. Shopify-only check
+_(the agent checks this for you)_
+- Is this feature shown to Shopify merchants? Hidden features (WooCommerce, Instagram, Appointments, coupons, non-Shopify payments, sign-up) are not documented.
 
 ## 5. Where it lives in the app
 _(nav path, e.g. Settings → Canned Replies)_
@@ -63,8 +60,9 @@ _(the agent will flag these to verify against the product rather than guess)_
 ---
 
 ### Reminders the agent will enforce for you (so you don't have to)
-- Brand is **ChatFlows.io** everywhere; the free plan is **Free Forever**.
-- **No prices or specific limits** on the page — those live only on Free vs. paid; the agent links there.
+- Brand is **ChatFlows.io** everywhere. Never WaMatrix or WhatsMark.
+- **No plans, prices or limits** on the page — only the billing page talks about plans.
+- Menu names use the Shopify-mode labels (Inbox, Customers, WhatsApp Setup…).
 - **No setup-time promises** ("in a couple of minutes").
 - Screenshots become plain markdown images with descriptive alt text written for you.
 - Every label you give gets **verified against the product** before it ships.
