@@ -2,7 +2,7 @@
 title: "Basic Flow Steps"
 description: "Everything you need to send messages to your customers, from simple text messages to interactive buttons and approved WhatsApp or Messenger templates."
 icon: "message-square"
-keywords: ["ChatFlows", "ChatFlows.io", "flow steps", "text message", "button message", "call to action", "WhatsApp template", "Messenger template", "WhatsApp Flow"]
+keywords: ["ChatFlows", "ChatFlows.io", "flow steps", "text message", "button message", "call to action", "WhatsApp template", "Messenger template", "WhatsApp Flow", "WhatsApp Forms"]
 ---
 
 The **Basic** category includes the flow steps you'll use most often to send messages to your customers.
@@ -86,7 +86,7 @@ The Body Text, Button Text, and Button Link fields are all required. The Body Te
 
 **What it does.** Sends one of your approved [WhatsApp templates](/messaging/whatsapp-templates).
 
-**When to use it.** Use this step to send a ready-made, approved message from your flow — such as an order confirmation, a delivery update, or an appointment reminder.
+**When to use it.** Use this step to send a ready-made, approved message from your flow — such as an order confirmation or a delivery update.
 
 **How to set it up.** Click the step and select your template. If it has [variables](/getting-started/concepts#the-building-blocks), fill in each **Body variable** field — type **@** to insert a [merge field](/messaging/merge-fields) like the contact's name. If the template has a media header, upload the image, video, or document here too.
 
@@ -112,9 +112,9 @@ You need at least one approved template first. See [WhatsApp Templates](/messagi
 
 ## WhatsApp Flow
 
-**What it does.** Sends one of your [WhatsApp Flows](/appointment-and-flow/whatsapp-flows) as part of the conversation — the customer clicks a button to open the form right inside WhatsApp.
+**What it does.** Sends one of your [WhatsApp Forms](/messaging/whatsapp-forms) as part of the conversation — the customer clicks a button to open the form right inside WhatsApp. In the builder, this step is called **WhatsApp Flow**.
 
-**When to use it.** Use this to collect structured answers, or let someone book an appointment, from within an automated conversation — for example, after a Button Message option like "Book an appointment."
+**When to use it.** Use this to collect structured answers from within an automated conversation — for example, a return request or a delivery address, after a Button Message option like "Return an item."
 
 **How to set it up.** Select the **WhatsApp Flow** to send. You can also add optional **Body Text** and change the **Button Text** shown on the message (defaults to "Open").
 
@@ -162,10 +162,6 @@ Turn this on to show a **"typing..."** bubble for a moment before your message a
 
 
 ![The Show typing indicator switch turned on, with helper text explaining it briefly shows the WhatsApp typing bubble before the message sends and requires an inbound trigger](/automation/img/basic/show-typing-indicator.png)
-
-<Note>
-This is a paid feature. The **Show Typing Indicator** option isn't available on the free trial. See [Trial vs. Paid Plans](/getting-started/free-vs-paid).
-</Note>
 
 ---
 

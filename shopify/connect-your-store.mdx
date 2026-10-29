@@ -1,25 +1,41 @@
 ---
-title: "Shopify"
-description: "Connect your Shopify store to send WhatsApp messages automatically."
+title: "Connect your store"
+description: "Your Shopify store connects when you install ChatFlows.io. Check the connection, bring in your customers, and fix it if something goes wrong."
 icon: "shopping-bag"
-keywords: ["ChatFlows", "Shopify", "integration", "ecommerce", "cart abandoned"]
+keywords: ["ChatFlows", "ChatFlows.io", "Shopify", "connect store", "integration", "ecommerce", "cart abandoned", "sync contacts", "reconnect"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-Connect your Shopify store to automatically send WhatsApp messages when customers **place an order, their order ships, their order is delivered, or they leave without completing a purchase**.
+Your Shopify store lets ChatFlows.io send WhatsApp messages automatically when customers **place an order, their order ships, their order is delivered, or they leave without completing a purchase**.
 
-Find it under **Settings → Shopify**.
+Your store is connected for you when you [install ChatFlows.io from Shopify](/getting-started/install-from-shopify). There's nothing to set up here first.
 
-<Note>
-The Shopify integration is available on the **Professional plan**.
-</Note>
+To check the connection, go to **Settings → Shopify** in your workspace.
 
-## Connecting your store
+## What the status means
+
+The store card shows one of these:
+
+- **Connected** — everything works. Store events can start your automations.
+- **Connecting…** — setup is still finishing. It changes to **Connected** a moment later.
+- **Needs attention** — something stopped working. The card shows the reason Shopify gave. See [Fix a connection that needs attention](#fix-a-connection-that-needs-attention).
+
+If your store isn't connected, you see the **Connect Shopify** form instead of the card.
+
+<Figure
+  src="/settings/img/shopify-connected.png"
+  alt="The Shopify Store card showing a connected store, a Disconnect button and the Sync contacts section"
+  caption="Image shows a connected Shopify store."
+/>
+
+## Connect with your store domain
+
+You only need this if your store isn't connected — for example, after you disconnected it.
 
 <Steps>
 <Step title="Enter your store domain">
-  Enter your Shopify store domain exactly as Shopify provides it, ending with `.myshopify.com`. For example, `your-store.myshopify.com`.
+  On **Settings → Shopify**, enter your Shopify store domain exactly as Shopify provides it, ending with `.myshopify.com`. For example, `your-store.myshopify.com`.
 
   <Figure
     src="/settings/img/connect-shopify.png"
@@ -29,7 +45,7 @@ The Shopify integration is available on the **Professional plan**.
 </Step>
 
 <Step title="Click Connect Shopify">
-  You are taken to Shopify.
+  You are taken to Shopify. If you're reconnecting the same store, the button says **Reconnect Shopify**.
 </Step>
 
 <Step title="Approve the permissions">
@@ -44,35 +60,47 @@ The Shopify integration is available on the **Professional plan**.
 
 <Step title="You come back automatically">
   The status shows **Connecting…** and then **Connected** a moment later.
-
-  <Figure
-    src="/settings/img/shopify-connected.png"
-    alt="The Shopify Store card showing a connected store, a Disconnect button and the Sync contacts section"
-    caption="Image shows a connected Shopify store."
-  />
 </Step>
 </Steps>
 
+<Note>
+  Shoppers can only get WhatsApp messages if your Shopify checkout asks for a phone number.
+</Note>
+
+## Fix a connection that needs attention
+
+When the card says **Needs attention**, read the reason it shows. Then use one of these buttons.
+
+- **Reconnect** — takes you back to Shopify to approve ChatFlows.io again. Use it when Shopify's access was removed, or when ChatFlows.io needs a permission your store hasn't given yet.
+- **Retry setup** — runs the store setup again, without going to Shopify. Use it when your store's access still works but setup didn't finish, for example after a problem has been fixed. You only see it when a retry can help.
+
+<Tip>
+  Seeing **Delivery updates are off**? Your **Out for delivery** and **Delivered** automations need one more permission. Click **Reconnect** and approve it in Shopify. If there's no **Reconnect** button in that message, contact support.
+</Tip>
 
 ## What you can build
 
-After you connect your store, Shopify events such as a **new order, shipping updates, order cancellation, or an abandoned cart** can automatically start an automation flow.
+Once your store is connected, Shopify events such as a **new order, shipping updates, order cancellation, or an abandoned cart** can start an automation.
 
-Choose the event when creating your flow. See [Shopify triggers](/automation/flow-builder#shopify) for the full list and when each one runs.
+Choose the event when you create your automation. See [Shopify triggers](/automation/flow-builder#shopify) for the full list and when each one runs.
 
 ## Your first message must be a template
 
-Every Shopify flow starts when something happens in your store, not when a customer messages you. For events like **abandoned carts, new orders, and shipping updates,** the customer usually hasn't contacted you yet, so you can't send a regular WhatsApp message.
+Every Shopify automation starts when something happens in your store, not when a customer messages you. For events like **abandoned carts, new orders, and shipping updates,** the customer usually hasn't contacted you yet, so you can't send a regular WhatsApp message.
 
-Start every Shopify flow with a [**Template Message**](/automation/flow-steps/basic#whatsapp-template). Once the customer replies, you can continue the conversation with normal text messages within [**the 24-hour messaging window**](/getting-started/concepts#two-whatsapp-rules-that-shape-everything).
+Start every Shopify automation with a [**Template Message**](/automation/flow-steps/basic#whatsapp-template). Once the customer replies, you can continue the conversation with normal text messages within [**the 24-hour messaging window**](/getting-started/concepts#two-whatsapp-rules-that-shape-everything).
 
 ## How abandoned carts work
 
 An **abandoned cart** is a customer who reached your checkout and left without paying.
 
-If they have not paid **one hour later**, the cart counts as abandoned and your flow runs. Paying stops it, and only one reminder is sent per cart. The one hour is fixed and cannot be changed.
+Each cart-recovery automation has its own **Send after (minutes)** setting. You choose how long to wait — from 5 minutes up to 1,440 minutes (one day). If you leave it empty, it waits 60 minutes.
+
+If the customer pays before the wait is over, no message is sent. You can run two automations with different waits — a quick nudge and a later follow-up.
 
 Add `order.recovery_url` to your message to send them straight back to their checkout, with everything still in the basket.
+
+See [Recover abandoned carts](/shopify/cart-recovery) for a step-by-step guide.
 
 ## Order details in your messages
 
@@ -82,9 +110,9 @@ See [Merge fields](/messaging/merge-fields#available-fields) for everything you 
 
 ## Bringing in your existing customers
 
-Click **Sync contacts** to import the customers already in your store into [Contacts](/contacts/managing-contacts).
+Click **Sync contacts** to import the customers already in your store into [Customers](/contacts/managing-contacts).
 
-Only customers **with a phone number** are imported. The rest are skipped.
+Only customers **with a phone number** are imported. The rest are skipped. If a customer has tags in Shopify, they come across as customer tags.
 
 <Figure
   src="/settings/img/shopify-connected.png"
@@ -94,16 +122,26 @@ Only customers **with a phone number** are imported. The rest are skipped.
 
 ## Disconnecting
 
-Click **Disconnect** and confirm. Shopify events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
+Click **Disconnect** and confirm. Shopify events stop starting your automations right away.
+
+Your customers stay in your workspace. Your automations are not deleted. If you connect the store again later, your existing automations work again.
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Automation Flows" icon="bot" href="/automation/overview">
-    Build the message that goes out on each store event.
+  <Card title="Recover abandoned carts" icon="shopping-cart" href="/shopify/cart-recovery">
+    Remind shoppers who left at checkout, at the time you choose.
   </Card>
 
-  <Card title="WooCommerce" icon="shopping-cart" href="/settings/woocommerce">
-    Connect a WooCommerce store instead, or as well.
+  <Card title="Send order updates" icon="package" href="/shopify/order-updates">
+    Tell buyers when their order is placed, shipped, out for delivery or delivered.
+  </Card>
+
+  <Card title="Your Shopify dashboard" icon="chart-line" href="/shopify/shopify-dashboard">
+    See orders, revenue and recovered carts in one place.
+  </Card>
+
+  <Card title="ChatFlows.io in your Shopify admin" icon="layout-dashboard" href="/shopify/shopify-admin-app">
+    Check your store's status from inside Shopify.
   </Card>
 </CardGroup>

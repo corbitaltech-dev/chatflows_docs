@@ -1,13 +1,13 @@
 ---
 title: "Dashboard & Feature Usage"
-description: "View your workspace overview and plan usage."
+description: "See your store's orders and recovered carts, how much you've used, and how your messaging is doing — all on one page."
 icon: "gauge"
-keywords: ["ChatFlows", "dashboard", "feature usage", "charts", "usage limits", "plan usage"]
+keywords: ["ChatFlows", "dashboard", "feature usage", "charts", "usage limits", "plan usage", "Shopify", "orders", "cart recovery"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-The **Dashboard** gives you a quick overview of your workspace. Check your recent activity, monitor plan usage, track messaging performance, and see what's coming up—all from one place.
+The **Dashboard** gives you a quick overview of your workspace. Check your store's results, see how much you've used, track messaging performance, and see what's coming up — all from one place.
 
 ## What you see first
 
@@ -19,13 +19,19 @@ The **Dashboard** gives you a quick overview of your workspace. Check your recen
 
 At the top of the Dashboard, you'll see today's date and quick actions:
 
-- **Open Inbox** — go to [Chat](/messaging/live-chat).
+- **Open Inbox** — go to the [Inbox](/messaging/live-chat).
 - **New Campaign** — start a [campaign](/messaging/campaigns).
 - **Refresh Data** — Update the dashboard with the latest data.
 
+## Your Shopify store
+
+When your Shopify store is connected, the top of the Dashboard shows how your store is doing. You see your orders, revenue, abandoned and recovered carts, and the results of your Shopify automations.
+
+See [Your Shopify dashboard](/shopify/shopify-dashboard) for what each number means.
+
 ## Usage & Limits
 
-This section shows your current **plan usage**.
+This section shows how much you've used and your limits.
 
 At the top, you'll see how many features are tracked, how many are unlimited, and which tracked feature has the highest usage.
 
@@ -34,9 +40,9 @@ Each card shows how much of a feature you've used, its limit, and the percentage
 There are two types of limits:
 
 - **Period quota** — Resets at the start of each billing cycle, such as AI tokens and campaigns.
-- **Plan limit** — Does not reset and counts the total allowed by your plan, such as contacts and team members.
+- **Plan limit** — Does not reset. It counts the total you're allowed, such as contacts and team members.
 
-Click **View all** to open [Plans & subscription](/billing/plans-and-subscription), where you can see your usage against your plan's limits and upgrade if you need more room.
+Click **View all** to see every limit on your [Billing](/billing/plan-and-billing) page.
 
 ## Upcoming Campaigns
 
@@ -81,7 +87,7 @@ This section contains your workspace charts. Each chart has its own **date range
     See everything that has happened in your workspace.
   </Card>
 
-  <Card title="Plans & Subscription" icon="credit-card" href="/billing/plans-and-subscription">
-    Upgrade if you are always close to a limit.
+  <Card title="Your Shopify dashboard" icon="shopping-bag" href="/shopify/shopify-dashboard">
+    Orders, revenue, recovered carts and automation results in one place.
   </Card>
 </CardGroup>

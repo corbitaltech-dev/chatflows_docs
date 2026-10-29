@@ -2,14 +2,14 @@
 title: "Roles & Permissions"
 description: "Choose what each team member can do in ChatFlows.io."
 icon: "shield-check"
-keywords: ["ChatFlows", "roles", "permissions", "access", "team", "restrict"]
+keywords: ["ChatFlows", "roles", "permissions", "access", "team", "Team & Agents", "restrict"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
 A role is a set of permissions that you assign to team members. Create roles like **Sales Agent**, **Support Agent**, or **Manager**, then assign them to one or more team members. Updating a role automatically updates permissions for everyone using it.
 
-Find it under **Setup → Roles** in the sidebar, or click **Manage Roles** on the Team page.
+Find it under **Setup → Roles** in the sidebar, or click **Manage Roles** on the **Team & Agents** page.
 
 <Figure
   src="/core-setup/img/role.png"
@@ -22,7 +22,7 @@ The table shows each role's **Name**, how many **Members** hold it, and when it 
 ## Create a role
 
 <Steps>
-<Step title="Click Create Role">
+<Step title="Click Add Role">
   The button sits at the top right. A form opens on the right side of the screen.
 </Step>
 
@@ -56,6 +56,8 @@ Most features offer the same four permissions:
 
 ### Permissions that work differently
 
+The role form lists some features by their older names. For example, **Contacts** means Customers, **Channels** means WhatsApp Setup, and **Chat** means **Inbox**.
+
 The table below explains the extra permissions available for each feature.
 
 | Feature | Extra permission |
@@ -64,7 +66,7 @@ The table below explains the extra permissions available for each feature.
 | **Channels** | [**Connect**](/core-setup/channels/whatsapp#connecting-whatsapp) and [**Disconnect**](/core-setup/channels/messenger#managing-a-connected-page) the channels. |
 | **Team** | [**Invite:**](/core-setup/team-and-roles#invite-them-by-email) sends an email invitation. |
 | **Templates** | [**Load:**](/messaging/whatsapp-templates#adding-a-template) pulls your approved templates in from Meta. |
-| **WhatsApp Flows** | [**Submission view:**](/appointment-and-flow/whatsapp-flows#submissions) members can see customer responses. |
+| **WhatsApp Flows** (the [WhatsApp Forms](/messaging/whatsapp-forms) page) | [**Submission view:**](/messaging/whatsapp-forms#submissions) members can see customer responses. |
 | **Chat** | Works differently — see [Chat](#chat) below. |
 
 ### Chat
@@ -90,11 +92,11 @@ A role that members are using cannot be deleted. Move those members to a differe
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Team" icon="users" href="/core-setup/team-and-roles">
+  <Card title="Team & Agents" icon="users" href="/core-setup/team-and-roles">
     Add members and give them the roles you have made.
   </Card>
 
-  <Card title="Live Chat" icon="messages-square" href="/messaging/live-chat">
+  <Card title="Inbox" icon="messages-square" href="/messaging/live-chat">
     See how chat permissions play out in the inbox.
   </Card>
 </CardGroup>

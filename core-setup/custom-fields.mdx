@@ -1,17 +1,17 @@
 ---
-title: "Custom Fields"
+title: "Customer Fields"
 description: "Store extra details about your contacts, like company name or renewal date."
 icon: "square"
-keywords: ["ChatFlows", "custom fields", "contacts", "data"]
+keywords: ["ChatFlows", "custom fields", "customer fields", "contacts", "data"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-Custom fields let you store your own details on every contact, beyond name and phone number. For example: "Company Name", "Contract Value", "Preferred Language", or "Birth Date".
+Customer fields let you store your own details on every contact, beyond name and phone number. For example: "Company Name", "Contract Value", "Preferred Language", or "Birth Date".
 
 Once you create a field, it appears on the **Custom Fields** tab whenever you add or edit a contact. You can also show it as a column in your contact list and use it to personalize messages.
 
-## Creating a custom field
+## Creating a customer field
 
 <Figure
   src="/core-setup/img/custom field-form.png"
@@ -20,11 +20,11 @@ Once you create a field, it appears on the **Custom Fields** tab whenever you ad
 />
 
 <Steps>
-<Step title="Open Setup → Custom Fields">
-  Click **Setup** in the sidebar, then **Custom Fields**.
+<Step title="Open Setup → Customer Fields">
+  Click **Setup** in the sidebar, then **Customer Fields**.
 </Step>
 
-<Step title="Click Create Custom Field">
+<Step title="Click Add Custom Field">
   A form opens on the right side of the screen. It has two tabs: **Basic** and **Options**.
 </Step>
 
@@ -84,29 +84,29 @@ When you click **Next**, the Options tab changes based on the type you picked:
 
 ## Editing and managing fields
 
-Your custom fields appear in a list on the same page. From here you can:
+Your customer fields appear in a list on the same page. From here you can:
 
 - **Edit** — open the row menu and click **Edit** to change the label, type, or options. The Slug cannot be changed.
 - **Turn on or off** — use the **Active** toggle on each row. An inactive field is hidden from the contact form and from message personalization, but the saved values are kept. Turn it back on and everything returns.
 - **Delete** — open the row menu and click **Delete** to remove the field everywhere.
 
 <Warning>
-Deleting a custom field cannot be undone. The field disappears from every contact. If you are not sure, turn the field off with the **Active** toggle instead.
+Deleting a customer field cannot be undone. The field disappears from every contact. If you are not sure, turn the field off with the **Active** toggle instead.
 </Warning>
 
-## Where custom fields appear
+## Where customer fields appear
 
 After you create a field, it works across ChatFlows.io:
 
 - On the **Custom Fields** tab when you [add or edit a contact](/contacts/managing-contacts).
 - As a column in your contact list, if **Show in Table** is on.
 - As a personalization token in messages and campaigns — you pick it from the token list, no typing needed. See [Merge Fields](/messaging/merge-fields).
-- When [importing contacts](/contacts/import-export), you can match a column in your file to a custom field.
-- When a customer fills a [WhatsApp Flow](/appointment-and-flow/whatsapp-flows), their answers can be saved into custom fields.
+- When [importing contacts](/contacts/import-export), you can match a column in your file to a customer field.
+- When a customer fills a [WhatsApp Form](/messaging/whatsapp-forms), their answers can be saved into customer fields.
 
 ## Tips
 
-- Create your custom fields before importing contacts, so you can fill them during the import.
+- Create your customer fields before importing contacts, so you can fill them during the import.
 - Use **Dropdown** instead of **Text** when the answers come from a fixed list. It keeps the data clean.
 - Turn on **Show in Table** only for the fields you check often, so your contact list stays easy to read.
 
@@ -114,15 +114,15 @@ After you create a field, it works across ChatFlows.io:
 
 <CardGroup cols={2}>
   <Card title="Merge Fields" icon="braces" href="/messaging/merge-fields">
-    Use custom fields to personalize your messages.
+    Use customer fields to personalize your messages.
   </Card>
 
   <Card title="Import & Export" icon="arrow-right-left" href="/contacts/import-export">
-    Fill custom fields while importing contacts.
+    Fill customer fields while importing contacts.
   </Card>
 
-  <Card title="WhatsApp Flows" icon="zap" href="/appointment-and-flow/whatsapp-flows">
-    Save form answers into custom fields.
+  <Card title="WhatsApp Forms" icon="zap" href="/messaging/whatsapp-forms">
+    Save form answers into customer fields.
   </Card>
 
   <Card title="Campaigns" icon="send" href="/messaging/campaigns">

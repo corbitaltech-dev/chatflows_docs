@@ -19,7 +19,7 @@ When someone says **"hi" → send them a welcome message. Then → show three bu
 </Step>
 
 <Step title="Set the Start Trigger">
-Every flow starts with a [**Start Trigger**](#the-start-trigger). Click it to choose who can start the flow and what should start it. For example, you can trigger the flow when someone sends a keyword or when an event occurs in your [Shopify](#shopify) or [WooCommerce](#woocommerce) store.
+Every flow starts with a [**Start Trigger**](#the-start-trigger). Click it to choose who can start the flow and what should start it. For example, you can trigger the flow when someone sends a keyword or when an event occurs in your [Shopify](#shopify) store.
 </Step>
 
 <Step title="Add flow steps">
@@ -44,11 +44,10 @@ Type **@** in almost any text box to drop in a merge field, such as the contact'
 </Tip>
 
 ## The Start Trigger
-Every flow begins here. The Start Trigger decides when your chatbot starts. Open the **Start Trigger** settings, then choose one of the three Trigger Sources.
+Every flow begins here. The Start Trigger decides when your chatbot starts. Open the **Start Trigger** settings, then choose one of the two Trigger Sources.
 
 - **Message** — someone sends you a WhatsApp message.
 - **Shopify** — something happens to an order in your Shopify store.
-- **WooCommerce** — something happens to an order in your WooCommerce store.
 
 The rest of the card changes depending on which one you choose, The following sections explain each option.
 
@@ -95,36 +94,22 @@ Pick one **Shopify Event**:
 | **Order delivered** | The order reached the customer. |
 | **Order cancelled** | The order was cancelled. |
 
-**What it's for.** Keep customers updated throughout their order journey. Use it to recover abandoned carts, send order notifications, and reduce support questions like "Where's my order?"
+**Send after (minutes).** When you pick **Cart abandoned**, a **Send after (minutes)** box appears. It sets how long to wait before the flow starts. You can enter 5 to 1,440 minutes. If you leave it empty, the wait is 60 minutes. If the shopper completes the order first, nothing is sent. Under 15 minutes is usually too soon. Shopify reports a checkout as soon as the shopper reaches it, so they may still be filling in their details. See [Recover abandoned carts](/shopify/cart-recovery).
 
-**Example.** When a customer abandons their **cart**, wait **1 hour** before sending a **WhatsApp template** with a discount code to encourage them to return and complete their order.
+**What it's for.** Keep customers updated throughout their order journey. Use it to recover abandoned carts, send [order updates](/shopify/order-updates), and reduce support questions like "Where's my order?"
+
+**Example.** Pick **Cart abandoned** and set **Send after (minutes)** to **60**. Then send a **WhatsApp template** with a link back to their cart, to encourage them to return and complete their order.
 
 <Note>
 The Order **Out for Delivery** and **Order Delivered** triggers work only if your shipping carrier sends tracking updates to Shopify. If you mark orders as fulfilled manually, these triggers won't run.
 </Note>
 
-### WooCommerce
-
-This flow runs automatically when an order changes in your connected WooCommerce store. Customers don't need to send a message. ChatFlows.io uses the customer's phone number to find the correct contact and start the flow.
-
-Pick one **WooCommerce Event**:
-
-![Start Trigger settings with Trigger Source set to WooCommerce and a WooCommerce Event dropdown set to Cart abandoned, above a note about the 24-hour messaging window](/automation/img/woocommerce-trigger.png)
-
-| Event | Fires when |
-| --- | --- |
-| **Order create** | A new order is placed. |
-| **Order update** | An order's status changes. |
-| **Cart abandoned** | Someone leaves without completing checkout. |
-
-Order Update runs every time an order status changes. Add a [**WooCommerce Condition**](/automation/flow-steps/integrations#woocommerce-condition) node after the trigger to choose which status changes should continue the flow. For example, you can send a message only when an order is marked as shipped or only for cash-on-delivery orders.
-
 <Warning>
-Shopify and WooCommerce flows start automatically when an event occurs in your store, not when a customer sends you a message. If the customer hasn't messaged you in the last [24 hours](/getting-started/concepts#two-whatsapp-rules-that-shape-everything), start the flow with a [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template). This ensures the first message is delivered successfully.
+Shopify flows start automatically when an event occurs in your store, not when a customer sends you a message. If the customer hasn't messaged you in the last [24 hours](/getting-started/concepts#two-whatsapp-rules-that-shape-everything), start the flow with a [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template). This ensures the first message is delivered successfully.
 </Warning>
 
 <Note>
-Shopify and WooCommerce triggers are paid features and need a connected store. See [Shopify](/settings/shopify) and [WooCommerce](/settings/woocommerce).
+Shopify triggers need a connected store. See [Connect your store](/shopify/connect-your-store).
 </Note>
 
 ## The five categories

@@ -13,8 +13,8 @@ In any text box that supports merge fields, type `@`. A list opens — pick a fi
 
 ## Where you can use them
 
-- The [live chat](/messaging/live-chat) composer
-- [Canned replies](/core-setup/canned-replies)
+- The [Inbox](/messaging/live-chat) reply box
+- [Quick replies](/core-setup/canned-replies)
 - [Campaigns](/messaging/campaigns)
 - [WhatsApp template](/messaging/whatsapp-templates) variable values
 - [Sending a template to one contact](/contacts/managing-contacts#actions-on-a-single-contact) from a contact row
@@ -28,7 +28,7 @@ In any text box that supports merge fields, type `@`. A list opens — pick a fi
 </Accordion>
 
 <Accordion title="Custom fields">
-  Every active [custom field](/core-setup/custom-fields) you create shows up.
+  Every active [customer field](/core-setup/custom-fields) you create shows up.
 </Accordion>
 
 <Accordion title="Team fields">
@@ -36,20 +36,13 @@ In any text box that supports merge fields, type `@`. A list opens — pick a fi
 </Accordion>
 
 <Accordion title="Shopify order fields">
-  Available when you have connected a [Shopify](/settings/shopify) store. They use the contact's most recent order or cart: Order Number, Order Date, Order Total, Subtotal, Shipping Price, Total Tax, Currency, Discount Code, Discount Amount, Items Summary, Payment Status, Payment Method, Fulfillment Status, Shipment Status, Tracking Number, Tracking URL, Cart Recovery Link, Shipping City, Shipping Address, and Order Note.
-</Accordion>
-
-<Accordion title="WooCommerce order fields">
-  Available when you have connected a [WooCommerce](/settings/woocommerce) store. They use the contact's most recent order or cart: Order Number, Order Date, Order Total, Order Status, Currency, Currency Symbol, Payment Method, Items Summary, Tracking Number, Tracking URL, and Cart Recovery Link.
+  Available when you have [connected your Shopify store](/shopify/connect-your-store). They use the contact's most recent order or cart: Order Number, Order Date, Order Total, Subtotal, Shipping Price, Total Tax, Currency, Discount Code, Discount Amount, Items Summary, Payment Status, Payment Method, Fulfillment Status, Shipment Status, Tracking Number, Tracking URL, Cart Recovery Link, Shipping City, Shipping Address, and Order Note.
 </Accordion>
 </AccordionGroup>
 
-## Appointment and flow fields
+## Automation fields
 
-Two places add their own fields to the picker:
-
-- **[Appointments](/appointment-and-flow/appointments)** — reminder and confirmation messages get appointment fields like the date, time and service.
-- **[Automation flows](/automation/flow-builder)** — a flow can use answers the customer gave earlier in the chat.
+[Automation flows](/automation/flow-builder) add their own fields to the picker. A flow can use answers the customer gave earlier in the chat.
 
 <Warning>
   If a contact doesn't have a value for a merge field, that part stays blank. The message is still sent. You cannot set a default value.
@@ -62,7 +55,7 @@ Two places add their own fields to the picker:
     Use merge fields to personalize a broadcast.
   </Card>
 
-  <Card title="Custom Fields" icon="list" href="/core-setup/custom-fields">
+  <Card title="Customer Fields" icon="list" href="/core-setup/custom-fields">
     Add your own fields so they become merge fields too.
   </Card>
 </CardGroup>

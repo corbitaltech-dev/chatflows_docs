@@ -1,6 +1,6 @@
 ---
 title: "Integration Flow Steps"
-description: "Save customer replies straight to a Google Sheet, or turn a booking into a Google Calendar event — automatically, with no manual copy-paste."
+description: "Save customer replies straight to a Google Sheet, or add them to Google Calendar as an event — automatically, with no manual copy-paste."
 icon: "cloud"
 keywords: ["ChatFlows", "ChatFlows.io", "flow steps", "google sheets", "google calendar", "integrations", "automation"]
 ---
@@ -15,7 +15,7 @@ Both steps need a connected Google account. Set one up first in [Google Accounts
 
 **What it does.** Adds a new row to a Google Sheet each time the flow reaches this step.
 
-**When to use it.** Use it to automatically save **leads**, **bookings**, **orders**, **survey responses**, or any other customer information in Google Sheets.
+**When to use it.** Use it to automatically save **leads**, **orders**, **return requests**, **survey responses**, or any other customer information in Google Sheets.
 
 **How to set it up.**
 
@@ -60,7 +60,7 @@ Add this step last, after all your questions — otherwise the answers that come
 
 **What it does.** Creates an event in your Google Calendar using details the customer gave you.
 
-**When to use it.** Appointments, site visits, consultations, demos — anything where a booking on WhatsApp should also appear in your calendar.
+**When to use it.** Callbacks, site visits, consultations, demos — anything where a time agreed on WhatsApp should also appear in your calendar.
 
 **How to set it up.**
 
@@ -74,7 +74,7 @@ Add this step last, after all your questions — otherwise the answers that come
 </Step>
 
 <Step title="Write the Event Title (required)">
-  For example, `Appointment with {'{{contact.first_name}}'}`.
+  For example, `Call with {'{{contact.first_name}}'}`.
 </Step>
 
 <Step title="Set the Start Date (required)">
@@ -107,45 +107,6 @@ The doctor sees it in their calendar, and because **Attendee Email** was filled 
 
 ---
 
-## WooCommerce Condition
-
-**What it does.** Checks one field of the WooCommerce order that started the flow, then sends the flow down a **yes** or **no** path.
-
-**When to use it.** Use it after an [**Order node**](/automation/flow-builder#woocommerce) trigger to run the flow only for specific orders, such as **shipped orders, cash-on-delivery orders, or high-value orders.**
-
-**How to set it up.** Pick a field, pick an operator, and type the value to compare against.
-
-The fields you can check:
-
-| Field | What it holds |
-| --- | --- |
-| **WooCommerce order status** | The order's status now, such as `completed` |
-| **Previous order status** | What it was before this change |
-| **Order total** | The order value |
-| **Currency** | The order's currency |
-| **Payment method** | How they paid |
-| **Is cash on delivery** | `1` for yes, `0` for no |
-| **Tracking number** | The shipment tracking number, if your store sets one |
-| **Item count** | How many items were bought |
-
-The operators: **Equals**, **Does not equal**, **Contains**, **Starts with**, **Ends with**, **Is empty**, **Is not empty**, **Greater than**, **Less than**, **Greater than or equal**, **Less than or equal**.
-
-Connect the green **yes** handle on the top right and the red **no** handle on the bottom right to what should happen next.
-
-![WooCommerce Condition settings with an Order field set to WooCommerce order status, an Operator set to Equals, a Value of Completed, a warning that it only works in flows triggered by WooCommerce, and a note that the green top-right handle is the YES branch and the red bottom-right handle is the NO branch](/automation/img/integrations/woo-condition.png)
-
-**Example**
-
-> **Order field:** WooCommerce order status
-> **Operator:** Equals
-> **Value:** Completed
-
-<Note>
-This step only works in a flow whose **Start Trigger** is a WooCommerce event. In any other flow it always takes the **no** path.
-
-On **abandoned cart** events, most order fields are empty — only **Order total** and **Item count** have values, so check one of those.
-</Note>
-
 ## A worked example
 
 A consultancy books discovery calls end to end:
@@ -169,7 +130,7 @@ A consultancy books discovery calls end to end:
     Connect the Google account these steps use.
   </Card>
 
-  <Card title="Appointments" icon="calendar-check" href="/appointment-and-flow/appointments">
-    A dedicated booking experience with real availability slots.
+  <Card title="Merge Fields" icon="braces" href="/messaging/merge-fields">
+    Use saved answers in any field by typing @.
   </Card>
 </CardGroup>

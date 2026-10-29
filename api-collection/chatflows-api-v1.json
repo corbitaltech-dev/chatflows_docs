@@ -654,7 +654,7 @@
             "get": {
                 "tags": ["Channels"],
                 "summary": "List Channels",
-                "description": "**Scope required:** `channels:read`\n\nReturns all connected messaging accounts for the workspace across **every platform** (WhatsApp, Messenger, Instagram, Telegram, …), each with their endpoints nested under `endpoints`.\n\nAll accounts include `id`, `platform`, `name`, `account_id`, `status`, `connection_method`, `is_default`, `connected_at` and `endpoints`. WhatsApp accounts additionally include the phone-number shape (`waba_id`, `business_profile`, `mm_lite_status`, `phone_numbers`) for backward compatibility. The default channel is listed first.",
+                "description": "**Scope required:** `channels:read`\n\nReturns all connected messaging accounts for the workspace across **every platform** (WhatsApp and Messenger), each with their endpoints nested under `endpoints`.\n\nAll accounts include `id`, `platform`, `name`, `account_id`, `status`, `connection_method`, `is_default`, `connected_at` and `endpoints`. WhatsApp accounts additionally include the phone-number shape (`waba_id`, `business_profile`, `mm_lite_status`, `phone_numbers`) for backward compatibility. The default channel is listed first.",
                 "operationId": "channelsListChannels",
                 "security": [
                     {

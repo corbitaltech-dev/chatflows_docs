@@ -1,27 +1,27 @@
 ---
-title: "Managing Contacts"
-description: "Keep your all contacts organized and manage their information from a single place."
+title: "Managing customers"
+description: "Keep all your customers organized and manage their details from one place."
 icon: "contact"
-keywords: ["ChatFlows", "contacts", "contact list", "contact detail", "notes", "initiate chat"]
+keywords: ["ChatFlows", "contacts", "customers", "contact list", "contact detail", "notes", "initiate chat"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-Manage all your customers and leads in one place. Keeping your contact list organized makes it easier to find people, start conversations, send broadcasts, and use Flows throughout ChatFlows.io.
+Manage all your customers and leads in one place, from the **Customers** menu. Keeping your list organized makes it easier to find people, start conversations, send broadcasts, and use automations throughout ChatFlows.io.
 
 
 <Note>
-Before creating contacts, connect at least one WhatsApp or Messenger channel. Without a connected channel, you can't create contacts or send messages. See [Channels](/core-setup/channels/whatsapp) to set up.
+Before creating contacts, connect at least one WhatsApp or Messenger channel. Without a connected channel, you can't create contacts or send messages. See [WhatsApp Setup](/core-setup/channels/whatsapp) to set up.
 </Note>
 
 ## Creating a contact
 
 <Steps>
-<Step title="Open Contacts">
-  Click **Contacts** in the Sidebar menu.
+<Step title="Open Customers">
+  Click **Customers** in the sidebar menu.
 </Step>
 
-<Step title="Click Create Contact">
+<Step title="Click Add Contact">
   The button sits at the top right of the page. A form opens on the right side of the screen.
 
   <Figure
@@ -54,7 +54,7 @@ Before creating contacts, connect at least one WhatsApp or Messenger channel. Wi
 </Step>
 
 <Step title="Choose a status">
-   In the **Status** field. Click the `+` icon to create a new status without leaving the form.
+  Pick the contact's current stage in the **Status** field. Click the `+` icon to create a new status without leaving the form.
 </Step>
 
 <Step title="Choose a source">
@@ -70,11 +70,11 @@ Before creating contacts, connect at least one WhatsApp or Messenger channel. Wi
 </Step>
 
 <Step title="Add groups and labels">
-  Pick one or more **Groups** and **Labels**. Click the `+` icon to create a new group or label without leaving the form.
+  Pick one or more **Groups** and **Labels**. Click the `+` icon to create a new customer group or customer tag without leaving the form.
 </Step>
 
 <Step title="Fill in custom fields">
-  If you created [custom fields](/core-setup/custom-fields), open the **Custom Fields** tab at the top of the form and fill them in. A red `*` on the tab means a required field is still empty.
+  If you created [customer fields](/core-setup/custom-fields), open the **Custom Fields** tab at the top of the form and fill them in. A red `*` on the tab means a required field is still empty.
 </Step>
 
 <Step title="Save">
@@ -83,7 +83,7 @@ Before creating contacts, connect at least one WhatsApp or Messenger channel. Wi
 </Steps>
 
 <Note>
-Contacts aren't only created by hand. When a new person messages you first, ChatFlows.io saves them as a contact automatically, with a default status, source, and more. You can choose those defaults in [Contact Configuration](/settings/contact-configuration).
+Contacts aren't only created by hand. When a new person messages you first, ChatFlows.io saves them as a contact automatically, with a default status, source, and more. You can choose those defaults in [Settings → Customers](/settings/contact-configuration).
 </Note>
 
 ## Fields worth knowing more about
@@ -100,7 +100,7 @@ A contact can be linked to more than one WhatsApp channel. Every time you edit t
 
 **Custom Fields**
 
-Extra details you decide to store, such as a company name or an order number. See [Custom Fields](/core-setup/custom-fields) to create your own.
+Extra details you decide to store, such as a company name or an order number. See [Customer Fields](/core-setup/custom-fields) to create your own.
 
 ## Editing a contact
 
@@ -147,8 +147,8 @@ Click the menu icon at the end of a contact row to see these actions:
 - **View** — open the contact details panel.
 - **Edit** — open the contact form to change details.
 - **Open chat** — go to the existing conversation with this contact. Shown only when the contact has already chatted with you.
-- **Initiate chat** — start a new WhatsApp conversation by sending an approved template message. Shown only when the contact has a phone number and a linked WhatsApp channel. See [Live Chat](/messaging/live-chat) to understand the 24-hour messaging window.
-- **Send flow** — send one of your [WhatsApp Flows](/appointment-and-flow/whatsapp-flows) to this contact. Shown only when the contact has a phone number and a linked WhatsApp channel.
+- **Initiate chat** — start a new WhatsApp conversation by sending an approved template message. Shown only when the contact has a phone number and a linked WhatsApp channel. See [Inbox](/messaging/live-chat) to understand the 24-hour messaging window.
+- **Send flow** — send one of your [WhatsApp Forms](/messaging/whatsapp-forms) to this contact. Shown only when the contact has a phone number and a linked WhatsApp channel.
 - **Merge with…** — join this contact with a duplicate record. See [Bulk Actions & Merge](/contacts/bulk-actions-and-merge).
 - **Delete** — remove the contact. This also permanently deletes their conversations and chat media, and cannot be undone.
 
@@ -190,7 +190,7 @@ Filters also help with bulk work. Filter your list first, then select all matchi
     Update many contacts together, or join duplicates.
   </Card>
 
-  <Card title="Custom Fields" icon="square" href="/core-setup/custom-fields">
+  <Card title="Customer Fields" icon="square" href="/core-setup/custom-fields">
     Store extra details on every contact.
   </Card>
 

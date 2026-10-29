@@ -1,8 +1,8 @@
 ---
-title: "Live Chat"
+title: "Inbox"
 description: "One place to handle all your WhatsApp and Messenger chats with customers."
 icon: "messages-square"
-keywords: ["ChatFlows", "chat", "live chat", "team inbox", "conversations", "inbox"]
+keywords: ["ChatFlows", "chat", "live chat", "Inbox", "team inbox", "conversations"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
@@ -10,12 +10,12 @@ import { Figure } from '/snippets/browser-frame.jsx';
 When a customer messages you on WhatsApp or Messenger, it shows up here instantly, and anyone from your team can reply. Everyone can work from the same screen, so nothing gets missed.
 
 <Note>
-  Before you start chat needs at least one **connected WhatsApp or Messenger channel** to work. Without that, the screen stays empty because there are no messages to receive. See [Connecting WhatsApp](/core-setup/channels/whatsapp) to set up.
+  Before you start, the Inbox needs at least one **connected WhatsApp or Messenger channel** to work. Without that, the screen stays empty because there are no messages to receive. See [Connect WhatsApp](/core-setup/channels/whatsapp) to set up.
 </Note>
 
-## What you see on the chat screen
+## What you see in the Inbox
 
-When you open Chat, the screen is split into four parts:
+When you open **Inbox**, the screen is split into four parts:
 
 1. **Sidebar** — filters to show only the chats you want.
 2. **Chat list** — all your conversations, newest at the top.
@@ -36,7 +36,7 @@ A chat can begin in two ways.
 
 This is how most chats start. The customer messages you first and then it shows up in your list, and you can open it and reply.
 
-If the customer is not in your contacts, they are added automatically. You do not need to add them.
+If the customer is not in your customer list yet, they are added automatically. You do not need to add them.
 
 ### You message first
 
@@ -119,9 +119,9 @@ Above the box you get basic formatting: bold, italic, strikethrough, and lists.
 2. **Attach** — send an image, video, audio file, or document. This opens your [Media Library](/media/media-library), where you can upload a new file or pick one you have already used.
 3. **Location** — send a location pin.
 4. **Contact card** — send contact details to the customer. You can pick one of your saved contacts, or type in new details by hand. Details you type here are only sent in the message and are not saved to your contacts.
-5. **Canned reply** — pick a saved reply you use often. You can also type `/` to open this. See [Canned Replies](/core-setup/canned-replies).
-6. **Run a flow** — start an automation in this chat. See [Chatbot Flows](/automation/overview).
-7. **Send form** — send a form the customer can fill in, like a booking form. (WhatsApp only) See [WhatsApp Flows](/appointment-and-flow/whatsapp-flows).
+5. **Canned reply** — pick a quick reply, a saved reply you use often. You can also type `/` to open this. See [Quick Replies](/core-setup/canned-replies).
+6. **Run a flow** — start an automation in this chat. See [Automations](/automation/overview).
+7. **Send form** — send a form the customer can fill in, like a feedback or address form. (WhatsApp only) See [WhatsApp Forms](/messaging/whatsapp-forms).
 8. **AI assist** — rewrite or translate your message with AI. See [AI assist](#ai-assist) below.
 9. **Send template** — send an approved template. See [WhatsApp Templates](/messaging/whatsapp-templates) and [Messenger Templates](/messaging/messenger-templates).
 10. **Voice notes** — When the box is empty, the send button turns into a microphone. Click it to record, then send it as a voice note.
@@ -139,7 +139,7 @@ You get:
 
 After AI rewrites your message you can **Undo** it or **Regenerate** for a different version.
 
-A meter shows how many AI tokens you have left from your plan's limit.
+A meter shows how many AI tokens you have left this month.
 
 <Figure
   src="/messaging/img/chat/chat-ai-assist.png"
@@ -159,9 +159,9 @@ Click the person icon at the top right to open details about the customer you ar
 
 ### Contact
 
-Their name, phone, email, source, type, who they are assigned to, labels, and the channel they use. Click **Edit** to change any of it without leaving the chat.
+Their name, phone, email, source, type, who they are assigned to, labels (customer tags), and the channel they use. Click **Edit** to change any of it without leaving the chat.
 
-See [Managing Contacts](/contacts/managing-contacts) for what each field means.
+See [Managing customers](/contacts/managing-contacts) for what each field means.
 
 <Figure
   src="/messaging/img/chat/chat-contact-panel-details.png"
@@ -195,7 +195,7 @@ The sidebar splits your chats into groups. Each one shows a live count, so you c
 - **Mine** — chats assigned to you.
 - **Unassigned** — chats nobody has picked up yet.
 - **Not Replied** — a switch that shows only chats where the customer is still waiting for an answer.
-- **Status** — your contact statuses, like New Lead or Customer. See [Statuses](/core-setup/statuses).
+- **Status** — your customer statuses, like New Lead or Customer. See [Customer Statuses](/core-setup/statuses).
 - **Team Inbox** — chats sent to a team you belong to, like Sales or Support.
 
 Click a filter again to turn it off.
@@ -246,10 +246,6 @@ Owners and admins see every chat. Everyone else only sees chats assigned to them
 ## Looking at older chats
 
 Click the calendar icon at the top of the sidebar to pick a date range. The chat list and the open chat both jump to that period. Clear the date chip to come back to now.
-
-<Note>
-How far back you can go depends on your plan. Dates outside your limit are greyed out in the picker, with a link to upgrade.
-</Note>
 
 ## Live updates
 

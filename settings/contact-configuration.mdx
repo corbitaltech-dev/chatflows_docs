@@ -1,18 +1,18 @@
 ---
-title: "Contact Defaults"
+title: "Customer Defaults"
 description: "Set the default details applied to new contacts that are created automatically when someone messages you."
 icon: "user-cog"
-keywords: ["ChatFlows", "ChatFlows.io", "contacts", "auto-create", "contact defaults", "assignment"]
+keywords: ["ChatFlows", "ChatFlows.io", "contacts", "customers", "auto-create", "contact defaults", "customer defaults", "assignment"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-In **Settings → Contacts**, you decide the default type, status, source, labels, groups, and assignee given to each new contact that's created automatically.
+In **Settings → Customers**, you decide the default type, status, source, labels, groups, and assignee given to each new contact that's created automatically.
 
 <Figure
   src="/settings/img/contact-configuration-form.png"
   alt="Global Defaults form showing Type, status, source, assign to, WhatsApp channel, labels, and groups fields"
-  caption="Image shows the Global Defaults form on the Settings → Contacts page."
+  caption="Image shows the Global Defaults form on the Settings → Customers page."
 />
 
 ## Global Defaults
@@ -21,11 +21,11 @@ These apply to every new contact, whichever channel they come from.
 
 - **Type** — what a new contact is called: **Guest**, **Lead** or **Customer**. See [Managing Contacts](/contacts/managing-contacts).
 - **Status** — the [status](/core-setup/statuses) a new contact starts in, like *New*.
-- **Source** — where the contact came from. See [Sources](/core-setup/sources).
+- **Source** — where the contact came from. See [Customer Sources](/core-setup/sources).
 - **Assign To** — who handles the new contact. See [Ways to assign](#ways-to-assign).
 - **WhatsApp Channel** — pick one of your connected WhatsApp channels.
-- **Labels** — optional. Add one or more [labels](/core-setup/labels) to every new contact.
-- **Groups** — optional. Put every new contact into one or more [groups](/core-setup/groups).
+- **Labels** — optional. Add one or more [customer tags](/core-setup/labels) to every new contact.
+- **Groups** — optional. Put every new contact into one or more [customer groups](/core-setup/groups).
 
 <Note>
 Type, Status, Source, Assign To and WhatsApp Channel are all required. You cannot save until each one is filled in.
@@ -43,13 +43,12 @@ Type, Status, Source, Assign To and WhatsApp Channel are all required. You canno
 A contact is created with these settings whenever a new person reaches you, and not only through chat:
 
 - A message on [WhatsApp](/core-setup/channels/whatsapp) or [Messenger](/core-setup/channels/messenger).
-- An order from [Shopify](/settings/shopify) or [WooCommerce](/settings/woocommerce).
-- A booking made through [Appointments](/appointment-and-flow/appointments).
+- An order from your [Shopify store](/shopify/connect-your-store).
 
 ## What's next
 
 <CardGroup cols={2}>
-  <Card title="Statuses" icon="circle" href="/core-setup/statuses">
+  <Card title="Customer Statuses" icon="circle" href="/core-setup/statuses">
     Track where every contact stands in your sales journey.
   </Card>
 

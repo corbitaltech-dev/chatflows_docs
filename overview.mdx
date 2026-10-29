@@ -2,25 +2,18 @@
 title: "API Overview"
 description: "Connect your own software to ChatFlows.io — what the API can do, and how to get your access token."
 icon: "eye"
-keywords: ["ChatFlows", "API", "REST API", "developer", "token", "scopes", "pagination"]
+keywords: ["ChatFlows", "API", "REST API", "developer", "token", "Developer API Keys", "scopes", "pagination"]
 ---
 
 ## What is the ChatFlows.io API
 
 The ChatFlows.io REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from the same address as your workspace, at `/api/v1`.
 
-<Warning>
-  API access is a paid feature. Upgrade your plan to start using the ChatFlows.io API.
-</Warning>
-
 ## Getting access
 
 <Steps>
-  <Step title="Upgrade to Professional">
-    If you're on the Free plan, upgrade from **Billing** in the account menu (click your name at the bottom of the sidebar) first. See [Plans & subscription](/billing/plans-and-subscription).
-  </Step>
   <Step title="Create a workspace API token">
-    Go to [Setup → API Tokens](/core-setup/api-keys) and create a token. Choose the abilities (scopes) it needs — tokens are only granted the scopes you select.
+    Go to [Setup → Developer API Keys](/core-setup/api-keys) and create a token. Choose the abilities (scopes) it needs — tokens are only granted the scopes you select.
   </Step>
   <Step title="Authenticate your requests">
     Every request must include your token as a bearer token:
@@ -110,5 +103,5 @@ If you'd rather browse and test everything from a single interactive Swagger pag
 </CardGroup>
 
 <Info>
-  Already have a Professional plan? Head to [Setup → API Tokens](/core-setup/api-keys) in your workspace to create your first token.
+  Ready to start? Head to [Setup → Developer API Keys](/core-setup/api-keys) in your workspace to create your first token.
 </Info>
