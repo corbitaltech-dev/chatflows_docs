@@ -38,19 +38,19 @@
     },
     {
       "source": "/ai-and-more/appointments",
-      "destination": "/appointment-and-flow/appointments"
+      "destination": "/messaging/whatsapp-forms"
     },
     {
       "source": "/ai-and-more/whatsapp-flows",
-      "destination": "/appointment-and-flow/whatsapp-flows"
+      "destination": "/messaging/whatsapp-forms"
     },
     {
       "source": "/automation/appointments",
-      "destination": "/appointment-and-flow/appointments"
+      "destination": "/messaging/whatsapp-forms"
     },
     {
       "source": "/automation/whatsapp-flows",
-      "destination": "/appointment-and-flow/whatsapp-flows"
+      "destination": "/messaging/whatsapp-forms"
     },
     {
       "source": "/automation/message-types/basic",
@@ -71,6 +71,38 @@
     {
       "source": "/automation/message-types/integrations",
       "destination": "/automation/flow-steps/integrations"
+    },
+    {
+      "source": "/getting-started/free-vs-paid",
+      "destination": "/billing/plan-and-billing"
+    },
+    {
+      "source": "/getting-started/register",
+      "destination": "/getting-started/install-from-shopify"
+    },
+    {
+      "source": "/settings/woocommerce",
+      "destination": "/shopify/connect-your-store"
+    },
+    {
+      "source": "/settings/shopify",
+      "destination": "/shopify/connect-your-store"
+    },
+    {
+      "source": "/appointment-and-flow/appointments",
+      "destination": "/messaging/whatsapp-forms"
+    },
+    {
+      "source": "/appointment-and-flow/whatsapp-flows",
+      "destination": "/messaging/whatsapp-forms"
+    },
+    {
+      "source": "/billing/plans-and-subscription",
+      "destination": "/billing/plan-and-billing"
+    },
+    {
+      "source": "/billing/payments-and-invoices",
+      "destination": "/billing/plan-and-billing"
     }
   ],
   "navigation": {
@@ -83,28 +115,36 @@
             "pages": [
               "index",
               "features",
-              "getting-started/concepts",
-              "getting-started/free-vs-paid",
-              "getting-started/register",
-              "getting-started/log-in"
+              "getting-started/install-from-shopify",
+              "getting-started/log-in",
+              "getting-started/concepts"
+            ]
+          },
+          {
+            "group": "Shopify",
+            "pages": [
+              "shopify/connect-your-store",
+              "shopify/shopify-admin-app",
+              "shopify/cart-recovery",
+              "shopify/order-updates",
+              "shopify/shopify-dashboard"
             ]
           },
           {
             "group": "Billing",
             "pages": [
-              "billing/plans-and-subscription",
-              "billing/payments-and-invoices"
+              "billing/plan-and-billing"
             ]
           },
           {
-            "group": "Channels",
+            "group": "WhatsApp Setup",
             "pages": [
               "core-setup/channels/whatsapp",
               "core-setup/channels/messenger"
             ]
           },
           {
-            "group": "Contacts",
+            "group": "Customers",
             "pages": [
               "contacts/managing-contacts",
               "contacts/import-export",
@@ -118,7 +158,8 @@
               "messaging/messenger-templates",
               "messaging/campaigns",
               "messaging/live-chat",
-              "messaging/merge-fields"
+              "messaging/merge-fields",
+              "messaging/whatsapp-forms"
             ]
           },
           {
@@ -141,13 +182,6 @@
             ]
           },
           {
-            "group": "Appointments & Flows",
-            "pages": [
-              "appointment-and-flow/whatsapp-flows",
-              "appointment-and-flow/appointments"
-            ]
-          },
-          {
             "group": "Reporting",
             "pages": [
               "reporting/dashboard-and-usage",
@@ -158,7 +192,9 @@
           },
           {
             "group": "Media",
-            "pages": ["media/media-library"]
+            "pages": [
+              "media/media-library"
+            ]
           },
           {
             "group": "Setup",
@@ -188,8 +224,6 @@
               "settings/google-accounts",
               "settings/inbound-media",
               "settings/opt-out",
-              "settings/shopify",
-              "settings/woocommerce",
               "settings/profile"
             ]
           }

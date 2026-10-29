@@ -1,0 +1,82 @@
+---
+title: "Send order updates"
+description: "Message customers on WhatsApp when an order is placed, shipped, out for delivery, delivered or cancelled."
+icon: "package"
+keywords: ["ChatFlows", "ChatFlows.io", "order updates", "shipping updates", "COD confirmation", "Shopify", "WhatsApp"]
+---
+
+Keep customers updated about their order on WhatsApp. Fewer people will ask "Where is my order?"
+
+Each update is an automation. It starts by itself when something happens to an order in your store.
+
+## Order events you can use
+
+| Event | When it runs |
+| --- | --- |
+| **Order placed** | A new order is placed. |
+| **COD order confirmed** | A cash-on-delivery order is confirmed. |
+| **Order partially shipped** | Part of the order has shipped. |
+| **Order shipped** | The whole order has shipped. |
+| **Order out for delivery** | The courier is delivering it today. |
+| **Order delivered** | The order reached the customer. |
+| **Order cancelled** | The order was cancelled. |
+
+<Warning>
+  **Order out for delivery** and **Order delivered** only work if your shipping carrier sends tracking updates to Shopify.
+  If you mark orders as fulfilled by hand, these two events never run.
+</Warning>
+
+## Before you start
+
+- Your [store is connected](/shopify/connect-your-store).
+- Your [WhatsApp number is connected](/core-setup/channels/whatsapp).
+- You have an **approved** [WhatsApp template](/messaging/whatsapp-templates) for each update.
+  Order updates usually fit the **Utility** category.
+
+## Build an order update
+
+<Steps>
+  <Step title="Create an automation" icon="plus">
+    Go to **Automations** and create a new automation.
+  </Step>
+
+  <Step title="Set the trigger" icon="play">
+    Click the **Start Trigger**. Choose **Shopify** as the trigger source, then pick the event, for example **Order shipped**.
+  </Step>
+
+  <Step title="Add your template" icon="file-text">
+    Add a [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template) step and pick your approved message.
+    Add order details like the order number or tracking link. Type `@` to pick them.
+    See [merge fields](/messaging/merge-fields) for the full list.
+  </Step>
+
+  <Step title="Save and turn it on" icon="check">
+    Save the automation. It runs for every matching order from now on.
+  </Step>
+</Steps>
+
+Make one automation for each event you want to use.
+
+## Ask for feedback after delivery
+
+1. Make an automation with the **Order delivered** event.
+2. Add a [**Delay**](/automation/flow-steps/advanced) step, for example 2 days.
+3. Add a template that asks how the order went.
+
+## How ChatFlows.io finds the customer
+
+ChatFlows.io uses the phone number on the order to find the customer.
+If there is no customer with that number yet, one is created.
+Orders without a phone number don't get a message.
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Your Shopify dashboard" icon="chart-line" href="/shopify/shopify-dashboard">
+    See how many messages were sent, delivered and read for each event.
+  </Card>
+
+  <Card title="Recover abandoned carts" icon="shopping-cart" href="/shopify/cart-recovery">
+    Remind shoppers who left without paying.
+  </Card>
+</CardGroup>
