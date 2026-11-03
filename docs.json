@@ -7,10 +7,7 @@
     "light": "#C6FE1E",
     "dark": "#166534"
   },
-  "favicon": {
-    "light": "/images/favicon-green.svg",
-    "dark": "/favicon.png"
-  },
+  "favicon": "/images/chatflows-favicon.png",
   "redirects": [
     {
       "source": "/quickstart",
@@ -344,8 +341,8 @@
     ]
   },
   "logo": {
-    "light": "/images/chatflows-dark-green.svg",
-    "dark": "/images/chatflows-green.svg"
+    "light": "/images/chatflows-logo-light.png",
+    "dark": "/images/chatflows-logo-dark.png"
   },
   "navbar": {
     "links": [
