@@ -1,1 +1,4 @@
 docs.chatflows.io.code-workspace
+# docs-screenshots login (holds a password)
+.env.screenshots
+shots/
