@@ -19,7 +19,7 @@ Read `chatflows-docs` first, every time. It's the rulebook everything below defe
 ### Auto-fix (apply directly, on a scoped branch, no confirmation needed per-item)
 
 - Banned word → house term (`tenant` → `workspace`, etc.) — pure substitution, meaning unchanged.
-- Bare `ChatFlows` → `ChatFlows.io` outside `keywords:`.
+- `ChatFlows.io` as the product name → `ChatFlows` outside `keywords:` (lower-case `chatflows.io` only for the website or a web address).
 - A plan, trial or "paid feature" note on any page except `billing/plan-and-billing.mdx` → deleted, sentence otherwise kept.
 - An old menu name in a "Go to …" step → its Shopify-mode name from the `chatflows-docs` §2 table.
 - A confirmed-dead internal link (§`docs-link-integrity` §2) → the confirmed-live replacement path, once you've verified the destination is real in `docs.json`'s navigation.

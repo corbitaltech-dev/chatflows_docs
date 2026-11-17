@@ -41,7 +41,7 @@ Bucket findings by theme (lettered, A/B/C…) the way the July 2026 audit did �
 ## 3. Report template
 
 ```markdown
-# ChatFlows.io Documentation Audit
+# ChatFlows Documentation Audit
 
 **Site:** docs.chatflows.io (Mintlify)
 **Date:** <date>
@@ -75,7 +75,7 @@ section because it's easy to miss in a general grep pass and has shipped before>
 
 Every finding needs a **fix**, but not every fix is something to apply unilaterally. Mirror the split `docs-manager` uses:
 
-- **Mechanical** (banned words, bare `ChatFlows`, `Free plan` naming, bare images, icon typos, dead old-path links) — state the fix directly; these are find-replace, no judgement.
+- **Mechanical** (banned words, `ChatFlows.io` as the product name, `Free plan` naming, bare images, icon typos, dead old-path links) — state the fix directly; these are find-replace, no judgement.
 - **Judgement** (jargon-heavy pages needing a voice rewrite, Title Case vs sentence-case as a site convention, which of two duplicate pages is canonical, whether to rename a folder) — state the **options**, not a single prescribed answer, and mark it "needs a decision" in the effort column. An audit that quietly picks the answer for an IA question removes the user's ability to disagree.
 
 ## 5. Common finding categories, from real audits (a checklist, not an exhaustive list)

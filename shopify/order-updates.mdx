@@ -1,9 +1,9 @@
 ---
 title: "Shopify order updates on WhatsApp"
 sidebarTitle: "Send order updates"
-description: "Message customers on WhatsApp when an order is placed, shipped, out for delivery, delivered or cancelled."
+description: "Tell buyers on WhatsApp when their order is placed, shipped, out for delivery, delivered or cancelled, and get fewer “Where is my order?” messages."
 icon: "package"
-keywords: ["ChatFlows", "ChatFlows.io", "order updates", "shipping updates", "COD confirmation", "Shopify", "WhatsApp"]
+keywords: ["ChatFlows", "chatflows.io", "order updates", "shipping updates", "COD confirmation", "Shopify", "WhatsApp"]
 ---
 
 Keep customers updated about their order on WhatsApp. Fewer people will ask "Where is my order?"
@@ -71,11 +71,32 @@ Make one automation for each event you want to use.
 2. Add a [**Delay**](/automation/flow-steps/advanced) step, for example 2 days.
 3. Add a template that asks how the order went.
 
-## How ChatFlows.io finds the customer
+## How ChatFlows finds the customer
 
-ChatFlows.io uses the phone number on the order to find the customer.
+ChatFlows uses the phone number on the order to find the customer.
 If there is no customer with that number yet, one is created.
 Orders without a phone number don't get a message.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I send Shopify order updates by SMS or email instead of WhatsApp?">
+    No. ChatFlows sends Shopify order updates on WhatsApp only, from your connected WhatsApp number. Customers are matched by the phone number on the order.
+  </Accordion>
+
+  <Accordion title="Does ChatFlows change or cancel my orders in Shopify?">
+    No. ChatFlows only reads your store. It never changes your orders or products.
+  </Accordion>
+
+  <Accordion title="Do I need to change my Shopify theme to send order updates?">
+    No. ChatFlows doesn't add anything to your storefront or theme. Order events reach ChatFlows from Shopify itself.
+  </Accordion>
+
+  <Accordion title="Can I message a customer who has never contacted me on WhatsApp?">
+    Yes, with an approved template. WhatsApp requires the first message to a customer to be an approved template, and that is Meta's rule, not ChatFlows'.
+    See [Meta's template rules](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
+  </Accordion>
+</AccordionGroup>
 
 ## Where to next
 

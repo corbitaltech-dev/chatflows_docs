@@ -1,6 +1,6 @@
 ---
 name: docs-fact-check
-description: How to verify a documentation claim against the real ChatFlows.io product before publishing it — locating the feature in the Laravel/Vue reseller source at /home/laravel/whatsmarkio_reseller (branch `chatflows`, Shopify-only mode), confirming exact UI button and status labels, checking which features Shopify-only mode hides, and telling sub-tenant behaviour apart from reseller-admin and platform behaviour. Activate when writing any factual claim about how the product behaves, when a page mentions a button/screen/limit, when auditing an existing page for accuracy, or when the user asks whether a documented behaviour is real.
+description: How to verify a documentation claim against the real ChatFlows product before publishing it — locating the feature in the Laravel/Vue reseller source at /home/laravel/whatsmarkio_reseller (branch `chatflows`, Shopify-only mode), confirming exact UI button and status labels, checking which features Shopify-only mode hides, and telling sub-tenant behaviour apart from reseller-admin and platform behaviour. Activate when writing any factual claim about how the product behaves, when a page mentions a button/screen/limit, when auditing an existing page for accuracy, or when the user asks whether a documented behaviour is real.
 ---
 
 # Fact-checking a docs claim
@@ -9,7 +9,7 @@ Every behavioural claim in the docs must be traceable to the product. A page tha
 
 **Product source:** `/home/laravel/whatsmarkio_reseller`, **branch `chatflows`** — Laravel + Vue/Inertia (`resources/js/pages`, no `app/Livewire`). This is the reseller/white-label build: the same codebase serves a plain B2C tenant, a reseller's own admin workspace, and a reseller's end customer (a "sub-tenant"), so confirm which of the three a claim is about before grepping.
 
-**Shopify-only mode.** The ChatFlows.io deployment runs with `SHOPIFY_ONLY_MODE=true`. Before documenting any feature, check `config/shopify_only.php`: `hidden_features`, `hidden_modules`, `hidden_integrations`, `hidden_platforms` and `offered_gateways` say what merchants never see, and `sidebar_labels` / `settings_labels` give the menu names they do see. A feature that exists in the code but is hidden there must not be documented. The reseller guide `docs/integrations/shopify-integration-setup.md` §11a (App Store onboarding) and §11b (Shopify-only mode) describes the merchant experience.
+**Shopify-only mode.** The ChatFlows deployment runs with `SHOPIFY_ONLY_MODE=true`. Before documenting any feature, check `config/shopify_only.php`: `hidden_features`, `hidden_modules`, `hidden_integrations`, `hidden_platforms` and `offered_gateways` say what merchants never see, and `sidebar_labels` / `settings_labels` give the menu names they do see. A feature that exists in the code but is hidden there must not be documented. The reseller guide `docs/integrations/shopify-integration-setup.md` §11a (App Store onboarding) and §11b (Shopify-only mode) describes the merchant experience.
 
 ⚠️ **The old path `/media/corbital/web_data/laravel.local/chatflows.io` (and the even older `chatflows-saas` Livewire v1 build) no longer exists on this machine.** Don't fact-check against it or assume it's still current — this reseller repo is the only verified source.
 
@@ -40,7 +40,7 @@ grep -rn "Sync Templates" resources/js --include="*.vue" | head
 
 If the string only appears in a translation file, check the current value there — that is what users see.
 
-**Plan gating and limits** — for a plain tenant or a reseller's own workspace, these live in the feature/plan seeders and are read through `FeatureService`. For a sub-tenant, the same `FeatureService` resolves against `SubTenantFeatureLimit`/`SubTenantPlan` instead (via `SubTenantContext::id()`) — same feature-key vocabulary, values sourced from the reseller's own plan rather than ChatFlows.io's. Feature pages do not mention plans, so you only need this when writing `billing/plan-and-billing.mdx`.
+**Plan gating and limits** — for a plain tenant or a reseller's own workspace, these live in the feature/plan seeders and are read through `FeatureService`. For a sub-tenant, the same `FeatureService` resolves against `SubTenantFeatureLimit`/`SubTenantPlan` instead (via `SubTenantContext::id()`) — same feature-key vocabulary, values sourced from the reseller's own plan rather than ChatFlows's. Feature pages do not mention plans, so you only need this when writing `billing/plan-and-billing.mdx`.
 
 **Behaviour** — trace the controller or job rather than inferring from the UI. There is no specialist-agent roster in this repo (no `.claude/agents/`) — read the relevant controller/route file directly instead of routing to a named subagent.
 

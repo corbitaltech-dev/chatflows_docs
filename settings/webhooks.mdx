@@ -1,13 +1,13 @@
 ---
 title: "Webhooks"
-description: "Webhook forwarding sends a copy of each WhatsApp event to your own server or app."
+description: "Send a copy of each WhatsApp event, like a new message or a template approval, to your own server or app in real time."
 icon: "webhook"
 keywords: ["ChatFlows", "webhooks", "webhook forwarding", "integration"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-Whenever there is activity on your WhatsApp account — like an incoming message, a template approval, or a delivery update — ChatFlows.io can send the details of that event to your own server, CRM, or automation tools.
+Whenever there is activity on your WhatsApp account — like an incoming message, a template approval, or a delivery update — ChatFlows can send the details of that event to your own server, CRM, or automation tools.
 
 Find it under **Settings → Webhooks**.
 
@@ -41,11 +41,11 @@ Only the workspace **owner** can change these settings.
 </Step>
 
 <Step title="Add a Signing Secret">
-  Click the refresh icon to generate a secret key. Your server uses this key to confirm that a webhook truly came from ChatFlows.io and wasn't sent by someone else.
+  Click the refresh icon to generate a secret key. Your server uses this key to confirm that a webhook truly came from ChatFlows and wasn't sent by someone else.
 </Step>
 
 <Step title="Pick your Events">
-  Choose which events to forward to your server — from 30 types like Messages, Template Status Updates, and Phone Number Quality Updates. Only the events you select are sent.
+  Choose which events to forward to your server — from a long list of event types, like **Messages**, **Message Template Status Update** and **Phone Number Quality Update**. Only the events you select are sent.
 </Step>
 
 <Step title="Save">

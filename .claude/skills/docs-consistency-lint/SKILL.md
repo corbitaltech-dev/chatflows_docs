@@ -28,13 +28,13 @@ grep -rln --include="*.mdx" -wE "quota|entitlement|endpoint|payload|webhook" . |
 
 Fix: swap for the house term (`tenant` → `workspace`, etc. — full table in `chatflows-docs` §1). This is a pure find-replace; no judgement needed unless the surrounding sentence was built around the banned word (see §3 jargon drift below for that case).
 
-## §2 — Bare "ChatFlows" instead of "ChatFlows.io"
+## §2 — "ChatFlows.io" used as the product name
 
 ```bash
-grep -rnE --include="*.mdx" "ChatFlows[^.]" . | grep -v "keywords"
+grep -rn --include="*.mdx" "ChatFlows\.io" . | grep -v "keywords"
 ```
 
-Every hit outside a `keywords:` array should read **ChatFlows.io**. Watch for the regex matching a sentence end (`ChatFlows.` with a period, which is correct) — read the actual match, don't blind-replace.
+The app is **ChatFlows** (its Shopify App Store name). Every hit outside a `keywords:` array should read **ChatFlows**. Only the website or a web address uses lower-case **chatflows.io** (`https://chatflows.io/`, `docs.chatflows.io`, `support@chatflows.io`).
 
 ## §3 — Plan naming and jargon drift
 

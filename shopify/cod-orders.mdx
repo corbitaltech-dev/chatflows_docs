@@ -1,14 +1,14 @@
 ---
 title: "Cash on delivery (COD) orders on WhatsApp"
 sidebarTitle: "COD orders"
-description: "What ChatFlows.io sends for cash-on-delivery orders today, and what it doesn't do yet."
+description: "Send WhatsApp order and shipping updates to cash-on-delivery buyers, and a message when a COD payment is received."
 icon: "banknote"
-keywords: ["ChatFlows", "ChatFlows.io", "COD", "cash on delivery", "COD confirmation", "Shopify", "WhatsApp", "order updates"]
+keywords: ["ChatFlows", "chatflows.io", "COD", "cash on delivery", "COD confirmation", "Shopify", "WhatsApp", "order updates"]
 ---
 
-Many stores sell with cash on delivery (COD). This page explains what ChatFlows.io sends for COD orders today.
+Many stores sell with cash on delivery (COD). COD buyers get the same WhatsApp order and shipping updates as every other buyer, and you can send a message when their COD payment is received. This page explains how it works.
 
-## How ChatFlows.io spots a COD order
+## How ChatFlows spots a COD order
 
 An order counts as COD when its payment method in Shopify has **cash on delivery** or **COD** in its name.
 In your messages, the **Payment Method** merge field then shows **Cash on Delivery**.
@@ -32,10 +32,10 @@ See [Send order updates](/shopify/order-updates) to set these up.
   Use it to thank the buyer once they have paid.
 </Note>
 
-## What ChatFlows.io doesn't do yet
+## What ChatFlows doesn't do yet
 
-ChatFlows.io doesn't ask buyers to confirm or cancel a COD order before it ships.
-It also doesn't change or cancel orders in Shopify. ChatFlows.io only reads your store.
+ChatFlows doesn't ask buyers to confirm or cancel a COD order before it ships.
+It also doesn't change or cancel orders in Shopify. ChatFlows only reads your store.
 
 An automation can't send COD orders down a different path from prepaid orders.
 If you want a different message for COD buyers, use the **COD payment received** event, or add the **Payment Method** merge field to your order message.
@@ -43,6 +43,28 @@ If you want a different message for COD buyers, use the **COD payment received**
 ## Example messages
 
 For ready-to-use wording, see the COD and order templates in [Template examples](/messaging/template-examples).
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can ChatFlows cancel or edit a COD order in Shopify for me?">
+    No. ChatFlows only reads your store and never changes or cancels orders. You manage COD orders in Shopify as usual.
+  </Accordion>
+
+  <Accordion title="Will ChatFlows recognize my cash on delivery payment method?">
+    Yes, if its name in Shopify contains **cash on delivery** or **COD**. A payment method without either wording isn't treated as COD.
+    See [How ChatFlows spots a COD order](#how-chatflows-spots-a-cod-order).
+  </Accordion>
+
+  <Accordion title="Will a COD buyer without a phone number get a WhatsApp message?">
+    No. ChatFlows finds the customer by the phone number on the order, and orders without one don't get a message.
+    See [Send order updates](/shopify/order-updates#how-chatflows-finds-the-customer).
+  </Accordion>
+
+  <Accordion title="Do I need to change my Shopify theme to handle COD orders on WhatsApp?">
+    No. ChatFlows doesn't add anything to your storefront or theme. It reads your orders from Shopify.
+  </Accordion>
+</AccordionGroup>
 
 ## Where to next
 

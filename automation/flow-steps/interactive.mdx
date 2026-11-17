@@ -1,11 +1,12 @@
 ---
-title: "Interactive Flow Steps"
+title: "Interactive steps: lists, media and locations"
+sidebarTitle: "Interactive Flow Steps"
 description: "Make your conversations more interactive with messages that customers can click, open, or view directly in WhatsApp."
 icon: "mouse-pointer-click"
-keywords: ["ChatFlows", "ChatFlows.io", "flow steps", "list message", "media message", "location", "contact card", "reaction"]
+keywords: ["ChatFlows", "chatflows.io", "flow steps", "list message", "media message", "location", "contact card", "reaction"]
 ---
 
-The **interactive** category flow steps let you send more than plain text. Share lists, images, videos, audio, documents, locations, contact cards, and emoji reactions to make conversations easier and more engaging.
+Customers answer faster when they can tap instead of type. The **Interactive** category steps let you send more than plain text. Share lists, images, videos, audio, documents, locations, contact cards, and emoji reactions to make conversations easier and more engaging.
 
 ![Flow Builder with the Interactive tab selected, showing the List Message, Media Message, Location, Contact Card, and Reaction tiles, and a flow connecting a Start Trigger to a List Message whose options lead to a Media Message, a Location, and a Contact Card](/automation/img/interactive/interactive-flow-steps.png)
 
@@ -28,7 +29,7 @@ The **interactive** category flow steps let you send more than plain text. Share
 - You can add up to 10 sections, but no more than **10 items in total** across all of them.
 - Section and item titles are limited to 24 characters, and item descriptions to 72 characters.
 
-Most of these limits come from WhatsApp, not from ChatFlows.io. See Meta's [Interactive list messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/interactive-list-messages) documentation.
+Most of these limits come from WhatsApp, not from ChatFlows. See Meta's [Interactive list messages](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/interactive-list-messages) documentation.
 
 ![List Message settings with Header, Body Text, Footer, and Button Text fields, and a Sections area containing a section with two items, plus Add Item and Add Section buttons](/automation/img/interactive/list-message-settings.png)
 
@@ -68,7 +69,7 @@ List Message is a WhatsApp-only step. It's hidden on Messenger flows.
 - **Document** — PDF, Word, Excel, PowerPoint, or plain text, up to 100 MB.
 - **Sticker** — WebP, up to 100 KB still or 500 KB animated.
 
-These file types and size limits come from WhatsApp, not from ChatFlows.io. See Meta's [Media](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/media) documentation.
+These file types and size limits come from WhatsApp, not from ChatFlows. See Meta's [Media](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/media) documentation.
 
 ![Media Message settings with a Media Type set to Image, an uploaded file named sale.png showing a New Arrivals catalog preview, and a Caption field describing the product catalog](/automation/img/interactive/media-message-settings.png)
 
@@ -171,7 +172,7 @@ A furniture shop answers a product enquiry:
 5. From `Visit the showroom`, a **Location** with the shop address.
 6. From `Talk to sales`, a **Contact Card** for the sales manager.
 
-![The finished clinic flow — a Start Trigger on first message leading to a welcome Text Message, then a Button Message with Book an appointment, Opening hours, and Speak to reception, each connected to an Ask Question or a Text Message](/automation/img/interactive/worked-example-furniture.png)
+![The finished furniture shop flow — a Start Trigger on the keywords sofa and couch leading to a List Message of sofa collections, which connect to Media Messages for each range and to a Button Message offering Visit Showroom or Talk to Sales, leading to a Location and a Contact Card](/automation/img/interactive/worked-example-furniture.png)
 
 
 ## Show Typing Indicator

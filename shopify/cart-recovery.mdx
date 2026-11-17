@@ -1,19 +1,19 @@
 ---
 title: "Shopify abandoned cart recovery on WhatsApp"
 sidebarTitle: "Recover abandoned carts"
-description: "Send a WhatsApp reminder to shoppers who reach checkout and leave without paying — at the time you choose."
+description: "Win back shoppers who leave checkout. ChatFlows sends a WhatsApp reminder with a link back to their cart, at the time you choose."
 icon: "shopping-cart"
-keywords: ["ChatFlows", "ChatFlows.io", "abandoned cart", "cart recovery", "Shopify", "checkout reminder", "WhatsApp"]
+keywords: ["ChatFlows", "chatflows.io", "abandoned cart", "cart recovery", "Shopify", "checkout reminder", "WhatsApp"]
 ---
 
 Some shoppers reach your checkout and leave without paying.
-ChatFlows.io can send them a WhatsApp message with a link back to their cart.
+ChatFlows can send them a WhatsApp message with a link back to their cart.
 
 ## How it works
 
 1. A shopper reaches your checkout and leaves without paying.
-2. ChatFlows.io waits for the time you set.
-3. ChatFlows.io checks the checkout again. If they still haven't paid, your automation sends the message.
+2. ChatFlows waits for the time you set.
+3. ChatFlows checks the checkout again. If they still haven't paid, your automation sends the message.
 4. If they pay before then, nothing is sent.
 
 Only one message goes out per cart for each automation.
@@ -23,11 +23,11 @@ Only one message goes out per cart for each automation.
 - Your [store is connected](/shopify/shopify-admin-app).
 - Your [WhatsApp number is connected](/core-setup/channels/whatsapp).
 - You have an **approved** [WhatsApp template](/messaging/whatsapp-templates) for the reminder. See [Template examples](/messaging/template-examples) for wording.
-- Your Shopify checkout asks for a **phone number**. Without one, ChatFlows.io can't reach the shopper.
+- Your Shopify checkout asks for a **phone number**. Without one, ChatFlows can't reach the shopper.
 
 <Note>
   The shopper hasn't messaged you, so the first message must be an approved template.
-  This is a WhatsApp rule, not a ChatFlows.io one. See [the 24-hour rule](/getting-started/concepts).
+  This is a WhatsApp rule, not a ChatFlows one. See [the 24-hour rule](/getting-started/concepts).
 </Note>
 
 ## Build the automation
@@ -65,7 +65,7 @@ Only one message goes out per cart for each automation.
 
 ## Choosing the wait time
 
-Shopify tells ChatFlows.io about a checkout as soon as the shopper **reaches** it, not when they leave.
+Shopify tells ChatFlows about a checkout as soon as the shopper **reaches** it, not when they leave.
 A very short wait can message someone who is still typing their address.
 
 - Under 15 minutes is usually too soon.
@@ -93,7 +93,7 @@ If the shopper pays after the first reminder, the second one is not sent.
 
 ## How recovery is counted
 
-A cart counts as **recovered** when it later becomes an order that isn't cancelled. ChatFlows.io matches the order to the cart in one of two ways:
+A cart counts as **recovered** when it later becomes an order that isn't cancelled. ChatFlows matches the order to the cart in one of two ways:
 
 - the same checkout is paid, or
 - the same customer places an order within 7 days.
@@ -103,6 +103,28 @@ Each cart counts once. A cart recovered after a reminder doesn't always mean the
 ## See your results
 
 The [Shopify dashboard](/shopify/shopify-dashboard) shows how many carts were abandoned, how many were recovered, and how many got a reminder.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Will a shopper who already paid still get a cart reminder?">
+    No. ChatFlows checks the checkout again just before sending, so a shopper who has already paid gets nothing.
+    See [How it works](#how-it-works).
+  </Accordion>
+
+  <Accordion title="Can I send cart reminders on SMS or email?">
+    No. ChatFlows sends Shopify cart reminders on WhatsApp only, from your connected WhatsApp number. Shoppers are matched by the phone number on their checkout.
+  </Accordion>
+
+  <Accordion title="Do I need to change my Shopify theme to recover abandoned carts?">
+    No. ChatFlows doesn't add anything to your storefront or theme. It only reads your store's checkouts and orders.
+  </Accordion>
+
+  <Accordion title="Can I put a discount code in my WhatsApp cart reminder?">
+    Yes. You can paste a discount code you created in Shopify into your reminder message. ChatFlows doesn't create discount codes for you.
+    See [Build the automation](#build-the-automation).
+  </Accordion>
+</AccordionGroup>
 
 ## Where to next
 

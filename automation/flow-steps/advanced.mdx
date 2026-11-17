@@ -1,11 +1,12 @@
 ---
-title: "Advanced Flow Steps"
+title: "Advanced steps: delays, conditions and API calls"
+sidebarTitle: "Advanced Flow Steps"
 description: "Control what happens next in your chatbot by adding decisions, delays, actions, and connections to other systems."
 icon: "sliders-horizontal"
-keywords: ["ChatFlows", "ChatFlows.io", "flow steps", "delay", "condition", "logic control", "api request", "save response", "wait for reply", "assign label", "sequence", "connect flow"]
+keywords: ["ChatFlows", "chatflows.io", "flow steps", "delay", "condition", "logic control", "api request", "save response", "wait for reply", "assign label", "sequence", "connect flow"]
 ---
 
-**Advanced** category flow steps control what your chatbot does behind the scenes. Use them to wait before replying, choose different paths, update contact details, connect with other systems, or start another flow.
+These steps make an automation smart. The **Advanced** category steps control what your chatbot does behind the scenes. Use them to wait before replying, choose different paths, update contact details, connect with other systems, or start another flow.
 
 ![Flow Builder showing a flow that uses Advanced steps — a Start Trigger on the keywords hi and hello leading to an Ask Question and a Get Input, then a Condition that splits into two paths, each running an Update Contact and an Assign Label before joining a closing Text Message](/automation/img/advance/advanced-flow-steps.png)
 
@@ -18,7 +19,7 @@ keywords: ["ChatFlows", "ChatFlows.io", "flow steps", "delay", "condition", "log
 **When to use it.** Use it whenever you want to wait before the next step. For example, send a follow-up after a day or remind customers about an abandoned cart after an hour.
 
 
--  Hours, Minutes and Seconds all start at 0 set at least one of them to make the step wait.
+-  Hours, Minutes and Seconds all start at 0; set at least one of them to make the step wait.
 
 ![Delay settings with a note explaining the flow pauses for a fixed amount of time and then continues on its own, separate Hours, Minutes and Seconds boxes, and a running total below them](/automation/img/advance/delay-settings.png)
 
@@ -154,7 +155,7 @@ Leave a field blank to keep whatever is already saved. The **Relation Type**, **
 
 **What it does.** Adds a [customer tag](/core-setup/labels) to the contact. If the label you need doesn't exist yet, you can create it here without leaving the flow.
 
-**When to use it.** Use it to automatically label customers based on their conversation. For example, add the `Hot Lead` label when someone asks about pricing, then send a [campaign](/messaging/campaigns), to everyone with that label.
+**When to use it.** Use it to automatically label customers based on their conversation. For example, add the `Hot Lead` label when someone asks about pricing, then send a [campaign](/messaging/campaigns) to everyone with that label.
 
 **Required fields**
 
@@ -197,7 +198,7 @@ Leave a field blank to keep whatever is already saved. The **Relation Type**, **
 **Required fields**
 
 - **URL** is the only required field.
-- **Method**, **Format**, **Body Params** and headers are all optional, The default settings work for most API requests, so you only need to change them if your API requires it.
+- **Method**, **Format**, **Body Params** and headers are all optional. The default settings work for most API requests, so you only need to change them if your API requires it.
 
 The response is only kept for the rest of that run. Add a **Save Response** step next to pull the values you need out of it.
 
@@ -228,7 +229,7 @@ The response is only kept for the rest of that run. Add a **Save Response** step
 - **Source API Request Node** is required.
 - You need at least **one mapping**, and each one needs both a **Source Path** and a **Variable Name**.
 
-![API Request settings with a note explaining the response is kept for this run and a Save Response step is needed to pull values out of it, a URL box containing a merge field, Method set to GET, Format set to JSON, and an empty Headers row with an Add Header button](/automation/img/advance/save-response-settings.png)
+![Save Response settings with a note explaining the step turns values from an API Request response into merge fields, a Source API Request Node dropdown, and a mapping with a Source Path of data.order_number and a Variable Name of order_number](/automation/img/advance/save-response-settings.png)
 
 **Example**
 

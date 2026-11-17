@@ -60,7 +60,7 @@ _(the agent will flag these to verify against the product rather than guess)_
 ---
 
 ### Reminders the agent will enforce for you (so you don't have to)
-- Brand is **ChatFlows.io** everywhere. Never WaMatrix or WhatsMark.
+- The product is **ChatFlows** (lower-case chatflows.io only for the website or a web address). Never WaMatrix or WhatsMark.
 - **No plans, prices or limits** on the page — only the billing page talks about plans.
 - Menu names use the Shopify-mode labels (Inbox, Customers, WhatsApp Setup…).
 - **No setup-time promises** ("in a couple of minutes").
