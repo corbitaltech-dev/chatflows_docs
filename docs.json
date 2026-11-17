@@ -79,11 +79,11 @@
     },
     {
       "source": "/settings/woocommerce",
-      "destination": "/shopify/connect-your-store"
+      "destination": "/shopify/shopify-admin-app"
     },
     {
       "source": "/settings/shopify",
-      "destination": "/shopify/connect-your-store"
+      "destination": "/shopify/shopify-admin-app"
     },
     {
       "source": "/appointment-and-flow/appointments",
@@ -100,6 +100,14 @@
     {
       "source": "/billing/payments-and-invoices",
       "destination": "/billing/plan-and-billing"
+    },
+    {
+      "source": "/shopify/connect-your-store",
+      "destination": "/shopify/shopify-admin-app"
+    },
+    {
+      "source": "/getting-started/shopify-quick-start",
+      "destination": "/"
     }
   ],
   "navigation": {
@@ -111,17 +119,15 @@
             "group": "Start here",
             "pages": [
               "index",
-              "getting-started/shopify-quick-start",
-              "features",
               "getting-started/install-from-shopify",
               "getting-started/log-in",
-              "getting-started/concepts"
+              "getting-started/concepts",
+              "features"
             ]
           },
           {
             "group": "Shopify",
             "pages": [
-              "shopify/connect-your-store",
               "shopify/shopify-admin-app",
               "shopify/cart-recovery",
               "shopify/order-updates",

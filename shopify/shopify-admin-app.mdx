@@ -1,12 +1,20 @@
 ---
-title: "ChatFlows.io in your Shopify admin"
-description: "See your store's status, sales and cart recovery inside Shopify, and open your ChatFlows.io dashboard in one click."
+title: "Your store and the Shopify app"
+description: "Check your store's connection, sync your Shopify customers, and see your sales inside Shopify."
 icon: "layout-dashboard"
-keywords: ["ChatFlows", "ChatFlows.io", "Shopify admin", "embedded app", "open dashboard", "overview", "setup"]
+keywords: ["ChatFlows", "ChatFlows.io", "Shopify", "Shopify admin", "embedded app", "open dashboard", "connect store", "sync contacts", "disconnect", "reconnect"]
 ---
 
-ChatFlows.io has a small app inside your Shopify admin. It shows how your store is doing and whether everything is connected.
-You do your real work in the ChatFlows.io dashboard. The app opens it for you in one click.
+import { Figure } from '/snippets/browser-frame.jsx';
+
+
+Your store is connected for you when you [install ChatFlows.io from Shopify](/getting-started/install-from-shopify).
+After that, you can see your store in two places:
+
+- **The ChatFlows.io app in your Shopify admin** shows your store's status and sales, and opens your dashboard in one click.
+- **Settings → Shopify in your workspace** is where you sync your customers and disconnect the store.
+
+You do your real work in the ChatFlows.io dashboard.
 
 ## Find the app
 
@@ -69,11 +77,44 @@ Click **Open dashboard** to go to ChatFlows.io. You are signed in as the workspa
 If you have not set a password yet, your dashboard shows **Set a password to sign in without Shopify**.
 You don't have to do it. A password lets you sign in from any browser without opening Shopify first.
 
+## Your store in your workspace
+
+In your workspace, go to **Settings → Shopify**. The store card shows one of these:
+
+- **Connected** — everything works. Store events can start your automations.
+- **Connecting…** — setup is still finishing. It changes to **Connected** a moment later.
+- **Needs attention** — something stopped working. The card shows the reason Shopify gave. Click **Reconnect** to approve ChatFlows.io again in Shopify, or **Retry setup** to run the setup again.
+
+<Figure
+  src="/settings/img/shopify-connected.png"
+  alt="The Shopify Store card showing a connected store, a Disconnect button and the Sync contacts section"
+  caption="Image shows a connected Shopify store."
+/>
+
+<Note>
+  Shoppers can only get WhatsApp messages if your Shopify checkout asks for a phone number.
+</Note>
+
+## Bring in your Shopify customers
+
+On **Settings → Shopify**, click **Sync contacts** to bring the customers already in your store into [Customers](/contacts/managing-contacts).
+
+Only customers **with a phone number** are brought in. The rest are skipped.
+If a customer has tags in Shopify, they come across as customer tags.
+
+## Disconnect your store
+
+On **Settings → Shopify**, click **Disconnect** and confirm. Shopify events stop starting your automations right away.
+Uninstalling ChatFlows.io from your Shopify admin also disconnects the store and cancels your plan.
+
+Your customers stay in your workspace, and your automations are not deleted.
+If you connect the store again later, your automations work again.
+
 ## Where to next
 
 <CardGroup cols={2}>
-  <Card title="Connect your store" icon="plug" href="/shopify/connect-your-store">
-    How the connection works, and how to fix it.
+  <Card title="Send order updates" icon="package" href="/shopify/order-updates">
+    Tell buyers when their order is placed, shipped, out for delivery or delivered.
   </Card>
 
   <Card title="Recover abandoned carts" icon="shopping-cart" href="/shopify/cart-recovery">
