@@ -111,6 +111,7 @@
             "group": "Start here",
             "pages": [
               "index",
+              "getting-started/shopify-quick-start",
               "features",
               "getting-started/install-from-shopify",
               "getting-started/log-in",

@@ -90,7 +90,13 @@ An **abandoned cart** is a customer who reached your checkout and left without p
 
 Each cart-recovery automation has its own **Send after (minutes)** setting. You choose how long to wait — from 5 minutes up to 1,440 minutes (one day). If you leave it empty, it waits 60 minutes.
 
-If the customer pays before the wait is over, no message is sent. You can run two automations with different waits — a quick nudge and a later follow-up.
+When the wait is over, ChatFlows.io checks the checkout again. If the customer has ordered, no message is sent.
+You can run two automations with different waits — a quick nudge and a later follow-up.
+
+<Warning>
+  Don't add a **Wait** step inside one cart automation to send a second reminder.
+  A wait does not check the checkout again, so a shopper who has already ordered would still get it.
+</Warning>
 
 Add `order.recovery_url` to your message to send them straight back to their checkout, with everything still in the basket.
 
@@ -117,6 +123,7 @@ Only customers **with a phone number** are imported. The rest are skipped. If a 
 ## Disconnecting
 
 Click **Disconnect** and confirm. Shopify events stop starting your automations right away.
+Uninstalling ChatFlows.io from your Shopify admin also disconnects the store and cancels your plan.
 
 Your customers stay in your workspace. Your automations are not deleted. If you connect the store again later, your existing automations work again.
 

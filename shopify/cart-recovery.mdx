@@ -12,7 +12,7 @@ ChatFlows.io can send them a WhatsApp message with a link back to their cart.
 
 1. A shopper reaches your checkout and leaves without paying.
 2. ChatFlows.io waits for the time you set.
-3. If they still haven't paid, your automation sends the message.
+3. ChatFlows.io checks the checkout again. If they still haven't paid, your automation sends the message.
 4. If they pay before then, nothing is sent.
 
 Only one message goes out per cart for each automation.
@@ -79,6 +79,11 @@ For example:
 - Automation 2: **Cart abandoned**, send after **720** minutes (12 hours). A last reminder.
 
 If the shopper pays after the first reminder, the second one is not sent.
+
+<Warning>
+  Don't add a **Wait** step inside one cart automation to send a second reminder.
+  A wait does not check the checkout again, so a shopper who has already ordered would still get it.
+</Warning>
 
 <Tip>
   Each reminder is a template message. WhatsApp charges for each one. Two reminders are usually enough.
