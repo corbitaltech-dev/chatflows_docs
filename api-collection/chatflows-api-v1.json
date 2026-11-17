@@ -25,23 +25,23 @@
             "description": "Connected WhatsApp accounts and their phone numbers."
         },
         {
-            "name": "Contacts",
-            "description": "Create, read, update, merge and bulk-manage contacts."
+            "name": "Customers",
+            "description": "Create, read, update, merge and bulk-manage customers."
         },
         {
-            "name": "Contact Statuses",
+            "name": "Customer Statuses",
             "description": "The pipeline statuses a contact can be assigned."
         },
         {
-            "name": "Contact Sources",
+            "name": "Customer Sources",
             "description": "Where a contact originated (e.g. website, referral)."
         },
         {
-            "name": "Contact Groups",
+            "name": "Customer Groups",
             "description": "Named groups used to segment contacts and target campaigns."
         },
         {
-            "name": "Contact Labels",
+            "name": "Customer Labels",
             "description": "Free-form labels for tagging contacts."
         },
         {
@@ -208,7 +208,6 @@
                     "Root"
                 ],
                 "summary": "Welcome",
-                "description": "No auth required. Returns a welcome message, the API name, version, the v1 base path, and the documentation URL.",
                 "operationId": "rootWelcome",
                 "security": [],
                 "responses": {
@@ -251,6 +250,11 @@
                             }
                         }
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "No auth required. Returns a welcome message, the API name, version, the v1 base path, and the documentation URL."
+                    }
                 }
             }
         },
@@ -260,7 +264,6 @@
                     "Auth & Account"
                 ],
                 "summary": "Ping",
-                "description": "Checks that your API key works. Returns your workspace, the key's name and the permissions it has.\n\nUse this first when you connect a new business system.",
                 "operationId": "authAccountPing",
                 "security": [
                     {
@@ -386,6 +389,12 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "Use this first when you connect a new business system.",
+                    "metadata": {
+                        "description": "Checks that your API key works. Returns your workspace, the key's name and the permissions it has."
+                    }
                 }
             }
         },
@@ -395,7 +404,6 @@
                     "Auth & Account"
                 ],
                 "summary": "Account",
-                "description": "Returns your workspace details: its name, your current plan and whether your subscription is active.",
                 "operationId": "authAccountAccount",
                 "security": [
                     {
@@ -514,6 +522,11 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns your workspace details: its name, your current plan and whether your subscription is active."
+                    }
                 }
             }
         },
@@ -523,7 +536,6 @@
                     "Auth & Account"
                 ],
                 "summary": "Usage",
-                "description": "Shows your usage for each feature on your plan, such as customers, campaigns or media storage. For every feature, you see how much you've used, your limit and how much is left.\n\nIf a feature has no limit, `unlimited` is `true`, and `limit` and `remaining` are `null`.",
                 "operationId": "authAccountUsage",
                 "security": [
                     {
@@ -627,6 +639,12 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "If a feature has no limit, `unlimited` is `true`, and `limit` and `remaining` are `null`.",
+                    "metadata": {
+                        "description": "Shows your usage for each feature on your plan, such as customers, campaigns or media storage. For every feature, you see how much you've used, your limit and how much is left."
+                    }
                 }
             }
         },
@@ -636,7 +654,6 @@
                     "Channels"
                 ],
                 "summary": "List Channels",
-                "description": "Lists your connected WhatsApp and Messenger accounts. Each account also shows its WhatsApp phone numbers or Facebook pages in the `endpoints` field.",
                 "operationId": "channelsListChannels",
                 "security": [
                     {
@@ -901,6 +918,11 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Lists your connected WhatsApp and Messenger accounts. Each account also shows its WhatsApp phone numbers or Facebook pages in the endpoints field."
+                    }
                 }
             }
         },
@@ -910,7 +932,6 @@
                     "Channels"
                 ],
                 "summary": "Get Channel",
-                "description": "Returns one connected account by its ID. The account also shows its WhatsApp phone numbers or Facebook pages in the `endpoints` field.\n\nReturns `404` if no account has this ID.",
                 "operationId": "channelsGetChannel",
                 "security": [
                     {
@@ -1194,16 +1215,21 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "Returns `404` if no account has this ID.",
+                    "metadata": {
+                        "description": "Returns one connected account by its ID. The account also shows its WhatsApp phone numbers or Facebook pages in the endpoints field."
+                    }
                 }
             }
         },
         "/api/v1/contacts": {
             "get": {
                 "tags": [
-                    "Contacts"
+                    "Customers"
                 ],
-                "summary": "List Contacts",
-                "description": "Returns a list of your contacts. You can search by name, phone or email, and filter by type, status, source, group or active state.\n\nResults come in pages of 50 by default. Merged contacts aren't included.",
+                "summary": "List Customers",
                 "operationId": "contactsListContacts",
                 "security": [
                     {
@@ -1232,7 +1258,7 @@
                                 "guest"
                             ]
                         },
-                        "description": "Only contacts of this type."
+                        "description": "Only customers of this type."
                     },
                     {
                         "name": "contact_status_id",
@@ -1240,7 +1266,7 @@
                         "schema": {
                             "type": "integer"
                         },
-                        "description": "Only contacts with this customer status."
+                        "description": "Only customers with this customer status."
                     },
                     {
                         "name": "contact_source_id",
@@ -1248,7 +1274,7 @@
                         "schema": {
                             "type": "integer"
                         },
-                        "description": "Only contacts from this customer source."
+                        "description": "Only customers from this customer source."
                     },
                     {
                         "name": "group_id",
@@ -1256,7 +1282,7 @@
                         "schema": {
                             "type": "integer"
                         },
-                        "description": "Only contacts in this customer group."
+                        "description": "Only customers in this customer group."
                     },
                     {
                         "name": "is_active",
@@ -1264,7 +1290,7 @@
                         "schema": {
                             "type": "boolean"
                         },
-                        "description": "`true` for active contacts only, `false` for inactive only."
+                        "description": "`true` for active customers only, `false` for inactive only."
                     },
                     {
                         "name": "page",
@@ -1284,7 +1310,7 @@
                             "minimum": 5,
                             "maximum": 100
                         },
-                        "description": "Contacts per page, from 5 to 100."
+                        "description": "Customers per page, from 5 to 100."
                     }
                 ],
                 "responses": {
@@ -1302,7 +1328,7 @@
                                                 "properties": {
                                                     "id": {
                                                         "type": "integer",
-                                                        "description": "The contact's ID."
+                                                        "description": "The customer's ID."
                                                     },
                                                     "first_name": {
                                                         "type": "string",
@@ -1330,7 +1356,7 @@
                                                     },
                                                     "is_active": {
                                                         "type": "boolean",
-                                                        "description": "`false` to mark the contact inactive."
+                                                        "description": "`false` to mark the customer inactive."
                                                     },
                                                     "contact_status_id": {
                                                         "type": "integer",
@@ -1345,14 +1371,14 @@
                                                         "items": {
                                                             "type": "integer"
                                                         },
-                                                        "description": "Customer group IDs this contact belongs to."
+                                                        "description": "Customer group IDs this customer belongs to."
                                                     },
                                                     "label_ids": {
                                                         "type": "array",
                                                         "items": {
                                                             "type": "integer"
                                                         },
-                                                        "description": "Customer tag IDs on this contact."
+                                                        "description": "Customer tag IDs on this customer."
                                                     },
                                                     "custom_fields": {
                                                         "type": "object",
@@ -1365,11 +1391,11 @@
                                                     },
                                                     "created_at": {
                                                         "type": "string",
-                                                        "description": "When the contact was created."
+                                                        "description": "When the customer was created."
                                                     },
                                                     "updated_at": {
                                                         "type": "string",
-                                                        "description": "When the contact was last changed."
+                                                        "description": "When the customer was last changed."
                                                     }
                                                 }
                                             }
@@ -1457,14 +1483,19 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "Results come in pages of 50 by default. Merged customers aren't included.",
+                    "metadata": {
+                        "description": "Returns a list of your customers. You can search by name, phone or email, and filter by type, status, source, group or active state."
+                    }
                 }
             },
             "post": {
                 "tags": [
-                    "Contacts"
+                    "Customers"
                 ],
-                "summary": "Create Contact",
-                "description": "Creates a contact. `first_name` and `phone` are required.\n\nReturns `422` with `limit_reached` if you've reached your plan's contact limit.",
+                "summary": "Create Customer",
                 "operationId": "contactsCreateContact",
                 "security": [
                     {
@@ -1539,7 +1570,7 @@
                                             "boolean",
                                             "null"
                                         ],
-                                        "description": "`false` to mark the contact inactive."
+                                        "description": "`false` to mark the customer inactive."
                                     },
                                     "group_ids": {
                                         "type": [
@@ -1550,7 +1581,7 @@
                                             "type": "integer",
                                             "description": "Must reference an existing `contact_groups` record."
                                         },
-                                        "description": "Customer group IDs this contact belongs to."
+                                        "description": "Customer group IDs this customer belongs to."
                                     },
                                     "label_ids": {
                                         "type": [
@@ -1561,7 +1592,7 @@
                                             "type": "integer",
                                             "description": "Must reference an existing `contact_labels` record."
                                         },
-                                        "description": "Customer tag IDs on this contact."
+                                        "description": "Customer tag IDs on this customer."
                                     },
                                     "custom_fields": {
                                         "type": [
@@ -1630,7 +1661,7 @@
                                             "properties": {
                                                 "id": {
                                                     "type": "integer",
-                                                    "description": "The contact's ID."
+                                                    "description": "The customer's ID."
                                                 },
                                                 "first_name": {
                                                     "type": "string",
@@ -1658,7 +1689,7 @@
                                                 },
                                                 "is_active": {
                                                     "type": "boolean",
-                                                    "description": "`false` to mark the contact inactive."
+                                                    "description": "`false` to mark the customer inactive."
                                                 },
                                                 "contact_status_id": {
                                                     "type": "integer",
@@ -1673,14 +1704,14 @@
                                                     "items": {
                                                         "type": "integer"
                                                     },
-                                                    "description": "Customer group IDs this contact belongs to."
+                                                    "description": "Customer group IDs this customer belongs to."
                                                 },
                                                 "label_ids": {
                                                     "type": "array",
                                                     "items": {
                                                         "type": "integer"
                                                     },
-                                                    "description": "Customer tag IDs on this contact."
+                                                    "description": "Customer tag IDs on this customer."
                                                 },
                                                 "custom_fields": {
                                                     "type": "object",
@@ -1693,11 +1724,11 @@
                                                 },
                                                 "created_at": {
                                                     "type": "string",
-                                                    "description": "When the contact was created."
+                                                    "description": "When the customer was created."
                                                 },
                                                 "updated_at": {
                                                     "type": "string",
-                                                    "description": "When the contact was last changed."
+                                                    "description": "When the customer was last changed."
                                                 }
                                             }
                                         }
@@ -1779,16 +1810,21 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "Returns `422` with `limit_reached` if you've reached your plan's customer limit.",
+                    "metadata": {
+                        "description": "Creates a customer. first_name and phone are required."
+                    }
                 }
             }
         },
         "/api/v1/contacts/batch": {
             "post": {
                 "tags": [
-                    "Contacts"
+                    "Customers"
                 ],
-                "summary": "Batch Create Contacts",
-                "description": "Creates up to 100 contacts in one request. Each contact uses the same fields as Create Contact.\n\nEach contact is saved on its own. The response lists the contacts that were `created`, and an `errors` entry for each one that wasn't, such as a duplicate phone number. `index` is that contact's position in your list, starting from `0`.",
+                "summary": "Batch Create Customers",
                 "operationId": "contactsBatchCreateContacts",
                 "security": [
                     {
@@ -1823,7 +1859,7 @@
                                                 }
                                             }
                                         },
-                                        "description": "The contacts to create, up to 100."
+                                        "description": "The customers to create, up to 100."
                                     }
                                 },
                                 "required": [
@@ -1925,7 +1961,7 @@
                                                             }
                                                         }
                                                     },
-                                                    "description": "The contacts that were created."
+                                                    "description": "The customers that were created."
                                                 },
                                                 "errors": {
                                                     "type": "array",
@@ -1948,7 +1984,7 @@
                                                             }
                                                         }
                                                     },
-                                                    "description": "The contacts that weren't created, with the reason."
+                                                    "description": "The customers that weren't created, with the reason."
                                                 }
                                             }
                                         }
@@ -2013,16 +2049,21 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "If a customer can't be saved, for example because of a duplicate phone number, it's listed under `errors`. The rest are still created.",
+                    "metadata": {
+                        "description": "Creates up to 100 customers in one request, using the same fields as Create Customer."
+                    }
                 }
             }
         },
         "/api/v1/contacts/bulk": {
             "post": {
                 "tags": [
-                    "Contacts"
+                    "Customers"
                 ],
-                "summary": "Bulk Contacts",
-                "description": "Applies one action to up to 500 contacts at once. Returns how many contacts were changed.\n\n| `action` | What it does |\n|---|---|\n| `delete` | Deletes the contacts. |\n| `change_status` | Sets a new customer status. Also send `contact_status_id`. |\n| `change_type` | Sets a new type. Also send `type`. |\n| `activate` | Marks the contacts active. |\n| `deactivate` | Marks the contacts inactive. |",
+                "summary": "Bulk Customers",
                 "operationId": "contactsBulkContacts",
                 "security": [
                     {
@@ -2046,7 +2087,7 @@
                                         },
                                         "minItems": 1,
                                         "maxItems": 500,
-                                        "description": "The contact IDs, up to 500."
+                                        "description": "The customer IDs, up to 500."
                                     },
                                     "action": {
                                         "type": "string",
@@ -2118,7 +2159,7 @@
                                                 },
                                                 "affected": {
                                                     "type": "integer",
-                                                    "description": "How many contacts were changed."
+                                                    "description": "How many customers were changed."
                                                 }
                                             }
                                         }
@@ -2197,16 +2238,21 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "| `action` | What it does |\n|---|---|\n| `delete` | Deletes the customers. |\n| `change_status` | Sets a new customer status. Also send `contact_status_id`. |\n| `change_type` | Sets a new type. Also send `type`. |\n| `activate` | Marks the customers active. |\n| `deactivate` | Marks the customers inactive. |",
+                    "metadata": {
+                        "description": "Applies one action to up to 500 customers at once. Returns how many customers were changed."
+                    }
                 }
             }
         },
         "/api/v1/contacts/{contact_id}/merge": {
             "post": {
                 "tags": [
-                    "Contacts"
+                    "Customers"
                 ],
-                "summary": "Merge Contact",
-                "description": "Merges a duplicate contact into this one. Send the duplicate's ID as `loser_id`.\n\nThe duplicate's conversations, tags, groups and customer field values move to this contact, and the duplicate is removed. Returns the merged contact.\n\nReturns `422` with `invalid_merge` if either contact is already merged, or if both IDs are the same.",
+                "summary": "Merge Customer",
                 "operationId": "contactsMergeContact",
                 "security": [
                     {
@@ -2224,7 +2270,7 @@
                             "type": "integer",
                             "example": 1
                         },
-                        "description": "The `id` of the contact to keep."
+                        "description": "The `id` of the customer to keep."
                     }
                 ],
                 "requestBody": {
@@ -2236,7 +2282,7 @@
                                 "properties": {
                                     "loser_id": {
                                         "type": "integer",
-                                        "description": "The `id` of the duplicate contact to merge in and remove."
+                                        "description": "The `id` of the duplicate customer to merge in and remove."
                                     }
                                 },
                                 "required": [
@@ -2267,7 +2313,7 @@
                                             "properties": {
                                                 "id": {
                                                     "type": "integer",
-                                                    "description": "The contact's ID."
+                                                    "description": "The customer's ID."
                                                 },
                                                 "first_name": {
                                                     "type": "string",
@@ -2295,7 +2341,7 @@
                                                 },
                                                 "is_active": {
                                                     "type": "boolean",
-                                                    "description": "`false` to mark the contact inactive."
+                                                    "description": "`false` to mark the customer inactive."
                                                 },
                                                 "contact_status_id": {
                                                     "type": "integer",
@@ -2310,14 +2356,14 @@
                                                     "items": {
                                                         "type": "integer"
                                                     },
-                                                    "description": "Customer group IDs this contact belongs to."
+                                                    "description": "Customer group IDs this customer belongs to."
                                                 },
                                                 "label_ids": {
                                                     "type": "array",
                                                     "items": {
                                                         "type": "integer"
                                                     },
-                                                    "description": "Customer tag IDs on this contact."
+                                                    "description": "Customer tag IDs on this customer."
                                                 },
                                                 "custom_fields": {
                                                     "type": "object",
@@ -2330,11 +2376,11 @@
                                                 },
                                                 "created_at": {
                                                     "type": "string",
-                                                    "description": "When the contact was created."
+                                                    "description": "When the customer was created."
                                                 },
                                                 "updated_at": {
                                                     "type": "string",
-                                                    "description": "When the contact was last changed."
+                                                    "description": "When the customer was last changed."
                                                 }
                                             }
                                         }
@@ -2416,16 +2462,21 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "The duplicate's conversations, tags, groups and customer field values move to this customer, and the duplicate is removed. Returns the merged customer.\n\nReturns `422` with `invalid_merge` if either customer is already merged, or if both IDs are the same.",
+                    "metadata": {
+                        "description": "Merges a duplicate customer into this one. Send the duplicate's ID as loser_id."
+                    }
                 }
             }
         },
         "/api/v1/contacts/{contact_id}": {
             "get": {
                 "tags": [
-                    "Contacts"
+                    "Customers"
                 ],
-                "summary": "Get Contact",
-                "description": "Returns one contact by its ID.\n\nReturns `404` if the contact doesn't exist or was merged into another contact.",
+                "summary": "Get Customer",
                 "operationId": "contactsGetContact",
                 "security": [
                     {
@@ -2443,7 +2494,7 @@
                             "type": "integer",
                             "example": 1
                         },
-                        "description": "The contact's `id`."
+                        "description": "The customer's `id`."
                     }
                 ],
                 "responses": {
@@ -2459,7 +2510,7 @@
                                             "properties": {
                                                 "id": {
                                                     "type": "integer",
-                                                    "description": "The contact's ID."
+                                                    "description": "The customer's ID."
                                                 },
                                                 "first_name": {
                                                     "type": "string",
@@ -2487,7 +2538,7 @@
                                                 },
                                                 "is_active": {
                                                     "type": "boolean",
-                                                    "description": "`false` to mark the contact inactive."
+                                                    "description": "`false` to mark the customer inactive."
                                                 },
                                                 "contact_status_id": {
                                                     "type": "integer",
@@ -2502,14 +2553,14 @@
                                                     "items": {
                                                         "type": "integer"
                                                     },
-                                                    "description": "Customer group IDs this contact belongs to."
+                                                    "description": "Customer group IDs this customer belongs to."
                                                 },
                                                 "label_ids": {
                                                     "type": "array",
                                                     "items": {
                                                         "type": "integer"
                                                     },
-                                                    "description": "Customer tag IDs on this contact."
+                                                    "description": "Customer tag IDs on this customer."
                                                 },
                                                 "custom_fields": {
                                                     "type": "object",
@@ -2522,11 +2573,11 @@
                                                 },
                                                 "created_at": {
                                                     "type": "string",
-                                                    "description": "When the contact was created."
+                                                    "description": "When the customer was created."
                                                 },
                                                 "updated_at": {
                                                     "type": "string",
-                                                    "description": "When the contact was last changed."
+                                                    "description": "When the customer was last changed."
                                                 }
                                             }
                                         }
@@ -2608,14 +2659,19 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "Returns `404` if the customer doesn't exist or was merged into another customer.",
+                    "metadata": {
+                        "description": "Returns one customer by its ID."
+                    }
                 }
             },
             "put": {
                 "tags": [
-                    "Contacts"
+                    "Customers"
                 ],
-                "summary": "Update Contact",
-                "description": "Updates a contact. Send only the fields you want to change. Everything else stays the same.\n\nTo clear a field, send it as `null`. `group_ids` and `label_ids` replace the contact's current list.",
+                "summary": "Update Customer",
                 "operationId": "contactsUpdateContact",
                 "security": [
                     {
@@ -2633,7 +2689,7 @@
                             "type": "integer",
                             "example": 1
                         },
-                        "description": "The contact's `id`."
+                        "description": "The customer's `id`."
                     }
                 ],
                 "requestBody": {
@@ -2673,7 +2729,7 @@
                                             "type": "integer",
                                             "description": "Must reference an existing `contact_labels` record."
                                         },
-                                        "description": "Customer tag IDs on this contact."
+                                        "description": "Customer tag IDs on this customer."
                                     },
                                     "last_name": {
                                         "type": [
@@ -2721,7 +2777,7 @@
                                             "boolean",
                                             "null"
                                         ],
-                                        "description": "`false` to mark the contact inactive."
+                                        "description": "`false` to mark the customer inactive."
                                     },
                                     "group_ids": {
                                         "type": [
@@ -2732,7 +2788,7 @@
                                             "type": "integer",
                                             "description": "Must reference an existing `contact_groups` record."
                                         },
-                                        "description": "Customer group IDs this contact belongs to."
+                                        "description": "Customer group IDs this customer belongs to."
                                     },
                                     "custom_fields": {
                                         "type": [
@@ -2773,7 +2829,7 @@
                                             "properties": {
                                                 "id": {
                                                     "type": "integer",
-                                                    "description": "The contact's ID."
+                                                    "description": "The customer's ID."
                                                 },
                                                 "first_name": {
                                                     "type": "string",
@@ -2801,7 +2857,7 @@
                                                 },
                                                 "is_active": {
                                                     "type": "boolean",
-                                                    "description": "`false` to mark the contact inactive."
+                                                    "description": "`false` to mark the customer inactive."
                                                 },
                                                 "contact_status_id": {
                                                     "type": "integer",
@@ -2816,14 +2872,14 @@
                                                     "items": {
                                                         "type": "integer"
                                                     },
-                                                    "description": "Customer group IDs this contact belongs to."
+                                                    "description": "Customer group IDs this customer belongs to."
                                                 },
                                                 "label_ids": {
                                                     "type": "array",
                                                     "items": {
                                                         "type": "integer"
                                                     },
-                                                    "description": "Customer tag IDs on this contact."
+                                                    "description": "Customer tag IDs on this customer."
                                                 },
                                                 "custom_fields": {
                                                     "type": "object",
@@ -2836,11 +2892,11 @@
                                                 },
                                                 "created_at": {
                                                     "type": "string",
-                                                    "description": "When the contact was created."
+                                                    "description": "When the customer was created."
                                                 },
                                                 "updated_at": {
                                                     "type": "string",
-                                                    "description": "When the contact was last changed."
+                                                    "description": "When the customer was last changed."
                                                 }
                                             }
                                         }
@@ -2889,7 +2945,7 @@
                         "$ref": "#/components/responses/Forbidden"
                     },
                     "404": {
-                        "description": "Contact not found",
+                        "description": "Customer not found",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2937,14 +2993,19 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "To clear a field, send it as `null`. Sending `group_ids` or `label_ids` replaces the existing groups or tags.",
+                    "metadata": {
+                        "description": "Updates a customer's details. Only the fields you send are changed."
+                    }
                 }
             },
             "delete": {
                 "tags": [
-                    "Contacts"
+                    "Customers"
                 ],
-                "summary": "Delete Contact",
-                "description": "Deletes a contact. This frees one place in your plan's contact limit. Returns `204` with no content.",
+                "summary": "Delete Customer",
                 "operationId": "contactsDeleteContact",
                 "security": [
                     {
@@ -2962,17 +3023,12 @@
                             "type": "integer",
                             "example": 1
                         },
-                        "description": "The contact's `id`."
+                        "description": "The customer's `id`."
                     }
                 ],
                 "responses": {
                     "204": {
-                        "description": "204 No Content",
-                        "content": {
-                            "application/json": {
-                                "schema": {}
-                            }
-                        }
+                        "description": "Deleted. There is no response body."
                     },
                     "401": {
                         "$ref": "#/components/responses/Unauthorized"
@@ -2984,7 +3040,7 @@
                         "$ref": "#/components/responses/Forbidden"
                     },
                     "404": {
-                        "description": "Contact not found",
+                        "description": "Customer not found",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3001,16 +3057,21 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "If it works, you get a `204` response with no content.",
+                    "metadata": {
+                        "description": "Deletes a customer from your workspace."
+                    }
                 }
             }
         },
         "/api/v1/statuses": {
             "get": {
                 "tags": [
-                    "Contact Statuses"
+                    "Customer Statuses"
                 ],
                 "summary": "List Statuses",
-                "description": "All contact statuses, ordered by `sort_order`.",
                 "operationId": "contactStatusesListStatuses",
                 "security": [
                     {
@@ -3087,14 +3148,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns all your customer statuses."
+                    }
                 }
             },
             "post": {
                 "tags": [
-                    "Contact Statuses"
+                    "Customer Statuses"
                 ],
                 "summary": "Create Status",
-                "description": "Create a status. `name` and `sort_order` must be unique.",
                 "operationId": "contactStatusesCreateStatus",
                 "security": [
                     {
@@ -3264,16 +3329,20 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Creates a customer status."
+                    }
                 }
             }
         },
         "/api/v1/statuses/{status_id}": {
             "get": {
                 "tags": [
-                    "Contact Statuses"
+                    "Customer Statuses"
                 ],
                 "summary": "Get Status",
-                "description": "",
                 "operationId": "contactStatusesGetStatus",
                 "security": [
                     {
@@ -3387,14 +3456,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns one customer status by its ID."
+                    }
                 }
             },
             "put": {
                 "tags": [
-                    "Contact Statuses"
+                    "Customer Statuses"
                 ],
                 "summary": "Update Status",
-                "description": "",
                 "operationId": "contactStatusesUpdateStatus",
                 "security": [
                     {
@@ -3526,14 +3599,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Updates a customer status."
+                    }
                 }
             },
             "delete": {
                 "tags": [
-                    "Contact Statuses"
+                    "Customer Statuses"
                 ],
                 "summary": "Delete Status",
-                "description": "Returns `204`. May return `422` if the status is in use / is the default.",
                 "operationId": "contactStatusesDeleteStatus",
                 "security": [
                     {
@@ -3574,16 +3651,20 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Deletes a customer status."
+                    }
                 }
             }
         },
         "/api/v1/sources": {
             "get": {
                 "tags": [
-                    "Contact Sources"
+                    "Customer Sources"
                 ],
                 "summary": "List Sources",
-                "description": "All contact sources, ordered by `sort_order`.",
                 "operationId": "contactSourcesListSources",
                 "security": [
                     {
@@ -3660,14 +3741,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns all your customer sources."
+                    }
                 }
             },
             "post": {
                 "tags": [
-                    "Contact Sources"
+                    "Customer Sources"
                 ],
                 "summary": "Create Source",
-                "description": "Create a source. `name` and `sort_order` must be unique.",
                 "operationId": "contactSourcesCreateSource",
                 "security": [
                     {
@@ -3830,16 +3915,20 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Creates a customer source."
+                    }
                 }
             }
         },
         "/api/v1/sources/{source_id}": {
             "get": {
                 "tags": [
-                    "Contact Sources"
+                    "Customer Sources"
                 ],
                 "summary": "Get Source",
-                "description": "",
                 "operationId": "contactSourcesGetSource",
                 "security": [
                     {
@@ -3953,14 +4042,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns one customer source by its ID."
+                    }
                 }
             },
             "put": {
                 "tags": [
-                    "Contact Sources"
+                    "Customer Sources"
                 ],
                 "summary": "Update Source",
-                "description": "",
                 "operationId": "contactSourcesUpdateSource",
                 "security": [
                     {
@@ -4086,14 +4179,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Updates a customer source."
+                    }
                 }
             },
             "delete": {
                 "tags": [
-                    "Contact Sources"
+                    "Customer Sources"
                 ],
                 "summary": "Delete Source",
-                "description": "Returns `204`. System sources cannot be deleted (`422`).",
                 "operationId": "contactSourcesDeleteSource",
                 "security": [
                     {
@@ -4134,16 +4231,20 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Deletes a customer source."
+                    }
                 }
             }
         },
         "/api/v1/groups": {
             "get": {
                 "tags": [
-                    "Contact Groups"
+                    "Customer Groups"
                 ],
                 "summary": "List Groups",
-                "description": "All contact groups with `contact_count`.",
                 "operationId": "contactGroupsListGroups",
                 "security": [
                     {
@@ -4220,14 +4321,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns all your customer groups."
+                    }
                 }
             },
             "post": {
                 "tags": [
-                    "Contact Groups"
+                    "Customer Groups"
                 ],
                 "summary": "Create Group",
-                "description": "",
                 "operationId": "contactGroupsCreateGroup",
                 "security": [
                     {
@@ -4390,16 +4495,20 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Creates a customer group."
+                    }
                 }
             }
         },
         "/api/v1/groups/{group_id}": {
             "get": {
                 "tags": [
-                    "Contact Groups"
+                    "Customer Groups"
                 ],
                 "summary": "Get Group",
-                "description": "",
                 "operationId": "contactGroupsGetGroup",
                 "security": [
                     {
@@ -4513,14 +4622,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns one customer group by its ID."
+                    }
                 }
             },
             "put": {
                 "tags": [
-                    "Contact Groups"
+                    "Customer Groups"
                 ],
                 "summary": "Update Group",
-                "description": "",
                 "operationId": "contactGroupsUpdateGroup",
                 "security": [
                     {
@@ -4646,14 +4759,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Updates a customer group."
+                    }
                 }
             },
             "delete": {
                 "tags": [
-                    "Contact Groups"
+                    "Customer Groups"
                 ],
                 "summary": "Delete Group",
-                "description": "Returns `204`.",
                 "operationId": "contactGroupsDeleteGroup",
                 "security": [
                     {
@@ -4694,16 +4811,20 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Deletes a customer group."
+                    }
                 }
             }
         },
         "/api/v1/groups/{group_id}/contacts": {
             "get": {
                 "tags": [
-                    "Contact Groups"
+                    "Customer Groups"
                 ],
                 "summary": "List Group Members",
-                "description": "Cursor-paginated contacts that belong to the group (summary shape).",
                 "operationId": "contactGroupsListGroupMembers",
                 "security": [
                     {
@@ -4805,14 +4926,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns the customers in a group."
+                    }
                 }
             },
             "post": {
                 "tags": [
-                    "Contact Groups"
+                    "Customer Groups"
                 ],
-                "summary": "Add Contact to Group",
-                "description": "Attach a contact to the group. Returns the refreshed group.",
+                "summary": "Add Customer to Group",
                 "operationId": "contactGroupsAddContactToGroup",
                 "security": [
                     {
@@ -4949,16 +5074,20 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Adds a customer to a group."
+                    }
                 }
             }
         },
         "/api/v1/groups/{group_id}/contacts/{contact_id}": {
             "delete": {
                 "tags": [
-                    "Contact Groups"
+                    "Customer Groups"
                 ],
-                "summary": "Remove Contact from Group",
-                "description": "Detach a contact from the group. Returns `204`.",
+                "summary": "Remove Customer from Group",
                 "operationId": "contactGroupsRemoveContactFromGroup",
                 "security": [
                     {
@@ -5008,16 +5137,20 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Removes a customer from a group."
+                    }
                 }
             }
         },
         "/api/v1/labels": {
             "get": {
                 "tags": [
-                    "Contact Labels"
+                    "Customer Labels"
                 ],
                 "summary": "List Labels",
-                "description": "All labels, ordered by `sort_order`.",
                 "operationId": "contactLabelsListLabels",
                 "security": [
                     {
@@ -5090,14 +5223,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns all your customer labels."
+                    }
                 }
             },
             "post": {
                 "tags": [
-                    "Contact Labels"
+                    "Customer Labels"
                 ],
                 "summary": "Create Label",
-                "description": "",
                 "operationId": "contactLabelsCreateLabel",
                 "security": [
                     {
@@ -5255,16 +5392,20 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Creates a customer label."
+                    }
                 }
             }
         },
         "/api/v1/labels/{label_id}": {
             "get": {
                 "tags": [
-                    "Contact Labels"
+                    "Customer Labels"
                 ],
                 "summary": "Get Label",
-                "description": "",
                 "operationId": "contactLabelsGetLabel",
                 "security": [
                     {
@@ -5374,14 +5515,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns one customer label by its ID."
+                    }
                 }
             },
             "put": {
                 "tags": [
-                    "Contact Labels"
+                    "Customer Labels"
                 ],
                 "summary": "Update Label",
-                "description": "",
                 "operationId": "contactLabelsUpdateLabel",
                 "security": [
                     {
@@ -5502,14 +5647,18 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Updates a customer label."
+                    }
                 }
             },
             "delete": {
                 "tags": [
-                    "Contact Labels"
+                    "Customer Labels"
                 ],
                 "summary": "Delete Label",
-                "description": "Returns `204`.",
                 "operationId": "contactLabelsDeleteLabel",
                 "security": [
                     {
@@ -5550,6 +5699,11 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Deletes a customer label."
+                    }
                 }
             }
         },
@@ -5559,7 +5713,6 @@
                     "Templates"
                 ],
                 "summary": "List Templates",
-                "description": "Length-aware paginated templates. Filters: `channel_id`, `status` (e.g. APPROVED), `category` (e.g. utility), `platform` (e.g. whatsapp), `per_page`.",
                 "operationId": "templatesListTemplates",
                 "security": [
                     {
@@ -5570,22 +5723,61 @@
                 ],
                 "parameters": [
                     {
+                        "name": "channel_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "Only templates from this WhatsApp account."
+                    },
+                    {
                         "name": "status",
                         "in": "query",
-                        "required": false,
                         "schema": {
                             "type": "string"
                         },
-                        "example": "APPROVED"
+                        "description": "Only templates with this status, for example `APPROVED`."
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "marketing",
+                                "utility",
+                                "authentication"
+                            ]
+                        },
+                        "description": "Only templates in this category."
+                    },
+                    {
+                        "name": "platform",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Only templates for this platform, for example `whatsapp`."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "description": "Page number."
                     },
                     {
                         "name": "per_page",
                         "in": "query",
-                        "required": false,
                         "schema": {
-                            "type": "integer"
+                            "type": "integer",
+                            "default": 50,
+                            "minimum": 5,
+                            "maximum": 100
                         },
-                        "example": 50
+                        "description": "Templates per page, from 5 to 100."
                     }
                 ],
                 "responses": {
@@ -5754,6 +5946,12 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "Results come in pages of 50 by default.",
+                    "metadata": {
+                        "description": "Returns your WhatsApp message templates. You can filter by account, status, category or platform."
+                    }
                 }
             },
             "post": {
@@ -5761,7 +5959,6 @@
                     "Templates"
                 ],
                 "summary": "Create Template",
-                "description": "Create a **standard** WhatsApp template (text/media header optional, required body, optional footer + buttons) and submit it to Meta. Synchronous — returns `201` with the template in `PENDING`, or `422 meta_rejected` if Meta refuses it (e.g. duplicate name). Poll `GET /templates/{id}` (or `POST /templates/sync`) for the final `APPROVED`/`REJECTED` status, which arrives asynchronously from Meta.\n\n`name` must be lowercase letters, digits and underscores. `category`: `MARKETING` / `UTILITY` / `AUTHENTICATION`. Body/header variables use `{{1}}` placeholders. Media (`IMAGE`/`VIDEO`/`DOCUMENT`) headers require a pre-obtained `header.media_handle` (Meta Resumable Upload API). Authentication & carousel template types are not exposed in v1.1.",
                 "operationId": "templatesCreateTemplate",
                 "security": [
                     {
@@ -6069,6 +6266,12 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "The new template starts as `PENDING`. Meta then approves or rejects it, which can take some time. Check the result with Get Template.\n\nReturns `422` with `meta_rejected` if Meta refuses the template straight away, for example because the name is already used.",
+                    "metadata": {
+                        "description": "Creates a WhatsApp message template and sends it to Meta for approval."
+                    }
                 }
             }
         },
@@ -6078,7 +6281,6 @@
                     "Templates"
                 ],
                 "summary": "Sync Templates",
-                "description": "Triggers a background sync of templates from Meta for all (or a given) connected account. Returns `202` — templates update asynchronously.",
                 "operationId": "templatesSyncTemplates",
                 "security": [
                     {
@@ -6158,6 +6360,12 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "content": "The update runs in the background, so your template list may take a moment to change.",
+                    "metadata": {
+                        "description": "Gets the latest templates and their statuses from Meta for all your connected WhatsApp accounts."
+                    }
                 }
             }
         },
@@ -6167,7 +6375,6 @@
                     "Templates"
                 ],
                 "summary": "Get Template",
-                "description": "",
                 "operationId": "templatesGetTemplate",
                 "security": [
                     {
@@ -6182,9 +6389,10 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "integer",
+                            "example": 1
                         },
-                        "description": "Identifier of the template."
+                        "description": "The template's `id`."
                     }
                 ],
                 "responses": {
@@ -6345,6 +6553,11 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns one template by its ID, including its current approval status."
+                    }
                 }
             }
         },
@@ -6353,8 +6566,7 @@
                 "tags": [
                     "Messages"
                 ],
-                "summary": "Send Template Message / Send Text Message",
-                "description": "Send an approved template message. The send is queued on Horizon and returns `202` immediately. Pass `template_data.components` to fill template variables. Optional `Idempotency-Key` via `idempotency_key`.\n\n_Sends are throttled to Meta's per-number rate (mps + 6s pair-rate); over the limit returns `429 send_rate_limited` with a `Retry-After` header._\n\n---\n\n**Scope:** `messages:send`\n\nSend a free-form text reply. Only allowed inside an open 24-hour customer-service window, otherwise `422 window_expired`.\n\n_Sends are throttled to Meta's per-number rate (mps + 6s pair-rate); over the limit returns `429 send_rate_limited` with a `Retry-After` header._",
+                "summary": "Send Message",
                 "operationId": "messagesSendTemplateMessage",
                 "security": [
                     {
@@ -6375,18 +6587,20 @@
                                         "enum": [
                                             "template",
                                             "text"
-                                        ]
+                                        ],
+                                        "description": "`template` or `text`."
                                     },
                                     "contact_id": {
                                         "type": "integer",
-                                        "description": "Must reference an existing `contacts` record."
+                                        "description": "The customer's `id`."
                                     },
                                     "channel_id": {
                                         "type": "integer",
-                                        "description": "Must reference an existing `channels` record."
+                                        "description": "The ID of the WhatsApp number you send from. Find it under `endpoints` in List Channels."
                                     },
                                     "template_id": {
-                                        "type": "integer"
+                                        "type": "integer",
+                                        "description": "The template's `id`. The template must be approved."
                                     },
                                     "template_data": {
                                         "type": "object",
@@ -6416,17 +6630,20 @@
                                                     }
                                                 }
                                             }
-                                        }
+                                        },
+                                        "description": "Values for the template's variables, if it has any."
                                     },
                                     "idempotency_key": {
                                         "type": [
                                             "string",
                                             "null"
                                         ],
-                                        "maxLength": 64
+                                        "maxLength": 64,
+                                        "description": "Optional. A unique value of your own. If you send the same request twice with the same key, the message is only sent once."
                                     },
                                     "body": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "description": "The text of your reply. Up to 4,096 characters."
                                     }
                                 },
                                 "required": [
@@ -6632,6 +6849,12 @@
                             }
                         }
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Sends a WhatsApp message to a customer: an approved template, or a text reply."
+                    },
+                    "content": "Set `type` to choose what you send:\n\n| `type` | Also send | When you can use it |\n|---|---|---|\n| `template` | `template_id`, and `template_data` if the template has variables | Any time |\n| `text` | `body` | Only within 24 hours of the customer's last message to you |\n\nThe message is sent in the background. You get its `id` straight away. Use Get Message to see if it was delivered."
                 }
             }
         },
@@ -6640,8 +6863,7 @@
                 "tags": [
                     "Messages"
                 ],
-                "summary": "Send Template to Contact (convenience)",
-                "description": "Convenience endpoint to send a template to a specific contact by path ID. Body omits `contact_id`/`type` (implied).\n\n_Sends are throttled to Meta's per-number rate (mps + 6s pair-rate); over the limit returns `429 send_rate_limited` with a `Retry-After` header._",
+                "summary": "Send Template to Customer",
                 "operationId": "messagesSendTemplateToContactConvenience",
                 "security": [
                     {
@@ -6656,9 +6878,10 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "integer",
+                            "example": 1
                         },
-                        "description": "Identifier of the contact."
+                        "description": "The customer's `id`."
                     }
                 ],
                 "requestBody": {
@@ -6669,10 +6892,12 @@
                                 "type": "object",
                                 "properties": {
                                     "channel_id": {
-                                        "type": "integer"
+                                        "type": "integer",
+                                        "description": "The ID of the WhatsApp number you send from. Find it under `endpoints` in List Channels."
                                     },
                                     "template_id": {
-                                        "type": "integer"
+                                        "type": "integer",
+                                        "description": "The template's `id`. The template must be approved."
                                     },
                                     "template_data": {
                                         "type": "object",
@@ -6702,14 +6927,16 @@
                                                     }
                                                 }
                                             }
-                                        }
+                                        },
+                                        "description": "Values for the template's variables, if it has any."
                                     },
                                     "idempotency_key": {
                                         "type": [
                                             "string",
                                             "null"
                                         ],
-                                        "maxLength": 64
+                                        "maxLength": 64,
+                                        "description": "Optional. A unique value of your own. If you send the same request twice with the same key, the message is only sent once."
                                     }
                                 }
                             },
@@ -6890,6 +7117,12 @@
                             }
                         }
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Sends an approved template to one customer."
+                    },
+                    "content": "Put the customer's ID in the URL, then send the template details in the request.\n\nFor example, to send to customer `5`, use `/api/v1/contacts/5/messages`."
                 }
             }
         },
@@ -6899,7 +7132,6 @@
                     "Messages"
                 ],
                 "summary": "Get Message",
-                "description": "Fetch a single message with its delivery status (`queued` → `sent` → `delivered` → `read`, or `failed`).",
                 "operationId": "messagesGetMessage",
                 "security": [
                     {
@@ -6914,9 +7146,10 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "integer",
+                            "example": 1
                         },
-                        "description": "Identifier of the message."
+                        "description": "The message `id` you got when you sent it."
                     }
                 ],
                 "responses": {
@@ -6931,36 +7164,55 @@
                                             "type": "object",
                                             "properties": {
                                                 "id": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "The message ID."
                                                 },
                                                 "conversation_id": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "The conversation it belongs to."
                                                 },
                                                 "contact_id": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "The customer's ID."
                                                 },
                                                 "channel_id": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "The WhatsApp number it was sent from."
                                                 },
                                                 "type": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "The kind of message, such as `text` or `template`."
                                                 },
                                                 "status": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "`pending`, `queued`, `sent`, `delivered`, `read` or `failed`."
                                                 },
-                                                "body": {},
-                                                "metadata": {},
-                                                "error_message": {},
-                                                "error_details": {},
+                                                "body": {
+                                                    "description": "The message text."
+                                                },
+                                                "metadata": {
+                                                    "description": "Extra details, such as the template used."
+                                                },
+                                                "error_message": {
+                                                    "description": "Why the message failed. Empty if it didn't."
+                                                },
+                                                "error_details": {
+                                                    "description": "More detail from Meta about the failure. Empty if it didn't fail."
+                                                },
                                                 "sent_at": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "When it was sent."
                                                 },
                                                 "delivered_at": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "When it was delivered."
                                                 },
-                                                "read_at": {},
+                                                "read_at": {
+                                                    "description": "When the customer read it."
+                                                },
                                                 "created_at": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "When it was created."
                                                 }
                                             }
                                         }
@@ -7035,6 +7287,12 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns one message and its delivery status."
+                    },
+                    "content": "The `status` shows where your message is:\n\n| `status` | Meaning |\n|---|---|\n| `pending` / `queued` | Waiting to be sent. |\n| `sent` | Sent to WhatsApp. |\n| `delivered` | Reached the customer's phone. |\n| `read` | The customer opened it. |\n| `failed` | Not sent. `error_message` tells you why. |"
                 }
             }
         },
@@ -7044,7 +7302,6 @@
                     "Conversations"
                 ],
                 "summary": "List Conversations",
-                "description": "Cursor-paginated conversations, newest first. Filters: `contact_id`, `channel_id`, `status` (`open`/`pending`/`assigned`/`resolved`/`closed`), `per_page` (5–100, default 25).\n\nEach item carries `last_message_at` and `is_window_open` (whether a free-form text reply is currently allowed). Pairs with the `message.received` webhook for a live inbox.",
                 "operationId": "conversationsListConversations",
                 "security": [
                     {
@@ -7055,22 +7312,46 @@
                 ],
                 "parameters": [
                     {
+                        "name": "contact_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "Only chats with this customer."
+                    },
+                    {
+                        "name": "channel_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "Only chats on this WhatsApp number."
+                    },
+                    {
                         "name": "status",
                         "in": "query",
-                        "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "enum": [
+                                "open",
+                                "pending",
+                                "assigned",
+                                "resolved",
+                                "closed"
+                            ]
                         },
-                        "example": "open"
+                        "description": "Only chats with this status."
                     },
                     {
                         "name": "per_page",
                         "in": "query",
-                        "required": false,
                         "schema": {
-                            "type": "integer"
+                            "type": "integer",
+                            "default": 25,
+                            "minimum": 5,
+                            "maximum": 100
                         },
-                        "example": 25
+                        "description": "Chats per page, from 5 to 100."
                     }
                 ],
                 "responses": {
@@ -7087,10 +7368,12 @@
                                                 "type": "object",
                                                 "properties": {
                                                     "id": {
-                                                        "type": "integer"
+                                                        "type": "integer",
+                                                        "description": "The chat ID."
                                                     },
                                                     "contact_id": {
-                                                        "type": "integer"
+                                                        "type": "integer",
+                                                        "description": "The customer's ID."
                                                     },
                                                     "contact": {
                                                         "type": "object",
@@ -7113,54 +7396,89 @@
                                                             "created_at": {
                                                                 "type": "string"
                                                             }
-                                                        }
+                                                        },
+                                                        "description": "Short details of the customer."
                                                     },
                                                     "channel_id": {
-                                                        "type": "integer"
+                                                        "type": "integer",
+                                                        "description": "The WhatsApp number the chat is on."
                                                     },
                                                     "platform": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "description": "`whatsapp` or `messenger`."
                                                     },
                                                     "status": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "description": "`open`, `pending`, `assigned`, `resolved` or `closed`."
                                                     },
                                                     "priority": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "description": "The chat's priority."
                                                     },
                                                     "unread_count": {
-                                                        "type": "integer"
+                                                        "type": "integer",
+                                                        "description": "Messages your team hasn't read yet."
                                                     },
                                                     "last_message_at": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "description": "When the last message was sent or received."
                                                     },
                                                     "last_message_preview": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "description": "The start of the last message."
                                                     },
                                                     "last_message_direction": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "description": "`inbound` if the customer sent it, `outbound` if you did."
                                                     },
                                                     "window_expires_at": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "description": "When the 24-hour reply window ends."
+                                                    },
+                                                    "free_entry_point_expires_at": {
+                                                        "type": [
+                                                            "string",
+                                                            "null"
+                                                        ],
+                                                        "format": "date-time",
+                                                        "description": "If the chat started from a Facebook ad or page post, when its free 72-hour messaging period ends."
+                                                    },
+                                                    "free_entry_point_source": {
+                                                        "type": [
+                                                            "string",
+                                                            "null"
+                                                        ],
+                                                        "description": "Where that free period came from: `ad` or `page_cta`."
                                                     },
                                                     "is_window_open": {
-                                                        "type": "boolean"
+                                                        "type": "boolean",
+                                                        "description": "`true` if you can still send a text reply."
                                                     },
                                                     "first_message_at": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "description": "When the chat started."
                                                     },
                                                     "last_inbound_at": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "description": "When the customer last wrote."
                                                     },
                                                     "last_outbound_at": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "description": "When you last wrote."
                                                     },
-                                                    "resolved_at": {},
-                                                    "closed_at": {},
+                                                    "resolved_at": {
+                                                        "description": "When the chat was resolved."
+                                                    },
+                                                    "closed_at": {
+                                                        "description": "When the chat was closed."
+                                                    },
                                                     "created_at": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "description": "When the chat was created."
                                                     },
                                                     "updated_at": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "description": "When the chat last changed."
                                                     }
                                                 }
                                             }
@@ -7209,6 +7527,8 @@
                                                     "last_message_preview": "Thanks for reaching out!",
                                                     "last_message_direction": "inbound",
                                                     "window_expires_at": "2026-06-27T10:05:00+00:00",
+                                                    "free_entry_point_expires_at": null,
+                                                    "free_entry_point_source": null,
                                                     "is_window_open": true,
                                                     "first_message_at": "2026-06-26T09:00:00+00:00",
                                                     "last_inbound_at": "2026-06-26T10:05:00+00:00",
@@ -7246,6 +7566,12 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Returns a list of your WhatsApp and Messenger conversations. The most recent conversation is first."
+                    },
+                    "content": "You can filter the list by customer, WhatsApp number or status."
                 }
             }
         },
@@ -7255,7 +7581,6 @@
                     "Conversations"
                 ],
                 "summary": "Get Conversation Messages",
-                "description": "Cursor-paginated message history for a conversation, newest first. Follow `links.next` until `null` to walk the full thread.",
                 "operationId": "conversationsGetConversationMessages",
                 "security": [
                     {
@@ -7270,9 +7595,21 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "integer",
+                            "example": 1
                         },
-                        "description": "Identifier of the conversation."
+                        "description": "The chat `id` from List Conversations."
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 30,
+                            "minimum": 5,
+                            "maximum": 100
+                        },
+                        "description": "Messages per page, from 5 to 100."
                     }
                 ],
                 "responses": {
@@ -7426,6 +7763,12 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Opens one conversation and returns all its messages, with the most recent message first."
+                    },
+                    "content": "Get the conversation's `id` from List Conversations."
                 }
             }
         },
@@ -7435,7 +7778,6 @@
                     "OTP"
                 ],
                 "summary": "Send OTP",
-                "description": "Send a one-time passcode over WhatsApp using an APPROVED **authentication**-category template. The 6-digit code is generated server-side, hashed at rest, and delivered via the template's body + URL button. Returns `202` with an opaque `reference`.\n\nRate limits: 5/hour and 20/day per phone; 60s resend cooldown. `channel_id` must be a WhatsApp phone-number (endpoint) channel; `template_id` must belong to its account and be authentication-category + APPROVED.\n\n_Sends are throttled to Meta's per-number rate (mps + 6s pair-rate); over the limit returns `429 send_rate_limited` with a `Retry-After` header._",
                 "operationId": "otpSendOtp",
                 "security": [
                     {
@@ -7453,22 +7795,24 @@
                                 "properties": {
                                     "phone": {
                                         "type": "string",
-                                        "maxLength": 20
+                                        "maxLength": 20,
+                                        "description": "The customer's phone number with country code, for example `919876543210`."
                                     },
                                     "channel_id": {
                                         "type": "integer",
-                                        "description": "Must reference an existing `channels` record."
+                                        "description": "The ID of the WhatsApp number you send from. Find it under `endpoints` in List Channels."
                                     },
                                     "template_id": {
                                         "type": "integer",
-                                        "description": "Must reference an existing `message_templates` record."
+                                        "description": "An approved template from the Authentication category."
                                     },
                                     "purpose": {
                                         "type": [
                                             "string",
                                             "null"
                                         ],
-                                        "maxLength": 50
+                                        "maxLength": 50,
+                                        "description": "Optional. A label for your own use, such as `login`."
                                     },
                                     "expiry_minutes": {
                                         "type": [
@@ -7476,7 +7820,8 @@
                                             "null"
                                         ],
                                         "minimum": 1,
-                                        "maximum": 60
+                                        "maximum": 60,
+                                        "description": "Optional. How long the code works, from 1 to 60 minutes. Default is 10."
                                     }
                                 },
                                 "required": [
@@ -7512,32 +7857,43 @@
                                             "type": "object",
                                             "properties": {
                                                 "reference": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "Use this to check, verify, resend or cancel the code."
                                                 },
                                                 "phone": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "The customer's phone number."
                                                 },
                                                 "channel_id": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "The WhatsApp number the code was sent from."
                                                 },
                                                 "purpose": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "Your label for this code."
                                                 },
                                                 "status": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "`pending`, `verified`, `expired` or `cancelled`."
                                                 },
                                                 "expires_at": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "When the code stops working."
                                                 },
-                                                "verified_at": {},
+                                                "verified_at": {
+                                                    "description": "When the code was verified."
+                                                },
                                                 "verification_attempts": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "How many times a code was entered."
                                                 },
                                                 "remaining_attempts": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "How many tries are left."
                                                 },
                                                 "created_at": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "When the code was sent."
                                                 }
                                             }
                                         }
@@ -7644,6 +8000,12 @@
                             }
                         }
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Sends a one-time code to your customer's WhatsApp to confirm their phone number."
+                    },
+                    "content": "The template you use must be approved and in the Authentication category.\n\nThe response includes a `reference`. Save it, because you need it to verify, resend or cancel the code.\n\nEach code works for 10 minutes. To change this, set `expiry_minutes` to a value from 1 to 60.\n\nYou can send up to 5 codes per hour and 20 codes per day to the same phone number."
                 }
             }
         },
@@ -7653,7 +8015,6 @@
                     "OTP"
                 ],
                 "summary": "Get OTP Status",
-                "description": "Returns the OTP's current `status` (`pending` / `verified` / `expired` / `cancelled`) and `remaining_attempts`.",
                 "operationId": "otpGetOtpStatus",
                 "security": [
                     {
@@ -7670,7 +8031,7 @@
                         "schema": {
                             "type": "string"
                         },
-                        "description": "Identifier of the reference."
+                        "description": "The `reference` you got from Send OTP."
                     }
                 ],
                 "responses": {
@@ -7685,32 +8046,43 @@
                                             "type": "object",
                                             "properties": {
                                                 "reference": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "Use this to check, verify, resend or cancel the code."
                                                 },
                                                 "phone": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "The customer's phone number."
                                                 },
                                                 "channel_id": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "The WhatsApp number the code was sent from."
                                                 },
                                                 "purpose": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "Your label for this code."
                                                 },
                                                 "status": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "`pending`, `verified`, `expired` or `cancelled`."
                                                 },
                                                 "expires_at": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "When the code stops working."
                                                 },
-                                                "verified_at": {},
+                                                "verified_at": {
+                                                    "description": "When the code was verified."
+                                                },
                                                 "verification_attempts": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "How many times a code was entered."
                                                 },
                                                 "remaining_attempts": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "How many tries are left."
                                                 },
                                                 "created_at": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "When the code was sent."
                                                 }
                                             }
                                         }
@@ -7781,6 +8153,11 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Shows whether a code is still waiting, has been verified, has expired or was cancelled."
+                    }
                 }
             },
             "delete": {
@@ -7788,7 +8165,6 @@
                     "OTP"
                 ],
                 "summary": "Cancel OTP",
-                "description": "Cancel an active OTP. Returns `204`. A verified/expired/cancelled OTP returns `422 otp_inactive`.",
                 "operationId": "otpCancelOtp",
                 "security": [
                     {
@@ -7805,7 +8181,7 @@
                         "schema": {
                             "type": "string"
                         },
-                        "description": "Identifier of the reference."
+                        "description": "The `reference` you got from Send OTP."
                     }
                 ],
                 "responses": {
@@ -7860,6 +8236,12 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Cancels a code so it can no longer be used."
+                    },
+                    "content": "If it works, you get a `204` response with no content."
                 }
             }
         },
@@ -7869,7 +8251,6 @@
                     "OTP"
                 ],
                 "summary": "Verify OTP",
-                "description": "Submit the code the user received. On success `status` becomes `verified`. Wrong codes decrement `remaining_attempts` (`invalid_code`); other failures: `otp_expired`, `already_verified`, `max_attempts_reached`, `otp_cancelled`.",
                 "operationId": "otpVerifyOtp",
                 "security": [
                     {
@@ -7886,7 +8267,7 @@
                         "schema": {
                             "type": "string"
                         },
-                        "description": "Identifier of the reference."
+                        "description": "The `reference` you got from Send OTP."
                     }
                 ],
                 "requestBody": {
@@ -7899,7 +8280,8 @@
                                     "code": {
                                         "type": "string",
                                         "minLength": 4,
-                                        "maxLength": 8
+                                        "maxLength": 8,
+                                        "description": "The code your customer received."
                                     }
                                 },
                                 "required": [
@@ -7929,34 +8311,44 @@
                                             "type": "object",
                                             "properties": {
                                                 "reference": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "Use this to check, verify, resend or cancel the code."
                                                 },
                                                 "phone": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "The customer's phone number."
                                                 },
                                                 "channel_id": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "The WhatsApp number the code was sent from."
                                                 },
                                                 "purpose": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "Your label for this code."
                                                 },
                                                 "status": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "`pending`, `verified`, `expired` or `cancelled`."
                                                 },
                                                 "expires_at": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "When the code stops working."
                                                 },
                                                 "verified_at": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "When the code was verified."
                                                 },
                                                 "verification_attempts": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "How many times a code was entered."
                                                 },
                                                 "remaining_attempts": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "How many tries are left."
                                                 },
                                                 "created_at": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "When the code was sent."
                                                 }
                                             }
                                         }
@@ -8027,6 +8419,12 @@
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Checks the code your customer entered."
+                    },
+                    "content": "If the code is right, `status` becomes `verified`. The customer has 5 tries. After that, send a new code with Resend OTP."
                 }
             }
         },
@@ -8036,7 +8434,6 @@
                     "OTP"
                 ],
                 "summary": "Resend OTP",
-                "description": "Issue a fresh code on the same `reference`, resetting attempts and extending expiry. Subject to the 60s cooldown (`resend_cooldown`) and hourly/daily limits.\n\n_Sends are throttled to Meta's per-number rate (mps + 6s pair-rate); over the limit returns `429 send_rate_limited` with a `Retry-After` header._",
                 "operationId": "otpResendOtp",
                 "security": [
                     {
@@ -8053,7 +8450,7 @@
                         "schema": {
                             "type": "string"
                         },
-                        "description": "Identifier of the reference."
+                        "description": "The `reference` you got from Send OTP."
                     }
                 ],
                 "responses": {
@@ -8068,32 +8465,43 @@
                                             "type": "object",
                                             "properties": {
                                                 "reference": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "Use this to check, verify, resend or cancel the code."
                                                 },
                                                 "phone": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "The customer's phone number."
                                                 },
                                                 "channel_id": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "The WhatsApp number the code was sent from."
                                                 },
                                                 "purpose": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "Your label for this code."
                                                 },
                                                 "status": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "`pending`, `verified`, `expired` or `cancelled`."
                                                 },
                                                 "expires_at": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "When the code stops working."
                                                 },
-                                                "verified_at": {},
+                                                "verified_at": {
+                                                    "description": "When the code was verified."
+                                                },
                                                 "verification_attempts": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "How many times a code was entered."
                                                 },
                                                 "remaining_attempts": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "description": "How many tries are left."
                                                 },
                                                 "created_at": {
-                                                    "type": "string"
+                                                    "type": "string",
+                                                    "description": "When the code was sent."
                                                 }
                                             }
                                         }
@@ -8180,6 +8588,12 @@
                             }
                         }
                     }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Sends a new code to your customer, for example if they didn't receive the first one."
+                    },
+                    "content": "The new code works for 10 minutes, and your customer gets 5 new tries to enter it.\n\nYou can resend a code once every 60 seconds."
                 }
             }
         },
@@ -8189,7 +8603,6 @@
                     "Error Examples"
                 ],
                 "summary": "Unknown Endpoint (→ 404)",
-                "description": "Demonstrates the fallback JSON 404 for any unrecognised path on the API domain.",
                 "operationId": "errorExamplesUnknownEndpoint404",
                 "security": [
                     {
@@ -8239,6 +8652,11 @@
                     },
                     "429": {
                         "$ref": "#/components/responses/QuotaExhausted"
+                    }
+                },
+                "x-mint": {
+                    "metadata": {
+                        "description": "Demonstrates the fallback JSON 404 for any unrecognised path on the API domain."
                     }
                 }
             }
