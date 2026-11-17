@@ -1,25 +1,25 @@
 ---
 title: "Connect your Shopify store to WhatsApp"
 sidebarTitle: "Your store and the Shopify app"
-description: "Check your store's connection, sync your Shopify customers, and see your sales inside Shopify."
+description: "See your store's connection and sales inside Shopify, bring your Shopify customers into ChatFlows, and open your dashboard in one click."
 icon: "layout-dashboard"
-keywords: ["ChatFlows", "ChatFlows.io", "Shopify", "Shopify admin", "embedded app", "open dashboard", "connect store", "sync contacts", "disconnect", "reconnect"]
+keywords: ["ChatFlows", "chatflows.io", "Shopify", "Shopify admin", "embedded app", "open dashboard", "connect store", "sync contacts", "disconnect", "reconnect"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
 
-Your store is connected for you when you [install ChatFlows.io from Shopify](/getting-started/install-from-shopify).
+Your store is connected for you when you [install ChatFlows from Shopify](/getting-started/install-from-shopify).
 After that, you can see your store in two places:
 
-- **The ChatFlows.io app in your Shopify admin** shows your store's status and sales, and opens your dashboard in one click.
+- **The ChatFlows app in your Shopify admin** shows your store's status and sales, and opens your dashboard in one click.
 - **Settings → Shopify in your workspace** is where you sync your customers and disconnect the store.
 
-You do your real work in the ChatFlows.io dashboard.
+You do your real work in the ChatFlows dashboard.
 
 ## Find the app
 
-In your Shopify admin, click **ChatFlows.io** under **Apps** in the left menu.
+In your Shopify admin, click **ChatFlows** under **Apps** in the left menu.
 The app has three pages: **Overview**, **Setup** and **Plan & billing**.
 
 ## Overview
@@ -33,7 +33,7 @@ This is the page you see first. It shows:
 
 ![The Overview page: the store marked Connected with the workspace, plan, Active status and next billing date, Open dashboard and Refresh buttons, cards for orders, revenue, average order value and carts recovered, and Orders, Cart recovery and Automations tabs above the charts](/shopify/img/shopify-app-overview.png)
 
-You can see the last 7, 30 or 90 days. These numbers match the [Shopify dashboard](/shopify/shopify-dashboard) in ChatFlows.io.
+You can see the last 7, 30 or 90 days. These numbers match the [Shopify dashboard](/shopify/shopify-dashboard) in ChatFlows.
 
 If something needs your attention, a notice tells you what to do.
 
@@ -42,7 +42,7 @@ If something needs your attention, a notice tells you what to do.
 This page shows how your store is connected and what is left to set up.
 
 - **Store connection** shows your store, your workspace, when it was connected, and which Shopify app it uses.
-- **Permissions** shows what ChatFlows.io may read from your store: **Orders and checkouts**, and **Delivery updates**. Each one shows **Granted** when it's on.
+- **Permissions** shows what ChatFlows may read from your store: **Orders and checkouts**, and **Delivery updates**. Each one shows **Granted** when it's on.
 
 ![The Setup page with Store connection details, Permissions showing Orders and checkouts and Delivery updates as Granted, a three-step Quick start, and shortcuts to WhatsApp setup and Automations](/shopify/img/shopify-app-setup.png)
 
@@ -50,7 +50,7 @@ If something is wrong:
 
 - If the connection has a problem, you see the reason. Click **Reconnect** to connect through Shopify again.
 - **Retry setup** opens the Shopify page in your dashboard to finish the setup.
-- If you see **Delivery updates are off**, your store was connected before ChatFlows.io asked for delivery access.
+- If you see **Delivery updates are off**, your store was connected before ChatFlows asked for delivery access.
   The **Order out for delivery** and **Order delivered** automations can't run.
   Reconnect the store once to turn them on.
 
@@ -68,10 +68,10 @@ See [Plan and billing](/billing/plan-and-billing) for the details.
 
 ## Open your dashboard
 
-Click **Open dashboard** to go to ChatFlows.io. You are signed in as the workspace owner. You don't need a password.
+Click **Open dashboard** to go to ChatFlows. You are signed in as the workspace owner. You don't need a password.
 
 <Note>
-  Anyone who can open ChatFlows.io in your Shopify admin can use **Open dashboard**.
+  Anyone who can open ChatFlows in your Shopify admin can use **Open dashboard**.
   Give app access in Shopify only to staff you trust.
 </Note>
 
@@ -84,7 +84,7 @@ In your workspace, go to **Settings → Shopify**. The store card shows one of t
 
 - **Connected** — everything works. Store events can start your automations.
 - **Connecting…** — setup is still finishing. It changes to **Connected** a moment later.
-- **Needs attention** — something stopped working. The card shows the reason Shopify gave. Click **Reconnect** to approve ChatFlows.io again in Shopify, or **Retry setup** to run the setup again.
+- **Needs attention** — something stopped working. The card shows the reason Shopify gave. Click **Reconnect** to approve ChatFlows again in Shopify, or **Retry setup** to run the setup again.
 
 <Figure
   src="/settings/img/shopify-connected.png"
@@ -106,10 +106,28 @@ If a customer has tags in Shopify, they come across as customer tags.
 ## Disconnect your store
 
 On **Settings → Shopify**, click **Disconnect** and confirm. Shopify events stop starting your automations right away.
-Uninstalling ChatFlows.io from your Shopify admin also disconnects the store and cancels your plan.
+Uninstalling ChatFlows from your Shopify admin also disconnects the store and cancels your plan.
 
 Your customers stay in your workspace, and your automations are not deleted.
 If you connect the store again later, your automations work again.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Does ChatFlows change my Shopify products, orders or settings?">
+    No. ChatFlows only reads your store: the **Orders and checkouts** and **Delivery updates** permissions are read access.
+    See [Setup](#setup).
+  </Accordion>
+
+  <Accordion title="Do I need to change my Shopify theme to use ChatFlows?">
+    No. ChatFlows doesn't add anything to your storefront or theme.
+  </Accordion>
+
+  <Accordion title="Can I open ChatFlows without going through my Shopify admin?">
+    Yes, once you set a password. Your dashboard offers **Set a password to sign in without Shopify**, so you can sign in from any browser.
+    See [Open your dashboard](#open-your-dashboard).
+  </Accordion>
+</AccordionGroup>
 
 ## Where to next
 

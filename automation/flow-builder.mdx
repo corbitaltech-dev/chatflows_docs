@@ -1,8 +1,9 @@
 ---
-title: "Flow Builder"
-description: "Build your chatbot by adding flow steps, connecting them together, and defining how each conversation should progress."
+title: "Automation flow builder"
+sidebarTitle: "Flow Builder"
+description: "Build an automation step by step: choose what starts it (a message, a keyword or a Shopify event), then add messages, questions and actions."
 icon: "workflow"
-keywords: ["ChatFlows", "ChatFlows.io", "flow builder", "automation", "flow steps", "triggers", "chatbot"]
+keywords: ["ChatFlows", "chatflows.io", "flow builder", "automation", "flow steps", "triggers", "chatbot"]
 ---
 
 The **Flow Builder** is where you create your chatbot conversation. Choose from different flow steps such as [**Text Message**](/automation/flow-steps/basic#text-message), [**Button Message**](/automation/flow-steps/basic#button-message), [**Ask Question**](/automation/flow-steps/ask#ask-question), [**Condition**](/automation/flow-steps/advanced#condition), or [**API Request**](/automation/flow-steps/advanced#api-request) then connect them to control what happens next. Every flow begins with a [**Start Trigger**](#the-start-trigger), which determines when the conversation starts. After that, each flow step runs in the order you've connected them.
@@ -46,10 +47,10 @@ Type **@** in almost any text box to drop in a merge field, such as the contact'
 ## The Start Trigger
 Every flow begins here. The Start Trigger decides when your chatbot starts. Open the **Start Trigger** settings, then choose one of the two Trigger Sources.
 
-- **Message** — someone sends you a WhatsApp message.
+- **Message** — someone sends you a WhatsApp or Messenger message.
 - **Shopify** — something happens to an order in your Shopify store.
 
-The rest of the card changes depending on which one you choose, The following sections explain each option.
+The rest of the card changes depending on which one you choose. The following sections explain each option.
 
 ### Message
 
@@ -68,16 +69,16 @@ The most common choice. The flow starts when someone messages you.
 | **First message from lead/customer** | Starts the flow when a lead or customer contacts you for the first time. After that, this trigger won't run again for the same contact. |
 | **No keyword matches (fallback)** | Use this as your default flow. If no other keyword triggers match, this flow runs automatically to make sure every customer receives a response. |
 
-**Keywords** — Available only **when On Exact Match** or **When Message Contains** is selected. Enter a keyword and press Enter to add it. Add multiple keywords or common variations so customers can trigger the flow using different words.
+**Keywords** — Available only when **On exact match** or **When message contains** is selected. Enter a keyword and press Enter to add it. Add multiple keywords or common variations so customers can trigger the flow using different words.
 
 **Example.** If you choose When Message Contains and add the keywords **book**, **table**, and **reservation**, messages like **"Can I book a table for 4?"** or **"I'd like to make a reservation"** will automatically start the booking flow.
 <Tip>
-We recommend creating one **First Message from Lead/Customer** flow to greet new **contacts** and one **No Keyword Matches (Fallback)** flow to handle messages that don't match any keywords. This way, every customer receives a response.
+We recommend creating one **First message from lead/customer** flow to greet new **contacts** and one **No keyword matches (fallback)** flow to handle messages that don't match any keywords. This way, every customer receives a response.
 </Tip>
 
 ### Shopify
 
-This flow runs automatically when an order changes in your connected Shopify store. Customers don't need to send a message. ChatFlows.io uses the customer's phone number to find the correct contact and start the flow.
+This flow runs automatically when an order changes in your connected Shopify store. Customers don't need to send a message. ChatFlows uses the customer's phone number to find the correct contact and start the flow.
 
 ![Start Trigger settings with Trigger Source set to Shopify, the Shopify Event set to Cart abandoned, a Send after (minutes) box with its help text, and a note about the 24-hour messaging window](/automation/img/shopify-trigger.png)
 
@@ -101,7 +102,7 @@ Pick one **Shopify Event**:
 **Example.** Pick **Cart abandoned** and set **Send after (minutes)** to **60**. Then send a **WhatsApp template** with a link back to their checkout. For a second reminder, create another cart-abandoned automation with a longer delay. Each one checks for an order before it sends.
 
 <Note>
-The Order **Out for Delivery** and **Order Delivered** triggers work only if your shipping carrier sends tracking updates to Shopify. If you mark orders as fulfilled manually, these triggers won't run.
+The **Order out for delivery** and **Order delivered** triggers work only if your shipping carrier sends tracking updates to Shopify. If you mark orders as fulfilled manually, these triggers won't run.
 </Note>
 
 <Warning>
@@ -150,7 +151,7 @@ The toolbar at the top right of the page has a few helpers:
 <Note>
 Some flow steps are available only on the platform that supports them. If you're building a Messenger flow, WhatsApp-only steps are hidden. If you're building a WhatsApp flow, **Messenger Template** is hidden.
 
-The WhatsApp-only steps are [**List Message**](/automation/flow-steps/interactive#list-message), [**Call To Action**](/automation/flow-steps/basic#call-to-action), [**Contact Card**](/automation/flow-steps/interactive#contact-card), [**Reaction**](/automation/flow-steps/interactive#reaction), [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template), and [**Ask Location**](/automation/flow-steps/ask#ask-location).
+The WhatsApp-only steps are [**List Message**](/automation/flow-steps/interactive#list-message), [**Call To Action**](/automation/flow-steps/basic#call-to-action), [**Contact Card**](/automation/flow-steps/interactive#contact-card), [**Reaction**](/automation/flow-steps/interactive#reaction), [**WhatsApp Template**](/automation/flow-steps/basic#whatsapp-template), [**WhatsApp Flow**](/automation/flow-steps/basic#whatsapp-flow), and [**Ask Location**](/automation/flow-steps/ask#ask-location).
 </Note>
 
 ## What's next

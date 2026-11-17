@@ -26,7 +26,7 @@ Two companion skills, used inside the method:
 
 ## Hard rules (same ones `docs-writer` follows)
 
-- "ChatFlows.io", never bare "chatflows", except in `keywords:`.
+- "ChatFlows" is the product name, never "ChatFlows.io". Lower-case "chatflows.io" is only for the website or a web address.
 - Never WaMatrix or WhatsMark.
 - No plans, trials, limits or prices outside `billing/plan-and-billing.mdx`.
 - Menu names use the Shopify-mode labels (`chatflows-docs` §2).

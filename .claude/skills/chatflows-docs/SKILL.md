@@ -1,15 +1,15 @@
 ---
 name: chatflows-docs
-description: Authoritative rules for writing and editing any page in the docs.chatflows.io Mintlify site — plain-language voice, the ChatFlows.io brand rules, the Shopify-only feature list and menu names, the banned-claims list, Mintlify component and docs.json mechanics (Lucide icons, redirects, the index.mdx root rule), screenshot and image alt-text conventions, the shared-repo safety rules for working alongside other writers, and the verification checklist every page must pass. Activate for ANY task that creates, rewrites, reviews, or fact-checks a docs page, edits docs.json or navigation, or when the user mentions the docs site, a docs page, Mintlify, or quickstart.
+description: Authoritative rules for writing and editing any page in the docs.chatflows.io Mintlify site — plain-language voice, the ChatFlows brand rules, the Shopify-only feature list and menu names, the banned-claims list, Mintlify component and docs.json mechanics (Lucide icons, redirects, the index.mdx root rule), screenshot and image alt-text conventions, the shared-repo safety rules for working alongside other writers, and the verification checklist every page must pass. Activate for ANY task that creates, rewrites, reviews, or fact-checks a docs page, edits docs.json or navigation, or when the user mentions the docs site, a docs page, Mintlify, or quickstart.
 ---
 
-# ChatFlows.io Documentation
+# ChatFlows Documentation
 
-You write the customer-facing docs at `docs.chatflows.io`. The audience is a **small-business owner or their staff** — not a developer. They run a Shopify store and installed ChatFlows.io from the Shopify App Store.
+You write the customer-facing docs at `docs.chatflows.io`. The audience is a **small-business owner or their staff** — not a developer. They run a Shopify store and installed ChatFlows from the Shopify App Store.
 
 Two goals, in this order:
 
-1. **Understand** — a visitor grasps what ChatFlows.io does within 15 seconds of landing.
+1. **Understand** — a visitor grasps what ChatFlows does within 15 seconds of landing.
 2. **Onboard** — they reach their first sent message without getting stuck or scared off.
 
 Everything below serves those two. When a rule conflicts with elegance, the rule wins — most of them exist because breaking one caused a real problem.
@@ -42,7 +42,7 @@ Two exceptions where a term is unavoidable: **template** and **channel**. Both a
 
 **Don't answer objections the reader doesn't have.** Reassurance like "no coding required", "you don't need a developer", "no technical knowledge needed" *creates* the worry it's trying to remove — a shop owner who never suspected programming was involved now wonders whether it normally is. We don't sell a code-based product, so never raise the subject.
 
-The same trap applies to any "don't worry about X" phrasing. If the reader wouldn't have thought of X unaided, leave it out. Where a genuinely technical capability exists, frame it as something they can *do*, not something they can *avoid*: "Can I connect ChatFlows.io to my own software?" — not "Do I need a developer?"
+The same trap applies to any "don't worry about X" phrasing. If the reader wouldn't have thought of X unaided, leave it out. Where a genuinely technical capability exists, frame it as something they can *do*, not something they can *avoid*: "Can I connect ChatFlows to my own software?" — not "Do I need a developer?"
 
 ---
 
@@ -68,13 +68,14 @@ Most readers arrive while deciding whether to trust and buy. These docs are part
 
 ## 2. Brand naming and the Shopify-only product — non-negotiable
 
-- The product is **ChatFlows.io**. Never "ChatFlows" in body prose, headings, descriptions, captions, or `docs.json`'s `name`.
-  - `keywords:` frontmatter is the **one exception** — keep the bare "ChatFlows" there too, because people search both spellings and dropping it costs search traffic.
+- The app is **ChatFlows** (that is its name in the Shopify App Store). Never "ChatFlows" as the product name in body prose, headings, descriptions, captions, alt text or `docs.json`'s `name`.
+  - **chatflows.io**, in lower case, is only for the website or a web address: "see chatflows.io", `https://chatflows.io/`, `docs.chatflows.io`, `support@chatflows.io`.
+  - `keywords:` frontmatter keeps both spellings, `"ChatFlows", "chatflows.io"`, because people search both.
 - The old brands **WaMatrix**, **WaMatrix.io**, **WhatsMark** and **whatsmark.io** must never appear — not in text, alt text, links or file names.
 
 ### Who reads these docs
 
-ChatFlows.io is sold **only to Shopify merchants**, through the Shopify App Store. The product runs with `SHOPIFY_ONLY_MODE=true` on the `chatflows` branch. Write for a Shopify shop owner. Lead with what matters to a store: abandoned carts, order updates, and the shared inbox.
+ChatFlows is sold **only to Shopify merchants**, through the Shopify App Store. The product runs with `SHOPIFY_ONLY_MODE=true` on the `chatflows` branch. Write for a Shopify shop owner. Lead with what matters to a store: abandoned carts, order updates, and the shared inbox.
 
 ### Features that do not exist for this audience
 
@@ -204,7 +205,7 @@ Images live in a section-local `img/` folder (`settings/img/`, `messaging/img/`,
 title: "Sentence case title"
 description: "One sentence. Appears in search results and social previews — write it to attract, not to summarise."
 icon: "lucide-name"
-keywords: ["ChatFlows", "ChatFlows.io", "…"]
+keywords: ["ChatFlows", "chatflows.io", "…"]
 ---
 ```
 
@@ -220,7 +221,7 @@ Phrase it as a source, not a dump — one link at the end of the section:
 
 ```mdx
 <Note>
-  This is a WhatsApp rule, not a ChatFlows.io one. Meta documents it in full under
+  This is a WhatsApp rule, not a ChatFlows one. Meta documents it in full under
   [messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits).
 </Note>
 ```
@@ -293,7 +294,7 @@ python3 -c "import json; json.load(open('docs.json')); print('valid')"
 Then confirm by hand:
 
 - [ ] Zero banned words from §1; every retained term defined on first use
-- [ ] "ChatFlows.io" everywhere except `keywords:`
+- [ ] "ChatFlows" as the product name; lower-case "chatflows.io" only for the website or a web address
 - [ ] No WaMatrix / WhatsMark anywhere, including alt text
 - [ ] No plan, trial, price or "paid feature" text outside `billing/plan-and-billing.mdx`
 - [ ] No hidden feature (WooCommerce, Instagram, Appointments, coupons, sign-up, non-Shopify payments)

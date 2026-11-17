@@ -1,7 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
-  "name": "ChatFlows.io",
+  "name": "ChatFlows",
+  "description": "ChatFlows is a Shopify app for WhatsApp. These docs show Shopify store owners how to install it, connect a WhatsApp Business number, send abandoned cart reminders, order and shipping updates and campaigns, and answer customers from a shared inbox.",
   "colors": {
     "primary": "#779812",
     "light": "#C6FE1E",
@@ -367,7 +368,12 @@
         "label": "Support",
         "href": "mailto:support@chatflows.io"
       }
-    ]
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Install on Shopify",
+      "href": "https://apps.shopify.com/chatflows"
+    }
   },
   "contextual": {
     "options": [
@@ -382,12 +388,71 @@
     ]
   },
   "footer": {
-    "socials": {}
+    "socials": {
+      "website": "https://chatflows.io/"
+    },
+    "links": [
+      {
+        "header": "ChatFlows",
+        "items": [
+          {
+            "label": "Website",
+            "href": "https://chatflows.io/"
+          },
+          {
+            "label": "Shopify App Store",
+            "href": "https://apps.shopify.com/chatflows"
+          }
+        ]
+      },
+      {
+        "header": "Help",
+        "items": [
+          {
+            "label": "Quick start",
+            "href": "/"
+          },
+          {
+            "label": "Troubleshooting",
+            "href": "/getting-started/troubleshooting"
+          },
+          {
+            "label": "Email support",
+            "href": "mailto:support@chatflows.io"
+          }
+        ]
+      },
+      {
+        "header": "Legal",
+        "items": [
+          {
+            "label": "Privacy policy",
+            "href": "https://chatflows.io/privacy-policy/"
+          },
+          {
+            "label": "Terms and conditions",
+            "href": "https://chatflows.io/terms-conditions/"
+          }
+        ]
+      }
+    ]
   },
   "icons": {
     "library": "lucide"
   },
   "fonts": {
     "family": "Geist"
+  },
+  "seo": {
+    "organization": {
+      "name": "ChatFlows",
+      "url": "https://chatflows.io/",
+      "sameAs": [
+        "https://apps.shopify.com/chatflows"
+      ]
+    }
+  },
+  "metadata": {
+    "timestamp": true
   }
 }

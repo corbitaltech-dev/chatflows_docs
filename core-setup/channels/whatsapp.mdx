@@ -1,13 +1,16 @@
 ---
-title: "Connect WhatsApp"
-description: "How to connect a WhatsApp Business Account to ChatFlows.io via Embedded Signup or manually, and manage its health and business profile."
-icon: "whatsapp"
+title: "Connect your WhatsApp Business number"
+sidebarTitle: "Connect WhatsApp"
+description: "Connect your WhatsApp Business number to ChatFlows through Meta's own pop-up window, keep the WhatsApp Business app on your phone, and check your number's health."
+icon: "message-circle"
 keywords: ["ChatFlows", "WhatsApp", "WhatsApp Setup", "channels", "WABA", "embedded signup", "coexistence", "business profile"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-Connect a WhatsApp Business Account (WABA) so you can send and receive WhatsApp messages through ChatFlows.io.
+Your WhatsApp number is what your customers see. Connect it once, and ChatFlows can send your cart reminders, order updates and campaigns from it, and every reply lands in your **Inbox**.
+
+Meta's own pop-up window walks you through it. Behind your number sits a WhatsApp Business Account (Meta calls it a **WABA**), which you create or pick in that window.
 
 ## Before you connect
 
@@ -70,7 +73,7 @@ Make sure you have the following ready:
 
 ## Coexistence mode
 
-You can connect a WhatsApp number in **coexistence mode** — this keeps your existing WhatsApp Business app active on your phone alongside the API connection. Chat history and contacts from the app are imported, and messages stay in sync between the app and ChatFlows.io.
+You can connect a WhatsApp number in **coexistence mode** — this keeps your existing WhatsApp Business app active on your phone alongside the API connection. Chat history and contacts from the app are imported, and messages stay in sync between the app and ChatFlows.
 
 ## WABA health
 
@@ -94,7 +97,7 @@ Open a connected WhatsApp channel to view:
   caption="Image shows the phone number and business profile card."
 />
 
-Go to a channel's **Profile** tab to edit the public WhatsApp Business Profile your contacts see: about text, address, description, email, websites, business vertical/category, and profile photo.
+Open a connected channel and click **Edit profile** on its phone number card to edit the public WhatsApp Business Profile your contacts see: about text, address, description, email, websites, business vertical/category, and profile photo.
 
 ## Test message
 
@@ -110,7 +113,7 @@ Use the **Test** button on a channel to confirm the connection actually works en
 
 <AccordionGroup>
   <Accordion title="Meta's pop-up window doesn't open">
-    Your browser may be blocking pop-ups. Allow pop-ups for ChatFlows.io and click **Connect Channel** again.
+    Your browser may be blocking pop-ups. Allow pop-ups for ChatFlows and click **Connect Channel** again.
   </Accordion>
 
   <Accordion title="The number is already registered on WhatsApp">
@@ -126,11 +129,35 @@ Use the **Test** button on a channel to confirm the connection actually works en
 
   <Accordion title="Messages stop at a daily limit">
     New numbers start with a limit on how many customers they can message in a day. Meta raises it as you send good-quality messages, and after business verification.
-    This is a WhatsApp rule, not a ChatFlows.io one. Meta explains it under [messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits).
+    This is a WhatsApp rule, not a ChatFlows one. Meta explains it under [messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits).
   </Accordion>
 </AccordionGroup>
 
 For other problems, see [Troubleshooting](/getting-started/troubleshooting).
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Will I lose my WhatsApp Business app chats if I connect to ChatFlows?">
+    No. If your number is on the WhatsApp Business app, connect it in coexistence mode and the app keeps working on your phone.
+    ChatFlows imports your chat history and contacts, and messages stay in sync between the app and your Inbox.
+  </Accordion>
+
+  <Accordion title="Can I connect my personal WhatsApp number to ChatFlows?">
+    Not while it is on the personal WhatsApp app. Delete that WhatsApp account on the phone first, or use another number.
+    A number already on the WhatsApp Business app can connect as it is.
+  </Accordion>
+
+  <Accordion title="Do I need Meta Business Verification to connect WhatsApp?">
+    No. Business Verification is not required to connect, but Meta strongly recommends it.
+    Without it your number stays on limited messaging tiers, which Meta explains under [messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits).
+  </Accordion>
+
+  <Accordion title="Can I connect Instagram as well as WhatsApp?">
+    No. ChatFlows works with WhatsApp and Messenger, and Instagram isn't available.
+    To add a Facebook Page, see [Connecting Messenger](/core-setup/channels/messenger).
+  </Accordion>
+</AccordionGroup>
 
 ## What's next
 

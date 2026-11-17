@@ -1,11 +1,12 @@
 ---
-title: "Ask Flow Steps"
-description: "Collect customer information by asking questions and automatically saving their answers."
+title: "Question steps: collect customer details"
+sidebarTitle: "Ask Flow Steps"
+description: "Ask for a name, phone number, email, address, location or file in the chat, check the answer, and save it to the customer's record automatically."
 icon: "circle-question-mark"
-keywords: ["ChatFlows", "ChatFlows.io", "flow steps", "ask question", "ask phone", "ask email", "ask address", "ask location", "ask media", "get input"]
+keywords: ["ChatFlows", "chatflows.io", "flow steps", "ask question", "ask phone", "ask email", "ask address", "ask location", "ask media", "get input"]
 ---
 
-**Ask** category flow steps let you collect information from **customers**, such as their **name**, **phone number**, **email address**, **location**, or **files**. Each step asks a question, validates the response, and saves the answer to the contact record for later use.
+Collect what you need without typing a single question yourself. The **Ask** category steps ask customers for their **name**, **phone number**, **email address**, **location** or **files**. Each step asks a question, validates the response, and saves the answer to the contact record for later use.
 
 ![Flow Builder with the Ask tab selected, showing the Ask Question, Ask Phone, Ask Email, Ask Address, Ask Location, Ask Media, and Get Input tiles, and a job application flow connecting a Start Trigger to an Ask Question, an Ask Phone, an Ask Media, and a closing Text Message](/automation/img/ask/ask-flow-steps.png)
 
@@ -47,7 +48,7 @@ In later message steps, type **@** in any message field to insert the saved answ
 **Required fields**
 
 - **Question** and **Capture Attribute** are required.
-- **Attribute Format** sets what a valid answer looks like. It defaults to **Any**, which accepts whatever customer send.
+- **Attribute Format** sets what a valid answer looks like. It defaults to **Any**, which accepts whatever the customer sends.
 - **Pattern** is required, but only if you set the Attribute Format to **Regular expression**.
 
 ![Ask Question settings with a Question box asking what date the customer would like their order delivered, a Capture Attribute of delivery_date, an Attribute Format of Date, Number of Attempts set to 2, a Validation Error Message, and an Attempts Over Message](/automation/img/ask/ask-question-settings.png)
@@ -157,7 +158,7 @@ Ask Location is a WhatsApp-only step. It's hidden on Messenger flows.
 
 ## Ask Media
 
-**What it does.** Asks the customer to upload a file. You can choose which file types are allowed, such as  **Image**, **Video**, **Audio**, **Document** or **Sticker** or **Any file**,.
+**What it does.** Asks the customer to upload a file. You can choose which file types are allowed, such as **Image**, **Video**, **Audio**, **Document**, or **Sticker**, or allow **Any** file.
 
 **When to use it.** Use it when you need customers to send files, **such as photos of damaged items**, **ID documents**, **prescriptions**, **screenshots**, or other **supporting documents**.
 

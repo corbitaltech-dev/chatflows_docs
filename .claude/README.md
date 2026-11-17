@@ -1,4 +1,4 @@
-# ChatFlows.io docs — the `.claude/` layer
+# ChatFlows docs — the `.claude/` layer
 
 This folder holds the agents and skills that write, draft, and monitor the
 customer-facing documentation at `docs.chatflows.io`. It's organised as two

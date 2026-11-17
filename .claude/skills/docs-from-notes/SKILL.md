@@ -76,7 +76,7 @@ Expand each bullet into plain, short sentences. Outcomes before mechanics; benef
 title: "Sentence case title"
 description: "One sentence, written to attract, not summarise — it shows in search and social. Plain text, no **bold**."
 icon: "lucide-name"     # Lucide only; they fail silently. message-circle for WhatsApp.
-keywords: ["ChatFlows", "ChatFlows.io", "…"]   # bare ChatFlows allowed here only
+keywords: ["ChatFlows", "chatflows.io", "…"]   # both spellings, for search
 ---
 ```
 
@@ -103,7 +103,7 @@ Ask a focused question **only** when a genuine gap blocks the page — an unknow
 title: "Quick replies"
 description: "Save the answers you send every day and drop them into a chat with a shortcut."
 icon: "message-square-quote"
-keywords: ["ChatFlows", "ChatFlows.io", "quick replies", "canned replies", "shortcuts", "live chat"]
+keywords: ["ChatFlows", "chatflows.io", "quick replies", "canned replies", "shortcuts", "live chat"]
 ---
 
 Save the replies you type again and again, and drop them into any chat in one click.

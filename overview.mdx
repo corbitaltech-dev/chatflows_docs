@@ -1,107 +1,69 @@
 ---
 title: "API Overview"
-description: "Connect your own software to ChatFlows.io — what the API can do, and how to get your access token."
+description: "Use the ChatFlows REST API to connect your website, CRM and other business systems to your workspace, so they work together automatically."
 icon: "eye"
-keywords: ["ChatFlows", "API", "REST API", "developer", "token", "Developer API Keys", "scopes", "pagination"]
+keywords: ["ChatFlows", "API", "REST API", "developer", "API key", "API token", "Developer API Keys"]
 ---
 
-## What is the ChatFlows.io API
-
-The ChatFlows.io REST API lets you interact with your workspace programmatically — contacts, templates, messages, conversations, channels, and OTP verification — instead of using the dashboard by hand. It's served from the same address as your workspace, at `/api/v1`.
-
-## Getting access
-
-<Steps>
-  <Step title="Create a workspace API token">
-    Go to [Setup → Developer API Keys](/core-setup/api-keys) and create a token. Choose the abilities (scopes) it needs — tokens are only granted the scopes you select.
-  </Step>
-  <Step title="Authenticate your requests">
-    Every request must include your token as a bearer token:
-
-    ```text
-    Authorization: Bearer YOUR_API_TOKEN
-    ```
-  </Step>
-  <Step title="Call the API">
-    Send requests to your own workspace address, at `/api/v1/...` — for example
-    `https://yourworkspace.example.com/api/v1/...`. Start with `GET /api/v1/ping` to confirm your
-    token and abilities are working — you'll find it under [Auth & Account](/api-reference/auth-&-account/ping)
-    in the sidebar.
-  </Step>
-</Steps>
-
-## Base URL
-
-Your workspace's own address, followed by `/api/v1` — for example:
-
-```text
-https://yourworkspace.example.com/api/v1
-```
-
-## Scopes (abilities)
-
-Each endpoint requires a specific token ability (scope), for example `account:read` or `channels:read`. Create your token with the abilities that match the endpoints you plan to call — a request will be rejected with `403 Forbidden` if your token is missing the required scope. Every endpoint page in this reference states its required scope at the top.
-
-## Pagination
-
-List endpoints return a consistent envelope:
-
-```json
-{
-  "data": [ ... ],
-  "links": { "next": "...", "prev": "..." },
-  "meta": { ... }
-}
-```
-
-Large or append-only collections (contacts, group members, webhooks) use opaque cursor pagination — keep following `links.next` until it's `null`. `per_page` is clamped between 5 and 100.
-
-## Async sends
-
-Message and OTP send endpoints return `202 Accepted` immediately and are processed on a background queue rather than sent synchronously.
-
-## Errors
-
-Errors use a consistent envelope:
-
-```json
-{
-  "message": "...",
-  "error_code": "...",
-  "status": 4xx
-}
-```
-
-Each endpoint page lists the specific error codes it can return and when they happen.
-
-## Modules
-
-The API covers: **Auth & Account** · **Channels** · **Contacts** · **Contact Statuses** · **Contact Sources** · **Contact Groups** · **Contact Labels** · **Templates** · **Messages** · **Conversations** · **OTP**.
-
-Every module is documented endpoint by endpoint in the sidebar under this Api tab — parameters, request bodies, required scopes, and example requests/responses for each one.
-
-## Prefer Swagger, or need an OpenAPI spec / Postman collection?
-
-If you'd rather browse and test everything from a single interactive Swagger page, or need the raw spec to generate a client, the same API is also documented at `/docs` on your own workspace address.
+## What you can do
 
 <CardGroup cols={2}>
-  <Card title="Try it out, live" icon="play">
-    Use the **Authorize** button on the Swagger UI (at `/docs` on your workspace address) to add `Authorization: Bearer <token>` and send real requests against your workspace without leaving the browser.
+  <Card title="Sync customers" icon="users">
+    Create and update customers from your other business systems.
   </Card>
-
-  <Card title="OpenAPI spec" icon="file-code">
-    Download the raw OAS 3.1 document from `/openapi/chatflows-api-v1.json` on your workspace address to generate clients or import it into your own tooling.
+  <Card title="Send WhatsApp messages" icon="send">
+    Send template messages and replies to your customers.
   </Card>
-
-  <Card title="Postman collection" icon="download">
-    Export every request, with example payloads and responses, ready to import into Postman (button available on the Swagger page at `/docs`).
+  <Card title="Read conversations" icon="messages-square">
+    View chats and message history in your other business systems.
   </Card>
-
-  <Card title="Full reference, right here" icon="book-open">
-    Every endpoint is documented in this sidebar with the same parameters, scopes, and examples — start with **Auth & Account**.
+  <Card title="Verify phone numbers" icon="shield-check">
+    Send a one-time code on WhatsApp and confirm it.
   </Card>
 </CardGroup>
 
-<Info>
-  Ready to start? Head to [Setup → Developer API Keys](/core-setup/api-keys) in your workspace to create your first token.
-</Info>
+## Get started
+
+<Steps>
+  <Step title="Create an API key">
+    Go to [Setup → Developer API Keys](/core-setup/api-keys) and click **Add Token**. Enter a name, select the permissions it needs, and copy the key. The key is shown only once.
+  </Step>
+  <Step title="Connect your business system">
+    Add your API key and the base URL below to your other business system.
+
+    ```text Base URL
+    https://app.chatflows.io/api/v1
+    ```
+  </Step>
+  <Step title="Test the connection">
+    Send a request to [Ping](/api-reference/auth-&-account/ping). A successful response confirms your API key is set up correctly.
+  </Step>
+</Steps>
+
+## Permissions and security
+
+- **Choose only the permissions you need.** Each API key has its own permissions, such as viewing customers or sending messages. Select only what your business system uses.
+- **Keep your API keys secure.** Anyone who has a key can access your workspace data. Store it safely and never share it in emails, chats or public places.
+- **Revoke keys you no longer use.** If a key is no longer needed or may have been exposed, revoke it from the [Developer API Keys](/core-setup/api-keys) page. It stops working immediately.
+
+## Error codes
+
+| Code | Meaning | What to do |
+|---|---|---|
+| `401` | The API key is missing, invalid or expired. | Check the key, or create a new one. |
+| `402` | The workspace has no active subscription. | Review [Plan & Billing](/billing/plan-and-billing). |
+| `403` | The API key doesn't have the required permission. | Create a key with the missing permission. |
+| `404` | The record or address doesn't exist. | Check the ID or URL. |
+| `422` | Some data is missing or invalid. | The error message names the field to fix. |
+| `429` | Too many requests, or the monthly limit is reached. | Wait and retry. |
+
+## Developer resources
+
+<CardGroup cols={2}>
+  <Card title="Interactive API reference" icon="play" href="https://app.chatflows.io/api-docs">
+    Test every endpoint live with your API key.
+  </Card>
+  <Card title="Postman collection" icon="download" href="/core-setup/api-keys">
+    Download it from the **Developer API Keys** page.
+  </Card>
+</CardGroup>

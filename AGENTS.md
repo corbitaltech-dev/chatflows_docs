@@ -2,7 +2,7 @@
 
 ## About this project
 
-- Customer docs for **ChatFlows.io**, sold only to Shopify merchants through the Shopify App Store
+- Customer docs for **ChatFlows** (website: chatflows.io), sold only to Shopify merchants through the Shopify App Store
 - Product source: `/home/laravel/whatsmarkio_reseller`, branch `chatflows`, with `SHOPIFY_ONLY_MODE=true` (hidden features: `config/shopify_only.php`)
 - This is a documentation site built on [Mintlify](https://mintlify.com)
 - Pages are MDX files with YAML frontmatter
@@ -12,7 +12,7 @@
 ## Terminology, style, and content boundaries
 
 The real rules — banned words (e.g. "workspace" not "tenant"), brand naming
-("ChatFlows.io", never WaMatrix or WhatsMark), the Shopify-only feature list and menu names, voice, page structure, Meta-citation requirements,
+("ChatFlows" for the app, lower-case "chatflows.io" only for the website; never WaMatrix or WhatsMark), the Shopify-only feature list and menu names, voice, page structure, Meta-citation requirements,
 and what belongs on a customer page versus the API reference — live in
 **`.claude/skills/chatflows-docs/SKILL.md`**. Read that file before writing or
 editing any page; it is the single source of truth, not this file.

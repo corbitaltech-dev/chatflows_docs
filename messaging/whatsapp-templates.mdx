@@ -1,13 +1,14 @@
 ---
-title: "WhatsApp Templates"
-description: "WhatsApp Templates are pre-approved message formats used to communicate with customers on WhatsApp."
+title: "Create WhatsApp message templates"
+sidebarTitle: "WhatsApp Templates"
+description: "Create WhatsApp templates, send them to Meta for approval, and use them in cart reminders, order updates and campaigns. Start from ready-made ones."
 icon: "file-text"
 keywords: ["ChatFlows", "WhatsApp templates", "message templates", "Meta approval", "carousel", "authentication template"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-The WhatsApp Templates page lets you create, submit, manage, and track your templates in one place. To open it, go to **Message Templates → WhatsApp**.
+Every cart reminder, order update and campaign starts with a template: a message Meta has approved, with blanks for things like the customer's name or order number. Create your templates here, send them to Meta for approval, and track them in one place. To open it, go to **Message Templates → WhatsApp**.
 
 Once a template is approved by Meta, it's ready to use in campaigns, automations, and other supported messaging features.
 
@@ -17,8 +18,8 @@ Before you can add a template, you need to [connect a WhatsApp channel](/core-se
 
 ## Adding a Template
 
-- **Sync Templates** – If you've already created templates in your **Meta Business account** and that account is connected to your WhatsApp channel, click **Sync Templates** to import them into ChatFlows.io.
-- **Add Template** – Click [**Add Template**](#creating-a-template) to create a new template directly in ChatFlows.io.
+- **Sync Templates** – If you've already created templates in your **Meta Business account** and that account is connected to your WhatsApp channel, click **Sync Templates** to import them into ChatFlows.
+- **Add Template** – Click [**Add Template**](#creating-a-template) to create a new template directly in ChatFlows.
 
 <Note>
 If you have more than one connected channel, clicking **Sync Templates** opens a menu where you can choose **Sync all accounts** or select a specific channel to sync.
@@ -113,7 +114,7 @@ Follow these steps to build one:
 
   To insert dynamic values, click **+ Add Variable** to add placeholders like `{{1}}` and `{{2}}`.
 
-  Each variable appears in a **Detected Variables** list below the body. ChatFlows.io assigns each a sample value (like "Value 1") for Meta's review — these aren't sent to customers.
+  Each variable appears in a **Detected Variables** list below the body. ChatFlows assigns each a sample value (like "Value 1") for Meta's review — these aren't sent to customers.
 
   When you send the template, each variable is replaced with real data, such as a [merge field](/messaging/merge-fields) (the contact's name) or a fixed value.
 
@@ -203,7 +204,7 @@ Follow these steps to build one:
   - **Buttons** – 1–2 buttons (Quick Reply or URL).
 
   <Warning>
-  All cards must use the same number of buttons with matching types (for example, all Quick Reply or all URL). ChatFlows.io checks this before submission and warns you if the cards don't match.
+  All cards must use the same number of buttons with matching types (for example, all Quick Reply or all URL). ChatFlows checks this before submission and warns you if the cards don't match.
   </Warning>
 </Step>
 </Steps>
@@ -246,7 +247,7 @@ Follow these steps to build one:
 
   - **Button Text** – The label on the OTP button, up to 25 characters.
   - **Code Expiry** – How long the code stays valid (1–90 minutes).
-  - **Message TTL** – How long WhatsApp retries delivery (10–600 seconds).
+  - **Message TTL** – How long WhatsApp retries delivery (30–900 seconds).
   - **Security recommendation** – Optional toggle that adds a "do not share this code" note.
   - **Android Package Name** and **App Signature Hash** – Required for **One-Tap** and **Zero-Tap**.
   - **Accept Zero-Tap Terms** – Required only when you choose **Zero-Tap**.
@@ -263,7 +264,7 @@ Follow these steps to build one:
 Once your template is created, submit it to Meta for review. The template first appears as **Pending** while Meta reviews it. When the review is complete, its status updates automatically to **Approved**, **Rejected**, **Paused**, or **Disabled**.
 
 <Note>
-Whenever Meta updates your template's status — approved, rejected, paused, or disabled — ChatFlows.io notifies you automatically. An on-screen notification appears and it's added to your notifications so you can review it anytime.
+Whenever Meta updates your template's status — approved, rejected, paused, or disabled — ChatFlows notifies you automatically. An on-screen notification appears and it's added to your notifications so you can review it anytime.
 </Note>
 
 ## Managing existing templates
@@ -283,6 +284,35 @@ Use the row menu on any template to:
 <Note>
 **View Stats** is available only when analytics is enabled for your WhatsApp Business Account. If analytics is turned off, enable it in **WhatsApp Manager** and try again.
 </Note>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="How long does WhatsApp template approval take?">
+    Meta decides, and the time varies from template to template. ChatFlows shows the template as **Pending** until Meta finishes its review, then updates the status and notifies you.
+    See Meta's [template rules](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
+  </Accordion>
+
+  <Accordion title="What happens if Meta rejects my WhatsApp template?">
+    ChatFlows marks the template **Rejected** and notifies you. You can edit the content and submit it again, or delete it and start over.
+    The name, language and category can't be changed after you submit.
+  </Accordion>
+
+  <Accordion title="Can I choose whether my WhatsApp template is Marketing or Utility?">
+    You pick a category when you create the template, but Meta makes the final decision on its category. Carousel templates are always Marketing, and Authentication templates are always Authentication.
+    Meta explains the categories in its [template overview](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
+  </Accordion>
+
+  <Accordion title="Can I use the WhatsApp templates I already made in Meta?">
+    Yes. Click **Sync Templates** and ChatFlows imports the templates from the Meta Business account connected to your WhatsApp channel.
+    If you have more than one channel, you can sync all of them or just one.
+  </Accordion>
+
+  <Accordion title="Do I need approval again if I edit a WhatsApp template?">
+    Yes. Editing an approved template sends it back to Meta, and its status returns to **Pending**.
+    You can use the updated version only after Meta approves it again.
+  </Accordion>
+</AccordionGroup>
 
 ## What's next
 

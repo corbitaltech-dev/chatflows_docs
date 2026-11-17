@@ -1,17 +1,18 @@
 ---
-title: "Automation"
-description: "Build WhatsApp chatbots with a drag-and-drop flow builder to automate replies, answer common questions, and guide customers through flows."
+title: "WhatsApp automation and chatbots"
+sidebarTitle: "Automation"
+description: "Reply to customers instantly, even when you're away. Build WhatsApp chatbots and Shopify automations, start from a ready-made flow, or let AI draft one."
 icon: "bot"
-keywords: ["ChatFlows", "ChatFlows.io", "automation", "chatbot", "flows"]
+keywords: ["ChatFlows", "chatflows.io", "automation", "chatbot", "flows"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
 
-You can't reply to every WhatsApp message the moment it arrives, but customers still expect a quick response. Automations reply instantly on your behalf, answer common questions, capture leads, and keep flow moving while you're busy or away. Build each flow once using a simple drag-and-drop flow builder, and it runs automatically whenever the selected keyword or event is triggered.
+You can't reply to every WhatsApp message the moment it arrives, but customers still expect a quick response. Automations reply instantly on your behalf, answer common questions, capture leads, and keep conversations moving while you're busy or away. Build each flow once using a simple drag-and-drop flow builder, and it runs automatically whenever the selected keyword or event is triggered.
 
 
 <Note>
-Before you can add a automation, you need to [connect a WhatsApp channel](/core-setup/channels/whatsapp) to your workspace.
+Before you can add an automation, you need to [connect a WhatsApp channel](/core-setup/channels/whatsapp) to your workspace.
 </Note>
 
 ## Three ways to build your flow
@@ -29,12 +30,12 @@ Design the flow in whichever way suits you:
   Click **Automations** in the sidebar.
 </Step>
 
-<Step title="Click Create Flow">
+<Step title="Click Add Automation">
   The button sits at the top right of the page. A form opens on the right side of the screen.
   <Figure
     src="/automation/img/automation-form.png"
-    alt="New Automation form showing fields for name, channels, and description"
-    caption="Image shows the New Automation form."
+    alt="Add Automation form showing fields for name, channels, and description"
+    caption="Image shows the Add Automation form."
   />
   
 </Step>
@@ -48,7 +49,7 @@ Design the flow in whichever way suits you:
 </Step>
 
 <Step title="Save and build">
-  Click **Save**. The flow is created as a **Draft** — open it in the [Flow Builder](/automation/flow-builder) to design the flow, then **Active** it.
+  Click **Save**. The flow is created as a **Draft** — open it in the [Flow Builder](/automation/flow-builder) to design the flow, then turn it on.
 </Step>
 </Steps>
 
@@ -60,11 +61,12 @@ Design the flow in whichever way suits you:
   caption="Image shows the Flow Collection dialog."
 />
 
-The **Flow Collection** is a set of ready-made flows built by ChatFlows.io. Instead of building from an empty builder, clone one and adjust it to your business. Click **Flow Collection** at the top of the Automations page to open it.
+The **Flow Collection** is a set of ready-made flows built by ChatFlows. Instead of building from an empty builder, clone one and adjust it to your business. Click **Flow Collection** at the top of the Automations page to open it.
 
 Flows are grouped by category, so you can jump straight to the ones written for your industry:
 
-- **General** — general-purpose flows any business can use, including WhatsApp Sales Pipeline CRM and Shopify Cart Recovery.
+- **General** — general-purpose flows any business can use, including WhatsApp Sales Pipeline CRM.
+- **Shopify Store** — flows for store events: cart recovery, order confirmation, COD payment received, and each shipping step.
 - **Business & Professional Services** — consultancy, web agency, recruitment, financial advice, and interior design.
 - **Food & Hospitality** — restaurants, cafés, and hostel booking.
 - **Shopping & Retail** — general retail, jewellery, electronics, and furniture.
@@ -98,6 +100,30 @@ The **All Automations** table lists every flow, with tabs to show **All**, **Dra
 <Note>
 If an incoming message matches the trigger conditions of more than one active flow, all of them run and reply in the chat — not just one.
 </Note>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can ChatFlows reply to WhatsApp customers while I'm away?">
+    Yes. Once an automation is turned on, ChatFlows replies to matching messages for you, so customers get an answer even when your team is busy or offline.
+    Only active flows run. See [Flow Builder](/automation/flow-builder).
+  </Accordion>
+
+  <Accordion title="Do I have to build a WhatsApp chatbot from scratch?">
+    No. You can clone a ready-made flow from the Flow Collection, or describe what you want and let AI draft it.
+    See [Generate with AI](/automation/generate-with-ai).
+  </Accordion>
+
+  <Accordion title="Can one customer message start more than one automation?">
+    Yes. When two active automations match a message in the same way, for example both on the same keyword, ChatFlows runs both and both reply in the chat.
+    Switch off any flow you don't want running.
+  </Accordion>
+
+  <Accordion title="Can I pause an automation without deleting it?">
+    Yes. Use the toggle on the automation's row to turn it off, and ChatFlows stops running it.
+    Deleting an automation can't be undone, so turning it off is the safer choice.
+  </Accordion>
+</AccordionGroup>
 
 ## What's next
 
