@@ -1,59 +1,87 @@
 ---
 title: "WhatsApp for Shopify: quick start"
 sidebarTitle: "Quick start"
-description: "Set up ChatFlows, the WhatsApp app for Shopify: install it from the App Store, connect your number, and turn on cart reminders and order updates."
+description: "Set up ChatFlows on your Shopify store and send your first WhatsApp message."
 icon: "zap"
 keywords: ["ChatFlows", "chatflows.io", "quick start", "get started", "Shopify", "Shopify App Store", "WhatsApp for Shopify", "WhatsApp Business", "abandoned cart", "order updates"]
 ---
 
-ChatFlows connects your Shopify store to your WhatsApp Business number.
-Shoppers who leave at checkout get a reminder. Buyers hear when their order ships and arrives.
-Your team answers every reply from one shared inbox.
+Win back abandoned carts, stop answering "Where's my order?" and send campaigns your customers can reply to.
+ChatFlows connects your Shopify store to your own WhatsApp Business number, and your team answers every reply from one inbox.
 
-There's no separate sign-up. You install ChatFlows from the Shopify App Store, and your workspace is created and your store connected as part of the install.
-Your Shopify customers come in too: shoppers who check out or order are added automatically, and you can bring in the customers already in your store with one click.
+## How ChatFlows works with your store
+
+You install ChatFlows from the Shopify App Store, just like any other app. The install creates your ChatFlows workspace and links it to your store, so you don't need to sign up anywhere else.
+
+While you install, Shopify asks you to let ChatFlows see your orders, checkouts and delivery updates. This is how ChatFlows knows what happens in your store, and it lets ChatFlows do three things for you:
+
+- **Send messages at the right moment.** When a customer leaves the checkout without buying, or when an order is placed, shipped or delivered, ChatFlows sends the WhatsApp message you set up for it.
+- **Build your customer list.** Everyone who checks out or places an order is added to **Customers** automatically. You can also bring in the customers already in your store with one click.
+- **Show your results in Shopify.** The ChatFlows app in your Shopify admin shows your orders, sales and the carts you won back.
+
+Learn more in [Your store and the Shopify app](/shopify/shopify-admin-app).
 
 ## What you get
 
 <CardGroup cols={2}>
-  <Card title="Carts brought back" icon="shopping-cart">
-    A shopper who leaves checkout gets a WhatsApp reminder with a link straight back to their cart.
+  <Card title="Win back abandoned carts" icon="shopping-cart">
+    When a customer leaves the checkout without buying, they get a WhatsApp reminder with a link back to their cart.
   </Card>
 
-  <Card title="Fewer &quot;Where's my order?&quot; messages" icon="package">
-    Buyers hear when their order is placed, shipped, out for delivery and delivered.
+  <Card title="Fewer &quot;Where's my order?&quot; questions" icon="package">
+    Customers get a WhatsApp message when their order is placed, shipped, out for delivery and delivered.
   </Card>
 
   <Card title="Campaigns customers can reply to" icon="megaphone">
-    Send a new collection or an offer to all your customers, or to one group.
+    Share a new collection or an offer with all your customers or one group, and read their replies in your inbox.
   </Card>
 
-  <Card title="One inbox for the team" icon="messages-square">
-    Every reply lands in a shared inbox, so anyone on your team can pick it up.
+  <Card title="One inbox for your team" icon="messages-square">
+    Every customer reply comes to one shared inbox, so anyone on your team can answer it.
+  </Card>
+
+  <Card title="Keep your WhatsApp number" icon="smartphone">
+    Already use the WhatsApp Business app? Keep it on your phone. New messages show up in both places.
+  </Card>
+
+  <Card title="See the sales it brings in" icon="chart-line">
+    Your dashboard shows your orders, sales and won-back carts next to the messages your automations sent.
   </Card>
 </CardGroup>
 
 ## Before you start
 
+Have these five things ready, so nothing stops you halfway through the setup.
+
 <AccordionGroup>
-  <Accordion title="A Shopify store" icon="shopping-bag">
-    You install ChatFlows from the Shopify App Store, so you need permission to add apps to your store.
+  <Accordion title="Permission to add apps to your Shopify store" icon="shopping-bag">
+    You install ChatFlows from the Shopify App Store. If you're the store owner, you already have this.
+    If someone else runs the store, ask them to give you permission to add apps.
   </Accordion>
 
   <Accordion title="A phone number for WhatsApp" icon="smartphone">
-    Use a number that isn't on WhatsApp yet, or one that already uses the **WhatsApp Business app**.
+    The number your customers will see your messages come from. It can be:
 
-    Already on the WhatsApp Business app? You can keep using it on your phone. ChatFlows connects alongside it, and new messages show up in both places.
+    - **A number that isn't on WhatsApp yet.**
+    - **A number on the WhatsApp Business app.** You keep using the app on your phone, and new messages show up in both places.
+
+    Is the number on the personal WhatsApp app? Delete that WhatsApp account on the phone first, or use another number.
+    Is it with another WhatsApp provider? Ask them to release it first.
   </Accordion>
 
-  <Accordion title="A Meta (Facebook) business account" icon="building-2">
-    WhatsApp is run by Meta, so you connect your number by signing in with Meta.
-    No business account yet? Meta's own pop-up window lets you create one while you connect.
+  <Accordion title="A Facebook account" icon="building-2">
+    WhatsApp belongs to Meta, so you connect your number by signing in with Facebook.
+    No Meta Business account yet? Meta's own pop-up window lets you create one while you connect.
+  </Accordion>
+
+  <Accordion title="A payment method with Meta" icon="credit-card">
+    Meta charges for template messages and bills you directly, so add a payment method in Meta's WhatsApp Manager.
+    Without it, your templates won't send. See [WhatsApp costs](/billing/whatsapp-costs).
   </Accordion>
 
   <Accordion title="Customers' phone numbers in Shopify" icon="contact">
-    WhatsApp can only reach a customer who gave a phone number.
-    Check that your Shopify checkout asks for a phone number.
+    WhatsApp can only reach customers who gave a phone number.
+    Check that your Shopify checkout asks for one.
   </Accordion>
 </AccordionGroup>
 
@@ -81,6 +109,7 @@ Your Shopify customers come in too: shoppers who check out or order are added au
     The first message to a customer must be a **template**: a reusable message with blanks for things like the customer's name or order number. Meta checks each template before you can send it.
 
     Go to **Message Templates → WhatsApp → Add Template**, write your message and submit it.
+    Not sure what to write? Start from one of the [ready-made template examples](/messaging/template-examples).
 
     Moving from another WhatsApp app? Click **Sync Templates** to bring in the templates you already have.
 
@@ -90,6 +119,8 @@ Your Shopify customers come in too: shoppers who check out or order are added au
   <Step title="Switch on cart reminders and order updates" icon="shopping-cart">
     Go to **Automations** and create an automation. Click the **Start Trigger**, choose **Shopify**, and pick an event such as **Cart abandoned** or **Order shipped**.
     Add your approved template and turn the automation on.
+
+    From now on, ChatFlows sends the message each time that event happens in your store.
 
     Details: [Recover abandoned carts](/shopify/cart-recovery) · [Send order updates](/shopify/order-updates)
   </Step>
@@ -103,7 +134,7 @@ Your Shopify customers come in too: shoppers who check out or order are added au
 </Steps>
 
 <Check>
-  **Done.** Install from Shopify → connect your number → get a template approved → switch on an automation → send a campaign.
+  **You're live.** Install from Shopify → connect your number → get a template approved → switch on an automation → send a campaign.
 </Check>
 
 ## When customers reply
@@ -116,6 +147,16 @@ This is a WhatsApp rule, not a ChatFlows one. [The short version of the rules �
 ## Common questions
 
 <AccordionGroup>
+  <Accordion title="Will I lose my WhatsApp number or my old chats?">
+    No. If your number is on the WhatsApp Business app, ChatFlows connects alongside it.
+    You keep the app on your phone, and new messages show up in both places.
+  </Accordion>
+
+  <Accordion title="I use another WhatsApp app. Can I switch?">
+    Yes. Keep your number, sync your approved templates, and bring in your customers.
+    See [Switch from another app](/getting-started/switch-from-another-app).
+  </Accordion>
+
   <Accordion title="How is my plan billed?">
     On your normal Shopify invoice. You choose, change or cancel your plan in your Shopify admin. Uninstalling the app cancels it.
     See [Plan and billing](/billing/plan-and-billing).
@@ -124,26 +165,6 @@ This is a WhatsApp rule, not a ChatFlows one. [The short version of the rules �
   <Accordion title="Does WhatsApp charge me separately?">
     Yes. Meta charges for template messages. The rate depends on the kind of template and the customer's country.
     Meta bills you directly, and ChatFlows adds nothing on top. See [WhatsApp costs](/billing/whatsapp-costs) for an example monthly bill.
-  </Accordion>
-
-  <Accordion title="Can I send a second cart reminder?">
-    Yes. Make a second cart automation with a longer **Send after (minutes)** delay.
-    Before any reminder goes out, ChatFlows checks the checkout again, so a shopper who has already ordered gets nothing more.
-  </Accordion>
-
-  <Accordion title="Does ChatFlows confirm COD orders before they ship?">
-    Not as a built-in step. For cash-on-delivery orders, ChatFlows sends the same order and shipping updates as for any order.
-    The **COD payment received** event sends a message once the COD payment is marked as paid in Shopify. See [COD orders](/shopify/cod-orders).
-  </Accordion>
-
-  <Accordion title="I use another WhatsApp app. Can I switch?">
-    Yes. Keep your number, sync your approved templates, and bring in your customers.
-    See [Switch from another app](/getting-started/switch-from-another-app).
-  </Accordion>
-
-  <Accordion title="Will I lose my WhatsApp number or my old chats?">
-    No. If your number is on the WhatsApp Business app, ChatFlows connects alongside it.
-    You keep the app on your phone, and new messages show up in both places.
   </Accordion>
 
   <Accordion title="Why can't I just type a message to a new customer?">
@@ -155,15 +176,21 @@ This is a WhatsApp rule, not a ChatFlows one. [The short version of the rules �
     Customers who agreed to hear from your business on WhatsApp. This is WhatsApp's rule.
     Meta sets it out in the [WhatsApp Business Messaging Policy](https://whatsappbusiness.com/policy/).
   </Accordion>
+
+  <Accordion title="Can I send a second cart reminder?">
+    Yes. Make a second cart automation with a longer **Send after (minutes)** delay.
+    Before any reminder goes out, ChatFlows checks the checkout again, so a customer who has already ordered gets nothing more.
+  </Accordion>
+
+  <Accordion title="Does ChatFlows confirm COD orders before they ship?">
+    Not as a built-in step. For cash-on-delivery orders, ChatFlows sends the same order and shipping updates as for any order.
+    The **COD payment received** event sends a message once the COD payment is marked as paid in Shopify. See [COD orders](/shopify/cod-orders).
+  </Accordion>
 </AccordionGroup>
 
 ## Where to next
 
 <CardGroup cols={2}>
-  <Card title="Your store and the Shopify app" icon="layout-dashboard" href="/shopify/shopify-admin-app">
-    Check your store's connection, sync customers, and see your sales inside Shopify.
-  </Card>
-
   <Card title="Your Shopify dashboard" icon="chart-line" href="/shopify/shopify-dashboard">
     Orders, revenue, recovered carts and automation results in one place.
   </Card>
@@ -174,5 +201,9 @@ This is a WhatsApp rule, not a ChatFlows one. [The short version of the rules �
 
   <Card title="Bring your team in" icon="users" href="/core-setup/team-and-roles">
     Invite colleagues and choose what each person can do.
+  </Card>
+
+  <Card title="Something not working?" icon="life-buoy" href="/getting-started/troubleshooting">
+    A message didn't send or a template was rejected? Find the cause and the fix.
   </Card>
 </CardGroup>
