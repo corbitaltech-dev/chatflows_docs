@@ -1,8 +1,8 @@
 ---
 title: "Shopify"
-description: "Connect your Shopify store to send WhatsApp messages automatically."
+description: "Install ChatFlows.io from the Shopify App Store to send cart reminders and order updates on WhatsApp automatically."
 icon: "shopping-bag"
-keywords: ["ChatFlows", "Shopify", "integration", "ecommerce", "cart abandoned"]
+keywords: ["ChatFlows", "ChatFlows.io", "Shopify", "Shopify App Store", "WhatsApp for Shopify", "integration", "ecommerce", "cart abandoned"]
 ---
 
 import { Figure } from '/snippets/browser-frame.jsx';
@@ -12,24 +12,16 @@ Connect your Shopify store to automatically send WhatsApp messages when customer
 Find it under **Settings → Shopify**.
 
 <Note>
-The Shopify integration is available on the **Professional plan**.
+Shopify is included in every ChatFlows.io plan. New to ChatFlows.io? Start with the [Shopify quick start](/getting-started/shopify-quick-start).
 </Note>
 
 ## Connecting your store
 
+You connect your store by installing ChatFlows.io from the Shopify App Store.
+
 <Steps>
-<Step title="Enter your store domain">
-  Enter your Shopify store domain exactly as Shopify provides it, ending with `.myshopify.com`. For example, `your-store.myshopify.com`.
-
-  <Figure
-    src="/settings/img/connect-shopify.png"
-    alt="The Connect Shopify card with a Store domain field and a Connect Shopify button"
-    caption="Image shows the Connect Shopify form."
-  />
-</Step>
-
-<Step title="Click Connect Shopify">
-  You are taken to Shopify.
+<Step title="Install from the Shopify App Store">
+  Open [ChatFlows.io on the Shopify App Store](https://apps.shopify.com/chatflows) and click **Install**.
 </Step>
 
 <Step title="Approve the permissions">
@@ -42,8 +34,12 @@ The Shopify integration is available on the **Professional plan**.
   />
 </Step>
 
-<Step title="You come back automatically">
-  The status shows **Connecting…** and then **Connected** a moment later.
+<Step title="Choose a plan, or sign in">
+  Pick a plan and approve it on Shopify's billing screen. Your workspace is created and linked to the store. Already have a ChatFlows.io workspace? Choose **Sign in to link this store** instead.
+</Step>
+
+<Step title="Your store shows as connected">
+  In ChatFlows.io, **Settings → Shopify** shows the store as **Connected**.
 
   <Figure
     src="/settings/img/shopify-connected.png"
@@ -70,7 +66,13 @@ Start every Shopify flow with a [**Template Message**](/automation/flow-steps/ba
 
 An **abandoned cart** is a customer who reached your checkout and left without paying.
 
-If they have not paid **one hour later**, the cart counts as abandoned and your flow runs. Paying stops it, and only one reminder is sent per cart. The one hour is fixed and cannot be changed.
+Each cart-abandoned automation waits for its own **Send after (minutes)** delay: one hour unless you change it, and anything from 5 minutes to 24 hours after checkout starts. When the time is up, ChatFlows.io checks the checkout again. If the shopper has ordered, nothing is sent.
+
+Want a second reminder? Create a second cart-abandoned automation with a longer delay, for example 60 minutes for a friendly nudge and 1,380 minutes for a last reminder the next day. Each one checks for an order before it sends.
+
+<Warning>
+Don't add a **Wait** step inside one cart automation to send a second reminder. A wait does not check the checkout again, so a shopper who has already ordered would still get it.
+</Warning>
 
 Add `order.recovery_url` to your message to send them straight back to their checkout, with everything still in the basket.
 
@@ -94,7 +96,7 @@ Only customers **with a phone number** are imported. The rest are skipped.
 
 ## Disconnecting
 
-Click **Disconnect** and confirm. Shopify events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
+Click **Disconnect** and confirm. Uninstalling ChatFlows.io from your Shopify admin also disconnects the store and cancels your plan. Shopify events stop triggering your automation flows immediately. Your contacts stay in your workspace. Automation flows are not deleted. If you reconnect later, your existing flows will work again.
 
 ## What's next
 
@@ -103,7 +105,7 @@ Click **Disconnect** and confirm. Shopify events stop triggering your automation
     Build the message that goes out on each store event.
   </Card>
 
-  <Card title="WooCommerce" icon="shopping-cart" href="/settings/woocommerce">
-    Connect a WooCommerce store instead, or as well.
+  <Card title="Order details in messages" icon="file-text" href="/messaging/merge-fields">
+    Add the order number, items, total and tracking link to any message.
   </Card>
 </CardGroup>
