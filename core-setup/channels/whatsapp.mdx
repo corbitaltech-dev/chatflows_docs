@@ -19,6 +19,7 @@ Make sure you have the following ready:
 - One mobile number for WhatsApp that must be either:
   - **not connected to any WhatsApp account**, or
   - **already connected to the WhatsApp Business App**
+- A **payment method** in Meta's WhatsApp Manager. Meta needs it to send your template messages. See [WhatsApp costs](/billing/whatsapp-costs).
 - Your **WABA ID**, **Access Token**, **Meta App ID**, and **App Secret** (for manual connections only).
 </Tip>
 
@@ -104,6 +105,32 @@ Go to a channel's **Profile** tab to edit the public WhatsApp Business Profile y
 />
 
 Use the **Test** button on a channel to confirm the connection actually works end-to-end before relying on it. You'll pick an approved **template** and a **recipient number** — so this needs at least one approved template on the account.
+
+## Common problems
+
+<AccordionGroup>
+  <Accordion title="Meta's pop-up window doesn't open">
+    Your browser may be blocking pop-ups. Allow pop-ups for ChatFlows.io and click **Connect Channel** again.
+  </Accordion>
+
+  <Accordion title="The number is already registered on WhatsApp">
+    - **On the WhatsApp Business app?** That's fine. Connect it alongside the app (coexistence).
+    - **On the personal WhatsApp app?** Delete that WhatsApp account on the phone first, or use another number.
+    - **On another provider's WhatsApp API?** Ask that provider to release the number, then connect it here.
+  </Accordion>
+
+  <Accordion title="Templates don't send after connecting">
+    Check that your WhatsApp Business account has a payment method in Meta's WhatsApp Manager, and that the template shows **Approved**.
+    The reason for a failed message shows in **Setup → WhatsApp Message Log**.
+  </Accordion>
+
+  <Accordion title="Messages stop at a daily limit">
+    New numbers start with a limit on how many customers they can message in a day. Meta raises it as you send good-quality messages, and after business verification.
+    This is a WhatsApp rule, not a ChatFlows.io one. Meta explains it under [messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits).
+  </Accordion>
+</AccordionGroup>
+
+For other problems, see [Troubleshooting](/getting-started/troubleshooting).
 
 ## What's next
 

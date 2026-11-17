@@ -1,0 +1,72 @@
+---
+title: "WhatsApp message costs explained"
+sidebarTitle: "WhatsApp costs"
+description: "What Meta charges for WhatsApp messages, which messages are free, and how to estimate your monthly bill."
+icon: "receipt"
+keywords: ["ChatFlows", "ChatFlows.io", "WhatsApp pricing", "WhatsApp API cost", "cost per message", "Meta fees", "utility", "marketing", "Shopify"]
+---
+
+You pay for two different things:
+
+- **Your ChatFlows.io plan.** Billed by Shopify. See [Plan and billing](/billing/plan-and-billing).
+- **WhatsApp messages.** Billed by **Meta**, directly to you. ChatFlows.io adds nothing on top.
+
+## What Meta charges for
+
+Meta charges for **template messages** that are delivered. The price depends on two things:
+
+- **The template category:** Marketing, Utility or Authentication.
+- **The customer's country.**
+
+| Category | Examples | Cost |
+| --- | --- | --- |
+| **Utility** | Order placed, shipped, delivered, COD payment received | Lower |
+| **Marketing** | Cart reminders, offers, new products, campaigns | Higher |
+| **Authentication** | One-time passcodes | Lower |
+
+## What's free
+
+- **Replies within 24 hours.** When a customer writes to you, you can reply freely for 24 hours. These replies are not charged.
+- **Utility templates inside the 24 hours.** A Utility template sent while the 24 hours are open is not charged.
+- **Messages that are not delivered** are not charged.
+
+## Estimate your monthly bill
+
+Count how many messages of each kind you send, and multiply by Meta's rate for your customers' country.
+
+Here is an example for a store that gets 300 orders and 200 abandoned carts a month.
+**The rates are made up to show the maths. Check Meta's real rates for your country.**
+
+| Messages | How many | Example rate | Cost |
+| --- | --- | --- | --- |
+| Order placed + shipped + delivered (Utility) | 300 × 3 = 900 | 0.10 | 90 |
+| Cart reminders (Marketing) | 200 | 0.80 | 160 |
+| One campaign to 1,000 customers (Marketing) | 1,000 | 0.80 | 800 |
+| Replies to customers within 24 hours | — | Free | 0 |
+| **Total** | | | **1,050** |
+
+<Tip>
+  Campaigns cost the most. Send them to a group that wants them, not to everyone.
+</Tip>
+
+## Where Meta bills you
+
+Meta bills your WhatsApp Business account. You add a payment method in Meta's own WhatsApp Manager.
+Without a payment method, Meta may stop your template messages from sending.
+
+<Note>
+  Meta sets these prices and changes them from time to time. This is a WhatsApp rule, not a ChatFlows.io one.
+  See Meta's current rates on its [pricing page](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing).
+</Note>
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Template examples" icon="file-text" href="/messaging/template-examples">
+    Copy-ready Utility and Marketing templates.
+  </Card>
+
+  <Card title="Plan and billing" icon="credit-card" href="/billing/plan-and-billing">
+    How Shopify bills your ChatFlows.io plan.
+  </Card>
+</CardGroup>

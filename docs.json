@@ -131,13 +131,15 @@
               "shopify/shopify-admin-app",
               "shopify/cart-recovery",
               "shopify/order-updates",
+              "shopify/cod-orders",
               "shopify/shopify-dashboard"
             ]
           },
           {
             "group": "Billing",
             "pages": [
-              "billing/plan-and-billing"
+              "billing/plan-and-billing",
+              "billing/whatsapp-costs"
             ]
           },
           {
@@ -159,6 +161,7 @@
             "group": "Messaging",
             "pages": [
               "messaging/whatsapp-templates",
+              "messaging/template-examples",
               "messaging/messenger-templates",
               "messaging/campaigns",
               "messaging/live-chat",
@@ -229,6 +232,13 @@
               "settings/inbound-media",
               "settings/opt-out",
               "settings/profile"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "getting-started/switch-from-another-app",
+              "getting-started/troubleshooting"
             ]
           }
         ]

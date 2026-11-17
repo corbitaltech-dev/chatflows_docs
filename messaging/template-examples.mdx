@@ -1,0 +1,122 @@
+---
+title: "WhatsApp template examples for Shopify stores"
+sidebarTitle: "Template examples"
+description: "Copy-ready WhatsApp templates for order updates, cart reminders, COD and campaigns, with tips to get them approved."
+icon: "file-text"
+keywords: ["ChatFlows", "ChatFlows.io", "WhatsApp template examples", "template approval", "order confirmation template", "abandoned cart template", "Shopify", "utility template", "marketing template"]
+---
+
+Every message that starts a conversation must be an approved **template**.
+Use these examples as a starting point. Change the wording to fit your store.
+
+In the examples, **numbers in double curly brackets** are variables, such as the customer's name or order number.
+When you use the template in an automation, you fill each variable with a [merge field](/messaging/merge-fields), like the order number.
+
+To add one, go to **Message Templates → WhatsApp → Add Template**.
+
+## Tips for getting approved
+
+- **Pick the right category.** Order updates are **Utility**. Cart reminders, offers and new products are **Marketing**.
+- **Keep Utility templates about the order.** A discount or "shop now" line in a Utility template can be rejected or moved to Marketing.
+- **Don't start or end with a variable.** Put some words before the first variable and after the last one.
+- **Fill in example values.** Meta uses them to check the template. Use realistic examples, like an order number.
+- **Keep it short and clear.** Say what happened and what the customer can do next.
+
+<Note>
+  Meta decides the final category, and it can change it. This is a WhatsApp rule, not a ChatFlows.io one.
+  Meta explains categories and reviews in its [template overview](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
+</Note>
+
+## Order updates (Utility)
+
+**Order placed**
+
+```text
+Hi {{1}}, thanks for your order {{2}}! We're getting it ready and will message you when it ships.
+```
+
+**Order shipped**
+
+```text
+Good news, {{1}}! Your order {{2}} is on its way. Track it here: {{3}}
+```
+
+**Out for delivery**
+
+```text
+Hi {{1}}, your order {{2}} is out for delivery today. Please keep your phone close.
+```
+
+**Delivered**
+
+```text
+Hi {{1}}, your order {{2}} has been delivered. We hope you love it! Reply here if anything isn't right.
+```
+
+**Order cancelled**
+
+```text
+Hi {{1}}, your order {{2}} has been cancelled. If you didn't ask for this, reply here and we'll help.
+```
+
+## COD (Utility)
+
+**COD payment received**
+
+```text
+Hi {{1}}, we've received your cash payment for order {{2}}. Thank you for shopping with us!
+```
+
+Use it with the **COD order confirmed** event. See [COD orders](/shopify/cod-orders).
+
+## Cart reminders (Marketing)
+
+**First reminder**
+
+```text
+Hi {{1}}, you left something in your cart. It's still waiting for you: {{2}}
+```
+
+**Last reminder**
+
+```text
+Hi {{1}}, your cart is about to expire. Complete your order here: {{2}}
+```
+
+Fill the link variable with the **Cart Recovery Link** merge field. See [Recover abandoned carts](/shopify/cart-recovery).
+
+## Feedback (Marketing)
+
+**After delivery**
+
+```text
+Hi {{1}}, how was your order {{2}}? Reply with a number from 1 to 5. Your feedback helps us get better.
+```
+
+Send it from an **Order delivered** automation with a **Delay** step, for example 2 days.
+
+## Campaigns (Marketing)
+
+**New collection**
+
+```text
+Hi {{1}}, our new collection has just arrived. Take a look before it sells out: {{2}}
+```
+
+**Back in stock**
+
+```text
+Hi {{1}}, good news: {{2}} is back in stock. Order yours here: {{3}}
+```
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="WhatsApp templates" icon="file-text" href="/messaging/whatsapp-templates">
+    How to create, submit and manage templates.
+  </Card>
+
+  <Card title="WhatsApp costs" icon="receipt" href="/billing/whatsapp-costs">
+    What Meta charges for Utility and Marketing templates.
+  </Card>
+</CardGroup>

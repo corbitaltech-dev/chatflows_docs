@@ -1,0 +1,57 @@
+---
+title: "Cash on delivery (COD) orders on WhatsApp"
+sidebarTitle: "COD orders"
+description: "What ChatFlows.io sends for cash-on-delivery orders today, and what it doesn't do yet."
+icon: "banknote"
+keywords: ["ChatFlows", "ChatFlows.io", "COD", "cash on delivery", "COD confirmation", "Shopify", "WhatsApp", "order updates"]
+---
+
+Many stores sell with cash on delivery (COD). This page explains what ChatFlows.io sends for COD orders today.
+
+## How ChatFlows.io spots a COD order
+
+An order counts as COD when its payment method in Shopify has **cash on delivery** or **COD** in its name.
+In your messages, the **Payment Method** merge field then shows **Cash on Delivery**.
+
+## What COD buyers get
+
+A COD order gets the same updates as any other order. Use the Shopify events in your automations:
+
+| Event | When it runs for a COD order |
+| --- | --- |
+| **Order placed** | The order is placed. |
+| **Order shipped** and **Order partially shipped** | The order, or part of it, ships. |
+| **Order out for delivery** and **Order delivered** | The courier is delivering it, or it arrived. Only if your carrier sends tracking to Shopify. |
+| **COD order confirmed** | The COD order is marked as **paid** in Shopify, after the buyer pays the courier. |
+| **Order cancelled** | The order is cancelled. |
+
+See [Send order updates](/shopify/order-updates) to set these up.
+
+<Note>
+  **COD order confirmed** runs after payment, not before the order ships.
+  Use it to thank the buyer once they have paid.
+</Note>
+
+## What ChatFlows.io doesn't do yet
+
+ChatFlows.io doesn't ask buyers to confirm or cancel a COD order before it ships.
+It also doesn't change or cancel orders in Shopify. ChatFlows.io only reads your store.
+
+An automation can't send COD orders down a different path from prepaid orders.
+If you want a different message for COD buyers, use the **COD order confirmed** event, or add the **Payment Method** merge field to your order message.
+
+## Example messages
+
+For ready-to-use wording, see the COD and order templates in [Template examples](/messaging/template-examples).
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Send order updates" icon="package" href="/shopify/order-updates">
+    Set up order, shipping and delivery messages.
+  </Card>
+
+  <Card title="Template examples" icon="file-text" href="/messaging/template-examples">
+    Copy-ready wording for order and COD messages.
+  </Card>
+</CardGroup>

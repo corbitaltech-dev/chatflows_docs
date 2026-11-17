@@ -1,0 +1,92 @@
+---
+title: "Troubleshooting ChatFlows.io for Shopify"
+sidebarTitle: "Troubleshooting"
+description: "A message didn't send, a template was rejected, or a Shopify event didn't run? Find the cause and the fix."
+icon: "life-buoy"
+keywords: ["ChatFlows", "ChatFlows.io", "troubleshooting", "message not sent", "template rejected", "cart reminder not sent", "Shopify", "WhatsApp", "help"]
+---
+
+Start here when something doesn't work as you expect.
+For any message, the first place to look is **Setup → WhatsApp Message Log**. It lists every message sent and shows why a message failed.
+See [WhatsApp Message Log](/core-setup/whatsapp-activity-log).
+
+## A message didn't send
+
+<AccordionGroup>
+  <Accordion title="The customer hasn't written to you in 24 hours">
+    Outside the 24 hours, you can only send an approved **template**. A normal text message won't go through.
+    Start your automation or campaign with a template. See [the 24-hour rule](/getting-started/concepts).
+  </Accordion>
+
+  <Accordion title="The template isn't approved yet">
+    A template can only be sent when it shows **Approved**. Check its status in **Message Templates → WhatsApp**.
+  </Accordion>
+
+  <Accordion title="The customer opted out">
+    A customer who replied **STOP** no longer gets marketing messages. Order updates and other Utility messages still go out.
+    See [Opt-out](/settings/opt-out).
+  </Accordion>
+
+  <Accordion title="The customer has no phone number">
+    WhatsApp needs a phone number. Check that your Shopify checkout asks for one.
+  </Accordion>
+
+  <Accordion title="Meta stopped the message">
+    Meta can stop messages, for example when there's no payment method on your WhatsApp Business account, or you reached your messaging limit.
+    The reason shows in the **WhatsApp Message Log**. See [WhatsApp costs](/billing/whatsapp-costs).
+  </Accordion>
+</AccordionGroup>
+
+## A cart reminder wasn't sent
+
+<AccordionGroup>
+  <Accordion title="The shopper ordered before the wait was over">
+    That's expected. ChatFlows.io checks the checkout again before it sends. A shopper who ordered gets nothing.
+  </Accordion>
+
+  <Accordion title="The wait isn't over yet">
+    Each cart automation waits for its **Send after (minutes)** time. Check what you set. See [Recover abandoned carts](/shopify/cart-recovery).
+  </Accordion>
+
+  <Accordion title="The automation is off">
+    Go to **Automations** and check that the automation is switched on.
+  </Accordion>
+
+  <Accordion title="The shopper didn't give a phone number">
+    Shopify only shares a phone number if your checkout asks for one.
+  </Accordion>
+</AccordionGroup>
+
+## An order update didn't run
+
+<AccordionGroup>
+  <Accordion title="Out for delivery or Delivered never runs">
+    These two events need delivery tracking. Your shipping carrier or shipping app must send tracking updates to Shopify.
+    If you mark orders as fulfilled by hand, these events never run.
+  </Accordion>
+
+  <Accordion title="Delivery updates are off">
+    Your store was connected before ChatFlows.io asked for delivery access.
+    Go to **Settings → Shopify** and click **Reconnect**, then approve the access in Shopify.
+  </Accordion>
+
+  <Accordion title="Nothing runs for any order">
+    Go to **Settings → Shopify** and check that your store shows **Connected**.
+    If it shows **Needs attention**, read the reason and click **Reconnect** or **Retry setup**.
+    See [Your store and the Shopify app](/shopify/shopify-admin-app).
+  </Accordion>
+</AccordionGroup>
+
+## A template was rejected
+
+Meta reviews every template. If it's rejected, you get a notification. Common reasons:
+
+- The category is wrong. For example, an offer inside a **Utility** template.
+- The template starts or ends with a variable.
+- The example values are missing or unclear.
+
+Fix the wording and submit it again. See [Template examples](/messaging/template-examples) for wording that works.
+
+## Still stuck?
+
+Email [support@chatflows.io](mailto:support@chatflows.io). Tell us your store name, what you expected, and what happened.

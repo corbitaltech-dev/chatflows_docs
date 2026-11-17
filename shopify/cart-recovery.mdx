@@ -1,5 +1,6 @@
 ---
-title: "Recover abandoned carts"
+title: "Shopify abandoned cart recovery on WhatsApp"
+sidebarTitle: "Recover abandoned carts"
 description: "Send a WhatsApp reminder to shoppers who reach checkout and leave without paying — at the time you choose."
 icon: "shopping-cart"
 keywords: ["ChatFlows", "ChatFlows.io", "abandoned cart", "cart recovery", "Shopify", "checkout reminder", "WhatsApp"]
@@ -21,7 +22,8 @@ Only one message goes out per cart for each automation.
 
 - Your [store is connected](/shopify/shopify-admin-app).
 - Your [WhatsApp number is connected](/core-setup/channels/whatsapp).
-- You have an **approved** [WhatsApp template](/messaging/whatsapp-templates) for the reminder.
+- You have an **approved** [WhatsApp template](/messaging/whatsapp-templates) for the reminder. See [Template examples](/messaging/template-examples) for wording.
+- Your Shopify checkout asks for a **phone number**. Without one, ChatFlows.io can't reach the shopper.
 
 <Note>
   The shopper hasn't messaged you, so the first message must be an approved template.
@@ -88,6 +90,15 @@ If the shopper pays after the first reminder, the second one is not sent.
 <Tip>
   Each reminder is a template message. WhatsApp charges for each one. Two reminders are usually enough.
 </Tip>
+
+## How recovery is counted
+
+A cart counts as **recovered** when it later becomes an order that isn't cancelled. ChatFlows.io matches the order to the cart in one of two ways:
+
+- the same checkout is paid, or
+- the same customer places an order within 7 days.
+
+Each cart counts once. A cart recovered after a reminder doesn't always mean the reminder caused the sale. The shopper might have come back anyway.
 
 ## See your results
 

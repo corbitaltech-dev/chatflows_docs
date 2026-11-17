@@ -1,5 +1,6 @@
 ---
-title: "Send order updates"
+title: "Shopify order updates on WhatsApp"
+sidebarTitle: "Send order updates"
 description: "Message customers on WhatsApp when an order is placed, shipped, out for delivery, delivered or cancelled."
 icon: "package"
 keywords: ["ChatFlows", "ChatFlows.io", "order updates", "shipping updates", "COD confirmation", "Shopify", "WhatsApp"]
@@ -27,6 +28,11 @@ Each update is an automation. It starts by itself when something happens to an o
   **Order out for delivery** and **Order delivered** only work if your shipping carrier sends tracking updates to Shopify.
   If you mark orders as fulfilled by hand, these two events never run.
 </Warning>
+
+Not sure if your carrier sends tracking? Open a shipped order in Shopify. If it shows delivery steps such as **Out for delivery** or **Delivered**, these events will run.
+Many stores get tracking through a shipping app. If yours doesn't, use **Order shipped** with the tracking link instead.
+
+Selling with cash on delivery? See [COD orders](/shopify/cod-orders).
 
 ## Before you start
 
@@ -74,6 +80,10 @@ Orders without a phone number don't get a message.
 ## Where to next
 
 <CardGroup cols={2}>
+  <Card title="Template examples" icon="file-text" href="/messaging/template-examples">
+    Copy-ready wording for every order update.
+  </Card>
+
   <Card title="Your Shopify dashboard" icon="chart-line" href="/shopify/shopify-dashboard">
     See how many messages were sent, delivered and read for each event.
   </Card>
