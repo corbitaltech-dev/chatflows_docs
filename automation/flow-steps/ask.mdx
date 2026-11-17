@@ -50,17 +50,17 @@ In later message steps, type **@** in any message field to insert the saved answ
 - **Attribute Format** sets what a valid answer looks like. It defaults to **Any**, which accepts whatever customer send.
 - **Pattern** is required, but only if you set the Attribute Format to **Regular expression**.
 
-![Ask Question settings with a Question box, a Capture Attribute of booking_date, an Attribute Format of Date, Number of Attempts set to 2, a Validation Error Message, and an Attempts Over Message](/automation/img/ask/ask-question-settings.png)
+![Ask Question settings with a Question box asking what date the customer would like their order delivered, a Capture Attribute of delivery_date, an Attribute Format of Date, Number of Attempts set to 2, a Validation Error Message, and an Attempts Over Message](/automation/img/ask/ask-question-settings.png)
 
 **Example**
 
-> **Question:** What date would you like to book?
+> **Question:** What date would you like your order delivered?
 > **Attribute Format:** Date
-> **Capture Attribute:** `booking_date`
+> **Capture Attribute:** `delivery_date`
 > **Number of Attempts:** 2
 > **Validation Error Message:** That doesn't look like a date. Please send it as DD/MM/YYYY.
 
-![A Start Trigger set to exact match on the keywords track and order status, connected to an Ask Question step asking What's your order number?](/automation/img/ask/ask-question.png)
+![A Start Trigger set to exact match on the keyword delivery date, connected to an Ask Question step asking what date the customer would like their order delivered](/automation/img/ask/ask-question.png)
 
 ---
 
@@ -89,7 +89,7 @@ In later message steps, type **@** in any message field to insert the saved answ
 
 **What it does.** Asks the customer for an email address and checks that it's valid.
 
-**When to use it.** Use it when you need the customer's email address, such as for sending invoices, booking confirmations, brochures, or newsletters.
+**When to use it.** Use it when you need the customer's email address, such as for sending invoices, order receipts, or newsletters.
 
 **Required fields**
 
@@ -189,32 +189,32 @@ Ask Location is a WhatsApp-only step. It's hidden on Messenger flows.
 - **Question** and **Capture Attribute** are required.
 - **Attribute Format** defaults to **Any**, which accepts whatever they send.
 
-![Get Input settings with a Question box asking how many people the booking is for, a Capture Attribute of party_size, an Attribute Format of Any, Number of Attempts set to 0, and the Show typing indicator switch turned off](/automation/img/ask/get-input-settings.png)
+![Get Input settings with a Question box asking how many the customer would like to order, a Capture Attribute of quantity, an Attribute Format of Number, Number of Attempts set to 0, and the Show typing indicator switch turned off](/automation/img/ask/get-input-settings.png)
 
 **Example**
 
-> **Question:** How many people is the booking for?
+> **Question:** How many would you like to order?
 > **Attribute Format:** Number
-> **Capture Attribute:** `party_size`
+> **Capture Attribute:** `quantity`
 
-![A Start Trigger set to exact match on the keyword book, connected to a Get Input step asking how many people the booking is for](/automation/img/ask/get-input.png)
+![A Start Trigger set to exact match on the keyword order, connected to a Get Input step asking how many the customer would like to order](/automation/img/ask/get-input.png)
 
 ---
 
 ## A worked example
 
-A restaurant collects a booking:
+A store takes a return request:
 
-1. **Button Message** — "How can we help?" with `Book a table`.
-2. **Ask Question** (Text) — "What name should we put the booking under?" → `booking_name`
-3. **Get Input** (Number) — "How many people?" → `party_size`
-4. **Ask Question** (Date) — "Which date?" → `booking_date`
-5. **Ask Phone** — "What number can we call if anything changes?" → `callback_number`
-6. **Text Message** — "Thanks {'{{contact.first_name}}'}! We've noted a table for {'{{vars.party_size}}'} on {'{{vars.booking_date}}'} under {'{{vars.booking_name}}'}. We'll confirm shortly."
+1. **Button Message** — "How can we help?" with `Return an item`.
+2. **Ask Question** (Text) — "What's your order number?" → `order_number`
+3. **Get Input** (Number) — "How many items are you returning?" → `return_qty`
+4. **Ask Question** (Date) — "Which date can we pick it up?" → `pickup_date`
+5. **Ask Phone** — "What number can the courier call?" → `callback_number`
+6. **Text Message** — "Thanks {'{{contact.first_name}}'}! We've noted your return of {'{{vars.return_qty}}'} item(s) from order {'{{vars.order_number}}'}. The courier will collect it on {'{{vars.pickup_date}}'}."
 
-![The finished booking flow — a Start Trigger on the keyword book leading to a Button Message with a Book a table button, then an Ask Question for the booking name, a Get Input for the party size, an Ask Question for the date, an Ask Phone for the callback number, and a closing Text Message that confirms the booking using the saved answers as merge fields](/automation/img/ask/worked-example-booking-flow.png)
+![The finished return flow — a Start Trigger on the keyword return leading to a Button Message with a Return an item button, then an Ask Question for the order number, a Get Input for the number of items, an Ask Question for the pickup date, an Ask Phone for the courier's call-back number, and a closing Text Message that confirms the return using the saved answers as merge fields](/automation/img/ask/worked-example-return-flow.png)
 
-Add a **Google Sheets** step at the end and every booking lands in a spreadsheet automatically.
+Add a **Google Sheets** step at the end and every return request lands in a spreadsheet automatically.
 
 ## Show Typing Indicator
 
