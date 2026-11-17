@@ -1,14 +1,14 @@
 {
     "openapi": "3.1.0",
     "info": {
-        "title": "ChatFlows.io REST API",
+        "title": "ChatFlows REST API",
         "version": "1.0.0",
-        "description": "ChatFlows.io REST API (v1).\n\n**Base URL:** `https://app.chatflows.io/api/v1` — also shown, with a copy button, on your **Developer API Keys** page.\n\n**Auth:** every authenticated request sends `Authorization: Bearer <token>`, where the token is created under **Setup → Developer API Keys** in your dashboard.\n\n**What a token can see:** a token belongs to ONE workspace — your store's. Every endpoint returns only that workspace's data, and `/api/v1/account` describes your own workspace. A token created before tokens were tied to a workspace is refused with `401 token_not_scoped`; create a new one to replace it.\n\n**Scopes:** each endpoint's description lists the token ability it requires. Create your token with the matching scopes.\n\n**Pagination:** list endpoints return `{ data, links: { next, prev }, meta }`. Large/append-only collections (contacts, group members, webhooks) use opaque cursor pagination — follow `links.next` until it is `null`. `per_page` is clamped to 5–100.\n\n**Async sends:** message and OTP sends return `202` and are processed on the queue.\n\n**Error envelope:**\n```json\n{ \"message\": \"...\", \"error_code\": \"...\", \"status\": 4xx }\n```\n\n**Modules:** Auth/Account · Channels · Contacts · Statuses · Sources · Groups · Labels · Templates · Messages · Conversations · OTP."
+        "description": "ChatFlows REST API (v1).\n\n**Base URL:** `https://app.chatflows.io/api/v1` — also shown, with a copy button, on your **Developer API Keys** page.\n\n**Auth:** every authenticated request sends `Authorization: Bearer <token>`, where the token is created under **Setup → Developer API Keys** in your dashboard.\n\n**What a token can see:** a token belongs to ONE workspace — your store's. Every endpoint returns only that workspace's data, and `/api/v1/account` describes your own workspace. A token created before tokens were tied to a workspace is refused with `401 token_not_scoped`; create a new one to replace it.\n\n**Scopes:** each endpoint's description lists the token ability it requires. Create your token with the matching scopes.\n\n**Pagination:** list endpoints return `{ data, links: { next, prev }, meta }`. Large/append-only collections (contacts, group members, webhooks) use opaque cursor pagination — follow `links.next` until it is `null`. `per_page` is clamped to 5–100.\n\n**Async sends:** message and OTP sends return `202` and are processed on the queue.\n\n**Error envelope:**\n```json\n{ \"message\": \"...\", \"error_code\": \"...\", \"status\": 4xx }\n```\n\n**Modules:** Auth/Account · Channels · Contacts · Statuses · Sources · Groups · Labels · Templates · Messages · Conversations · OTP."
     },
     "servers": [
         {
             "url": "https://app.chatflows.io",
-            "description": "ChatFlows.io"
+            "description": "ChatFlows"
         }
     ],
     "tags": [
@@ -240,8 +240,8 @@
                                     "200 OK": {
                                         "summary": "200 OK",
                                         "value": {
-                                            "message": "Welcome to the ChatFlows.io REST API",
-                                            "name": "ChatFlows.io REST API",
+                                            "message": "Welcome to the ChatFlows REST API",
+                                            "name": "ChatFlows REST API",
                                             "version": "v1",
                                             "base": "/api/v1",
                                             "documentation": "https://app.chatflows.io/api-docs"
@@ -462,7 +462,7 @@
                                                         },
                                                         "valid": {
                                                             "type": "boolean",
-                                                            "description": "`true` if your workspace can currently use ChatFlows.io."
+                                                            "description": "`true` if your workspace can currently use ChatFlows."
                                                         },
                                                         "ends_at": {
                                                             "type": [
