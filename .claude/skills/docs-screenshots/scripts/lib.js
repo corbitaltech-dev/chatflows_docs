@@ -19,6 +19,8 @@ const env = (k, d) => (process.env[k] !== undefined && process.env[k] !== '' ? p
 const BASE = env('SHOT_BASE_URL', '').replace(/\/$/, '');
 const WIDTH = Number(env('SHOT_WIDTH', 1905));
 const HEIGHT = Number(env('SHOT_HEIGHT', 859));
+// Pixel density of the capture (2 = sharp "retina" images). Blur areas are scaled to match.
+const SCALE = Number(env('SHOT_SCALE', 1));
 if (!BASE) throw new Error('SHOT_BASE_URL is not set. Copy config.example.env to .env.screenshots and fill it in.');
 
 // Open a logged-in page. `height` lets one shot use a taller window than the default.
@@ -29,7 +31,7 @@ async function open(height = HEIGHT) {
   const browser = await chromium.launch({ args, executablePath });
   const context = await browser.newContext({
     viewport: { width: WIDTH, height },
-    deviceScaleFactor: 1,
+    deviceScaleFactor: SCALE,
     ignoreHTTPSErrors: env('SHOT_IGNORE_HTTPS_ERRORS', '1') === '1',
     colorScheme: env('SHOT_COLOR_SCHEME', 'light'),
   });
@@ -104,7 +106,8 @@ async function captureClip(page, out, clip, { blurTexts = [], blurSelectors = []
   const boxes = [...(await textBoxes(page, [...always, ...blurTexts])), ...(await selectorBoxes(page, blurSelectors))];
   const rel = boxes
     .map((b) => [b.x - clip.x, b.y - clip.y, b.width, b.height])
-    .filter(([x, y, w, h]) => x + w > 0 && y + h > 0 && x < clip.width && y < clip.height);
+    .filter(([x, y, w, h]) => x + w > 0 && y + h > 0 && x < clip.width && y < clip.height)
+    .map((r) => r.map((v) => v * SCALE));
   fs.mkdirSync(path.dirname(path.resolve(out)), { recursive: true });
   fs.writeFileSync(out + '.blur.json', JSON.stringify(rel));
   await page.screenshot({ path: out, clip: roundClip(clip) });

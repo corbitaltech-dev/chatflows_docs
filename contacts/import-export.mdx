@@ -13,7 +13,7 @@ Have a contact list in Excel or another app? You don't need to add people one at
 
 <Steps>
 <Step title="Upload your file">
-  From **Customers**, click **Import Contacts**, then **New Import**, and upload a **CSV or XLSX** file (up to 30 MB).
+  From **Customers**, click **Import Contacts**, then **Add Import**, and upload a **CSV or XLSX** file (up to 30 MB).
 
   <Figure
     src="/contacts/img/import-upload.png"
@@ -23,7 +23,7 @@ Have a contact list in Excel or another app? You don't need to add people one at
 
   Not sure how your file should look? Click **Download sample CSV** on this step to get a ready-made example.
 
-  Your file needs a **header row** as the first row, and phone numbers must include the **country code** (for example `+9198******`). Duplicate phone numbers are **skipped** — existing contacts are never overwritten.
+  Your file needs a **header row** as the first row, and phone numbers must include the **country code** (for example `+9198******`). If a phone number already belongs to a customer, you choose what happens on the last step.
 </Step>
 
 <Step title="Map your columns">
@@ -37,13 +37,20 @@ Have a contact list in Excel or another app? You don't need to add people one at
 </Step>
 
 <Step title="Set Default Values and start the import">
-  On the **Default Values** step, set the **status**, **source**, **group(s)**, **label(s)**, **WhatsApp channel**, and **assigned team member**. These values are applied to **every** contact in this file — they cannot come from the file itself. Then choose **Start Import**. The import runs in the background, so large files don't block you from continuing to use the app.
+  First, choose what happens when a phone number already belongs to a customer:
+
+  - **Skip the row** — the existing customer stays as it is. The row is listed as skipped. This is the default.
+  - **Update the existing contact** — the customer is updated with the columns from your file and the default values below. Groups and labels are added, never removed.
+
+  Updating an existing customer doesn't use any of your room for new contacts.
+
+  Then set the **status**, **source**, **group(s)**, **label(s)**, **WhatsApp channel**, and **assigned team member**. These values are applied to **every** contact in this file — they cannot come from the file itself. Then choose **Start Import**. The import runs in the background, so large files don't block you from continuing to use the app.
 
   If your file has more rows than you have room for, ChatFlows.io warns you here and imports only what fits. The extra rows are reported as failed.
 
   <Figure
     src="/contacts/img/import-default-values.png"
-    alt="Default Values step showing an import summary of the column mapping, a note confirming how many rows were detected and how many contact slots remain, and default fields for channel, type, status, source, assignee, groups, and labels"
+    alt="Default Values step showing an import summary of the column mapping, a note confirming how many rows were detected and how many contact slots remain, the If a phone number already exists choice with Skip the row selected, and default fields for channel, type, status, source, assignee, groups, and labels"
     caption="Image shows the Default Values step with the import summary and default field settings."
   />
 </Step>
@@ -63,7 +70,7 @@ Some defaults are **required** — the WhatsApp channel, type, status, and sourc
 
 Each import you run is listed with its status and progress. Open one to:
 
-- See how many rows were imported, skipped, and failed.
+- See how many rows were imported, updated, skipped, and failed.
 - **Download Failed Rows CSV** — a file listing the rows that failed and why.
 - **Download Original File** — the file you uploaded.
 - **Delete** a single import record, or **bulk-delete** several at once. This only removes the import history entry — contacts already created by that import are not deleted.
