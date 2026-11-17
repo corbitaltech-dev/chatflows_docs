@@ -22,13 +22,13 @@ A COD order gets the same updates as any other order. Use the Shopify events in 
 | **Order placed** | The order is placed. |
 | **Order shipped** and **Order partially shipped** | The order, or part of it, ships. |
 | **Order out for delivery** and **Order delivered** | The courier is delivering it, or it arrived. Only if your carrier sends tracking to Shopify. |
-| **COD order confirmed** | The COD order is marked as **paid** in Shopify, after the buyer pays the courier. |
+| **COD payment received** | The COD order is marked as **paid** in Shopify, after the buyer pays the courier. |
 | **Order cancelled** | The order is cancelled. |
 
 See [Send order updates](/shopify/order-updates) to set these up.
 
 <Note>
-  **COD order confirmed** runs after payment, not before the order ships.
+  **COD payment received** runs after payment, not before the order ships.
   Use it to thank the buyer once they have paid.
 </Note>
 
@@ -38,7 +38,7 @@ ChatFlows.io doesn't ask buyers to confirm or cancel a COD order before it ships
 It also doesn't change or cancel orders in Shopify. ChatFlows.io only reads your store.
 
 An automation can't send COD orders down a different path from prepaid orders.
-If you want a different message for COD buyers, use the **COD order confirmed** event, or add the **Payment Method** merge field to your order message.
+If you want a different message for COD buyers, use the **COD payment received** event, or add the **Payment Method** merge field to your order message.
 
 ## Example messages
 
