@@ -3,7 +3,7 @@ title: "Shopify order updates on WhatsApp"
 sidebarTitle: "Send order updates"
 description: "Tell buyers on WhatsApp when their order is placed, shipped, out for delivery, delivered or cancelled, and get fewer “Where is my order?” messages."
 icon: "package"
-keywords: ["ChatFlows", "chatflows.io", "order updates", "shipping updates", "COD confirmation", "Shopify", "WhatsApp"]
+keywords: ["ChatFlows", "chatflows.io", "order updates", "shipping updates", "out for delivery", "delivered", "tracking", "COD", "Shopify", "WhatsApp"]
 ---
 
 Keep customers updated about their order on WhatsApp. Fewer people will ask "Where is my order?"
@@ -22,15 +22,28 @@ Each update is an automation. It starts by itself when something happens to an o
 | **Order delivered** | The order reached the customer. |
 | **Order cancelled** | The order was cancelled. |
 
+The same list also has **Cart abandoned**, for shoppers who leave checkout. See [Recover abandoned carts](/shopify/cart-recovery).
+
+Need wording for these messages? [Template examples](/messaging/template-examples#order-updates-utility) has a ready-to-use message for each update.
+
 ![The Start Trigger settings with Trigger Source set to Shopify and the Shopify Event list open, showing Cart abandoned, Order placed, COD payment received, Order partially shipped, Order shipped, Order out for delivery, Order delivered and Order cancelled](/shopify/img/shopify-order-events.png)
 
+### Out for delivery and Delivered need tracking
+
 <Warning>
-  **Order out for delivery** and **Order delivered** only work if your shipping carrier sends tracking updates to Shopify.
+  **Order out for delivery** and **Order delivered** only run when your shipping carrier or shipping app sends tracking updates to Shopify.
   If you mark orders as fulfilled by hand, these two events never run.
 </Warning>
 
-Not sure if your carrier sends tracking? Open a shipped order in Shopify. If it shows delivery steps such as **Out for delivery** or **Delivered**, these events will run.
-Many stores get tracking through a shipping app. If yours doesn't, use **Order shipped** with the tracking link instead.
+Whether you get these updates depends on your carrier and how you ship, not on ChatFlows. Shopify explains it under [order status pages](https://help.shopify.com/en/manual/fulfillment/setup/order-status-page/understanding-order-status-pages).
+
+**To check your store:**
+
+1. Open a shipped order in your Shopify admin.
+2. Look at its tracking. If it shows steps such as **Out for delivery** or **Delivered**, these two events will run.
+3. If it doesn't, ask your shipping app or carrier whether they send tracking updates to Shopify.
+
+No tracking updates? Use **Order shipped** and add the tracking link to the message. Your customers can follow the delivery themselves.
 
 Selling with cash on delivery? See [COD orders](/shopify/cod-orders).
 
