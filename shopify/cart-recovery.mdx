@@ -1,17 +1,17 @@
 ---
 title: "Shopify abandoned cart recovery on WhatsApp"
 sidebarTitle: "Recover abandoned carts"
-description: "Win back shoppers who leave checkout. ChatFlows sends a WhatsApp reminder with a link back to their cart, at the time you choose."
+description: "Win back customers who leave checkout. ChatFlows sends a WhatsApp reminder with a link back to their cart, at the time you choose."
 icon: "shopping-cart"
-keywords: ["ChatFlows", "chatflows.io", "abandoned cart", "cart recovery", "Shopify", "checkout reminder", "WhatsApp"]
+keywords: ["ChatFlows", "chatflows.io", "abandoned cart", "cart recovery", "Shopify", "checkout reminder", "checkout phone number", "recovered carts", "WhatsApp"]
 ---
 
-Some shoppers reach your checkout and leave without paying.
+Some customers reach your checkout and leave without paying.
 ChatFlows can send them a WhatsApp message with a link back to their cart.
 
 ## How it works
 
-1. A shopper reaches your checkout and leaves without paying.
+1. A customer reaches your checkout and leaves without paying.
 2. ChatFlows waits for the time you set.
 3. ChatFlows checks the checkout again. If they still haven't paid, your automation sends the message.
 4. If they pay before then, nothing is sent.
@@ -23,12 +23,37 @@ Only one message goes out per cart for each automation.
 - Your [store is connected](/shopify/shopify-admin-app).
 - Your [WhatsApp number is connected](/core-setup/channels/whatsapp).
 - You have an **approved** [WhatsApp template](/messaging/whatsapp-templates) for the reminder. See [Template examples](/messaging/template-examples) for wording.
-- Your Shopify checkout asks for a **phone number**. Without one, ChatFlows can't reach the shopper.
+- Your Shopify checkout asks for a **phone number**. Without one, ChatFlows can't reach the customer. See [Collect phone numbers at checkout](#collect-phone-numbers-at-checkout) below.
 
 <Note>
-  The shopper hasn't messaged you, so the first message must be an approved template.
-  This is a WhatsApp rule, not a ChatFlows one. See [the 24-hour rule](/getting-started/concepts).
+  The customer hasn't messaged you, so the first message must be an approved template.
+  This is a WhatsApp rule, not a ChatFlows one. See [the two WhatsApp rules](/getting-started/concepts#two-whatsapp-rules-that-shape-everything), or Meta's own [template rules](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
 </Note>
+
+## Collect phone numbers at checkout
+
+A cart reminder goes to the phone number the customer gave at checkout, or the one on their Shopify customer profile. No number means no reminder, so it's worth asking for one at checkout.
+
+<Steps>
+  <Step title="Open your checkout settings">
+    In your Shopify admin, go to **Settings → Checkout**.
+  </Step>
+
+  <Step title="Ask for a phone number">
+    Under **Customer information**, set **Shipping address phone number** to **Required** (or **Optional**, if you'd rather not make it compulsory).
+  </Step>
+
+  <Step title="Save">
+    Click **Save**. New checkouts now ask for a phone number.
+  </Step>
+</Steps>
+
+Some customers still won't get a reminder:
+
+- **They left before typing their number.** Shopify only records a checkout once the customer has entered their contact details. Someone who leaves on the first screen may not have given a phone number yet.
+- **Their order needs no shipping.** The shipping address phone number is only asked for when checkout has a shipping step.
+
+Shopify explains these settings under [checkout form options](https://help.shopify.com/en/manual/checkout-settings/checkout-form-options) and [abandoned checkouts](https://help.shopify.com/en/manual/promoting-marketing/create-marketing/abandoned-checkouts).
 
 ## Build the automation
 
@@ -53,7 +78,7 @@ Only one message goes out per cart for each automation.
   </Step>
 
   <Step title="Add the cart link" icon="link">
-    Put `order.recovery_url` in the template's button or text. It takes the shopper back to checkout with their cart still full.
+    Put `order.recovery_url` in the template's button or text. It takes the customer back to checkout with their cart still full.
   </Step>
 
   <Step title="Save and turn it on" icon="check">
@@ -65,7 +90,7 @@ Only one message goes out per cart for each automation.
 
 ## Choosing the wait time
 
-Shopify tells ChatFlows about a checkout as soon as the shopper **reaches** it, not when they leave.
+Shopify tells ChatFlows about a checkout as soon as the customer **reaches** it, not when they leave.
 A very short wait can message someone who is still typing their address.
 
 - Under 15 minutes is usually too soon.
@@ -80,15 +105,15 @@ For example:
 - Automation 1: **Cart abandoned**, send after **20** minutes. A friendly nudge.
 - Automation 2: **Cart abandoned**, send after **720** minutes (12 hours). A last reminder.
 
-If the shopper pays after the first reminder, the second one is not sent.
+If the customer pays after the first reminder, the second one is not sent.
 
 <Warning>
   Don't add a **Wait** step inside one cart automation to send a second reminder.
-  A wait does not check the checkout again, so a shopper who has already ordered would still get it.
+  A wait does not check the checkout again, so a customer who has already ordered would still get it.
 </Warning>
 
 <Tip>
-  Each reminder is a template message. WhatsApp charges for each one. Two reminders are usually enough.
+  Each reminder is a template message. WhatsApp charges for each one. Two reminders are usually enough. See [WhatsApp costs](/billing/whatsapp-costs).
 </Tip>
 
 ## How recovery is counted
@@ -98,7 +123,7 @@ A cart counts as **recovered** when it later becomes an order that isn't cancell
 - the same checkout is paid, or
 - the same customer places an order within 7 days.
 
-Each cart counts once. A cart recovered after a reminder doesn't always mean the reminder caused the sale. The shopper might have come back anyway.
+Each cart counts once. A cart recovered after a reminder doesn't always mean the reminder caused the sale. The customer might have come back anyway.
 
 ## See your results
 
@@ -107,13 +132,13 @@ The [Shopify dashboard](/shopify/shopify-dashboard) shows how many carts were ab
 ## Common questions
 
 <AccordionGroup>
-  <Accordion title="Will a shopper who already paid still get a cart reminder?">
-    No. ChatFlows checks the checkout again just before sending, so a shopper who has already paid gets nothing.
+  <Accordion title="Will a customer who already paid still get a cart reminder?">
+    No. ChatFlows checks the checkout again just before sending, so a customer who has already paid gets nothing.
     See [How it works](#how-it-works).
   </Accordion>
 
   <Accordion title="Can I send cart reminders on SMS or email?">
-    No. ChatFlows sends Shopify cart reminders on WhatsApp only, from your connected WhatsApp number. Shoppers are matched by the phone number on their checkout.
+    No. ChatFlows sends Shopify cart reminders on WhatsApp only, from your connected WhatsApp number. Customers are matched by the phone number on their checkout.
   </Accordion>
 
   <Accordion title="Do I need to change my Shopify theme to recover abandoned carts?">
