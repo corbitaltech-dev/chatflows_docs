@@ -5,8 +5,6 @@ icon: "webhook"
 keywords: ["ChatFlows", "webhooks", "webhook forwarding", "integration"]
 ---
 
-import { Figure } from '/snippets/browser-frame.jsx';
-
 Whenever there is activity on your WhatsApp account — like an incoming message, a template approval, or a delivery update — ChatFlows can send the details of that event to your own server, CRM, or automation tools.
 
 Find it under **Settings → Webhooks**.
@@ -15,11 +13,7 @@ Find it under **Settings → Webhooks**.
 Only the workspace **owner** can change these settings.
 </Note>
 
-<Figure
-  src="/settings/img/webhooks-form.png"
-  alt="Global Webhook Config form showing webhook URL, method, signing secret, events, and a list of channel overrides"
-  caption="Image shows the Webhooks page, with the global settings on top and channel overrides below."
-/>
+![Global Webhook Config form showing webhook URL, method, signing secret, events, and a list of channel overrides](/settings/img/webhooks-form.png)
 
 ## Turning it on
 
@@ -57,11 +51,7 @@ Only the workspace **owner** can change these settings.
 
 By default, all your channels forward their events to the same webhook URL. If you want a specific channel to send its events somewhere else instead, you can give that channel its own webhook settings.
 
-<Figure
-  src="/settings/img/webhooks-channel-override.png"
-  alt="The Channel Overrides section with a channel expanded, showing an Override toggle, Enable forwarding switch, and its own Webhook URL, Method, Signing Secret, and Events fields, with a Save Channel button"
-  caption="Image shows the Channel Overrides section with a channel's own settings."
-/>
+![The Channel Overrides section with a channel expanded, showing an Override toggle, Enable forwarding switch, and its own Webhook URL, Method, Signing Secret, and Events fields, with a Save Channel button](/settings/img/webhooks-channel-override.png)
 
 <Steps>
 <Step title="Find the channel">

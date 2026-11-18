@@ -9,3 +9,6 @@ drafts/
 # Internal planning/notes — not a nav page, but excluded explicitly rather than
 # relying only on it staying out of docs.json navigation
 scratchpad/
+
+# Internal audit notes — never publish
+ChatFlows Landing Page Audit.md

@@ -6,8 +6,6 @@ icon: "file-input"
 keywords: ["ChatFlows", "contacts", "customers", "import", "export", "CSV", "XLSX", "bulk import"]
 ---
 
-import { Figure } from '/snippets/browser-frame.jsx';
-
 Have a contact list in Excel or another app? You don't need to add people one at a time — import the whole file from the **Customers** page.
 
 ## Importing contacts
@@ -16,11 +14,7 @@ Have a contact list in Excel or another app? You don't need to add people one at
 <Step title="Upload your file">
   From **Customers**, click **Import Contacts**, then **Add Import**, and upload a **CSV or XLSX** file (up to 30 MB).
 
-  <Figure
-    src="/contacts/img/import-upload.png"
-    alt="Upload step of the import wizard with a Before you upload checklist and a drag-and-drop file area accepting CSV or XLSX up to 30 MB"
-    caption="Image shows the upload step with the before-you-upload checklist and file drop area."
-  />
+  ![Upload step of the import wizard with a Before you upload checklist and a drag-and-drop file area accepting CSV or XLSX up to 30 MB](/contacts/img/import-upload.png)
 
   Not sure how your file should look? Click **Download sample CSV** on this step to get a ready-made example.
 
@@ -30,11 +24,7 @@ Have a contact list in Excel or another app? You don't need to add people one at
 <Step title="Map your columns">
   ChatFlows reads your file's headers and suggests a mapping to contact fields automatically. Review and adjust the mapping — including your own [customer fields](/core-setup/custom-fields) — before continuing.
 
-  <Figure
-    src="/contacts/img/import-map-columns.png"
-    alt="Map Columns step showing a preview of the first rows of the uploaded file above dropdowns matching each file column to a contact field, with Phone and First Name marked required"
-    caption="Image shows the Map Columns step with a file preview and field mapping dropdowns."
-  />
+  ![Map Columns step showing a preview of the first rows of the uploaded file above dropdowns matching each file column to a contact field, with Phone and First Name marked required](/contacts/img/import-map-columns.png)
 </Step>
 
 <Step title="Set Default Values and start the import">
@@ -49,11 +39,7 @@ Have a contact list in Excel or another app? You don't need to add people one at
 
   If your file has more rows than you have room for, ChatFlows warns you here and imports only what fits. The extra rows are reported as failed.
 
-  <Figure
-    src="/contacts/img/import-default-values.png"
-    alt="Default Values step showing an import summary of the column mapping, a note confirming how many rows were detected and how many contact slots remain, the If a phone number already exists choice with Skip the row selected, and default fields for channel, type, status, source, assignee, groups, and labels"
-    caption="Image shows the Default Values step with the import summary and default field settings."
-  />
+  ![Default Values step showing an import summary of the column mapping, a note confirming how many rows were detected and how many contact slots remain, the If a phone number already exists choice with Skip the row selected, and default fields for channel, type, status, source, assignee, groups, and labels](/contacts/img/import-default-values.png)
 </Step>
 </Steps>
 
@@ -63,11 +49,7 @@ Some defaults are **required** — the WhatsApp channel, type, status, and sourc
 
 ## Tracking an import
 
-<Figure
-  src="/contacts/img/import-history.png"
-  alt="Import Contacts page listing past imports with the file name, a progress bar showing rows processed with counts of imported and skipped rows, a Completed status, and the date"
-  caption="Image shows the Import Contacts page listing past imports with their progress."
-/>
+![Import Contacts page listing past imports with the file name, a progress bar showing rows processed with counts of imported and skipped rows, a Completed status, and the date](/contacts/img/import-history.png)
 
 Each import you run is listed with its status and progress. Open one to:
 
