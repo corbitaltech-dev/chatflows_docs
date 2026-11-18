@@ -25,6 +25,7 @@ Write like you're explaining it to a shop owner over the counter. Short sentence
 | Never write | Write instead |
 |---|---|
 | tenant | workspace |
+| shopper / shoppers | customer / customers |
 | WABA / WhatsApp Business Account (unqualified) | your WhatsApp Business account, or just "your number" |
 | session message | free-form message / writing back in your own words |
 | 24-hour customer service window | "you can write back freely for 24 hours" |
