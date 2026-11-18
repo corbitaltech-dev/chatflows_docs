@@ -181,6 +181,7 @@
               "automation/overview",
               "automation/generate-with-ai",
               "automation/flow-builder",
+              "automation/ai-assistant",
               {
                 "group": "Flow Steps",
                 "icon": "shapes",
