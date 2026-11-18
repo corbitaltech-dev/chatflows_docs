@@ -5,8 +5,6 @@ icon: "list"
 keywords: ["ChatFlows", "WhatsApp", "activity log", "WhatsApp Message Log", "message log", "delivery", "errors"]
 ---
 
-import { Figure } from '/snippets/browser-frame.jsx';
-
 When a customer says "I never got your message", look here first. This page shows all WhatsApp messages sent from your workspace, whether they were sent from a **[campaign](/messaging/campaigns)**, **[automation](/automation/overview)**, or **[chat](/messaging/live-chat)**. You can use it to check sent messages and see why any message failed.
 
 Find it under **Setup → WhatsApp Message Log**.
@@ -14,11 +12,7 @@ Find it under **Setup → WhatsApp Message Log**.
 
 ## The message list
 
-<Figure
-  src="/core-setup/img/whatsapp-activity-log.png"
-  alt="The message log with All, Success and Errors tabs and a table of sent messages showing category, name, template name, status, error, relation type and created date"
-  caption="Image shows the WhatsApp Message Log."
-/>
+![The message log with All, Success and Errors tabs and a table of sent messages showing category, name, template name, status, error, relation type and created date](/core-setup/img/whatsapp-activity-log.png)
 
 | Column | What it shows |
 | --- | --- |
@@ -45,11 +39,7 @@ Find it under **Setup → WhatsApp Message Log**.
 
 Open the `⋮` menu and choose **View** to see more information about the message:
 
-<Figure
-  src="/core-setup/img/whatsapp-activity-log-view.png"
-  alt="The message details dialog with Response and Raw Content tabs, showing the status, response code, response time, wamid, and the response payload returned by WhatsApp"
-  caption="Image shows the message details view with the Response tab open."
-/>
+![The message details dialog with Response and Raw Content tabs, showing the status, response code, response time, wamid, and the response payload returned by WhatsApp](/core-setup/img/whatsapp-activity-log-view.png)
 
 - **Response** — Shows the current message status, WhatsApp response code, response time, message ID (WAMID), and the response payload returned by WhatsApp.
 - **Raw Content** — Shows the original request sent to WhatsApp, including the message type, phone number ID, business account ID, request payload, and other message details.

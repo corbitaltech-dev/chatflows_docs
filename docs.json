@@ -103,12 +103,12 @@
       "destination": "/billing/plan-and-billing"
     },
     {
-      "source": "/shopify/connect-your-store",
-      "destination": "/shopify/shopify-admin-app"
+      "source": "/settings/billing-details",
+      "destination": "/billing/plan-and-billing"
     },
     {
-      "source": "/settings/billing-details",
-      "destination": "/billing/plan-and-billing#your-invoice"
+      "source": "/shopify/connect-your-store",
+      "destination": "/shopify/shopify-admin-app"
     },
     {
       "source": "/getting-started/shopify-quick-start",
@@ -127,7 +127,15 @@
               "getting-started/install-from-shopify",
               "getting-started/log-in",
               "getting-started/concepts",
-              "features"
+              "features",
+              "getting-started/switch-from-another-app"
+            ]
+          },
+          {
+            "group": "WhatsApp Setup",
+            "pages": [
+              "core-setup/channels/whatsapp",
+              "core-setup/channels/messenger"
             ]
           },
           {
@@ -145,13 +153,6 @@
             "pages": [
               "billing/plan-and-billing",
               "billing/whatsapp-costs"
-            ]
-          },
-          {
-            "group": "WhatsApp Setup",
-            "pages": [
-              "core-setup/channels/whatsapp",
-              "core-setup/channels/messenger"
             ]
           },
           {
@@ -241,7 +242,6 @@
           {
             "group": "Help",
             "pages": [
-              "getting-started/switch-from-another-app",
               "getting-started/troubleshooting"
             ]
           }

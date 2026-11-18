@@ -1,24 +1,32 @@
 ---
 title: "WhatsApp template examples for Shopify stores"
 sidebarTitle: "Template examples"
-description: "Copy-ready WhatsApp templates for order updates, cart reminders, COD and campaigns, with tips to get them approved."
+description: "Copy-ready WhatsApp templates for Shopify, grouped by Utility and Marketing: order updates, COD, cart reminders, feedback and campaigns."
 icon: "file-text"
-keywords: ["ChatFlows", "chatflows.io", "WhatsApp template examples", "template approval", "order confirmation template", "abandoned cart template", "Shopify", "utility template", "marketing template"]
+keywords: ["ChatFlows", "chatflows.io", "WhatsApp template examples", "template approval", "order confirmation template", "shipping update template", "abandoned cart template", "Shopify", "utility template", "marketing template"]
 ---
 
 Every message that starts a conversation must be an approved **template**.
 Use these examples as a starting point. Change the wording to fit your store.
 
-In the examples, **numbers in double curly brackets** are variables, such as the customer's name or order number.
-When you use the template in an automation, you fill each variable with a [merge field](/messaging/merge-fields), like the order number.
+In the examples, **numbers in double curly brackets** are variables, such as the customer's name or order number. Each one is filled in for every customer when the message is sent.
 
-To add one, go to **Message Templates → WhatsApp → Add Template**.
+## Utility or Marketing?
+
+Every template has a **category**. It decides what the message can say and what Meta charges for it.
+
+| Category | Use it for | What Meta charges |
+| --- | --- | --- |
+| **Utility** | Updates about an order the customer already placed | A lower rate, every time |
+| **Marketing** | Cart reminders, offers, new products, feedback requests | A higher rate, every time |
+
+So keep order updates as **Utility**, and don't mix a sales line into them. See [WhatsApp costs](/billing/whatsapp-costs) for the details.
 
 ## Tips for getting approved
 
-- **Pick the right category.** Order updates are **Utility**. Cart reminders, offers and new products are **Marketing**.
+- **Pick the right category.** Use the table above.
 - **Keep Utility templates about the order.** A discount or "shop now" line in a Utility template can be rejected or moved to Marketing.
-- **Don't start or end with a variable.** Put some words before the first variable and after the last one.
+- **Don't start or end with a variable.** Put some words before the first variable and after the last one. Every example below follows this.
 - **Fill in example values.** Meta uses them to check the template. Use realistic examples, like an order number.
 - **Keep it short and clear.** Say what happened and what the customer can do next.
 
@@ -27,41 +35,67 @@ To add one, go to **Message Templates → WhatsApp → Add Template**.
   Meta explains categories and reviews in its [template overview](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
 </Note>
 
-## Order updates (Utility)
+## How to use an example
 
-**Order placed**
+1. Go to **Message Templates → WhatsApp → Add Template**.
+2. Pick the category shown for the example.
+3. Copy the text into the message body and change the wording to fit your store.
+4. Submit it to Meta. When it shows **Approved**, use it in an automation.
+5. In the automation, fill each variable with the [merge field](/messaging/merge-fields) listed under the example.
+
+## Utility templates
+
+Use these with the Shopify order events. See [Send order updates](/shopify/order-updates).
+
+### Order placed
 
 ```text
 Hi {{1}}, thanks for your order {{2}}! We're getting it ready and will message you when it ships.
 ```
 
-**Order shipped**
+Fill with: `{{1}}` **First Name**, `{{2}}` **Order Number**.
+
+### Order partially shipped
 
 ```text
-Good news, {{1}}! Your order {{2}} is on its way. Track it here: {{3}}
+Hi {{1}}, part of your order {{2}} is on its way. You can track it at {{3}}. We'll message you when the rest ships.
 ```
 
-**Out for delivery**
+Fill with: `{{1}}` **First Name**, `{{2}}` **Order Number**, `{{3}}` **Tracking URL**.
+
+### Order shipped
+
+```text
+Good news, {{1}}! Your order {{2}} is on its way. You can track it at {{3}} anytime.
+```
+
+Fill with: `{{1}}` **First Name**, `{{2}}` **Order Number**, `{{3}}` **Tracking URL**.
+
+### Out for delivery
 
 ```text
 Hi {{1}}, your order {{2}} is out for delivery today. Please keep your phone close.
 ```
 
-**Delivered**
+Fill with: `{{1}}` **First Name**, `{{2}}` **Order Number**.
+
+### Delivered
 
 ```text
 Hi {{1}}, your order {{2}} has been delivered. We hope you love it! Reply here if anything isn't right.
 ```
 
-**Order cancelled**
+Fill with: `{{1}}` **First Name**, `{{2}}` **Order Number**.
+
+### Order cancelled
 
 ```text
 Hi {{1}}, your order {{2}} has been cancelled. If you didn't ask for this, reply here and we'll help.
 ```
 
-## COD (Utility)
+Fill with: `{{1}}` **First Name**, `{{2}}` **Order Number**.
 
-**COD order verification**
+### COD order verification
 
 ```text
 Hi {{1}},
@@ -74,53 +108,61 @@ Please confirm your Cash on Delivery order so we can proceed with shipping.
 
 Add two **Quick Reply** buttons, **Confirm order** and **Cancel order**. Use it with the **COD order placed** event. This is the **Shopify: COD Order Verification** template in the Template Collection. See [COD orders](/shopify/cod-orders).
 
-**COD payment received**
+### COD payment received
 
 ```text
 Hi {{1}}, we've received your cash payment for order {{2}}. Thank you for shopping with us!
 ```
 
-Use it with the **COD payment received** event. See [COD orders](/shopify/cod-orders).
+Fill with: `{{1}}` **First Name**, `{{2}}` **Order Number**. Use it with the **COD payment received** event. See [COD orders](/shopify/cod-orders).
 
-## Cart reminders (Marketing)
+## Marketing templates
 
-**First reminder**
+These are charged every time they're sent, so send them when they're most likely to help.
 
-```text
-Hi {{1}}, you left something in your cart. It's still waiting for you: {{2}}
-```
-
-**Last reminder**
+### Cart reminder: first
 
 ```text
-Hi {{1}}, your cart is about to expire. Complete your order here: {{2}}
+Hi {{1}}, you left something in your cart. It's still waiting for you at {{2}} whenever you're ready.
 ```
 
-Fill the link variable with the **Cart Recovery Link** merge field. See [Recover abandoned carts](/shopify/cart-recovery).
+Fill with: `{{1}}` **First Name**, `{{2}}` **Cart Recovery Link**. See [Recover abandoned carts](/shopify/cart-recovery).
 
-## Feedback (Marketing)
+### Cart reminder: last
 
-**After delivery**
+```text
+Hi {{1}}, just a reminder that your cart is still saved. You can finish your order at {{2}} before items sell out.
+```
+
+Fill with: `{{1}}` **First Name**, `{{2}}` **Cart Recovery Link**.
+
+<Tip>
+  Rather than putting the link in the text, you can add a button, such as **Complete my order**, and use the **Cart Recovery Link** as its link.
+</Tip>
+
+### Feedback after delivery
 
 ```text
 Hi {{1}}, how was your order {{2}}? Reply with a number from 1 to 5. Your feedback helps us get better.
 ```
 
-Send it from an **Order delivered** automation with a **Delay** step, for example 2 days.
+Fill with: `{{1}}` **First Name**, `{{2}}` **Order Number**. Send it from an **Order delivered** automation with a **Delay** step, for example 2 days.
 
-## Campaigns (Marketing)
-
-**New collection**
+### Campaign: new collection
 
 ```text
-Hi {{1}}, our new collection has just arrived. Take a look before it sells out: {{2}}
+Hi {{1}}, our new collection has just arrived. Take a look on our store before it sells out!
 ```
 
-**Back in stock**
+Fill with: `{{1}}` **First Name**. Add a button that links to your collection page.
+
+### Campaign: back in stock
 
 ```text
-Hi {{1}}, good news: {{2}} is back in stock. Order yours here: {{3}}
+Hi {{1}}, good news: {{2}} is back in stock. Tap below to order yours.
 ```
+
+Fill with: `{{1}}` **First Name**, `{{2}}` the product name. Add a button that links to the product page.
 
 ## Where to next
 
