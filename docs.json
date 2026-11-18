@@ -123,7 +123,15 @@
               "getting-started/install-from-shopify",
               "getting-started/log-in",
               "getting-started/concepts",
-              "features"
+              "features",
+              "getting-started/switch-from-another-app"
+            ]
+          },
+          {
+            "group": "WhatsApp Setup",
+            "pages": [
+              "core-setup/channels/whatsapp",
+              "core-setup/channels/messenger"
             ]
           },
           {
@@ -141,13 +149,6 @@
             "pages": [
               "billing/plan-and-billing",
               "billing/whatsapp-costs"
-            ]
-          },
-          {
-            "group": "WhatsApp Setup",
-            "pages": [
-              "core-setup/channels/whatsapp",
-              "core-setup/channels/messenger"
             ]
           },
           {
@@ -238,7 +239,6 @@
           {
             "group": "Help",
             "pages": [
-              "getting-started/switch-from-another-app",
               "getting-started/troubleshooting"
             ]
           }
