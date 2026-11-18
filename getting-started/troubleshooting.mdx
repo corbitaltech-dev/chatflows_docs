@@ -1,21 +1,25 @@
 ---
 title: "Troubleshooting ChatFlows for Shopify"
 sidebarTitle: "Troubleshooting"
-description: "A message didn't send, a template was rejected, or a Shopify event didn't run? Find the cause and the fix."
+description: "A message didn't send, a template was rejected, a customer has no phone number, or a delivery update never ran? Find the cause and the fix."
 icon: "life-buoy"
-keywords: ["ChatFlows", "chatflows.io", "troubleshooting", "message not sent", "template rejected", "cart reminder not sent", "Shopify", "WhatsApp", "help"]
+keywords: ["ChatFlows", "chatflows.io", "troubleshooting", "message not sent", "template rejected", "cart reminder not sent", "no phone number", "delivered status missing", "Shopify", "WhatsApp", "help"]
 ---
 
 Start here when something doesn't work as you expect.
 For any message, the first place to look is **Setup → WhatsApp Message Log**. It lists every message sent and shows why a message failed.
 See [WhatsApp Message Log](/core-setup/whatsapp-activity-log).
 
+Can't connect your WhatsApp number at all? Go through the [checklist before you connect](/core-setup/channels/whatsapp#before-you-connect) and its common problems.
+
 ## A message didn't send
 
 <AccordionGroup>
   <Accordion title="The customer hasn't written to you in 24 hours">
     Outside the 24 hours, you can only send an approved **template**. A normal text message won't go through.
-    Start your automation or campaign with a template. See [the 24-hour rule](/getting-started/concepts).
+    Start your automation or campaign with a template. See [the two WhatsApp rules](/getting-started/concepts#two-whatsapp-rules-that-shape-everything).
+
+    This is a WhatsApp rule, not a ChatFlows one. Meta explains it under [pricing](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing).
   </Accordion>
 
   <Accordion title="The template isn't approved yet">
@@ -28,12 +32,19 @@ See [WhatsApp Message Log](/core-setup/whatsapp-activity-log).
   </Accordion>
 
   <Accordion title="The customer has no phone number">
-    WhatsApp needs a phone number. Check that your Shopify checkout asks for one.
+    WhatsApp can't reach anyone without a phone number. Make your Shopify checkout ask for one:
+
+    1. In your Shopify admin, go to **Settings → Checkout**.
+    2. Under **Customer information**, set **Shipping address phone number** to **Required**.
+    3. Click **Save**.
+
+    This only works when checkout has a shipping step. It doesn't change customers who have already ordered. Shopify explains it under [checkout form options](https://help.shopify.com/en/manual/checkout-settings/checkout-form-options).
   </Accordion>
 
   <Accordion title="Meta stopped the message">
     Meta can stop messages, for example when there's no payment method on your WhatsApp Business account, or you reached your messaging limit.
     The reason shows in the **WhatsApp Message Log**. See [WhatsApp costs](/billing/whatsapp-costs).
+    Meta explains daily limits under [messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits).
   </Accordion>
 </AccordionGroup>
 
@@ -53,7 +64,7 @@ See [WhatsApp Message Log](/core-setup/whatsapp-activity-log).
   </Accordion>
 
   <Accordion title="The shopper didn't give a phone number">
-    Shopify only shares a phone number if your checkout asks for one.
+    Shopify only shares a phone number if your checkout asks for one. To turn it on, see **The customer has no phone number** under **A message didn't send** above.
   </Accordion>
 </AccordionGroup>
 
@@ -63,6 +74,8 @@ See [WhatsApp Message Log](/core-setup/whatsapp-activity-log).
   <Accordion title="Out for delivery or Delivered never runs">
     These two events need delivery tracking. Your shipping carrier or shipping app must send tracking updates to Shopify.
     If you mark orders as fulfilled by hand, these events never run.
+
+    **To check:** open the order in your Shopify admin. If it has no tracking number, or the tracking shows no delivery updates, Shopify has nothing to tell ChatFlows. Add tracking when you fulfill the order, or ask your shipping app whether it sends tracking updates to Shopify.
   </Accordion>
 
   <Accordion title="Delivery updates are off">
@@ -79,10 +92,36 @@ See [WhatsApp Message Log](/core-setup/whatsapp-activity-log).
 
 ## A template was rejected
 
-Meta reviews every template. If it's rejected, you get a notification. Common reasons:
+Meta reviews every template. If it's rejected, you get a notification, and the template shows **Rejected** in **Message Templates → WhatsApp**.
+
+Common reasons:
 
 - The category is wrong. For example, an offer inside a **Utility** template.
 - The template starts or ends with a variable.
 - The example values are missing or unclear.
 
-Fix the wording and submit it again. See [Template examples](/messaging/template-examples) for wording that works.
+Edit the template and submit it again, or delete it and start over. See [Template examples](/messaging/template-examples) for wording that works.
+
+<Note>
+  Meta decides what's approved, not ChatFlows. Meta explains categories and reviews under [templates](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
+</Note>
+
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Template examples" icon="file-text" href="/messaging/template-examples">
+    Ready-made wording that passes Meta's review.
+  </Card>
+
+  <Card title="WhatsApp Message Log" icon="scroll-text" href="/core-setup/whatsapp-activity-log">
+    See every message sent and why one failed.
+  </Card>
+
+  <Card title="Order updates" icon="package" href="/shopify/order-updates">
+    Which Shopify events send a message.
+  </Card>
+
+  <Card title="Recover abandoned carts" icon="shopping-cart" href="/shopify/cart-recovery">
+    Set when reminders go out.
+  </Card>
+</CardGroup>
