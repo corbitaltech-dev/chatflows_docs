@@ -53,6 +53,8 @@ These steps make an automation smart. The **Advanced** category steps control wh
 
 - **Store Reply In** is required. Use lowercase letters, numbers, and underscores, starting with a letter — for example `user_provided_id`.
 
+**Optional: if there is no reply.** Set **If there is no reply within** to a number of minutes, hours or days (up to 30 days). A second, red exit appears on the step: the flow takes it when the customer hasn't replied in time. Leave it empty to wait as long as it takes. A common use is cancelling a cash-on-delivery order nobody confirmed. See [COD orders](/shopify/cod-orders#when-the-buyer-doesnt-reply).
+
 ![Wait for Reply settings with a note explaining the flow pauses until the contact sends their next message and then saves it, and a Store Reply In box holding a variable name](/automation/img/advance/wait-for-reply-settings.png)
 
 **Example.** A **Text Message** asking for the order ID, a **Wait for Reply** saving it to `order_id`, then a **Text Message** confirming it back with {'{{vars.order_id}}'}.

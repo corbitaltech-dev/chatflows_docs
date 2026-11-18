@@ -1,44 +1,124 @@
 ---
-title: "Cash on delivery (COD) orders on WhatsApp"
+title: "Verify cash on delivery (COD) orders on WhatsApp"
 sidebarTitle: "COD orders"
-description: "Send WhatsApp order and shipping updates to cash-on-delivery buyers, and a message when a COD payment is received."
+description: "Ask every cash-on-delivery buyer to confirm their order on WhatsApp before you ship it. ChatFlows tags the order in Shopify so your team packs only confirmed ones."
 icon: "banknote"
-keywords: ["ChatFlows", "chatflows.io", "COD", "cash on delivery", "COD confirmation", "Shopify", "WhatsApp", "order updates"]
+keywords: ["ChatFlows", "chatflows.io", "COD", "cash on delivery", "COD confirmation", "COD verification", "verify COD orders", "Shopify", "WhatsApp", "order tags"]
 ---
 
-Many stores sell with cash on delivery (COD). COD buyers get the same WhatsApp order and shipping updates as every other buyer, and you can send a message when their COD payment is received. This page explains how it works.
+A cash-on-delivery (COD) order that the buyer never meant to accept costs you shipping both ways.
+ChatFlows asks every COD buyer to confirm their order on WhatsApp, then tags the order in Shopify, so your team packs only the confirmed ones.
+
+## How it works
+
+<Steps>
+  <Step title="A COD order is placed" icon="banknote">
+    The **COD order placed** event starts your automation, and ChatFlows tags the order **COD-PENDING** in Shopify. If you turned on **Hold new COD orders until the buyer confirms**, the order is also put **On hold**, so nobody can fulfill it yet.
+  </Step>
+
+  <Step title="The buyer gets a WhatsApp message" icon="message-circle">
+    The message shows what they ordered and the amount, with two buttons: **Confirm order** and **Cancel order**.
+  </Step>
+
+  <Step title="The buyer taps a button" icon="mouse-pointer-click">
+    - **Confirm order**: the tag changes to **COD-CONFIRMED**, the hold is released, and the buyer gets a thank-you.
+    - **Cancel order**: the tag changes to **COD-CANCELLED**, a note is added, the order is **cancelled in Shopify** (items go back in stock, nothing is refunded), and the buyer is told it won't ship.
+    - **They type a reply instead**: they're asked to tap one of the buttons.
+  </Step>
+
+  <Step title="Your team packs the confirmed orders" icon="package">
+    In Shopify, filter your orders by the **COD-CONFIRMED** tag. With the hold switched on, unconfirmed orders can't be fulfilled at all.
+  </Step>
+</Steps>
+
+If one buyer has two COD orders waiting, each tap updates the order whose message they tapped. Their first answer counts: tapping **Cancel order** after **Confirm order** on the same message changes nothing.
+
+## Before you start
+
+<AccordionGroup>
+  <Accordion title="Permission to change orders" icon="tags">
+    Tagging, holding and cancelling need ChatFlows' permission to update orders in your store. Stores connected before ChatFlows asked for it see **Order changes are off** in **Settings → Shopify**. Click **Reconnect** and approve it in Shopify.
+
+    ChatFlows only adds and removes tags, adds notes, holds, releases and cancels orders, and only when your automation does it. It never changes products or prices.
+  </Accordion>
+
+  <Accordion title="An approved message template" icon="file-text">
+    The first message to a buyer must be a template that Meta has approved. This is a WhatsApp rule, not a ChatFlows one. Meta explains it in its [template overview](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
+  </Accordion>
+
+  <Accordion title="Phone numbers at checkout" icon="smartphone">
+    ChatFlows finds the buyer by the phone number on the order. Make sure your Shopify checkout asks for one.
+  </Accordion>
+</AccordionGroup>
+
+## Set it up
+
+<Steps>
+  <Step title="Add the template" icon="file-text">
+    Go to **Message Templates → WhatsApp**, open the **Template Collection**, and click **Use Template** on **Shopify: COD Order Verification**. Keep the name **shopify_cod_confirmation**, adjust the wording if you like, and submit it to Meta.
+  </Step>
+
+  <Step title="Add the automation" icon="zap">
+    Go to **Automations**, click **Flow Collection**, choose **Shopify Store**, and clone **Shopify: COD Order Verification**. Pick your WhatsApp number.
+  </Step>
+
+  <Step title="Turn it on" icon="toggle-right">
+    Once Meta approves the template, turn the automation on. Every new COD order now gets the message.
+  </Step>
+
+  <Step title="Optional: hold new COD orders" icon="pause-circle">
+    In **Settings → Shopify**, turn on **Hold new COD orders until the buyer confirms**. New COD orders are then put **On hold** in Shopify until the buyer taps **Confirm order**.
+  </Step>
+</Steps>
+
+## Hold new COD orders until the buyer confirms
+
+With this switch on, every new COD order is put **On hold** in Shopify the moment it arrives, so it can't be fulfilled by mistake. **Confirm order** releases it; **Cancel order** cancels it.
+
+- A COD order is only held when an automation on **COD order placed** is turned on and the order has a phone number. That way every held order gets the WhatsApp question.
+- ChatFlows only ever releases its own hold. A hold from another app or your team stays.
+- Turning the switch off doesn't release orders that are already on hold.
+
+## When the buyer doesn't reply
+
+In the automation, open the **Wait for Reply** step and set **If there is no reply within**, for example 24 hours. A second, red exit appears on the step. Connect it to what should happen, such as a reminder template, or a **Cancel Shopify Order** step to cancel unconfirmed orders. See [Wait for Reply](/automation/flow-steps/advanced#wait-for-reply).
+
+Without a time limit, an unanswered order keeps the **COD-PENDING** tag, and stays on hold if the switch is on, until you deal with it in Shopify.
+
+<Tip>
+  Want different tags? Open the automation and change the **Update Shopify Order** steps. See [Update Shopify Order](/automation/flow-steps/integrations#update-shopify-order).
+</Tip>
+
+<Warning>
+  Tell your team to pack only orders tagged **COD-CONFIRMED**, rather than skipping orders tagged **COD-PENDING**. An order with no phone number never gets a message or a tag.
+</Warning>
 
 ## How ChatFlows spots a COD order
 
-An order counts as COD when its payment method in Shopify has **cash on delivery** or **COD** in its name.
+An order counts as COD when its payment method in Shopify says **cash on delivery**, or has **COD** as a separate word, like "Cash on Delivery (COD)".
 In your messages, the **Payment Method** merge field then shows **Cash on Delivery**.
 
-## What COD buyers get
+## The COD events
 
-A COD order gets the same updates as any other order. Use the Shopify events in your automations:
-
-| Event | When it runs for a COD order |
+| Event | When it runs |
 | --- | --- |
-| **Order placed** | The order is placed. |
-| **Order shipped** and **Order partially shipped** | The order, or part of it, ships. |
-| **Order out for delivery** and **Order delivered** | The courier is delivering it, or it arrived. Only if your carrier sends tracking to Shopify. |
-| **COD payment received** | The COD order is marked as **paid** in Shopify, after the buyer pays the courier. |
-| **Order cancelled** | The order is cancelled. |
+| **COD order placed** | A COD order is placed, before the buyer has paid. Use it to ask them to confirm. |
+| **COD payment received** | The COD order is marked as **paid** in Shopify, after the buyer pays the courier. Use it to thank them. |
 
-See [Send order updates](/shopify/order-updates) to set these up.
+A COD order also gets every other order event, such as **Order placed**, **Order shipped** and **Order delivered**. See [Send order updates](/shopify/order-updates).
 
 <Note>
-  **COD payment received** runs after payment, not before the order ships.
-  Use it to thank the buyer once they have paid.
+  **Order placed** runs for COD orders too. If you also send an order confirmation on **Order placed**, a COD buyer gets both messages. Keep both, or word the order confirmation so it reads well next to the COD question.
 </Note>
 
-## What ChatFlows doesn't do yet
+## What ChatFlows doesn't do
 
-ChatFlows doesn't ask buyers to confirm or cancel a COD order before it ships.
-It also doesn't change or cancel orders in Shopify. ChatFlows only reads your store.
+- It never cancels an order that is already paid or shipped, even if the buyer taps **Cancel order**. You handle those in Shopify.
+- It doesn't refund anything when it cancels. A COD order hasn't taken any money.
 
-An automation can't send COD orders down a different path from prepaid orders.
-If you want a different message for COD buyers, use the **COD payment received** event, or add the **Payment Method** merge field to your order message.
+## Already using the old COD automation?
+
+The earlier ready-made COD flow started on **COD payment received** and didn't tag, release or cancel orders. Clone **Shopify: COD Order Verification** again from the Flow Collection, then turn the old one off.
 
 ## Example messages
 
@@ -47,22 +127,34 @@ For ready-to-use wording, see the COD and order templates in [Template examples]
 ## Common questions
 
 <AccordionGroup>
-  <Accordion title="Can ChatFlows cancel or edit a COD order in Shopify for me?">
-    No. ChatFlows only reads your store and never changes or cancels orders. You manage COD orders in Shopify as usual.
+  <Accordion title="Can ChatFlows verify COD orders before they ship?">
+    Yes. ChatFlows asks each COD buyer to confirm or cancel on WhatsApp and tags the order **COD-CONFIRMED** or **COD-CANCELLED** in Shopify, so you ship only confirmed orders.
+  </Accordion>
+
+  <Accordion title="Does ChatFlows cancel COD orders in Shopify for me?">
+    Yes, when the buyer taps **Cancel order**: the ready-made automation tags the order **COD-CANCELLED** and cancels it in Shopify, with no refund. It never cancels an order that is already paid or shipped.
+  </Accordion>
+
+  <Accordion title="Can ChatFlows stop my team from shipping unconfirmed COD orders?">
+    Yes. Turn on **Hold new COD orders until the buyer confirms** in **Settings → Shopify**. Each new COD order is put on hold in Shopify and released only when the buyer confirms.
+  </Accordion>
+
+  <Accordion title="What else can ChatFlows change in my Shopify store?">
+    Only order tags, notes, holds and cancellations, and only when one of your automations does it. ChatFlows never changes products or prices.
   </Accordion>
 
   <Accordion title="Will ChatFlows recognize my cash on delivery payment method?">
-    Yes, if its name in Shopify contains **cash on delivery** or **COD**. A payment method without either wording isn't treated as COD.
+    Yes, if its name in Shopify says **cash on delivery** or has **COD** as a separate word. A payment method without either isn't treated as COD.
     See [How ChatFlows spots a COD order](#how-chatflows-spots-a-cod-order).
   </Accordion>
 
   <Accordion title="Will a COD buyer without a phone number get a WhatsApp message?">
-    No. ChatFlows finds the customer by the phone number on the order, and orders without one don't get a message.
+    No. ChatFlows finds the customer by the phone number on the order, and orders without one don't get a message or a tag.
     See [Send order updates](/shopify/order-updates#how-chatflows-finds-the-customer).
   </Accordion>
 
-  <Accordion title="Do I need to change my Shopify theme to handle COD orders on WhatsApp?">
-    No. ChatFlows doesn't add anything to your storefront or theme. It reads your orders from Shopify.
+  <Accordion title="Do I need to change my Shopify theme to verify COD orders?">
+    No. ChatFlows doesn't add anything to your storefront or theme.
   </Accordion>
 </AccordionGroup>
 

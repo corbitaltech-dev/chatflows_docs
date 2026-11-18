@@ -1,15 +1,15 @@
 ---
-title: "Google Sheets and Google Calendar steps"
+title: "Google Sheets, Google Calendar and Shopify order steps"
 sidebarTitle: "Integration Flow Steps"
-description: "Save customer replies straight to a Google Sheet, or add them to Google Calendar as an event — automatically, with no manual copy-paste."
+description: "Save customer replies straight to a Google Sheet, add them to Google Calendar as an event, or tag the Shopify order that started the automation."
 icon: "cloud"
-keywords: ["ChatFlows", "chatflows.io", "flow steps", "google sheets", "google calendar", "integrations", "automation"]
+keywords: ["ChatFlows", "chatflows.io", "flow steps", "google sheets", "google calendar", "integrations", "automation", "update shopify order", "cancel shopify order", "order hold", "order tags"]
 ---
 
-Stop copying chat answers into a spreadsheet by hand. The **Integrations** category steps let your chatbot work with Google services. Automatically save customer information to Google Sheets or create Google Calendar events. These steps run in the background and don't send any message to the customer.
+Stop copying chat answers into a spreadsheet by hand. The **Integrations** category steps let your chatbot work with other tools: save customer information to Google Sheets, create Google Calendar events, or tag a Shopify order. These steps run in the background and don't send any message to the customer.
 
 <Note>
-Both steps need a connected Google account. Set one up first in [Google Accounts](/settings/google-accounts).
+The two Google steps need a connected Google account. Set one up first in [Google Accounts](/settings/google-accounts).
 </Note>
 
 ## Google Sheets
@@ -107,6 +107,55 @@ A clinic turns a WhatsApp booking into a calendar entry:
 The doctor sees it in their calendar, and because **Attendee Email** was filled in, the patient gets a Google invite by email too.
 
 ---
+
+## Update Shopify Order
+
+**What it does.** Adds tags to, removes tags from, adds a note to, puts on hold, or releases the hold of the Shopify order that started the automation.
+
+**When to use it.** Use it to mark orders for your team, for example **COD-CONFIRMED** once a cash-on-delivery buyer confirms. See [COD orders](/shopify/cod-orders).
+
+This step shows in the palette only when the **Start Trigger** listens for a Shopify event. It works on orders, not abandoned carts.
+
+**How to set it up.**
+
+<Steps>
+<Step title="Add tags">
+  Type the tags to add, separated by commas, like `COD-CONFIRMED`. Tags the order already has are kept.
+</Step>
+
+<Step title="Remove tags">
+  Type the tags to take off, like `COD-PENDING`. A tag can't be added and removed in the same step.
+</Step>
+
+<Step title="Add to order note">
+  Text added on a new line after the order's current note. Type **@** to add a merge field, such as the customer's name.
+</Step>
+
+<Step title="Order hold">
+  Choose **Put the order on hold** so it can't be fulfilled in Shopify, or **Release the hold ChatFlows placed** once the buyer confirms. A hold placed by another app or your team is never released.
+</Step>
+
+<Step title="If the update fails">
+  Choose **Carry on with the next step** (the customer still gets your next message) or **Stop the automation**. It can fail when the store is disconnected, or when ChatFlows doesn't have permission to update orders yet.
+</Step>
+</Steps>
+
+Fill in at least one of the first four. The step needs ChatFlows' permission to update orders in your store. If **Settings → Shopify** shows **Order changes are off**, click **Reconnect**.
+
+## Cancel Shopify Order
+
+**What it does.** Cancels the Shopify order that started the automation, with no refund. Cancelling can't be undone.
+
+**When to use it.** When a cash-on-delivery buyer taps **Cancel order**, or on a **Wait for Reply** step's red "no reply" exit, to cancel orders nobody confirmed. See [COD orders](/shopify/cod-orders).
+
+Like **Update Shopify Order**, it shows in the palette only when the **Start Trigger** listens for a Shopify event.
+
+- **Put the items back in stock**: on by default.
+- **Send Shopify's cancellation email**: off by default, since you usually tell the buyer on WhatsApp.
+- **Note for your team**: Shopify's internal note on the order. Type **@** to add a merge field.
+- **If cancelling fails**: carry on with the next step, or stop the automation.
+
+It never cancels an order that is already paid or shipped; those you handle in Shopify.
 
 ## A worked example
 

@@ -40,7 +40,7 @@ If something needs your attention, a notice tells you what to do.
 This page shows how your store is connected and what is left to set up.
 
 - **Store connection** shows your store, your workspace, when it was connected, and which Shopify app it uses.
-- **Permissions** shows what ChatFlows may read from your store: **Orders and checkouts**, and **Delivery updates**. Each one shows **Granted** when it's on.
+- **Permissions** shows what ChatFlows may access in your store: **Orders and checkouts**, **Delivery updates**, and **Order changes** (the tags, holds and cancellations your COD automation makes, see [COD orders](/shopify/cod-orders)). Each one shows **Granted** when it's on.
 
 ![The Setup page with Store connection details, Permissions showing Orders and checkouts and Delivery updates as Granted, a three-step Quick start, and shortcuts to WhatsApp setup and Automations](/shopify/img/shopify-app-setup.png)
 
@@ -51,13 +51,16 @@ If something is wrong:
 - If you see **Delivery updates are off**, your store was connected before ChatFlows asked for delivery access.
   The **Order out for delivery** and **Order delivered** automations can't run.
   Reconnect the store once to turn them on.
+- If you see **Order changes are off**, your store was connected before ChatFlows asked to update orders.
+  Automations can't tag, hold or cancel orders, so COD verification can't mark orders as confirmed.
+  Reconnect the store once to turn it on.
 
 The **Quick start** has three steps: **Workspace ready**, **Connect WhatsApp**, and **Build a Shopify automation**.
 Click **Set up** on a step to open that page in your dashboard. **In your workspace** has shortcuts to **WhatsApp setup** and **Automations**.
 
 ## Plan & billing
 
-This page shows your **Current plan** and a **Billing summary** with the next charge.
+This page shows your **Current plan** and a **Billing summary** with the next charge. Your invoice is your Shopify bill, under **Settings → Billing → Bills** in your Shopify admin.
 Under **Change plan**, you can move to another plan.
 
 ![The Plan & billing page with the current plan, price, next billing date and Billed through Shopify, a Billing summary with the next charge, and Change plan cards with a Monthly and Yearly switch](/shopify/img/shopify-app-billing.png)
@@ -109,7 +112,7 @@ If you connect the store again later, your automations work again.
 
 <AccordionGroup>
   <Accordion title="Does ChatFlows change my Shopify products, orders or settings?">
-    No. ChatFlows only reads your store: the **Orders and checkouts** and **Delivery updates** permissions are read access.
+    ChatFlows never changes your products or settings. It changes an order (tags, notes, a hold or a cancellation) only when one of your automations does it, for example tagging it **COD-CONFIRMED**.
     See [Setup](#setup).
   </Accordion>
 
