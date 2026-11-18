@@ -75,24 +75,21 @@ Have these five things ready, so nothing stops you halfway through the setup.
   </Accordion>
 
   <Accordion title="A payment method with Meta" icon="credit-card">
-    Meta charges for template messages and bills you directly, so add a payment method in Meta's WhatsApp Manager.
+    Meta charges for template messages, and for your replies after the first 1,000 each month. Meta bills you directly, so add a payment method in Meta's WhatsApp Manager.
     Without it, your templates won't send. See [WhatsApp costs](/billing/whatsapp-costs).
   </Accordion>
 
   <Accordion title="Customers' phone numbers in Shopify" icon="contact">
     WhatsApp can only reach customers who gave a phone number.
-    Check that your Shopify checkout asks for one.
+    Check that your Shopify checkout asks for one. See [how to turn it on](/shopify/cart-recovery#collect-phone-numbers-at-checkout).
   </Accordion>
 </AccordionGroup>
 
-## Set up in 5 steps
+## Set up in 6 steps
 
 <Steps>
   <Step title="Install ChatFlows from Shopify" icon="shopping-bag">
-    Open [ChatFlows: WhatsApp Automation](https://apps.shopify.com/chatflows) in the Shopify App Store and click **Install**.
-    Pick a plan and approve it in Shopify. Your workspace is created and your store is connected.
-
-    Then click **Open dashboard**. You are signed in straight away.
+    Install [ChatFlows: WhatsApp Automation](https://apps.shopify.com/chatflows) from the Shopify App Store and approve your plan. Then click **Open dashboard**.
 
     Details: [Install from Shopify](/getting-started/install-from-shopify)
   </Step>
@@ -101,6 +98,8 @@ Have these five things ready, so nothing stops you halfway through the setup.
     Go to **WhatsApp Setup** and click **Connect Channel**. Choose **WhatsApp**, then sign in with Meta and pick your number in Meta's pop-up window.
 
     When the pop-up closes, your number shows as **Active**.
+
+    Not sure you're ready? Check the [5-point checklist](/core-setup/channels/whatsapp#before-you-connect) first.
 
     Details: [Connect WhatsApp](/core-setup/channels/whatsapp)
   </Step>
@@ -111,9 +110,19 @@ Have these five things ready, so nothing stops you halfway through the setup.
     Go to **Message Templates → WhatsApp → Add Template**, write your message and submit it.
     Not sure what to write? Start from one of the [ready-made template examples](/messaging/template-examples).
 
-    Moving from another WhatsApp app? Click **Sync Templates** to bring in the templates you already have.
+    Your template shows **Pending** while Meta reviews it. Wait until it shows **Approved** before you use it.
+
+    Already have templates in your Meta account, or moving from another WhatsApp app? Click **Sync Templates** to bring them in.
 
     Details: [WhatsApp templates](/messaging/whatsapp-templates)
+  </Step>
+
+  <Step title="Send yourself a test" icon="smartphone">
+    Go to **WhatsApp Setup** and click **Test** on your WhatsApp channel. Pick your approved template, enter your own phone number and send it.
+
+    When it arrives on your phone, you know everything works.
+
+    Details: [Test message](/core-setup/channels/whatsapp#test-message)
   </Step>
 
   <Step title="Switch on cart reminders and order updates" icon="shopping-cart">
@@ -127,21 +136,21 @@ Have these five things ready, so nothing stops you halfway through the setup.
 
   <Step title="Bring in your customers and send a campaign" icon="send">
     Go to **Settings → Shopify** and click **Sync contacts** to bring in your Shopify customers.
-    Then go to **Campaigns → Add Campaign**, choose **Template Campaign**, and send your template to everyone or to one group.
+    Then go to **Campaigns**, create a campaign and choose **Template** as the campaign type. Send it to everyone or to one group.
 
     Details: [Your store and the Shopify app](/shopify/shopify-admin-app#bring-in-your-shopify-customers) · [Campaigns](/messaging/campaigns)
   </Step>
 </Steps>
 
 <Check>
-  **You're live.** Install from Shopify → connect your number → get a template approved → switch on an automation → send a campaign.
+  **You're live.** Install from Shopify → connect your number → get a template approved → send yourself a test → switch on an automation → send a campaign.
 </Check>
 
 ## When customers reply
 
 Replies land in the **Inbox**. Anyone on your team can pick up a chat, assign it, or leave a private note.
 
-Once a customer writes to you, you can reply freely for 24 hours. After that, you need an approved template again.
+Once a customer writes to you, you can reply in your own words for 24 hours. After that, you need an approved template again.
 This is a WhatsApp rule, not a ChatFlows one. [The short version of the rules →](/getting-started/concepts)
 
 ## Common questions
@@ -163,13 +172,13 @@ This is a WhatsApp rule, not a ChatFlows one. [The short version of the rules �
   </Accordion>
 
   <Accordion title="Does WhatsApp charge me separately?">
-    Yes. Meta charges for template messages. The rate depends on the kind of template and the customer's country.
+    Yes. Meta charges for template messages, and for your replies after the first 1,000 each month. The rate depends on the kind of message and the customer's country.
     Meta bills you directly, and ChatFlows adds nothing on top. See [WhatsApp costs](/billing/whatsapp-costs) for an example monthly bill.
   </Accordion>
 
   <Accordion title="Why can't I just type a message to a new customer?">
     WhatsApp only lets a business start a conversation with a template Meta has approved.
-    Once the customer replies, you can write freely for 24 hours. Meta explains it in its [template overview](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
+    Once the customer replies, you can write in your own words for 24 hours. Meta explains it in its [template overview](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview).
   </Accordion>
 
   <Accordion title="Who can I message?">
