@@ -14,17 +14,44 @@ Meta's own pop-up window walks you through it. Behind your number sits a WhatsAp
 
 ## Before you connect
 
-<Tip>
-Make sure you have the following ready:
+Most connection problems come from something missing before you start. Go through this checklist first, so you don't have to start over halfway through Meta's window.
 
-- A Facebook account.
-- A **Meta Business account** — Business Verification is not mandatory to connect, but it is strongly recommended; without it your account stays on limited messaging tiers.
-- One mobile number for WhatsApp that must be either:
-  - **not connected to any WhatsApp account**, or
-  - **already connected to the WhatsApp Business App**
-- A **payment method** in Meta's WhatsApp Manager. Meta needs it to send your template messages. See [WhatsApp costs](/billing/whatsapp-costs).
-- Your **WABA ID**, **Access Token**, **Meta App ID**, and **App Secret** (for manual connections only).
-</Tip>
+<AccordionGroup>
+  <Accordion title="1. A Facebook account that manages your business" icon="user">
+    You log in to Meta's window with Facebook. Use the account you already use to manage your business on Meta, so you can see your business and its WhatsApp number.
+  </Accordion>
+
+  <Accordion title="2. A Meta business account" icon="building-2">
+    This is where Meta keeps your business details. Don't have one yet? Meta's window helps you create it as you go.
+
+    **Business verification** isn't needed to connect, but we strongly recommend it. Without it, your number stays on a lower daily messaging limit.
+  </Accordion>
+
+  <Accordion title="3. A phone number that can get a code" icon="smartphone">
+    The number must be one of these:
+
+    - **Not on WhatsApp at all**, or
+    - **Already on the WhatsApp Business app.** You can keep using the app on your phone.
+
+    A number on the **personal WhatsApp app** can't connect until you delete that WhatsApp account.
+
+    Meta sends a code to the number by **text message (SMS)** or **voice call**, so you need to be able to receive it. For a landline, choose the voice call.
+    Meta lists all the number rules under [business phone numbers](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers).
+  </Accordion>
+
+  <Accordion title="4. A display name that matches your store" icon="badge-check">
+    This is the name customers see on WhatsApp. Meta reviews it, so it should match your store or brand name. Avoid generic words or advertising, like "Best Deals".
+    See Meta's [display name guidelines](https://www.facebook.com/business/help/757569725593362).
+  </Accordion>
+
+  <Accordion title="5. A payment method in Meta's WhatsApp Manager" icon="credit-card">
+    Meta charges for some messages, like cart reminders and campaigns, and bills you directly. Without a payment method, those messages don't send. See [WhatsApp costs](/billing/whatsapp-costs).
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  These are WhatsApp rules, not ChatFlows ones. Connecting through the **Manual** tab also needs your **WABA ID**, **Access Token**, **Meta App ID** and **App Secret**. Most stores don't need it.
+</Note>
 
 ## Connecting WhatsApp
 
@@ -120,6 +147,21 @@ Use the **Test** button on a channel to confirm the connection actually works en
     - **On the WhatsApp Business app?** That's fine. Connect it alongside the app (coexistence).
     - **On the personal WhatsApp app?** Delete that WhatsApp account on the phone first, or use another number.
     - **On another provider's WhatsApp API?** Ask that provider to release the number, then connect it here.
+  </Accordion>
+
+  <Accordion title="The verification code doesn't arrive">
+    - Ask for a **voice call** instead of a text message. A landline can only get the code by voice call.
+    - If the number goes to a phone menu or switchboard, make sure the call can reach a real person.
+    - Check the number can receive calls and texts from other countries.
+  </Accordion>
+
+  <Accordion title="My business or number isn't listed in Meta's window">
+    You may be logged in with a different Facebook account. Log out of Facebook, launch the window again, and log in with the account that manages your business.
+    If you still don't see it, ask the person who set up your Meta business account to give you full access.
+  </Accordion>
+
+  <Accordion title="Meta didn't approve my display name">
+    Change it to match your store or brand name, then submit it again in Meta's WhatsApp Manager. Meta's [display name guidelines](https://www.facebook.com/business/help/757569725593362) show what passes.
   </Accordion>
 
   <Accordion title="Templates don't send after connecting">
