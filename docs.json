@@ -103,6 +103,10 @@
       "destination": "/billing/plan-and-billing"
     },
     {
+      "source": "/settings/billing-details",
+      "destination": "/billing/plan-and-billing"
+    },
+    {
       "source": "/shopify/connect-your-store",
       "destination": "/shopify/shopify-admin-app"
     },
@@ -227,7 +231,6 @@
             "pages": [
               "settings/general",
               "settings/business-hours",
-              "settings/billing-details",
               "settings/contact-configuration",
               "settings/webhooks",
               "settings/google-accounts",
