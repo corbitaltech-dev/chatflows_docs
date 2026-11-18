@@ -3,10 +3,10 @@ title: "Advanced steps: delays, conditions and API calls"
 sidebarTitle: "Advanced Flow Steps"
 description: "Control what happens next in your chatbot by adding decisions, delays, actions, and connections to other systems."
 icon: "sliders-horizontal"
-keywords: ["ChatFlows", "chatflows.io", "flow steps", "delay", "condition", "logic control", "api request", "save response", "wait for reply", "assign label", "sequence", "connect flow"]
+keywords: ["ChatFlows", "chatflows.io", "flow steps", "delay", "condition", "logic control", "api request", "save response", "wait for reply", "assign label", "sequence", "connect flow", "ai assistant"]
 ---
 
-These steps make an automation smart. The **Advanced** category steps control what your chatbot does behind the scenes. Use them to wait before replying, choose different paths, update contact details, connect with other systems, or start another flow.
+These steps make an automation smart. The **Advanced** category steps control what your chatbot does behind the scenes. Use them to wait before replying, choose different paths, update contact details, connect with other systems, start another flow, or let your AI Assistant answer.
 
 ![Flow Builder showing a flow that uses Advanced steps — a Start Trigger on the keywords hi and hello leading to an Ask Question and a Get Input, then a Condition that splits into two paths, each running an Update Contact and an Assign Label before joining a closing Text Message](/automation/img/advance/advanced-flow-steps.png)
 
@@ -294,6 +294,38 @@ If the list is empty, you'll see a message saying there are no other flows avail
 > **Step 2** — after 3 days: "🔥 Don't miss our latest deals! Shop now and save on your favorites."
 
 ![Flow builder example showing a Button Message asking if the contact wants special offers, with a Yes, notify me option leading to two chained Sequence steps](/automation/img/advance/sequence-example.png)
+
+---
+
+## AI
+
+### AI Assistant
+
+**What it does.** Lets your [AI Assistant](/automation/ai-assistant) answer customer questions from what you taught it. It can answer one question, or keep answering for the rest of the conversation.
+
+**When to use it.** Use it when customers ask questions your assistant knows the answer to, such as delivery times, returns or sizing. For example, start a flow when a customer says "hi", then let the assistant answer their questions.
+
+**How to set it up.** Pick the **Assistant**, then choose a **Mode**:
+
+- **Hand over the conversation** — The assistant replies to each new message until it hands the chat to your team. The flow stops after the handover.
+- **Answer one question** — The assistant answers one question, then the flow continues down an **answered** or **unanswered** path. It won't answer another question until the flow runs again. This mode has a few more settings:
+  - **Greeting message** — Sent when the assistant starts, so the customer knows it's ready. The message that started the flow isn't treated as their question. Leave it empty to use the default greeting.
+  - **Question** — What the assistant answers:
+    - **The customer's last message** — answers what the customer just typed. Right after the trigger, it sends the **Greeting message** first and waits for their next message instead.
+    - **A saved variable** — answers a value collected earlier in the flow, like an **Ask Question** reply. Shows a **Variable name** box. Type the name only, without `{'{{ }}'}` (for example `order_question`).
+  - **Save answer as** — The variable the assistant's reply is saved to, so later steps can use it. With the default name, use it as `{'{{vars.ai_answer}}'}`.
+  - **Send the answer to the customer** — On by default, so the reply goes out straight away. Turn it off to only save the answer, so a later step decides what to send.
+  - **Show typing indicator** — Shows the customer that a reply is on its way.
+
+**Required fields**
+
+- **Assistant** is required. Only assistants that are **Ready** and switched on (**Active**) appear in the list.
+
+![AI Assistant settings in Answer one question mode, with Store Support Assistant selected, a Greeting message, Question set to The customer's last message, Save answer as ai_answer, and the Send the answer to the customer and Show typing indicator switches turned on](/automation/img/ai-assistant/step-answer-one.png)
+
+**Example.** A **Start Trigger** on "hi", then an **AI Assistant** set to **Hand over the conversation**. The customer can ask anything, and the assistant replies until it hands the chat to your team.
+
+![A flow with a Start Trigger set to Exact match: hi, connected to an AI Assistant step that says Hands over the conversation](/automation/img/ai-assistant/flow-step.png)
 
 ---
 
