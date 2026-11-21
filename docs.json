@@ -145,7 +145,8 @@
               "shopify/cart-recovery",
               "shopify/order-updates",
               "shopify/cod-orders",
-              "shopify/shopify-dashboard"
+              "shopify/shopify-dashboard",
+              "shopify/store-insights"
             ]
           },
           {
