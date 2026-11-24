@@ -12,3 +12,6 @@ scratchpad/
 
 # Internal audit notes — never publish
 ChatFlows Landing Page Audit.md
+
+# OG image generator (fonts, logo, script): repo tooling, not docs content
+scripts/

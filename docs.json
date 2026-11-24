@@ -445,6 +445,11 @@
       "sameAs": [
         "https://apps.shopify.com/chatflows"
       ]
+    },
+    "metatags": {
+      "og:locale": "en_US",
+      "og:image:alt": "ChatFlows help docs: WhatsApp for Shopify",
+      "twitter:image:alt": "ChatFlows help docs: WhatsApp for Shopify"
     }
   },
   "metadata": {
